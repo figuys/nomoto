@@ -10,9 +10,8 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace />
+    <RootNamespace>lenovo.mbg.service.common.webservices</RootNamespace>
   </PropertyGroup>
-  <ItemGroup />
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>..\..\..\droid\fix\BouncyCastle.Crypto.dll</HintPath>
