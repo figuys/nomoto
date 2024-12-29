@@ -10,8 +10,9 @@
     <LangVersion>11.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup />
-  <ItemGroup />
+  <PropertyGroup>
+    <RootNamespace>lenovo.mbg.service.framework.services</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GoogleAnalytics.Core">
       <HintPath>..\..\..\droid\fix\GoogleAnalytics.Core.dll</HintPath>
