@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.support.MainFrame" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.support" xmlns:localVM="clr-namespace:lenovo.mbg.service.lmsa.support.ViewModel" xmlns:land="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControl="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" x:Name="us_support">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <localVM:MainFrameControlTemplateSelector x:Key="mainFrameControlTemplateSelector" />
+      <local:ComboxItemTemplateSelector x:Key="comboxItemTemplateSelector" />
+      <DataTemplate x:Key="dropdownSelectionItemDataTemplate">
+        <DockPanel>
+          <Image Name="item_left_icon" DockPanel.Dock="Left" Stretch="Uniform" Width="15" VerticalAlignment="Center" Source="{Binding Icon}" />
+          <land:LangTextBlock Margin="5.8 0 0 0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" LangText="{Binding Value}" LangKey="{Binding Value}" />
+        </DockPanel>
+        <DataTemplate.Triggers>
+          <DataTrigger Value="True" Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ListBoxItem, Mode=FindAncestor}}">
+            <Setter TargetName="item_left_icon" Property="Image.Source" Value="{Binding HoverIcon}" />
+          </DataTrigger>
+          <DataTrigger Value="True" Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem, Mode=FindAncestor}}">
+            <Setter TargetName="item_left_icon" Property="Image.Source" Value="{Binding HoverIcon}" />
+          </DataTrigger>
+        </DataTemplate.Triggers>
+      </DataTemplate>
+      <DataTemplate x:Key="SelectionBoxItemDataTemplate">
+        <DockPanel>
+          <Image DockPanel.Dock="Left" Margin="10.8 0 0 0" Stretch="Uniform" Width="15" VerticalAlignment="Center" Source="{Binding HoverIcon}" />
+          <land:LangTextBlock Margin="5.8 0 0 0" FontSize="14px" Foreground="#FF001429" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" LangText="{Binding Value}" LangKey="{Binding Value}" />
+        </DockPanel>
+      </DataTemplate>
+      <ControlTemplate x:Key="bigButtonTemplate" TargetType="{x:Type genericControl:IconButton}">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="41" />
+          </Grid.RowDefinitions>
+          <Border Grid.Row="0" Grid.RowSpan="2" Background="#ffffff" CornerRadius="16">
+            <UIElement.Effect>
+              <DropShadowEffect BlurRadius="16" ShadowDepth="0" Direction="0" Color="#C4D1D7" Opacity="0.5" />
+            </UIElement.Effect>
+          </Border>
+          <Image Source="{TemplateBinding genericControl:IconButton.Icon}" Margin="14 11 14 0" VerticalAlignment="Center" HorizontalAlignment="Center" />
+          <land:LangTextBlock Grid.Row="1" LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Foreground="#43B5E2" FontWeight="Bold" />
+        </Grid>
+      </ControlTemplate>
+      <DataTemplate x:Key="ucListNavigation">
+        <Grid Background="#f7f9fc">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="53" />
+            <RowDefinition Height="500" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+              <land:LangTextBlock LangText="Switching device type:" LangKey="K1417" FontSize="14px" Margin="0,0,15,0" Opacity="100" Foreground="#647EA6" VerticalAlignment="Center" />
+              <genericControl:LComboBox Name="stepCombobox" BorderBrush="#FFD4DCE3" Width="195" BorderThickness="1" CornerRadius="4" DataLoading="False" FontSize="14px" Height="36" Panel.ZIndex="2" Margin="5 0 10 0" VerticalAlignment="Center" IsEditable="False" IsTextSearchEnabled="False" ToggleButtonIsCheckedBorderBursh="#00FFFFFF" ToggleButtonIsCheckedBackground="#00FFFFFF" ToggleButtonIsCheckedArrowBackground="#43B5E2" ToggleButtonIsCheckedForeground="#FF001429" ToggleButtonBackground="#00FFFFFF" ToggleButtonBorderBursh="#00FFFFFF" ToggleButtonArrowBackground="#6D86AB" ToggleButtonForeground="#001429" DropDownBackground="#ffffff" DropDownBorderBrush="#339FAEBF" DropDownBorderThickness="1" DropDownItemBackground="#ffffff" DropDownItemForeground="#545454" DropDownItemMouseOverBackground="#339FAEBF" DropDownItemSelectedBackground="#339FAEBF" DropDownItemMouseOverForeground="#FF001429" DropDownItemSelectedForeground="#FF001429" DorpDownPanelVerticalOffset="0" EmptyTips="" EmptyTipsForeground="#43B5E2" ItemTemplateSelector="{StaticResource comboxItemTemplateSelector}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutLComboBoxStyleEx2}}" SelectedItem="{Binding SelectedCategoryItem, Mode=TwoWay}" ItemsSource="{Binding CategoryItemsSource}" />
+            </StackPanel>
+            <ListBox Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Panel.ZIndex="1" Padding="0 0 5 0" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=leftNavigationStyleOne}}" />
+          </DockPanel>
+          <Grid Row="1" Margin="0 0 0 0">
+            <ContentPresenter Content="{Binding CurrentView}" />
+          </Grid>
+          <Button Name="btn_back" Grid.Row="2" Content="K0628" Visibility="Collapsed" Style="{DynamicResource V6_BackBtnStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Command="{Binding BackHomeCommand}" Click="btn_back_Click" />
+        </Grid>
+      </DataTemplate>
+      <Style x:Key="PhoneBtnStyle" TargetType="{x:Type genericControl:IconButton}">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="235" />
+        <Setter Property="BorderBrush" Value="{DynamicResource V6_ThemeFgdBrushKey}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type genericControl:IconButton}">
+              <Border BorderThickness="0.6" CornerRadius="16" BorderBrush="{TemplateBinding Control.BorderBrush}">
+                <Grid>
+                  <Image Name="img" Source="{TemplateBinding genericControl:IconButton.Icon}" Stretch="None" />
+                  <land:LangTextBlock Name="txt" Margin="0,0,0,20" LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" Foreground="#FFFFFF" />
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Value="{DynamicResource V6_HighLightBorderBrushKey}" Property="BorderBrush" />
+                  <Setter TargetName="img" Property="Image.Source" Value="{Binding MouseOverIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                  <Setter TargetName="txt" Property="TextBlock.Foreground" Value="#43B5E2" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Value="{DynamicResource V6_HighLightBorderBrushKey}" Property="BorderBrush" />
+                  <Setter TargetName="img" Property="Image.Source" Value="{Binding MouseOverIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                  <Setter TargetName="txt" Property="TextBlock.Foreground" Value="#43B5E2" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <DataTemplate x:Key="startPage">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210*" />
+            <ColumnDefinition Width="265" />
+            <ColumnDefinition Width="29" />
+            <ColumnDefinition Width="265" />
+            <ColumnDefinition Width="29" />
+            <ColumnDefinition Width="265" />
+            <ColumnDefinition Width="159*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="119*" />
+            <RowDefinition Height="42" />
+            <RowDefinition Height="344" />
+            <RowDefinition Height="185*" />
+          </Grid.RowDefinitions>
+          <land:LangTextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" LangText="Select your device type" LangKey="K0835" FontSize="33" Foreground="#FFFFFFFF" FontWeight="SemiBold" />
+          <land:LangTextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="28" Foreground="#355562" FontWeight="SemiBold" LangText="{Binding TestP}" LangKey="{Binding TestP}" />
+          <genericControl:IconButton Grid.Row="2" Grid.Column="1" CommandParameter="{x:Static local:MainFrameViewModel.MOTO_PHONE}" Content="MOTO Phones" LangKey="K0812" Icon="{DynamicResource startPageMOTOPhoneDrawingImage}" MouseOverIcon="{DynamicResource startPageMOTOPhoneDrawingImageSelect}" Style="{StaticResource PhoneBtnStyle}" Command="{Binding DeviceTypeSelectedCommand}" />
+          <genericControl:IconButton Name="asb" Grid.Row="2" Grid.Column="3" CommandParameter="{x:Static local:MainFrameViewModel.LENOVO_PHONE}" Content="Lenovo Phones" LangKey="K0810" MouseOverIcon="{DynamicResource startPageLenovoPhoneDrawingImageSelect}" Icon="{DynamicResource startPageLenovoPhoneDrawingImage}" Style="{StaticResource PhoneBtnStyle}" Command="{Binding DeviceTypeSelectedCommand}" />
+          <genericControl:IconButton Grid.Row="2" Grid.Column="5" CommandParameter="{x:Static local:MainFrameViewModel.LENOVO_TABLET}" Content="Lenovo Tablets" LangKey="K0811" MouseOverIcon="{DynamicResource startPageLenovoTableDrawingImageSelect}" Icon="{DynamicResource startPageLenovoTableDrawingImage}" Style="{StaticResource PhoneBtnStyle}" Command="{Binding DeviceTypeSelectedCommand}" />
+        </Grid>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <ContentPresenter Content="{Binding}" ContentTemplateSelector="{Binding DataContext.MainFrameControlTemplateSelector, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:MainFrame}}" />
+</UserControl>

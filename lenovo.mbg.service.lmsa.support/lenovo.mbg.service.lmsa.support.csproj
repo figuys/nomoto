@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>lenovo.mbg.service.lmsa.support</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="assets\images\home_serch_big_icon.png" />
+    <None Remove="assets\images\suppot_backhome.png" />
+    <None Remove="assets\images\support_device_big_icon.png" />
+    <None Remove="assets\images\startpagemotophone.png" />
+    <None Remove="assets\images\warranty_phonedefault.png" />
+    <None Remove="assets\images\startpagelenovophoneselect.png" />
+    <None Remove="assets\images\startpagelenovophone.png" />
+    <None Remove="assets\images\home_search_helper_button_icon.png" />
+    <None Remove="assets\images\warranty_tablert_1.png" />
+    <None Remove="assets\images\warranty_error.png" />
+    <None Remove="assets\images\support_search.png" />
+    <None Remove="assets\images\warranty_smartdevice.png" />
+    <None Remove="assets\images\warranty_warn.png" />
+    <None Remove="assets\images\support_question_image.png" />
+    <None Remove="assets\images\startpagemotophoneselect.png" />
+    <None Remove="assets\images\support_warrenty_image.png" />
+    <None Remove="assets\images\warranty_correct.png" />
+    <None Remove="assets\images\startpagelenovotable.png" />
+    <None Remove="assets\images\startpagelenovotableselect.png" />
+    <EmbeddedResource Include="assets\images\home_serch_big_icon.png" LogicalName="assets/images/home_serch_big_icon.png" />
+    <EmbeddedResource Include="assets\images\suppot_backhome.png" LogicalName="assets/images/suppot_backhome.png" />
+    <EmbeddedResource Include="assets\images\support_device_big_icon.png" LogicalName="assets/images/support_device_big_icon.png" />
+    <EmbeddedResource Include="assets\images\startpagemotophone.png" LogicalName="assets/images/startpagemotophone.png" />
+    <EmbeddedResource Include="assets\images\warranty_phonedefault.png" LogicalName="assets/images/warranty_phonedefault.png" />
+    <EmbeddedResource Include="assets\images\startpagelenovophoneselect.png" LogicalName="assets/images/startpagelenovophoneselect.png" />
+    <EmbeddedResource Include="assets\images\startpagelenovophone.png" LogicalName="assets/images/startpagelenovophone.png" />
+    <EmbeddedResource Include="assets\images\home_search_helper_button_icon.png" LogicalName="assets/images/home_search_helper_button_icon.png" />
+    <EmbeddedResource Include="assets\images\warranty_tablert_1.png" LogicalName="assets/images/warranty_tablert_1.png" />
+    <EmbeddedResource Include="assets\images\warranty_error.png" LogicalName="assets/images/warranty_error.png" />
+    <EmbeddedResource Include="assets\images\support_search.png" LogicalName="assets/images/support_search.png" />
+    <EmbeddedResource Include="assets\images\warranty_smartdevice.png" LogicalName="assets/images/warranty_smartdevice.png" />
+    <EmbeddedResource Include="assets\images\warranty_warn.png" LogicalName="assets/images/warranty_warn.png" />
+    <EmbeddedResource Include="assets\images\support_question_image.png" LogicalName="assets/images/support_question_image.png" />
+    <EmbeddedResource Include="assets\images\startpagemotophoneselect.png" LogicalName="assets/images/startpagemotophoneselect.png" />
+    <EmbeddedResource Include="assets\images\support_warrenty_image.png" LogicalName="assets/images/support_warrenty_image.png" />
+    <EmbeddedResource Include="assets\images\warranty_correct.png" LogicalName="assets/images/warranty_correct.png" />
+    <EmbeddedResource Include="assets\images\startpagelenovotable.png" LogicalName="assets/images/startpagelenovotable.png" />
+    <EmbeddedResource Include="assets\images\startpagelenovotableselect.png" LogicalName="assets/images/startpagelenovotableselect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="lenovo.themes.generic">
+      <HintPath>..\..\..\droid\fix\lenovo.themes.generic.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="lenovo.mbg.service.framework.services">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.webservices">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.devicemgt">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.devicemgt.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.lang">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.lang.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="lenovo.mbg.service.lmsa.hostproxy">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.lmsa.hostproxy.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.utilities">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.lmsa.messenger">
+      <HintPath>..\..\..\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.log">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.lmsa.tips">
+      <HintPath>..\..\..\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.tips.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.lmsa.forum">
+      <HintPath>..\..\..\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.forum.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
