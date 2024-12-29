@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.Loading" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic">
-  <Grid Background="#00FFFFFF">
-    <Border Background="#fbfbfb" Opacity="0.7" />
-    <Border Width="600" Height="300">
-      <genericControls:GifPanel UriImageSource="/lenovo.mbg.service.lmsa.phoneManager;component/Assets/Images/loading.gif" />
-    </Border>
-  </Grid>
-</UserControl>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="lenovo.mbg.service.lmsa.UserControls.CustomControls.ServerNorespond" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:localPorject="clr-namespace:lenovo.mbg.service.lmsa" x:Name="serverNorespond" xmlns:customcontrols="clr-namespace:lenovo.mbg.service.lmsa.UserControls.CustomControls">
-  <StackPanel VerticalAlignment="Center" Background="#FFFFFFFF">
-    <Image Stretch="None" Source="/Software Fix;component/Resource/AssistantPictures/ServerNoRespond.png" />
-    <TextBlock Margin="0,10,0,10" HorizontalAlignment="Center" Foreground="#FF9B9999" FontSize="20" FontFamily="Microsoft Yahei" Text="{Binding StrTitleTip, ElementName=serverNorespond}" />
-    <TextBlock HorizontalAlignment="Center" Foreground="#FFA4A4A4" FontFamily="Microsoft Yahei" Text="{Binding StrTips, ElementName=serverNorespond}" />
-    <localPorject:ButtonEx_Common ButtonClick="ReConnectServer" Margin="0,110,0,0" StrButtonTitle="Connect" />
-  </StackPanel>
-</UserControl>

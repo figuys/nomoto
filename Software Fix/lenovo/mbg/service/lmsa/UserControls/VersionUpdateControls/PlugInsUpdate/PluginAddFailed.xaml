@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="lenovo.mbg.service.lmsa.UserControls.VersionUpdateControls.PlugInsUpdate.PluginAddFailed" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Name="pluginAddFailed" xmlns:pluginsupdate="clr-namespace:lenovo.mbg.service.lmsa.UserControls.VersionUpdateControls.PlugInsUpdate;assembly=Software Fix">
-  <StackPanel VerticalAlignment="Center">
-    <Image Stretch="None" Source="/Software Fix;component/Resource/AssistantPictures/transmit_failed.png" />
-    <TextBlock Margin="0,50,0,10" HorizontalAlignment="Center" FontSize="24" Foreground="#A0A0A0" FontFamily="Microsoft Yahei" Text="{Binding strErrorTip, ElementName=pluginAddFailed}" />
-    <TextBlock HorizontalAlignment="Center" FontSize="18" Opacity="0.7" Foreground="#A0A0A0" FontFamily="Microsoft Yahei" Text="{Binding StrErrorTipConent, ElementName=pluginAddFailed}" />
-  </StackPanel>
-</UserControl>

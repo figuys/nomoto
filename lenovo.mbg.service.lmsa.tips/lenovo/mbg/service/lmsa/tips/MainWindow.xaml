@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Window x:Class="lenovo.mbg.service.lmsa.tips.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localPorject="clr-namespace:lenovo.mbg.service.lmsa.tips" Title="MainWindow" Height="600" Width="820">
-  <Grid>
-    <localPorject:TipsFrame />
-  </Grid>
-</Window>

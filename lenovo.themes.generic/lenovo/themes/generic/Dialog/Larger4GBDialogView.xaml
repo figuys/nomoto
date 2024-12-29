@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl x:Class="lenovo.themes.generic.Dialog.Larger4GBDialogView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.themes.generic.Dialog" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
-  <TextBlock Foreground="#FF345375" FontSize="14" HorizontalAlignment="Left" TextWrapping="Wrap" Width="452">
-    <Run Name="txtSubContent" /> <lang:LangRun LangKey="K1882" LangText="Please click to view" /> <lang:LangRun LangKey="K1883" LangText="large files" Cursor="Hand" Foreground="#FF2177B8" TextDecorations="Underline" PreviewMouseDown="Run_PreviewMouseDown" /> <lang:LangRun LangKey="K1884" LangText="over 4G." /></TextBlock>
-</UserControl>
