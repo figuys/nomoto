@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.TabletQMatchViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" Background="{DynamicResource V6_SubThemeBrushKey}">
+  <Grid Margin="28 44 82 0" HorizontalAlignment="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="276" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="40 0 0 20">
+      <lang:LangTextBlock LangKey="K1782" FontSize="16" TextWrapping="Wrap" HorizontalAlignment="Left" LineHeight="21" Margin="0 37 0 5" Foreground="{DynamicResource V6_TitleBrushKey}" FontWeight="Normal" />
+      <lang:LangTextBlock LangKey="K1164" FontSize="14" TextWrapping="Wrap" HorizontalAlignment="Left" Foreground="{DynamicResource V6_ContentBrushKey}" FontWeight="Normal" />
+      <StackPanel Orientation="Horizontal" Margin="0 31 0 4">
+        <TextBox Name="txtSearch" Width="537" Style="{DynamicResource V6_SearchBoxStyle}" Tag="K1184" CharacterCasing="Upper" input:InputMethod.IsInputMethodEnabled="False" FontSize="15" Text="{Binding SearchKeyText}" PreviewKeyDown="OnPreviewKeyDown" TextChanged="Txt_TextChanged" />
+        <Button Width="32" Height="32" Margin="6 0 0 0" Style="{DynamicResource V6_RoundCronerBtnStyle}" IsEnabled="{Binding IsBtnEnable}" Click="OnBtnSearch">
+          <Path Name="icon" Width="18" Height="18" Stretch="Fill" Fill="#FFFFFFFF" RenderTransformOrigin="0.5 0.5" Data="M42.5,22 C49.4036,22 55,27.5964 55,34.5 C55,41.4036 49.4036,47 42.5,47 C40.1356,47 37.9245,46.3435 36,45.2426 L26.9749,54.2678 C25.8033,55.4393 23.9038,55.4393 22.7322,54.2678 C21.5607,53.0962 21.5607,51.1967 22.7322,50.0251 L31.7971,40.961 C30.6565,39.0755 30,36.8644 30,34.5 C30,27.5964 35.5964,22 42.5,22 M42.5,26 C37.8056,26 34,29.8056 34,34.5 C34,39.1944 37.8056,43 42.5,43 C47.1944,43 51,39.1944 51,34.5 C51,29.8056 47.1944,26 42.5,26">
+            <UIElement.RenderTransform>
+              <RotateTransform Angle="270" />
+            </UIElement.RenderTransform>
+          </Path>
+        </Button>
+      </StackPanel>
+      <DockPanel TextBlock.FontSize="12">
+        <lang:LangTextBlock VerticalAlignment="Top" Foreground="#FFFF0000" LangKey="{Binding SearchWarnText}" />
+        <lang:LangTextBlock VerticalAlignment="Center" TextWrapping="Wrap" Margin="0 10 40 0" HorizontalAlignment="Right" Cursor="Hand" TextDecorations="Underline" FontSize="12" LangKey="K1165" Foreground="{DynamicResource V6_ContentBrushKey}" MouseLeftButtonDown="OnLButtonDown" />
+      </DockPanel>
+    </StackPanel>
+    <Border Grid.RowSpan="3" Background="{DynamicResource V6_SubThemeBrushKey}" CornerRadius="15" VerticalAlignment="Top" Margin="0 10 0 0">
+      <UIElement.Effect>
+        <DropShadowEffect BlurRadius="20" ShadowDepth="3" Color="#DFDFDF" />
+      </UIElement.Effect>
+      <StackPanel>
+        <Image Width="219" Height="385" Source="pack://application:,,,/lenovo.mbg.service.lmsa.flash;component/ResourceV6/tablet_input_sn.png" />
+        <Grid Name="textgrid" MaxHeight="100" Margin="0 0 0 15">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="24" />
+          </Grid.ColumnDefinitions>
+          <Button Name="prevbtn" Style="{StaticResource v6_comm_img_button}" Width="12" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource icon_left_normal}" gc6:ControlAttachPropertyV6.DisabledImageSource="{StaticResource icon_disabled_left_normal}" Click="prevbtn_Click" />
+          <Grid Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <lang:LangTextBlock Name="steptext" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Foreground="{DynamicResource V6_TitleBrushKey}" FontWeight="Medium">
+              <FrameworkElement.ToolTip>
+                <ToolTip Placement="Right" HorizontalOffset="20" VerticalOffset="-30">
+                  <Control.Template>
+                    <ControlTemplate>
+                      <Grid Width="320" Height="auto" Background="#00FFFFFF" Margin="20">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="Auto" />
+                          <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border VerticalAlignment="Center">
+                          <Polygon Margin="0 0 0 0" VerticalAlignment="Bottom" Fill="#D9000000" Points="0,0 -7,7 0,14" Stroke="#00FFFFFF" StrokeThickness="0" />
+                        </Border>
+                        <Border Grid.Column="1" Background="#D9000000" Margin="0 0 0 7" CornerRadius="5">
+                          <UIElement.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="20" />
+                          </UIElement.Effect>
+                          <StackPanel Margin="11">
+                            <lang:LangTextBlock Style="{StaticResource v6_comm_text_desc_style}" Foreground="#FFFFFFFF" TextWrapping="Wrap" LangKey="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TextBlock}}" />
+                          </StackPanel>
+                        </Border>
+                      </Grid>
+                    </ControlTemplate>
+                  </Control.Template>
+                </ToolTip>
+              </FrameworkElement.ToolTip>
+            </lang:LangTextBlock>
+          </Grid>
+          <Button Name="nextbtn" Grid.Column="2" Style="{StaticResource v6_comm_img_button}" Width="12" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource icon_right_normal}" gc6:ControlAttachPropertyV6.DisabledImageSource="{StaticResource icon_disabled_right_normal}" Click="nextbtn_Click" />
+        </Grid>
+      </StackPanel>
+    </Border>
+    <DockPanel Grid.Row="1" Grid.Column="1" Margin="20 0 0 10" VerticalAlignment="Bottom">
+      <Path Width="14" Height="14" Stretch="Fill" VerticalAlignment="Top" Margin="0 0 6 0" Fill="{DynamicResource V6_WarnningBrushKey}" Data="{DynamicResource V6_IconNoticeKey}" />
+      <lang:LangTextBlock TextWrapping="Wrap" LangKey="K1106" VerticalAlignment="Center" FontSize="14" Foreground="{DynamicResource V6_WarnningBrushKey}" />
+    </DockPanel>
+    <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="40 0 0 40" TextBlock.FontSize="14" TextBlock.Foreground="{DynamicResource V6_DisableBrushKey}">
+      <lang:LangTextBlock LangText="Note for advanced/previous Software Fix users :" LangKey="K0905" FontWeight="Regular" Foreground="{DynamicResource V6_ContentBrushKey}" />
+      <lang:LangTextBlock TextWrapping="Wrap" Margin="0,5" LineHeight="12" FontWeight="Regular">
+        <lang:LangRun LangKey="K1175" /> <lang:LangRun LangText="Software Fix can auto match a firm ware for you." LangKey="K1185" /></lang:LangTextBlock>
+    </StackPanel>
+    <Path Grid.Row="2" Margin="20 0 0 0" Grid.Column="1" Width="14" Height="14" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="{DynamicResource V6_ContentBrushKey}" Data="{DynamicResource V6_IconNoticeKey}" />
+    <Popup Name="PART_Popup" AllowsTransparency="True" StaysOpen="False" Placement="Bottom" MaxHeight="292" Width="{Binding ElementName=txtSearch, Path=ActualWidth}" PlacementTarget="{Binding ElementName=txtSearch}">
+      <Border BorderBrush="{DynamicResource V6_BorderBrushKey}" BorderThickness="1" Background="#FFFFFFFF">
+        <ListBox SelectedValuePath="Item2" Style="{DynamicResource SearchBoxPopupListStyle}" ItemsSource="{Binding SnArr}" SelectedValue="{Binding SearchKeyText}" SelectionChanged="OnSelectionChanged" />
+      </Border>
+    </Popup>
+  </Grid>
+</UserControl>

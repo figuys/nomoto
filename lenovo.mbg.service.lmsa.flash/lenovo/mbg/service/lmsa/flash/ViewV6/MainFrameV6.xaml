@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.MainFrameV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6" xmlns:gc="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:gifbh="clr-namespace:lenovo.themes.generic.Gif;assembly=lenovo.themes.generic">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <SolidColorBrush x:Key="V6_BorderBrushKey1" Color="#26FFFFFF" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="32" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Border Name="containerBorder" Grid.Row="0" Grid.Column="1">
+        <ContentPresenter Name="container" Content="{Binding CurrentView}" />
+      </Border>
+      <Border Name="BottomBorder" Grid.ColumnSpan="2" Grid.Row="1" BorderThickness="0 1 0 0" Visibility="{Binding FooterVisible}" Background="{Binding PageBackground}" BorderBrush="{Binding BorderBrush}">
+        <StackPanel Orientation="Horizontal" Margin="21 0 0 0">
+          <Button Padding="0" Content="K0628" VerticalAlignment="Bottom" HorizontalAlignment="Left" Visibility="{Binding BackVisible}" Style="{Binding BackBtnStyle}" Click="OnBtnBack" />
+          <Button Style="{StaticResource v6_comm_pre_image_button_ex}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_icon_home}" gc6:ControlAttachPropertyV6.CornerRadius="3" Background="#00FFFFFF" BorderThickness="1" BorderBrush="#6EC2ED" Foreground="#6EC2ED" Content="K1737" MinWidth="91" Height="24" Margin="0 0 21 0" Visibility="{Binding HomeVisible}" Click="OnBtnHome" />
+          <Button Style="{StaticResource v6_comm_tail_image_button}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_return_icon}" gc6:ControlAttachPropertyV6.CornerRadius="3" Background="#6EC2ED" BorderThickness="0" Foreground="#001427" Content="K1733" MinWidth="186" Height="24" Visibility="{Binding ReturnRescueVisible}" Click="OnBtnReturnRescue" />
+        </StackPanel>
+      </Border>
+      <Border Name="expand" Visibility="Collapsed" Panel.ZIndex="9999" HorizontalAlignment="Left" Margin="20 20 0 0" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top">
+        <Button Height="60" Click="ShowClick">
+          <Control.Template>
+            <ControlTemplate>
+              <Image Name="img" Source="{StaticResource v6_Icon_Multi_device2}" />
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="UIElement.Opacity" Value="0.7" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Control.Template>
+        </Button>
+      </Border>
+      <Border Name="devicelist" Visibility="Collapsed" Grid.RowSpan="2" Background="{DynamicResource V6_SubThemeBrushKey}">
+        <StackPanel Grid.RowSpan="2" Background="#A5ECF1F8">
+          <Button HorizontalAlignment="Right" Margin="0 0 8 0" Click="HideClick">
+            <Control.Template>
+              <ControlTemplate>
+                <Border Name="bd" Padding="5" VerticalAlignment="Center" Visibility="Visible">
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Name="img" Width="12" Height="12" Source="{StaticResource v6_icon_left_1}" />
+                    <lang:LangTextBlock LangKey="K1632" Style="{StaticResource v6_comm_text_style_4}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" />
+                  </StackPanel>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter Property="UIElement.Opacity" Value="0.7" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+          </Button>
+          <ListView Grid.Column="0" SelectionMode="Single" Style="{StaticResource v6_listview_devicelist_style}" ItemsSource="{Binding Devices}" />
+          <lang:LangTextBlock LangKey="K0531" Margin="10 3 0 3" Style="{StaticResource v6_comm_text_style_4}" />
+          <lang:LangTextBlock MaxWidth="185" MaxHeight="50" LangKey="K1633" Margin="10 0 0 0" Style="{StaticResource v6_comm_text_style_4}" Foreground="#9FAEBF" HorizontalAlignment="Left" TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{Binding Path=Text, RelativeSource={RelativeSource Mode=Self}}" />
+        </StackPanel>
+      </Border>
+    </Grid>
+    <Border Grid.Column="1" Visibility="{Binding MessageView, Converter={StaticResource v6_NullOrEmptyToVisibleConverter}}">
+      <Border CornerRadius="7" Background="{DynamicResource V6_ThemeFgdBrushKey}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <UIElement.Effect>
+          <DropShadowEffect Color="#CCCCCC" BlurRadius="10" ShadowDepth="1" Direction="315" />
+        </UIElement.Effect>
+        <ContentPresenter Content="{Binding MessageView}" />
+      </Border>
+    </Border>
+  </Grid>
+</UserControl>

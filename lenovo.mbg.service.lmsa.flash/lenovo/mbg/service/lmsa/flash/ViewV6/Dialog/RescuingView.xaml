@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.Dialog.RescuingView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6.Dialog" xmlns:gifbh="clr-namespace:lenovo.themes.generic.Gif;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="RescuingView" Height="261" Width="454" WindowStartupLocation="CenterOwner" Style="{DynamicResource V6_DialogStyle}">
+  <Border CornerRadius="5" SnapsToDevicePixels="True" Margin="30 10" VerticalAlignment="Center">
+    <StackPanel>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Image Width="33" Height="55" Stretch="Uniform" Source="pack://application:,,,/lenovo.mbg.service.lmsa.flash;component/ResourceV6/rescuing1.png" />
+        <Image gifbh:ImageBehavior.AutoStart="True" Width="70" Stretch="Uniform" Margin="10 0 0 0" gifbh:ImageBehavior.AnimatedSource="pack://application:,,,/lenovo.mbg.service.lmsa.flash;component/ResourceV6/rescuing.gif" />
+        <Image Width="95" Height="57" Stretch="Uniform" Source="pack://application:,,,/lenovo.mbg.service.lmsa.flash;component/ResourceV6/rescuing2.png" />
+      </StackPanel>
+      <lang:LangTextBlock LangKey="K1207" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource V6_TitleBrushKey}" FontSize="12" FontWeight="Medium" />
+      <lang:LangTextBlock LangKey="K1617" Foreground="#FF9258" FontWeight="Medium" />
+      <lang:LangTextBlock LangKey="K1615" VerticalAlignment="Center" Foreground="{DynamicResource V6_ContentBrushKey}" FontSize="12" TextWrapping="Wrap" Margin="0 4" />
+      <lang:LangTextBlock LangKey="K1616" VerticalAlignment="Center" Foreground="{DynamicResource V6_ContentBrushKey}" FontSize="12" TextWrapping="Wrap" />
+    </StackPanel>
+  </Border>
+</Window>

@@ -1,0 +1,17 @@
+namespace lenovo.mbg.service.lmsa.flash.ModelV6;
+
+public enum PageIndex
+{
+	RESCUE_HOME,
+	RESCUE_FLASH,
+	PHONE_ENTRANCE,
+	PHONE_SEARCH,
+	PHONE_MANUAL,
+	TABLET_ENTRANCE,
+	TABLET_SEARCH,
+	TABLET_MANUAL,
+	TABLET_AUTO,
+	SMART_SEARCH,
+	SMART_MANUAL,
+	SMART_AUTO
+}

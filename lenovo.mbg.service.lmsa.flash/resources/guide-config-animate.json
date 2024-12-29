@@ -1,0 +1,24 @@
+{
+  "Title": "K1013" /*"Tutorial - How to switch to fastboot mode"*/,
+  "TotalTime": 21000,
+  "GifImageList": [
+    {
+      "FileName": "fastboot-guide.gif",
+      "DisplayTime": 21000
+    }
+  ],
+  "CaptionList": [
+    {
+      "CaptionText": "K0913" /*"Step 1. Power off your device."*/,
+      "DisplayTime": 5000
+    },
+    {
+      "CaptionText": "K0914" /*"Step 2. Connect the USB cable to the PC."*/,
+      "DisplayTime": 5000
+    },
+    {
+      "CaptionText": "K1008" /*"Step 3. Press and hold the volume down key on your device and connect the USB cable to your device.\nStep 4. Release the volume down key on your device once the green Android is seen on the phone display."*/,
+      "DisplayTime": 11000
+    }
+  ]
+}

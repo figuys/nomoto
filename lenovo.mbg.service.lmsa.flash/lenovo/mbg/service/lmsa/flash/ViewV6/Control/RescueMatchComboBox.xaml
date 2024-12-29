@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.Control.RescueMatchComboBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6.Control" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:ctrl="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <Control.Template>
+    <ControlTemplate TargetType="{x:Type UserControl}">
+      <AdornerDecorator>
+        <Grid Background="#00FFFFFF" Width="{Binding Width, ElementName=rootContainter}">
+          <ctrl:LComboBox Name="stepCombobox" Style="{StaticResource RescueUseLComboBoxStyle}" Grid.Row="0" IsTextSearchEnabled="False" ShowClear="True" DisplayMemberPath="ItemText" Height="35" BorderThickness="1" CornerRadius="4" BorderBrush="#FF6D86AB" ToggleButtonArrowBackground="{DynamicResource V6_BorderBrushKey}" ToggleButtonIsCheckedBorderBursh="#00FFFFFF" ToggleButtonIsCheckedBackground="#1C49A6" ToggleButtonIsCheckedArrowBackground="{DynamicResource V6_BorderBrushKey}" ToggleButtonIsCheckedForeground="#ffffff" ToggleButtonBackground="#ffffff" ToggleButtonBorderBursh="#00FFFFFF" ToggleButtonForeground="{DynamicResource V6_TitleBrushKey}" DropDownBackground="#FFFFFF" DropDownItemForeground="#FF9FAEBF" DropDownItemMouseOverBackground="{DynamicResource V6_ItemHoverBkgBrushKey}" DropDownItemSelectedBackground="{DynamicResource V6_ItemSelBkgBrushKey}" DropDownItemMouseOverForeground="{DynamicResource V6_ItemTextBrushKey}" DropDownItemSelectedForeground="{DynamicResource V6_ItemTextBrushKey}" DorpDownPanelVerticalOffset="3" EmptyTipsForeground="#FF9FAEBF" EditableTextBoxForeground="#FF001429" IsEditable="{Binding IsEditable}" FilterCompareDelegate="{Binding ComboBoxFilter}" MoreButtonCommand="{Binding ComboBoxMoreButtonCommand}" MoreButtonVisibility="{Binding ComboBoxMoreButtonVisibility}" IsDropDownOpen="{Binding IsDropDownOpened}" ItemsSource="{Binding StepComboBoxItemSource}" Width="{Binding Width, ElementName=rootContainter}" DropDownIsEnaled="{Binding IsDropDownEnabled, Mode=TwoWay}" IsSearchable="{Binding Path=IsSearchable, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:RescueMatchComboBox}}" SelectedIndex="{Binding ComboBoxSelectedIndex}" SelectedValue="{Binding ComboBoxSelectedValue}" DataLoading="{Binding IsDataLoading}" EmptyTips="{Binding ComboBoxWatermark}">
+            <i:Interaction.Triggers>
+              <i:EventTrigger i:EventTrigger.EventName="SelectionChanged">
+                <i:InvokeCommandAction i:InvokeCommandAction.Command="{Binding SelectionChangedCommand}" i:InvokeCommandAction.CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=ComboBox}}" />
+              </i:EventTrigger>
+              <i:EventTrigger i:EventTrigger.EventName="TextChanged">
+                <i:InvokeCommandAction i:InvokeCommandAction.Command="{Binding ComboBoxTextChangedCommand}" i:InvokeCommandAction.CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType=ComboBox}}" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </ctrl:LComboBox>
+        </Grid>
+      </AdornerDecorator>
+    </ControlTemplate>
+  </Control.Template>
+</UserControl>

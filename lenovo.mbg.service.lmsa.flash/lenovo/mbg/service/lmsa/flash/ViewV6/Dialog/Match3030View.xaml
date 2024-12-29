@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.Dialog.Match3030View" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6.Dialog" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" Title="Match3030SelView" Height="434" Width="778" Style="{DynamicResource V6_DialogStyle}" WindowStartupLocation="CenterOwner">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="210" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="60" />
+    </Grid.RowDefinitions>
+    <Button Grid.Row="0" Style="{DynamicResource V6_WndCloseBtnStyle}" HorizontalAlignment="Right" Tag="false" Click="OnBtnClick" />
+    <Grid Row="0" Margin="42 44 56 0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="104" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Border Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Image Height="129" Stretch="Uniform" Source="{Binding DevImagePath}" />
+      </Border>
+      <gc6:WarrantyInfoDetailV6 HorizontalAlignment="Left" Margin="22 0 0 0" Grid.Column="1" DataContext="{Binding WarrantyVm}" />
+    </Grid>
+    <Border Grid.Row="1" Margin="40 0" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource V6_SplitterBrushKey}">
+      <lang:LangTextBlock LangKey="K1357" VerticalAlignment="Center" Margin="0 10" FontSize="18" Style="{DynamicResource V6_TitleTextStyle}" />
+    </Border>
+    <Grid Row="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Column="0" Margin="40 0" LineHeight="24" Style="{StaticResource v6_comm_text_style_4}" FontSize="14" Text="{Binding Information}" />
+      <StackPanel Grid.Column="1" Margin="40 0">
+        <TextBlock Grid.Column="0" LineHeight="24" Style="{StaticResource v6_comm_text_style_4}" FontSize="14" Text="{Binding InformationEx}" Visibility="{Binding InformationEx, Converter={StaticResource stringIsNullOrEmptyToVisibilityConverter}}" />
+        <ListBox BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource StepListItemStyle}" ItemsSource="{Binding CbxConditionArr}" />
+      </StackPanel>
+    </Grid>
+    <lang:LangButton Grid.Row="4" LangKey="K0327" HorizontalAlignment="Center" Margin="0 6 0 20" Style="{DynamicResource V6_NormalBtnStyle}" Tag="True" IsEnabled="{Binding IsOkBtnEnable}" Click="OnBtnClick" />
+  </Grid>
+</Window>

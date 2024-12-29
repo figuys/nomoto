@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.flash">
+  <DrawingImage x:Key="usb_cableDrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,45 L20,45 L20,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFBCBCBC" Geometry="F1 M20,45 M0,0 M16.4,8.6 L15.4,8.6 L15.4,1.9 C15.4,1.5 14.9,1.4 14.8,1.4 L9.9,1.4 L9.9,0.4 L14.9,0.4 C15.5,0.4 16.4,0.9 16.4,1.9 L16.4,8.6" />
+          <GeometryDrawing Brush="#FFBCBCBC" Geometry="F1 M20,45 M0,0 M10.1,26.8 L10.1,25.8 C12.5,25.8 14.5,25 16.3,23.2 C18.3,21.3 18.4,17.9 18.4,17.8 L18.4,9.6 C18.4,9.4 18.3,9.4 18.3,9.4 C18.2,9.3 17.9,9.3 17.8,9.3 L10,9.3 L10,8.3 L17.8,8.3 C17.8,8.3 18.5,8.3 19,8.7 C19.2,8.9 19.4,9.2 19.4,9.7 L19.4,18 C19.4,18.2 19.3,21.8 17,24.1 C15,25.9 12.7,26.8 10.1,26.8" />
+          <GeometryDrawing Brush="#FFBCBCBC" Geometry="F1 M20,45 M0,0 M4.5,8.6 L3.5,8.6 L3.5,1.9 C3.5,0.9 4.4,0.5 5,0.4 L10,0.4 L10,1.4 L5,1.4 C4.9,1.4 4.5,1.5 4.5,1.9 L4.5,8.6" />
+          <GeometryDrawing Brush="#FFBCBCBC" Geometry="F1 M20,45 M0,0 M9.9,26.8 C7.3,26.8 5,25.9 3,24 C0.7,21.8 0.6,18.1 0.6,17.9 L0.6,9.6 C0.6,9.1 0.8,8.8 1,8.6 C1.5,8.2 2.1,8.2 2.2,8.2 L10,8.2 L10,9.2 L2.2,9.2 C2.1,9.2 1.8,9.2 1.7,9.3 C1.7,9.3 1.6,9.4 1.6,9.5 L1.6,17.8 C1.6,17.8 1.7,21.2 3.7,23.1 C5.5,24.8 7.5,25.7 9.9,25.7 L9.9,26.8" />
+        </DrawingGroup>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="0.9" RadiusY="0.9" Center="7.1,4.8" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <EllipseGeometry RadiusX="0.9" RadiusY="0.9" Center="12.8,4.8" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="9.6,25.8,0.9,7.8" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="9.6,34.6,0.9,0.9" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="9.6,36.6,0.9,0.9" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="9.6,38.7,0.9,1.4" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#FFBCBCBC">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="9.6,41.8,0.9,3.1" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <BitmapImage x:Key="phoneGlobalBackImage" UriSource="/lenovo.mbg.service.lmsa.flash;component/UserResources/Images/phoneGlobalBack1.png" />
+  <DrawingImage x:Key="fork_updateDrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,34 L35,34 L35,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFF2F2F2">
+            <GeometryDrawing.Geometry>
+              <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0.8,0.3,33.4,33.4" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <DrawingGroup>
+            <GeometryDrawing Brush="#43B5E2" Geometry="F1 M35,34 M0,0 M6.8,19.2 L9.1,19.2 L9.1,11.3 C9.1,11.3 8.9,8.7 11.4,8.7 C13.9,8.7 15.7,8.7 15.7,8.7 C15.7,8.7 16.4,8.8 16.4,9.5 C16.4,10.2 15.7,10.4 15.7,10.4 L14.6,10.4 C14.6,10.4 13.6,10.4 13.6,11.3 C13.6,12.2 13.6,19.3 13.6,19.3 L15.9,19.3 L11.3,24.2 L6.8,19.2" />
+            <GeometryDrawing Brush="#43B5E2" Geometry="F1 M35,34 M0,0 M27,13.5 L24.7,13.5 L24.7,21.4 C24.7,21.4 24.9,24 22.4,24 C19.9,24 18.1,24 18.1,24 C18.1,24 17.4,23.9 17.4,23.2 C17.4,22.5 18.1,22.3 18.1,22.3 L19.2,22.3 C19.2,22.3 20.2,22.3 20.2,21.4 C20.2,20.5 20.2,13.4 20.2,13.4 L17.9,13.4 L22.5,8.5 L27,13.5" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="fork_rescueDrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,34 L35,34 L35,0 L0,0">
+        <GeometryDrawing Brush="#FFFFFFFF">
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0.6,0.3,33.4,33.4" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="#43B5E2" Geometry="F1 M35,34 M0,0 M24.9,27.4 L9.6,27.4 C7.9,27.4 6.6,26 6.6,24.4 L6.6,15.8 C6.6,14.2 8,12.8 9.6,12.8 L24.9,12.8 C26.5,12.8 27.9,14.2 27.9,15.8 L27.9,24.4 C27.9,26 26.6,27.4 24.9,27.4" />
+        <DrawingGroup Transform="1,0,0,1,12.9501,24.7062">
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M35,34 M0,0 M4.18907785415649,-7.03896999359131 L5.06647491455078,-7.03896999359131 L5.06647491455078,-4.38038969039917 L7.7316517829895,-4.38038969039917 L7.7316517829895,-3.49639558792114 L5.06647491455078,-3.49639558792114 L5.06647491455078,-0.837815523147583 L4.18907785415649,-0.837815523147583 L4.18907785415649,-3.49639558792114 L1.53049767017365,-3.49639558792114 L1.53049767017365,-4.38038969039917 L4.18907785415649,-4.38038969039917 L4.18907785415649,-7.03896999359131">
+            <GeometryDrawing.Pen>
+              <Pen Brush="#FFFFFFFF" Thickness="1.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+        </DrawingGroup>
+        <GeometryDrawing Brush="#43B5E2" Geometry="F1 M35,34 M0,0 M22.2,11.3 L20.5,11.3 C20.1,11.3 19.7,11 19.7,10.5 L19.7,9.2 C19.7,9 19.7,8.9 19.6,8.8 C19.6,8.8 19.5,8.8 19.5,8.8 L15,8.8 C14.9,8.8 14.9,8.8 14.9,8.8 C14.9,8.9 14.8,9 14.8,9.1 L14.8,10.5 C14.8,10.9 14.5,11.3 14,11.3 L12.3,11.3 L12.3,9.8 L13.2,9.8 L13.2,9.2 C13.2,9.1 13.1,8.4 13.7,7.8 C14,7.6 14.4,7.3 15,7.3 L19.5,7.3 C20.1,7.3 20.5,7.6 20.8,7.8 C21.3,8.4 21.3,9.1 21.3,9.3 L21.3,9.8 L22.2,9.8 L22.2,11.3" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <BitmapImage x:Key="ImgThewavesofthesea" UriSource="/lenovo.mbg.service.lmsa.flash;component/UserResources/Images/Thewavesofthesea.png" />
+  <BitmapImage x:Key="phoneFrame" UriSource="/lenovo.mbg.service.lmsa.flash;component/UserResources/Images/phoneFrame.png" />
+  <DrawingImage x:Key="phoneFrameTwo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,345 L170,345 L170,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-240,-193">
+          <DrawingGroup Transform="1,0,0,1,240,193">
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FFFFFFFF" Opacity="0.534388951" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Pen>
+                <Pen Thickness="2.0412" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                  <Pen.Brush>
+                    <SolidColorBrush Color="#FF43B5E2" Opacity="0.534388951" />
+                  </Pen.Brush>
+                </Pen>
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="40.824" RadiusY="40.824" Rect="1.0206,1.0206,167.2488,342.5314" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FFF2F7F9">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="7,36,155,272" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FF43B5E2" Opacity="0.701799665" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="2.0608" RadiusY="2.0608" Rect="63.99,9.0677,40.5,4.1217" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <DrawingGroup Opacity="0.2423735111951828" Transform="1,0,0,1,65.61,94.798673">
+              <GeometryDrawing Geometry="F1 M170,345 M0,0 M26.049654,16.5626531 C27.3740436,16.5626531 28.4484655,15.4692148 28.4484655,14.1213848 C28.4484655,12.7735548 27.3740436,11.6801165 26.049654,11.6801165 C24.7252645,11.6801165 23.6508426,12.7735548 23.6508426,14.1213848 C23.6508426,15.4692148 24.7252645,16.5626531 26.049654,16.5626531 M10.6919982,16.5626531 C12.0163877,16.5626531 13.0908097,15.4692148 13.0908097,14.1213848 C13.0908097,12.7735548 12.0163877,11.6801165 10.6919982,11.6801165 C9.3676087,11.6801165 8.29317337,12.7735548 8.29317337,14.1213848 C8.28880135,15.4692148 9.3632233,16.5626531 10.6919982,16.5626531 M36.1316788,22.4225896 L36.1316788,34.1469257 C36.1316788,35.7669996 34.8423725,37.0791255 33.2504738,37.0791255 L3.49117842,37.0791255 C1.89927977,37.0791255 0.609973429,35.7669996 0.609973429,34.1469257 L0.609973429,22.4225896 L36.1316788,22.4225896 M36.1316788,21.4451897 L0.609973429,21.4451897 L0.609973429,20.4677898 C0.609973429,14.7595957 3.43855367,9.72531666 7.74501228,6.73509771 L4.92958822,1.77222686 C4.66646448,1.30361046 4.81995333,0.705566673 5.28041988,0.437785871 C5.74088643,0.17000507 6.32852946,0.326210538 6.5916532,0.79482694 L9.39392107,5.73091971 C11.6480145,4.53483213 14.213471,3.8564541 16.9324163,3.8564541 L19.8136213,3.8564541 C22.602733,3.8564541 25.2251997,4.56607322 27.523147,5.82017997 L30.3736542,0.790363926 C30.636778,0.321747524 31.224421,0.161079044 31.6848876,0.433322858 C32.1453541,0.701103659 32.3032284,1.29914745 32.0357192,1.76776385 L29.1545142,6.84221003 C33.3732649,9.85028103 36.1316788,14.8310039 36.1316788,20.4677898 L36.1316788,21.4451897">
+                <GeometryDrawing.Brush>
+                  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" Opacity="1">
+                    <GradientStop Color="#FF07D1FF" Offset="0" />
+                    <GradientStop Color="#FF0551D7" Offset="1" />
+                  </LinearGradientBrush>
+                </GeometryDrawing.Brush>
+              </GeometryDrawing>
+            </DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Thickness="0.6804" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                  <Pen.Brush>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" Opacity="0.715401786">
+                      <GradientStop Color="#FF24D7FB" Offset="0" />
+                      <GradientStop Color="#FF0551D7" Offset="1" />
+                    </LinearGradientBrush>
+                  </Pen.Brush>
+                </Pen>
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="42.93" RadiusY="43.6898" Center="84.24,113.7584" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <Style x:Key="ReturnButtonStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Foreground" Value="#43B5E2" />
+    <Setter Property="Background" Value="#F7F8FA" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="6">
+            <Grid Margin="0 0 10 0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Path Width="16" Height="14" Fill="{TemplateBinding Control.Foreground}" Stretch="Fill" Data="F1 M13,11 M0,0 M7.9310828,10.266651 L1.2984798,10.266651 L1.2984798,10.2320376 L1.29847983,10.2320376 C0.94091586,10.1177678 0.73689621,9.71233856 0.842788344,9.3264859 C0.907722317,9.0898782 1.07921897,8.90481301 1.29847983,8.83474236 L1.29847983,8.83151569 L1.30799381,8.83151569 L1.30799379,8.8315157 C1.42926398,8.78951899 1.55967093,8.78951899 1.68094232,8.83151564 L7.8642195,8.83151564 C10.1667804,8.83151564 11.3179348,7.89876326 11.3176561,6.03325848 C11.3176561,4.23004414 10.2036139,3.32838684 7.97552563,3.32828658 L5.16034062,3.32828658 L5.16034062,4.36375445 C5.16183567,4.36522112 5.1630589,4.36712779 5.16455395,4.36859446 L5.16455395,5.01906188 L5.16455395,5.01906188 C5.05765468,5.12674914 4.9042176,5.161548 4.76619056,5.10940866 L4.71291228,5.14754203 L0.427812093,3.07777791 C0.421152307,3.07821791 0.414492521,3.07997791 0.407560907,3.07997791 L0.407560886,3.07997791 C0.182896644,3.08043728 0.000425467674,2.88427508 -5.13367127E-13,2.64183651 C-0.000326777802,2.45531182 0.108614336,2.28893089 0.27164689,2.22696416 L0.27164689,2.21464416 L4.62198314,0.1131977 L4.62198312,0.113197717 C4.77579954,-0.0381255062 5.01122806,-0.0376800629 5.16455206,0.11422435 L5.16455206,0.765864822 C5.16319292,0.767184824 5.16169786,0.768064825 5.16033872,0.769238159 L5.16033872,1.89343947 L7.76050354,1.89343947 C11.0133741,1.89343947 12.639816,3.3187962 12.639816,6.16950825 C12.639816,8.9009346 11.070235,10.266651 7.93107295,10.266651 L7.9310828,10.266651" />
+              <ContentPresenter Name="contentPresenter" Grid.Column="1" Margin="{TemplateBinding Control.Padding}" RecognizesAccessKey="True" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="Background" Value="#FFEBEEF1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Background" Value="#FFD2D6DC" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFEEF2F6" />
+              <Setter Property="BorderBrush" Value="#FFEEF2F6" />
+              <Setter Property="Foreground" Value="#AEBDCB" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

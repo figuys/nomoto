@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.flash.ViewV6.Dialog.InvalidView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="InvalidView" Height="434" Width="778" FontSize="14" Style="{DynamicResource V6_DialogStyle}" WindowStartupLocation="CenterOwner" xmlns:dialog="clr-namespace:lenovo.mbg.service.lmsa.flash.ViewV6.Dialog;assembly=lenovo.mbg.service.lmsa.flash">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="V6_ImageRadioBtnStyle" TargetType="{x:Type RadioButton}">
+        <Setter Property="Width" Value="310" />
+        <Setter Property="Height" Value="128" />
+        <Setter Property="Background" Value="#DCE3EB" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RadioButton}">
+              <Grid Background="{TemplateBinding Control.Background}">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="144" />
+                  <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter />
+                <lang:LangTextBlock Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0 0 20 0" LangKey="{TemplateBinding FrameworkElement.Tag}" FontSize="14" FontWeight="Regular" Foreground="{DynamicResource V6_TitleBrushKey}" />
+                <Image Name="img" Width="29" Height="26" Source="{DynamicResource NormalBtnImage}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Background" Value="#666EC2ED" />
+                  <Setter TargetName="img" Value="{DynamicResource HoverBtnImage}" Property="Image.Source" />
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                  <Setter Property="Background" Value="#666EC2ED" />
+                  <Setter TargetName="img" Value="{DynamicResource HoverBtnImage}" Property="Image.Source" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border CornerRadius="8" Background="#FFFFFFFF">
+    <Grid ToggleButton.Checked="OnRbtnChecked">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="60" />
+        <RowDefinition Height="60" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="150" />
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0" BorderBrush="{DynamicResource V6_SplitterBrushKey}" BorderThickness="0 0 0 1">
+        <lang:LangTextBlock LangKey="K0933" Margin="30 0 50 0" VerticalAlignment="Center" Style="{DynamicResource V6_TitleTextStyle}" />
+      </Border>
+      <lang:LangTextBlock Name="lblInfo" Grid.Row="1" LangKey="K0977" TextWrapping="Wrap" VerticalAlignment="Center" Margin="30 0 20 0" FontSize="14" FontWeight="Normal" Style="{DynamicResource V6_TitleTextStyle}" />
+      <StackPanel Name="p1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+        <RadioButton Name="btn1" Style="{StaticResource V6_ImageRadioBtnStyle}" Tag="{Binding LeftBtnText}">
+          <Image Width="102" Height="63" Stretch="Uniform" Source="{Binding LeftBtnImage}" />
+        </RadioButton>
+        <RadioButton Name="btn2" Style="{StaticResource V6_ImageRadioBtnStyle}" Margin="63 0 0 0" Tag="{Binding RightBtnText}">
+          <Image Width="102" Height="63" Stretch="Uniform" Source="{Binding RightBtnImage}" />
+        </RadioButton>
+      </StackPanel>
+      <StackPanel Name="p2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Width="310">
+          <Border Height="24">
+            <lang:LangTextBlock Name="LeftMark" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="#FF25B738" />
+          </Border>
+          <lang:LangTextBlock TextWrapping="Wrap" FontSize="14" FontWeight="Regular" Foreground="{DynamicResource V6_DescriptBrushKey}" LangKey="{Binding LeftLabelText}" />
+        </StackPanel>
+        <StackPanel Name="RightPanel" Width="310" Margin="63 0 0 0">
+          <Border Height="24">
+            <lang:LangTextBlock Name="RightMark" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="#FF25B738" />
+          </Border>
+          <lang:LangTextBlock Width="310" TextWrapping="Wrap" FontSize="14" FontWeight="Regular" Foreground="{DynamicResource V6_DescriptBrushKey}" LangKey="{Binding RightLabelText}" />
+        </StackPanel>
+      </StackPanel>
+      <Button Style="{StaticResource V6_WndCloseBtnStyle}" HorizontalAlignment="Right" VerticalAlignment="Top" Click="OnWndClose" />
+    </Grid>
+  </Border>
+</Window>
