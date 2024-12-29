@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>lenovo.mbg.service.lmsa.messenger</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="asset\imgs\device_icon.png" />
+    <None Remove="asset\imgs\moli_button_icon.png" />
+    <EmbeddedResource Include="asset\imgs\device_icon.png" LogicalName="asset/imgs/device_icon.png" />
+    <EmbeddedResource Include="asset\imgs\moli_button_icon.png" LogicalName="asset/imgs/moli_button_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DotNetBrowser.Wpf">
+      <HintPath>..\..\..\droid\fix\DotNetBrowser.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.services">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser">
+      <HintPath>..\..\..\droid\fix\DotNetBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.utilities">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.log">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.lmsa.hostproxy">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.lmsa.hostproxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+</Project>

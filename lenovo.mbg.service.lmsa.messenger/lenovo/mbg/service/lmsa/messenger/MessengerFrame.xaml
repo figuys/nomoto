@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.messenger.MessengerFrame" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.messenger" xmlns:WPF="clr-namespace:DotNetBrowser.Wpf;assembly=DotNetBrowser.Wpf" xmlns:winform="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControl="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:genericAttachedProperty="clr-namespace:lenovo.themes.generic.AttachedProperty;assembly=lenovo.themes.generic">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/lenovo.mbg.service.lmsa.messenger;component/Themes/Generic.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="rootGrid">
+    <DockPanel Name="homeViewPanel" Visibility="Collapsed">
+      <Border DockPanel.Dock="Left" Width="325">
+        <Image Source="{StaticResource device_icon}" Stretch="None" />
+      </Border>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="170" />
+          <RowDefinition Height="20" />
+          <RowDefinition Height="38" />
+        </Grid.RowDefinitions>
+        <lang:LangTextBlock TextBlock.TextWrapping="Wrap" TextBlock.Foreground="#8A8C97" TextBlock.FontSize="14pt" FrameworkElement.VerticalAlignment="Center" TextBlock.LineHeight="35" lang:LangTextBlock.LangText="{DynamicResource moli0001}" />
+        <Button Grid.Row="1" Width="400" Height="55" VerticalAlignment="Top" HorizontalAlignment="Center" Click="GoToMoli_Click">
+          <Control.Template>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <StackPanel Orientation="Horizontal" Background="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=primaryBlueBrush}}">
+                <Image Source="{StaticResource moliDrawingImage}" Margin="10 0 10 0" />
+                <ContentPresenter />
+              </StackPanel>
+            </ControlTemplate>
+          </Control.Template>
+          <UIElement.Effect>
+            <DropShadowEffect Color="Gray" Direction="315" ShadowDepth="3" Opacity="0.5" />
+          </UIElement.Effect>
+          <ContentControl.Content>
+            <lang:LangTextBlock lang:LangTextBlock.LangText="Start to chat with Moli" TextBlock.Foreground="#ffffff" TextBlock.FontSize="19pt" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" />
+          </ContentControl.Content>
+        </Button>
+        <WrapPanel Grid.Row="3" Orientation="Horizontal">
+          <lang:LangTextBlock TextBlock.Foreground="#8A8C97" TextBlock.FontSize="10pt" TextBlock.TextWrapping="Wrap" lang:LangTextBlock.LangText="By using this chat function, you are agreeing with Lenovo's and Motorola's" />
+          <Button Margin="5 0 0 0" Cursor="Hand" Click="GoToPrivacyStatement_Click">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <ContentPresenter />
+              </ControlTemplate>
+            </Control.Template>
+            <ContentControl.Content>
+              <lang:LangTextBlock lang:LangTextBlock.LangText="Privacy Statement." TextBlock.TextDecorations="Baseline" TextBlock.FontSize="10pt" TextBlock.Foreground="#FFB70B" />
+            </ContentControl.Content>
+          </Button>
+        </WrapPanel>
+      </Grid>
+    </DockPanel>
+    <Border Name="formshost" Visibility="Visible">
+      <WPF:BrowserView Name="browserView" />
+    </Border>
+    <Popup Name="popupWin" StaysOpen="True" genericAttachedProperty:PopupManager.AutoMove="True" AllowsTransparency="True" Placement="Center" IsOpen="False" PlacementTarget="{Binding ElementName=rootGrid}">
+      <Border Width="600" Height="300">
+        <genericControl:GifPanel genericControl:GifPanel.UriImageSource="pack://application:,,,/lenovo.themes.generic;component/Resource/Images/loading.gif" />
+      </Border>
+    </Popup>
+  </Grid>
+</UserControl>
