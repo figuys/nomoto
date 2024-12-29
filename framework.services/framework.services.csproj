@@ -17,6 +17,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\common.log\common.log.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="GoogleAnalytics.Core">
       <HintPath>..\lib\GoogleAnalytics.Core.dll</HintPath>
     </Reference>
@@ -24,8 +27,5 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
-    <Reference Include="lenovo.mbg.service.common.log">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

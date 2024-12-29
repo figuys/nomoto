@@ -16,15 +16,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="lenovo.mbg.service.framework.services">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.common.utilities">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
+    <ProjectReference Include="..\framework.services\framework.services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Core" />
-    <Reference Include="lenovo.mbg.service.common.log">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

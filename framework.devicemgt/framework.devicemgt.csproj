@@ -16,26 +16,18 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="lenovo.mbg.service.framework.services">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.common.webservices">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\common.log\common.log.csproj" />
+    <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
+    <ProjectReference Include="..\common.webservices\common.webservices.csproj" />
+    <ProjectReference Include="..\framework.services\framework.services.csproj" />
+    <ProjectReference Include="..\framework.socket\framework.socket.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Core" />
-    <Reference Include="lenovo.mbg.service.framework.socket">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.socket.dll</HintPath>
-    </Reference>
     <Reference Include="SharpAdbClient">
       <HintPath>..\..\..\droid\fix\SharpAdbClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="lenovo.mbg.service.common.utilities">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.common.log">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>..\..\..\droid\fix\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>

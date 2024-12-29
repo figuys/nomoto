@@ -13,9 +13,9 @@
     <RootNamespace>lenovo.mbg.service.framework.smartbase</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="lenovo.mbg.service.framework.services">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\framework.services\framework.services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Core" />
   </ItemGroup>
 </Project>

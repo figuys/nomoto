@@ -17,33 +17,20 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="lenovo.mbg.service.framework.services">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
+    <ProjectReference Include="..\common.webservices\common.webservices.csproj" />
+    <ProjectReference Include="..\framework.resources\framework.resources.csproj" />
+    <ProjectReference Include="..\framework.services\framework.services.csproj" />
+    <ProjectReference Include="..\framework.smartbase\framework.smartbase.csproj" />
+    <ProjectReference Include="..\runtime.hostproxy\runtime.hostproxy.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="lenovo.themes.generic">
-      <HintPath>..\..\..\droid\fix\lenovo.themes.generic.dll</HintPath>
+      <HintPath>..\lib\lenovo.themes.generic.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="lenovo.mbg.service.common.utilities">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.common.webservices">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
-    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
-    <Reference Include="lenovo.mbg.service.common.log">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.framework.smartbase">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.smartbase.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="lenovo.mbg.service.framework.resources">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="lenovo.mbg.service.lmsa.hostproxy">
-      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.lmsa.hostproxy.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
