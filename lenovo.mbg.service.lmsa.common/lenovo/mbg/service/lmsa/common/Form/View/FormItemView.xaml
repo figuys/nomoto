@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.common.Form.View.FormItemView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.common.Form.View" x:Name="root">
+  <Control.Template>
+    <ControlTemplate TargetType="{x:Type UserControl}">
+      <StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <ContentPresenter Content="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}" />
+          <ContentPresenter Content="{Binding Require, RelativeSource={RelativeSource TemplatedParent}}" />
+          <ContentPresenter Content="{TemplateBinding ContentControl.Content}" />
+          <ContentPresenter Content="{Binding RightContent, RelativeSource={RelativeSource TemplatedParent}}" />
+        </StackPanel>
+        <ContentPresenter Content="{Binding ButtomContent, RelativeSource={RelativeSource TemplatedParent}}" />
+      </StackPanel>
+    </ControlTemplate>
+  </Control.Template>
+</UserControl>
