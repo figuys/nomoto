@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>lenovo.mbg.service.framework.devicemgt</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="lenovo.mbg.service.framework.services">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.webservices">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.socket">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.socket.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpAdbClient">
+      <HintPath>..\..\..\droid\fix\SharpAdbClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="lenovo.mbg.service.common.utilities">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.log">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\droid\fix\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+</Project>
