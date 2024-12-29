@@ -9,8 +9,9 @@
     <LangVersion>11.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup />
-  <ItemGroup />
+  <PropertyGroup>
+    <RootNamespace>lenovo.mbg.service.framework.updateversion</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="lenovo.mbg.service.common.webservices">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
