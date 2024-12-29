@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>lenovo.mbg.service.common.log</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>11.0</LangVersion>
@@ -13,23 +13,8 @@
     <RootNamespace>lenovo.mbg.service.common.log</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\droid\fix\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging">
-      <HintPath>..\..\..\droid\fix\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core">
-      <HintPath>..\..\..\droid\fix\Common.Logging.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Core" />
-    <Reference Include="Common.Logging.Log4Net.Universal">
-      <HintPath>..\..\..\droid\fix\Common.Logging.Log4Net.Universal.dll</HintPath>
-    </Reference>
+    <PackageReference Include="log4net" Version="3.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
   </ItemGroup>
 </Project>
