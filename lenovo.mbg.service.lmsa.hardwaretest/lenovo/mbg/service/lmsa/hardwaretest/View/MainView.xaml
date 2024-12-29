@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.hardwaretest.View.MainView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:gc="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.hardwaretest.View">
+  <Control.Template>
+    <ControlTemplate>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="290" />
+          <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" Margin="4 0" VerticalAlignment="Center">
+          <Grid Width="282" Height="335">
+            <Image Name="img1" Source="pack://application:,,,/lenovo.mbg.service.lmsa.hardwaretest;component/Resource/Hardware test-Item list-image@2x.png" Visibility="Hidden" />
+            <gc:GifPanel Name="img2" Visibility="Hidden" UriImageSource="{Binding StarttingUri}" />
+          </Grid>
+          <Button Margin="0 16 0 0" Style="{StaticResource v6_comm_border_button}" gc6:ControlAttachPropertyV6.CornerRadius="19" Background="#00FFFFFF" BorderThickness="1" BorderBrush="#D4DCE3" Foreground="#005D7F" Content="K1485" HorizontalAlignment="Center" Width="187" Padding="23 6" MinHeight="38" IsEnabled="{Binding IsEnabled}" Command="{Binding ReadResultCommand}" />
+          <Button Name="btn2" Margin="0 8 0 0" Style="{StaticResource v6_comm_base_button}" Padding="23 6" gc6:ControlAttachPropertyV6.CornerRadius="19" Background="#005D7F" BorderThickness="0" Foreground="#FFFFFF" Content="K1486" HorizontalAlignment="Center" Width="187" MinHeight="38" Command="{Binding StartTestCommand}" />
+        </StackPanel>
+        <ScrollViewer Grid.Column="1" Grid.Row="0" Margin="0 15 39 0" HorizontalScrollBarVisibility="Disabled">
+          <Border BorderThickness="0 1 0 0" BorderBrush="#D8D8D8">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="44" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="113" />
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="113" />
+              </Grid.ColumnDefinitions>
+              <Border Background="#54D4DCE3" BorderBrush="#D8D8D8" BorderThickness="1 0 1 0">
+                <lang:LangTextBlock LangKey="K1483" FontFamily="{StaticResource GothamMedium}" Foreground="#2E2F2F" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <Border Grid.Column="1" Background="#326EC2ED" BorderBrush="#D8D8D8" BorderThickness="0 0 1 0">
+                <lang:LangTextBlock LangKey="K1484" FontFamily="{StaticResource GothamMedium}" Foreground="#2E2F2F" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <Border Grid.Column="2" Background="#54D4DCE3" BorderBrush="#D8D8D8" BorderThickness="0 0 1 0">
+                <lang:LangTextBlock LangKey="K1483" FontFamily="{StaticResource GothamMedium}" Foreground="#2E2F2F" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <Border Grid.Column="3" Background="#326EC2ED" BorderBrush="#D8D8D8" BorderThickness="0 0 1 0">
+                <lang:LangTextBlock LangKey="K1484" FontFamily="{StaticResource GothamMedium}" Foreground="#2E2F2F" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <Border Grid.Row="1" Grid.ColumnSpan="4" Width="686" BorderBrush="#D8D8D8" BorderThickness="0 1 0 0">
+                <ListView ItemsSource="{Binding Items}">
+                  <Control.Template>
+                    <ControlTemplate>
+                      <ItemsPresenter />
+                    </ControlTemplate>
+                  </Control.Template>
+                  <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                      <WrapPanel />
+                    </ItemsPanelTemplate>
+                  </ItemsControl.ItemsPanel>
+                  <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                      <Setter Property="Foreground" Value="#2E2F2F" />
+                      <Setter Property="FontSize" Value="14" />
+                      <Setter Property="Padding" Value="0 7" />
+                      <Setter Property="Background" Value="#FFFFFF" />
+                      <Setter Property="FontWeight" Value="SemiBold" />
+                      <Setter Property="Template">
+                        <Setter.Value>
+                          <ControlTemplate TargetType="{x:Type ListViewItem}">
+                            <Grid>
+                              <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="230" />
+                                <ColumnDefinition Width="113" />
+                              </Grid.ColumnDefinitions>
+                              <Border BorderBrush="#D8D8D8" Padding="{TemplateBinding Control.Padding}" BorderThickness="{Binding BorderThickness}">
+                                <Grid VerticalAlignment="Center">
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                  </Grid.ColumnDefinitions>
+                                  <Border Margin="26 0 8 0">
+                                    <Image Width="24" Height="24" Stretch="UniformToFill" Source="{Binding Image}" />
+                                  </Border>
+                                  <lang:LangTextBlock Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="{TemplateBinding Control.FontSize}" FontWeight="{TemplateBinding Control.FontWeight}" FontFamily="{StaticResource GothamMedium}" Foreground="{TemplateBinding Control.Foreground}" LangKey="{Binding Item}" />
+                                </Grid>
+                              </Border>
+                              <Border Grid.Column="1" Background="#326EC2ED" BorderBrush="#D8D8D8" BorderThickness="0 0 1 1" Padding="{TemplateBinding Control.Padding}">
+                                <Grid>
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                  </Grid.ColumnDefinitions>
+                                  <Image Name="rimg" Margin="3 0 0 0" Height="21" Source="{DynamicResource v6_hwtest_normal}" Stretch="UniformToFill" Visibility="Collapsed" />
+                                  <lang:LangTextBlock Name="rtxt" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" Margin="6 0 0 0" LangKey="K1491" FontSize="14" FontWeight="Regular" FontFamily="{StaticResource GothamBook}" Foreground="{TemplateBinding Control.Foreground}" />
+                                </Grid>
+                              </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                              <DataTrigger Value="0" Binding="{Binding Status}">
+                                <Setter TargetName="rimg" Value="{DynamicResource v6_hwtest_undetected}" Property="Image.Source" />
+                                <Setter TargetName="rimg" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="rtxt" Property="lang:LangTextBlock.LangKey" Value="K1493" />
+                              </DataTrigger>
+                              <DataTrigger Value="1" Binding="{Binding Status}">
+                                <Setter TargetName="rimg" Value="{DynamicResource v6_hwtest_normal}" Property="Image.Source" />
+                                <Setter TargetName="rimg" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="rtxt" Property="lang:LangTextBlock.LangKey" Value="K1492" />
+                              </DataTrigger>
+                              <DataTrigger Value="2" Binding="{Binding Status}">
+                                <Setter TargetName="rimg" Value="{DynamicResource v6_hwtest_fail}" Property="Image.Source" />
+                                <Setter TargetName="rimg" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="rtxt" Property="lang:LangTextBlock.LangKey" Value="K0387" />
+                              </DataTrigger>
+                              <DataTrigger Value="-1" Binding="{Binding Status}">
+                                <Setter TargetName="rimg" Property="Visibility" Value="Collapsed" />
+                                <Setter TargetName="rtxt" Property="TextBlock.Foreground" Value="#9FAEBF" />
+                                <Setter TargetName="rtxt" Property="lang:LangTextBlock.LangKey" Value="K1491" />
+                              </DataTrigger>
+                            </ControlTemplate.Triggers>
+                          </ControlTemplate>
+                        </Setter.Value>
+                      </Setter>
+                    </Style>
+                  </ItemsControl.ItemContainerStyle>
+                </ListView>
+              </Border>
+            </Grid>
+          </Border>
+        </ScrollViewer>
+        <Grid Name="tipinfo" Column="1" Row="1" Margin="0 0 0 20">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Image Source="{StaticResource v6_blue_info_icon}" Width="15" Height="15" />
+          <lang:LangTextBlock Grid.Column="1" LangKey="K1487" VerticalAlignment="Center" HorizontalAlignment="Left" Width="660" TextWrapping="Wrap" Margin="12 0 0 0" Style="{StaticResource v6_comm_text_style_4}" FontSize="14" />
+        </Grid>
+      </Grid>
+      <ControlTemplate.Triggers>
+        <DataTrigger Value="True" Binding="{Binding Started}">
+          <Setter TargetName="btn2" Property="ContentControl.Content" Value="K1488" />
+          <Setter TargetName="img1" Property="UIElement.Visibility" Value="Hidden" />
+          <Setter TargetName="img2" Property="UIElement.Visibility" Value="Visible" />
+        </DataTrigger>
+        <DataTrigger Value="False" Binding="{Binding Started}">
+          <Setter TargetName="btn2" Property="ContentControl.Content" Value="K1486" />
+          <Setter TargetName="img2" Property="UIElement.Visibility" Value="Hidden" />
+          <Setter TargetName="img1" Property="UIElement.Visibility" Value="Visible" />
+        </DataTrigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate>
+  </Control.Template>
+</UserControl>

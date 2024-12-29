@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>lenovo.mbg.service.lmsa.hardwaretest</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="resource\icons\icon-gps-2x.png" />
+    <None Remove="resource\icons\icon-receiver-2x.png" />
+    <None Remove="resource\icons\icon-buletooth-2x.png" />
+    <None Remove="resource\icons\icon-ear-20speaker-2x.png" />
+    <None Remove="resource\icons\icon-touch-20screen-2x.png" />
+    <None Remove="resource\icons\icon-vibration-2x.png" />
+    <None Remove="resource\icons\icon-audio-20connection-2x.png" />
+    <None Remove="resource\icons\icon-earphone-2x.png" />
+    <None Remove="resource\icons\icon-proximity-20sensor-2x.png" />
+    <None Remove="resource\icons\icon-mobile-20network-2x.png" />
+    <None Remove="resource\icons\icon-flash-2x.png" />
+    <None Remove="resource\icons\icon-battery-2x.png" />
+    <None Remove="resource\icons\icon-speaker-2x.png" />
+    <None Remove="resource\icons\icon-backlight-2x.png" />
+    <None Remove="resource\icons\icon-display-2x.png" />
+    <None Remove="resource\hardware-20testing.gif" />
+    <None Remove="resource\icons\icon-multi-20touch-2x.png" />
+    <None Remove="resource\icons\icon-wifi-2x.png" />
+    <None Remove="resource\icons\icon-gravity-20sensor-2x.png" />
+    <None Remove="resource\icons\icon-volume-20button-2x.png" />
+    <None Remove="resource\hardware-20test-item-20list-image-2x.png" />
+    <None Remove="resource\icons\icon-miro-20phone-2x.png" />
+    <None Remove="resource\icons\icon-front-20camera-2x.png" />
+    <None Remove="resource\icons\icon-rear-20camera-2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-gps-2x.png" LogicalName="resource/icons/icon-gps@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-receiver-2x.png" LogicalName="resource/icons/icon-receiver@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-buletooth-2x.png" LogicalName="resource/icons/icon-buletooth@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-ear-20speaker-2x.png" LogicalName="resource/icons/icon-ear%20speaker@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-touch-20screen-2x.png" LogicalName="resource/icons/icon-touch%20screen@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-vibration-2x.png" LogicalName="resource/icons/icon-vibration@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-audio-20connection-2x.png" LogicalName="resource/icons/icon-audio%20connection@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-earphone-2x.png" LogicalName="resource/icons/icon-earphone@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-proximity-20sensor-2x.png" LogicalName="resource/icons/icon-proximity%20sensor@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-mobile-20network-2x.png" LogicalName="resource/icons/icon-mobile%20network@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-flash-2x.png" LogicalName="resource/icons/icon-flash@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-battery-2x.png" LogicalName="resource/icons/icon-battery@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-speaker-2x.png" LogicalName="resource/icons/icon-speaker@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-backlight-2x.png" LogicalName="resource/icons/icon-backlight@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-display-2x.png" LogicalName="resource/icons/icon-display@2x.png" />
+    <EmbeddedResource Include="resource\hardware-20testing.gif" LogicalName="resource/hardware%20testing.gif" />
+    <EmbeddedResource Include="resource\icons\icon-multi-20touch-2x.png" LogicalName="resource/icons/icon-multi%20touch@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-wifi-2x.png" LogicalName="resource/icons/icon-wifi@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-gravity-20sensor-2x.png" LogicalName="resource/icons/icon-gravity%20sensor@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-volume-20button-2x.png" LogicalName="resource/icons/icon-volume%20button@2x.png" />
+    <EmbeddedResource Include="resource\hardware-20test-item-20list-image-2x.png" LogicalName="resource/hardware%20test-item%20list-image@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-miro-20phone-2x.png" LogicalName="resource/icons/icon-miro%20phone@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-front-20camera-2x.png" LogicalName="resource/icons/icon-front%20camera@2x.png" />
+    <EmbeddedResource Include="resource\icons\icon-rear-20camera-2x.png" LogicalName="resource/icons/icon-rear%20camera@2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="lenovo.mbg.service.framework.services">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="lenovo.themes.generic">
+      <HintPath>..\..\..\droid\fix\lenovo.themes.generic.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.devicemgt">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.devicemgt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.socket">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.socket.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.lmsa.hostproxy">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.lmsa.hostproxy.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.common.utilities">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="lenovo.mbg.service.common.log">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
+    </Reference>
+    <Reference Include="lenovo.mbg.service.framework.lang">
+      <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.lang.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
