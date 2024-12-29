@@ -664,6 +664,9 @@
     <EmbeddedResource Include="resourcev6\find\find_imei_m3_down.png" LogicalName="resourcev6/find/find_imei_m3_down.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="lenovo.mbg.service.framework.services">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
     </Reference>
