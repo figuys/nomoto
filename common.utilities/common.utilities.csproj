@@ -13,35 +13,23 @@
     <RootNamespace>lenovo.mbg.service.common.utilities</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="DotNetBrowser" Version="3.0.0" />
+    <PackageReference Include="DotNetBrowser.Wpf" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Squid-Box.SevenZipSharp" Version="1.6.2.24" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DotNetBrowser">
-      <HintPath>..\..\..\droid\fix\DotNetBrowser.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetBrowser.Wpf">
-      <HintPath>..\..\..\droid\fix\DotNetBrowser.Wpf.dll</HintPath>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>..\lib\Gma.QrCodeNet.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Core" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Gma.QrCodeNet.Encoding">
-      <HintPath>..\..\..\droid\fix\Gma.QrCodeNet.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="SevenZipSharp">
-      <HintPath>..\..\..\droid\fix\SevenZipSharp.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="DotNetBrowser.Logging">
-      <HintPath>..\..\..\droid\fix\DotNetBrowser.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetBrowser.Core">
-      <HintPath>..\..\..\droid\fix\DotNetBrowser.Core.dll</HintPath>
-    </Reference>
     <Reference Include="lenovo.mbg.service.common.log">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.log.dll</HintPath>
     </Reference>

@@ -18,7 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GoogleAnalytics.Core">
-      <HintPath>..\..\..\droid\fix\GoogleAnalytics.Core.dll</HintPath>
+      <HintPath>..\lib\GoogleAnalytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System.ComponentModel.Composition" />
