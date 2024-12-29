@@ -2,33 +2,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35617.110
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.updateversion", "lenovo.mbg.service.framework.updateversion\framework.updateversion.csproj", "{3BBF2CF4-9C07-44B9-8CD8-46E5A23C1C49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.updateversion", "framework.updateversion\framework.updateversion.csproj", "{3BBF2CF4-9C07-44B9-8CD8-46E5A23C1C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.devicemgt", "lenovo.mbg.service.framework.devicemgt\framework.devicemgt.csproj", "{6BB2A649-0B8F-440E-BA6B-52BE0DE34B3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.devicemgt", "framework.devicemgt\framework.devicemgt.csproj", "{6BB2A649-0B8F-440E-BA6B-52BE0DE34B3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.socket", "lenovo.mbg.service.framework.socket\framework.socket.csproj", "{4577986E-0133-43CE-A9F1-BC46B85EE736}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.socket", "framework.socket\framework.socket.csproj", "{4577986E-0133-43CE-A9F1-BC46B85EE736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.utilities", "lenovo.mbg.service.common.utilities\common.utilities.csproj", "{01E949AA-6E6B-4F0D-8AC1-D4631863E158}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.utilities", "common.utilities\common.utilities.csproj", "{01E949AA-6E6B-4F0D-8AC1-D4631863E158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.services", "lenovo.mbg.service.framework.services\framework.services.csproj", "{B7265F1C-C81A-449B-94AF-BADB91D89A13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.services", "framework.services\framework.services.csproj", "{B7265F1C-C81A-449B-94AF-BADB91D89A13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.resources", "lenovo.mbg.service.framework.resources\framework.resources.csproj", "{8711EDCF-C82D-4251-BFE1-B10F578B8D15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.resources", "framework.resources\framework.resources.csproj", "{8711EDCF-C82D-4251-BFE1-B10F578B8D15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.hostcontroller", "lenovo.mbg.service.framework.hostcontroller\framework.hostcontroller.csproj", "{98D6235A-8B83-4C17-BE09-8F3DAFD68F1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.hostcontroller", "framework.hostcontroller\framework.hostcontroller.csproj", "{98D6235A-8B83-4C17-BE09-8F3DAFD68F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.webservices", "lenovo.mbg.service.common.webservices\common.webservices.csproj", "{7F9CCFCE-0E7A-4019-A7E3-B35A47E4A3D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.webservices", "common.webservices\common.webservices.csproj", "{7F9CCFCE-0E7A-4019-A7E3-B35A47E4A3D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.smartdevice", "lenovo.mbg.service.framework.smartdevice\framework.smartdevice.csproj", "{0E484453-D210-4E7D-99E0-A42FC9E08D70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.smartdevice", "framework.smartdevice\framework.smartdevice.csproj", "{0E484453-D210-4E7D-99E0-A42FC9E08D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.smartbase", "lenovo.mbg.service.framework.smartbase\framework.smartbase.csproj", "{B8499502-5B93-4DD4-AB61-58D488C42CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.smartbase", "framework.smartbase\framework.smartbase.csproj", "{B8499502-5B93-4DD4-AB61-58D488C42CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.pipes", "lenovo.mbg.service.framework.pipes\framework.pipes.csproj", "{6EB63C69-A307-4468-84C0-0D90F4DB13E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.pipes", "framework.pipes\framework.pipes.csproj", "{6EB63C69-A307-4468-84C0-0D90F4DB13E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.download", "lenovo.mbg.service.framework.download\framework.download.csproj", "{C7245AD5-725B-49F6-B3CE-537CC53F9FCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "framework.download", "framework.download\framework.download.csproj", "{C7245AD5-725B-49F6-B3CE-537CC53F9FCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.log", "lenovo.mbg.service.common.log\common.log.csproj", "{92C1EC5A-D0A9-4782-A313-4896A5B0BA23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.log", "common.log\common.log.csproj", "{92C1EC5A-D0A9-4782-A313-4896A5B0BA23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "runtime.hostproxy", "lenovo.mbg.service.lmsa.hostproxy\runtime.hostproxy.csproj", "{B1FE6697-7FD3-A573-F203-67B7C31169C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "runtime.hostproxy", "runtime.hostproxy\runtime.hostproxy.csproj", "{B1FE6697-7FD3-A573-F203-67B7C31169C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
