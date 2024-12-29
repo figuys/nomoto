@@ -13,11 +13,11 @@
     <RootNamespace>lenovo.mbg.service.framework.updateversion</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="lenovo.mbg.service.common.webservices">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.webservices.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="lenovo.mbg.service.common.utilities">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>

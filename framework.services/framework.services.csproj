@@ -14,14 +14,14 @@
     <RootNamespace>lenovo.mbg.service.framework.services</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="GoogleAnalytics.Core">
       <HintPath>..\..\..\droid\fix\GoogleAnalytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="lenovo.mbg.service.common.log">

@@ -13,11 +13,11 @@
     <RootNamespace>lenovo.mbg.service.framework.resources</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="lenovo.mbg.service.framework.services">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="lenovo.mbg.service.common.utilities">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>

@@ -13,9 +13,9 @@
     <RootNamespace>lenovo.mbg.service.framework.pipes</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Core" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\droid\fix\Newtonsoft.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
