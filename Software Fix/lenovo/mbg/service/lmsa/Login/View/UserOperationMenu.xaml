@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.Login.View.UserOperationMenu" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa" xmlns:loginView="clr-namespace:lenovo.mbg.service.lmsa.Login.View" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:genericAP="clr-namespace:lenovo.themes.generic.AttachedProperty;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" x:Name="winmenu" MouseDown="UserControl_MouseDown" PreviewMouseLeftButtonDown="winmenu_PreviewMouseLeftButtonDown">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DrawingImage x:Key="mainWindowMenuButtonIcon">
+        <DrawingImage.Drawing>
+          <DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#ffffff" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#ffffff" Thickness="1" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <PathGeometry>
+                  <PathFigure StartPoint="0,0" IsClosed="True">
+                    <PolyLineSegment Points="9,0 4.5,4.5" />
+                  </PathFigure>
+                </PathGeometry>
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Menu Name="menum" Padding="0" Background="#00FFFFFF">
+    <genericControls:MouseOverMenuItem BorderThickness="0" Background="#00FFFFFF" Padding="0" Tag="RootItem" VerticalAlignment="Center" HorizontalAlignment="Center" MouseOverForeground="#00FFFFFF" MouseOverBackground="#00FFFFFF" Template="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutMenuItemControlTemplate}}" MouseOverHeader="{Binding Header, RelativeSource={RelativeSource Self}}" Header="{Binding Header, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl, AncestorLevel=1}}" ItemsSource="{Binding MenuItems}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <genericControls:MouseOverMenuItem Height="32" Margin="0" MinWidth="160" BorderThickness="0" Background="#ffffff" MouseOverForeground="#ffffff" MouseOverBackground="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" DataContext="{Binding}" Visibility="{Binding ItemVisibility}" Command="{Binding ClickCommand}" IsEnabled="{Binding IsEnabled}" ItemsSource="{Binding MenuItems}">
+            <MenuItem.Icon>
+              <Image Margin="3 0 3 0" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Right" Source="{Binding Icon}" />
+            </MenuItem.Icon>
+            <genericControls:MouseOverMenuItem.MouseOverIcon>
+              <Image Margin="3 0 3 0" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Right" Source="{Binding MouseOverIcon}" />
+            </genericControls:MouseOverMenuItem.MouseOverIcon>
+            <HeaderedItemsControl.Header>
+              <lang:LangTextBlock Margin="0 0 3 0" FontSize="9pt" VerticalAlignment="Center" Foreground="#777776" HorizontalAlignment="Left" LangText="{Binding Header}" LangKey="{Binding Header}" />
+            </HeaderedItemsControl.Header>
+            <genericControls:MouseOverMenuItem.MouseOverHeader>
+              <lang:LangTextBlock Margin="0 0 3 0" FontSize="9pt" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#ffffff" LangText="{Binding Header}" LangKey="{Binding Header}" />
+            </genericControls:MouseOverMenuItem.MouseOverHeader>
+          </genericControls:MouseOverMenuItem>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </genericControls:MouseOverMenuItem>
+  </Menu>
+</UserControl>

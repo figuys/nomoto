@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.UserControls.SurveyWindowV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.ViewModels" xmlns:convert="clr-namespace:lenovo.mbg.service.lmsa.Converters" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:gconvert="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" x:Name="frmWorkstation" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Title="SurveyWindow" Height="700" Width="1012" Foreground="#FF001429" FontSize="14" Style="{StaticResource V6_DialogStyle}" xmlns:usercontrols="clr-namespace:lenovo.mbg.service.lmsa.UserControls">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/RadioButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <convert:CompareRedioBtnConverter x:Key="CompareRedioBtnConverter" />
+      <gconvert:CompareValueConverter x:Key="CompareValueConverter" />
+      <Style x:Key="V6_WndCloseBtnStyle_White" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Margin" Value="0 0 20 0" />
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border Background="#00FFFFFF" CornerRadius="2">
+                <Path Stretch="Fill" Fill="{TemplateBinding Control.Foreground}" Margin="3" Data="M8.2006886,0.23831634 L4.79427851,3.64301803 L1.38891994,0.23831634 C1.18338441,0.0327808021 0.883809833,-0.0474899627 0.603043067,0.0277412654 C0.322276301,0.102972494 0.102972494,0.322276301 0.0277412654,0.603043067 L0.00493168553,0.72419418 C-0.0219990345,0.967483404 0.0621430218,1.21274663 0.23831634,1.38891994 L3.64301803,4.79427851 L0.23831634,8.2006886 C-0.0794140589,8.51841903 -0.0794140488,9.03356179 0.238316354,9.35129219 L0.339163021,9.4370794 C0.657101186,9.66584529 1.10296256,9.63724957 1.38891993,9.35129221 L4.79427851,5.945539 L8.2006886,9.35129221 C8.51841901,9.66902262 9.03356179,9.66902262 9.35129221,9.35129221 L9.43707942,9.25044554 C9.66584531,8.93250736 9.63724958,8.48664597 9.35129221,8.2006886 L5.945539,4.79427851 L9.35129221,1.38891994 C9.55682774,1.18338441 9.63709851,0.883809833 9.56186728,0.603043067 C9.48663605,0.322276301 9.26733224,0.102972494 8.98656548,0.0277412654 C8.70579871,-0.0474899627 8.40622414,0.0327808021 8.2006886,0.23831634" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Foreground" Value="#FF8B8FA6" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="Foreground" Value="#FF8B8FA6" />
+                  <Setter Property="RenderTransform">
+                    <Setter.Value>
+                      <TranslateTransform X="2" Y="2" />
+                    </Setter.Value>
+                  </Setter>
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="RadioBtnScoreStyle" TargetType="{x:Type RadioButton}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="#FFD4DCE3" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="RadioButton.GroupName" Value="Score" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RadioButton}">
+              <Border Width="58" Height="28" Background="{TemplateBinding Control.Background}">
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Foreground" Value="#FFFFFFFF" />
+                  <Setter Property="Background" Value="#FF005D7F" />
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                  <Setter Property="Foreground" Value="#FFFFFFFF" />
+                  <Setter Property="Background" Value="#FF005D7F" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="txtOpinion" TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#FF001429" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border BorderBrush="#FFD4DCE3" BorderThickness="1" Background="#FFFFFFFF">
+                <Grid Margin="10 5 0 5" Height="85" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <ScrollViewer Name="PART_ContentHost" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource V6_CommonScrollViewerStyle}" />
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <DataTemplate x:Key="SroceTemplate" DataType="{x:Type local:SurveyDataModel}">
+        <RadioButton Width="68" Height="38" Margin="0 0 2 0" Style="{StaticResource RadioBtnScoreStyle}" Content="{Binding ItemText}" Command="{Binding DataContext.RadioBtnScoreCommand, ElementName=frmWorkstation}" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" IsChecked="{Binding IsSelected}" />
+      </DataTemplate>
+      <DataTemplate x:Key="SingleChoiceTemplate" DataType="{x:Type local:SurveyDataModel}">
+        <Grid VerticalAlignment="Center" Width="{Binding Width}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <lang:LangRadioButton MinHeight="28" MaxWidth="330" Style="{StaticResource v6_RadioButtonDefultStyle}" LangKey="{Binding ItemText}" IsChecked="{Binding IsSelected}" Command="{Binding DataContext.RadioBtnSingleCommand, ElementName=frmWorkstation}" GroupName="{Binding GroupName}" />
+          <TextBox Grid.Column="1" Height="28" Margin="9 0 0 0" Padding="13 5" Style="{StaticResource v6_textbox_style}" Visibility="{Binding Visibile}" Text="{Binding Data}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="MultipleChoiceTemplate" DataType="{x:Type local:SurveyDataModel}">
+        <CheckBox Width="330" MinHeight="25" Margin="-5 0 0 0" Style="{StaticResource v6_defaultCheckBoxStyle}" IsChecked="{Binding IsSelected}">
+          <TextBlock VerticalAlignment="Center">
+            <AccessText TextWrapping="Wrap" Text="{Binding ItemText}" />
+          </TextBlock>
+        </CheckBox>
+      </DataTemplate>
+      <DataTemplate x:Key="TextTemplate" DataType="{x:Type local:SurveyDataModel}">
+        <TextBox VerticalAlignment="Top" Width="500" Height="100" HorizontalAlignment="Left" AcceptsReturn="True" TextWrapping="Wrap" Style="{StaticResource txtOpinion}" Text="{Binding ItemText}" />
+      </DataTemplate>
+      <local:SurveyV2TemplateSelector x:Key="questionTemplateSelector" SroceTemplate="{StaticResource SroceTemplate}" TextTemplate="{StaticResource TextTemplate}" SingleChoiceTemplate="{StaticResource SingleChoiceTemplate}" MultipleChoiceTemplate="{StaticResource MultipleChoiceTemplate}" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Background="#FFFFFF">
+    <UIElement.Effect>
+      <DropShadowEffect BlurRadius="10" ShadowDepth="1" Direction="0" Color="#DFDFDF" />
+    </UIElement.Effect>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="45" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid Row="0" Height="45" Background="#FF005D7F" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+      <Button Style="{StaticResource V6_WndCloseBtnStyle_White}" Command="{Binding CloseWinCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+    </Grid>
+    <Grid Row="1">
+      <Panel.Background>
+        <ImageBrush ImageSource="../ResourceV6/survey_bk_v6.png" Stretch="UniformToFill" />
+      </Panel.Background>
+      <ScrollViewer Background="#00FFFFFF" VerticalScrollBarVisibility="Auto" CanContentScroll="True" Style="{StaticResource V6_CommonScrollViewerStyle}" Visibility="{Binding QuestionVisibility, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:Visible:Collapsed}">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <StackPanel Grid.Row="0" Orientation="Vertical" Margin="60 28 0 30">
+            <lang:LangTextBlock LineHeight="30" FontWeight="Medium" FontSize="16" LangText="{Binding SurveyTitle}" LangKey="{Binding SurveyTitle}" />
+            <lang:LangTextBlock TextWrapping="Wrap" FontWeight="Medium" FontSize="16" LangText="{Binding SurveySubTitle}" LangKey="{Binding SurveySubTitle}" />
+          </StackPanel>
+          <StackPanel Grid.Row="1" Orientation="Vertical" Margin="105 0 0 0">
+            <TextBlock Name="txtSelectedScore" Visibility="Collapsed" Text="{Binding SelectedScore}" />
+            <ListBox Width="720" HorizontalAlignment="Left" Background="#FFFF4042" BorderBrush="#00FFFFFF" ItemsSource="{Binding QuestionList}">
+              <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                  <Setter Property="Template">
+                    <Setter.Value>
+                      <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <ContentPresenter />
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ItemsControl.ItemContainerStyle>
+              <Control.Template>
+                <ControlTemplate TargetType="{x:Type ItemsControl}">
+                  <ItemsPresenter />
+                </ControlTemplate>
+              </Control.Template>
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Orientation="Vertical">
+                    <lang:LangTextBlock FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap">
+                      <TextBlock Text="*" Foreground="#FFFF4042" Visibility="{Binding IsRequired}" /> <lang:LangRun Foreground="#FF001429" LangText="{Binding QuestionTitle}" LangKey="{Binding QuestionTitle}" /></lang:LangTextBlock>
+                    <StackPanel Orientation="Vertical" Margin="20 10 0 10">
+                      <ListBox Background="#00FFFFFF" BorderBrush="#00FFFFFF" ItemTemplateSelector="{StaticResource questionTemplateSelector}" Width="660" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding QuestionItems}">
+                        <ItemsControl.ItemsPanel>
+                          <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                          </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <Control.Template>
+                          <ControlTemplate TargetType="{x:Type ItemsControl}">
+                            <ItemsPresenter />
+                          </ControlTemplate>
+                        </Control.Template>
+                        <ItemsControl.ItemContainerStyle>
+                          <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                              <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                  <ContentPresenter Margin="-10 0 0 0" />
+                                </ControlTemplate>
+                              </Setter.Value>
+                            </Setter>
+                          </Style>
+                        </ItemsControl.ItemContainerStyle>
+                      </ListBox>
+                      <DockPanel Margin="-10 6 0 0" Width="660" Visibility="{Binding IsSatisfied}">
+                        <lang:LangTextBlock Text="Not at all satisfied" FontSize="14" LangKey="K1312" Foreground="#FFFF4042" />
+                        <lang:LangTextBlock Text="Very satisfied" FontSize="14" LangKey="K1313" Foreground="#FF005D7F" HorizontalAlignment="Right" />
+                      </DockPanel>
+                    </StackPanel>
+                  </StackPanel>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ListBox>
+            <StackPanel Margin="0 0 0 60" Height="60" Orientation="Vertical">
+              <TextBlock FontSize="14" Foreground="#FFFF4042" Text="{Binding VerifyErrorText}" Visibility="{Binding VerifyErrorVisibility}" />
+              <lang:LangButton LangContent="Submit" LangKey="K0036" MinWidth="158" Height="38" Style="{StaticResource V6_NormalBtnStyle}" HorizontalAlignment="Center" Command="{Binding SubmitClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" IsEnabled="{Binding SubmitBtnEnable}" />
+            </StackPanel>
+          </StackPanel>
+        </Grid>
+      </ScrollViewer>
+      <StackPanel Background="#00FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="{Binding QuestionVisibility, Converter={StaticResource CompareValueConverter}, ConverterParameter=false:Visible:Collapsed}">
+        <Image Height="187" Width="282" Margin="0 66 0 13" Source="../ResourceV6/survey_thks_v6.png" />
+        <lang:LangTextBlock FontSize="32" FontWeight="Medium" LangText="{Binding SubmitThanksText}" LangKey="{Binding SubmitThanksText}" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Window>

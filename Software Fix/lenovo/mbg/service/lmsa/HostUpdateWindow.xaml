@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.HostUpdateWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localPorject="clr-namespace:lenovo.mbg.service.lmsa" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:localporject="clr-namespace:lenovo.mbg.service.lmsa" x:Name="hostUpdateWindow" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="Manual" AllowsTransparency="True" ShowInTaskbar="False" BorderThickness="10 35" Width="560" MaxWidth="560" MinWidth="560" Height="355" MaxHeight="355" MinHeight="355" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Triggers>
+    <EventTrigger RoutedEvent="Loaded">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation From="0" To="1" Duration="0:0:0.3" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </FrameworkElement.Triggers>
+  <Border>
+    <Grid Background="#FFFFFF">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="25" />
+        <RowDefinition Height="100" />
+        <RowDefinition Height="10" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid RowSpan="3" Row="0" Margin="0 -10 0 0">
+        <Panel.Background>
+          <ImageBrush ImageSource="{DynamicResource ClientUpdatePopBackgroundImage}" />
+        </Panel.Background>
+      </Grid>
+      <Border Grid.Row="0">
+        <Grid>
+          <Button Name="btnCloseWin" Width="14" Height="14" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 5 5 0" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=speciallyuttonTemplate}}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Click="btnCloseWin_Click">
+            <Control.Background>
+              <ImageBrush ImageSource="{DynamicResource CloseIconImage}" />
+            </Control.Background>
+          </Button>
+        </Grid>
+      </Border>
+      <Grid Row="2" RowSpan="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="15" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25" />
+          <RowDefinition Height="20" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="20" />
+          <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+          <Border Grid.Column="1">
+            <lang:LangTextBlock Name="TxbTips" TextWrapping="NoWrap" FontSize="13pt" Foreground="#43B5E2" HorizontalAlignment="Left" LangText="New version was detected. " LangKey="K0286" />
+          </Border>
+          <Border Grid.Column="1">
+            <TextBlock Name="fileVersion" VerticalAlignment="Center" Foreground="#afaeae" FontSize="8pt">
+              <TextBlock.Text>
+                <MultiBinding StringFormat="[V{0}({1:yyyy.MM.dd})]">
+                  <Binding Path="Version" />
+                  <Binding Path="ReleaseDate" />
+                </MultiBinding>
+              </TextBlock.Text>
+            </TextBlock>
+          </Border>
+          <Border Grid.Column="1" Margin="2">
+            <Grid>
+              <TextBlock Name="fileSize" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFFA500" FontSize="7pt">
+                <TextBlock.Text>
+                  <MultiBinding Converter="{StaticResource newVersionSizeConverter}">
+                    <Binding Path="downloadFileSize" />
+                    <Binding Path="downloadUrl" />
+                    <Binding Path="Data" Source="{StaticResource Pakage_Size_Tip}" />
+                  </MultiBinding>
+                </TextBlock.Text>
+              </TextBlock>
+            </Grid>
+          </Border>
+        </StackPanel>
+        <lang:LangTextBlock Grid.Column="1" Grid.Row="1" Padding="3" Visibility="Visible" HorizontalAlignment="Left" LangText="Update Content:" LangKey="K0289" Foreground="#FFFFA500" FontSize="10pt" />
+        <ScrollViewer Name="scrViewerVersionList" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="30 0 0 0" Background="#00FFFFFF" PreviewMouseWheel="scrViewerVersionList_PreviewMouseWheel">
+          <TextBlock Name="updatContent" Padding="3" Visibility="Visible" HorizontalAlignment="Left" Foreground="#afaeae" FontSize="10pt" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="{Binding ReleaseNotes}" />
+        </ScrollViewer>
+        <lang:LangTextBlock Name="updateWarn" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Margin="0" Visibility="Collapsed" HorizontalAlignment="Center" LangText="!     Unable to use without updating." LangKey="K0345" Foreground="#D67D79" FontSize="12pt" />
+        <StackPanel Name="panelDetected" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="4" Visibility="Visible">
+          <StackPanel Orientation="Horizontal">
+            <CheckBox Name="checkboxNotRemindMeForThisVersion" FontSize="7pt" IsChecked="False" Foreground="#888989" Margin="1 0 0 0" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=CheckBoxDefaultStyle}}" />
+            <lang:LangTextBlock Name="checkboxNotRemindMeForThisVersionContent" Foreground="#888989" LangText="Don't remind me again for this version" LangKey="K0292" />
+          </StackPanel>
+          <StackPanel Orientation="Horizontal" Margin="0 3 0 0" HorizontalAlignment="Center">
+            <lang:LangButton Name="btnCancelUpgrade" BorderBrush="#00FFFFFF" Background="#E5E5E5" MinWidth="100" Margin="0 0 150  0" Foreground="#888989" Padding="10 5 10 5" Style="{DynamicResource CancelBtnStyle}" LangContent="No, thanks" LangKey="K0291" Click="btnCancelUpgrade_Click" />
+            <lang:LangButton Name="btnUpgradeNow" BorderBrush="#00FFFFFF" MinWidth="100" Background="#FFFFFF" Foreground="#43B5E2" Padding="10 5 10 5" Style="{DynamicResource OkBtnStyle}" LangContent="Upgrade now" LangKey="K0290" Click="btnUpgradeNow_Click" />
+          </StackPanel>
+        </StackPanel>
+        <StackPanel Name="panelDownload" Grid.ColumnSpan="2" Grid.Row="4" Visibility="Collapsed">
+          <localporject:ProgressBar_Common Margin="0,0,0,20" Height="4" ProgressBarValue="{Binding PercentNum, ElementName=hostUpdateWindow}" />
+          <TextBlock Name="TxbPercent" HorizontalAlignment="Left" Margin="20 0 0 0" FontSize="11" Foreground="#afaeae" Text="{Binding StrPercent, ElementName=hostUpdateWindow}" />
+        </StackPanel>
+        <StackPanel Name="panelInstall" Grid.ColumnSpan="2" Grid.Row="4" Visibility="Collapsed" Orientation="Horizontal" Margin="0 3 0 0" Height="34" HorizontalAlignment="Center">
+          <lang:LangButton Name="btnCalcelInstall" BorderBrush="#00FFFFFF" Background="#E5E5E5" MinWidth="100" Foreground="#888989" Padding="10 5 10 5" Margin="0 0 150 0" Style="{DynamicResource CancelBtnStyle}" LangContent="No, thanks" LangKey="K0291" Click="btnCalcelInstall_Click" />
+          <lang:LangButton Name="btnInstallNow" BorderBrush="#00FFFFFF" MinWidth="100" Background="#FFFFFF" Foreground="#43B5E2" Padding="10 5 10 5" Style="{DynamicResource OkBtnStyle}" LangContent="Install" LangKey="K0295" Click="btnInstallNow_Click" />
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Border>
+</Window>

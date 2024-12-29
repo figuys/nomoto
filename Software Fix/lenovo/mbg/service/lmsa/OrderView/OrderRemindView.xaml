@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.OrderView.OrderRemindView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ctrl="clr-namespace:lenovo.mbg.service.lmsa.OrderView" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Title="RescueB2BRemindWindowV6" Background="#00FFFFFF" Height="465" Width="778" Style="{StaticResource V6_DialogStyle}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/Global.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border CornerRadius="12">
+    <Border.Background>
+      <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#FFD3E9FF" />
+        <GradientStop Offset="1" Color="#FFFFFFFF" />
+      </LinearGradientBrush>
+    </Border.Background>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="45" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Button Grid.Row="0" Style="{StaticResource V6_WndCloseBtnStyle}" Click="BtnClose_Click" />
+      <lang:LangTextBlock Name="txtTitle" Grid.Row="1" Foreground="#FF005D7F" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" LangKey="K1852" LangText="The free trial period is almost over" />
+      <StackPanel Grid.Row="2" Orientation="Vertical" Margin="66 26 0 0" Width="673" HorizontalAlignment="Left">
+        <lang:LangTextBlock Name="txtInfo" Foreground="#FF345375" FontSize="14" LangKey="K1686" LangText="- {0} of {1} free devices completed Rescue." TextWrapping="Wrap" />
+        <lang:LangTextBlock Foreground="#FF345375" FontSize="14" LangKey="K1687" LangText="- Select a monthly plan to continue using all features." TextWrapping="Wrap" />
+      </StackPanel>
+      <ctrl:B2BPricePanel x:Name="BuyPanel" Margin="0 20 0 0" VerticalAlignment="Top" Grid.Row="3" Height="235" />
+      <TextBlock Margin="70 5 0 0" Width="660" TextWrapping="Wrap" Grid.Row="4" FontSize="12" Foreground="#FF345375" HorizontalAlignment="Left">
+        <Run Text="*" /> <lang:LangRun LangText="A premium fee is required to maintain ongoing support, enhancements, and to ensure Software Fix remains available to support all Motorola and Lenovo Android devices." LangKey="K1857" /></TextBlock>
+    </Grid>
+  </Border>
+</Window>

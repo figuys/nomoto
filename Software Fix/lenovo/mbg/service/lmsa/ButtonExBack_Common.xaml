@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.ButtonExBack_Common" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Name="buttonExBack_Common" xmlns:lmsa="clr-namespace:lenovo.mbg.service.lmsa;assembly=Software Fix">
+  <Grid>
+    <Border Name="ShandowBorder" Margin="10,10,0,0" BorderBrush="#DDDDDD" Background="#FFFFFFFF" BorderThickness="4" Width="{Binding Width, ElementName=MainBorder}" CornerRadius="{Binding CornerRadius, ElementName=MainBorder}" Height="{Binding Height, ElementName=MainBorder}" MouseDown="MainBorder_MouseDown" />
+    <Border Name="MainBorder" BorderThickness="3" BorderBrush="#29a2ff" Background="#00FFFFFF" CornerRadius="{Binding CronRadio, ElementName=buttonExBack_Common}" Width="{Binding ButtonWidth, ElementName=buttonExBack_Common}" Height="{Binding ButtonHeight, ElementName=buttonExBack_Common}">
+      <UIElement.Effect>
+        <DropShadowEffect x:Name="EffectShadow" Color="Blue" BlurRadius="15" ShadowDepth="0" Direction="315" Opacity="0" />
+      </UIElement.Effect>
+      <TextBlock Foreground="#3A9DEE" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding StrButtonTitle, ElementName=buttonExBack_Common}" />
+    </Border>
+  </Grid>
+</UserControl>

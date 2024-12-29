@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.Login.View.DeviceListView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.Login.View" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericCoverters="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:converter="clr-namespace:lenovo.mbg.service.lmsa.Converters" Background="#FFFFFFFF">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <converter:IndexConverter x:Key="_IndexConverter" />
+      <genericCoverters:ListCountToBooleanConverter x:Key="listCountToBooleanConverter" />
+      <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource V6_CommonScrollViewerStyle}" />
+      <DrawingImage x:Key="__DrawingImage">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,1024 L1024,1024 L1024,0 L0,0">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M712.620994,1023.993625 L311.315253,1023.993625 C304.710447,1023.993625 299.361574,1018.644752 299.361574,1012.039946 C299.361574,1005.43514 304.710447,1000.086267 311.315253,1000.086267 L712.620993,1000.086267 C719.225799,1000.086267 724.574672,1005.43514 724.574672,1012.039946 C724.574672,1018.644752 719.2258,1023.993625 712.620994,1023.993625" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M712.620994,1023.993625 C706.016188,1023.993625 700.667315,1018.644752 700.667315,1012.039946 C700.667315,1005.43514 706.016188,1000.086267 712.620994,1000.086267 C734.507384,1000.086267 752.313585,982.280066 752.313585,960.393676 C752.313585,953.78887 757.662458,948.439997 764.267264,948.439997 C770.87207,948.439997 776.220943,953.78887 776.220943,960.393676 C776.227319,995.457801 747.697871,1023.993625 712.620994,1023.993625" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M764.27364,972.347354 C757.668834,972.347354 752.319961,966.998481 752.319961,960.393675 L752.31996,63.638202 C752.31996,57.033396 757.668833,51.684523 764.273639,51.684523 C770.878445,51.684523 776.227318,57.033396 776.227318,63.638202 L776.227318,960.387299 C776.227319,966.992106 770.878446,972.347354 764.27364,972.347354" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M764.27364,75.560005 C757.668834,75.560005 752.319961,70.211132 752.319961,63.606326 C752.319961,41.719936 734.51376,23.913735 712.62737,23.913735 C706.022564,23.913735 700.673691,18.564862 700.673691,11.960056 C700.673691,5.35525000000001 706.016187,0 712.620994,0 C747.691496,0 776.227319,28.535824 776.227319,63.606325 C776.227319,70.211132 770.878446,75.560005 764.27364,75.560005" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M712.620994,23.913734 L311.315253,23.913734 C304.710447,23.913734 299.361574,18.564861 299.361574,11.960055 C299.361574,5.355249 304.710447,0 311.315253,0 L712.620993,0 C719.2258,0 724.581048,5.348873 724.581048,11.953679 C724.581048,18.558485 719.2258,23.913734 712.620994,23.913734" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M259.662607,75.560005 C253.057801,75.560005 247.708928,70.211132 247.708928,63.606325 C247.708928,28.535824 276.244752,0 311.315253,0 C317.920059,0 323.268932,5.348873 323.268932,11.953679 C323.268932,18.558485 317.920059,23.907358 311.315253,23.907358 C289.428863,23.907358 271.622662,41.713559 271.622662,63.599949 C271.622662,70.211132 266.273789,75.560005 259.662607,75.560005" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M259.662607,972.347354 C253.057801,972.347354 247.708928,966.998481 247.708928,960.393675 L247.708928,63.638202 C247.708928,57.033396 253.057801,51.684523 259.662607,51.684523 C266.267413,51.684523 271.616286,57.033396 271.616286,63.638202 L271.616286,960.387299 C271.622662,966.992106 266.273789,972.347354 259.662607,972.347354" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M311.315253,1023.993625 C276.244751,1023.993625 247.708928,995.457801 247.708928,960.3873 C247.708928,953.782494 253.057801,948.433621 259.662607,948.433621 C266.267413,948.433621 271.616286,953.782494 271.616286,960.3873 C271.616286,982.27369 289.422487,1000.079891 311.308877,1000.079891 C317.913683,1000.079891 323.262556,1005.428764 323.262556,1012.03357 C323.262556,1018.638376 317.92006,1023.993625 311.315253,1023.993625" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M511.971311,984.587922 C486.176864,984.587922 465.189391,963.600448 465.189391,937.806002 C465.189391,912.011555 486.176865,891.024082 511.971311,891.024082 C537.765758,891.024082 558.753231,912.011556 558.753231,937.806002 C558.753231,963.600448 537.765758,984.587922 511.971311,984.587922 M511.971311,914.937816 C499.360976,914.937816 489.103125,925.195667 489.103125,937.806002 C489.103125,950.409962 499.360976,960.674188 511.971311,960.674188 C524.575271,960.674188 534.839497,950.416337 534.839497,937.806002 C534.839497,925.195667 524.575271,914.937816 511.971311,914.937816" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M561.112091,75.560005 L456.155597,75.560005 C449.550791,75.560005 444.201918,70.211132 444.201918,63.606326 C444.201918,57.00152 449.550791,51.652647 456.155597,51.652647 L561.112091,51.652647 C567.716897,51.652647 573.06577,57.00152 573.06577,63.606326 C573.06577,70.211132 567.716897,75.560005 561.112091,75.560005" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M712.691122,878.15236 L311.245125,878.15236 C299.208567,878.15236 289.416112,868.359906 289.416112,856.323347 L289.416113,126.785506 C289.416113,114.748948 299.208567,104.962869 311.245126,104.962869 L712.691123,104.962869 C724.727681,104.962869 734.520136,114.748948 734.520136,126.785506 L734.520134,856.329722 C734.520134,868.359905 724.72768,878.15236 712.691122,878.15236 M311.245125,120.907484 C308.000099,120.907484 305.360727,123.546856 305.360727,126.785507 L305.360727,856.329722 C305.360727,859.574748 308.000099,862.21412 311.245125,862.21412 L712.691122,862.21412 C715.936148,862.21412 718.57552,859.574748 718.57552,856.329722 L718.57552,126.785506 C718.57552,123.54048 715.936148,120.907483 712.691122,120.907483 L311.245125,120.907484" />
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <DrawingImage x:Key="__DrawingImage1">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,1024 L1024,1024 L1024,0 L0,0">
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M712.620994,1023.993625 L311.315253,1023.993625 C304.710447,1023.993625 299.361574,1018.644752 299.361574,1012.039946 C299.361574,1005.43514 304.710447,1000.086267 311.315253,1000.086267 L712.620993,1000.086267 C719.225799,1000.086267 724.574672,1005.43514 724.574672,1012.039946 C724.574672,1018.644752 719.2258,1023.993625 712.620994,1023.993625" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M712.620994,1023.993625 C706.016188,1023.993625 700.667315,1018.644752 700.667315,1012.039946 C700.667315,1005.43514 706.016188,1000.086267 712.620994,1000.086267 C734.507384,1000.086267 752.313585,982.280066 752.313585,960.393676 C752.313585,953.78887 757.662458,948.439997 764.267264,948.439997 C770.87207,948.439997 776.220943,953.78887 776.220943,960.393676 C776.227319,995.457801 747.697871,1023.993625 712.620994,1023.993625" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M764.27364,972.347354 C757.668834,972.347354 752.319961,966.998481 752.319961,960.393675 L752.31996,63.638202 C752.31996,57.033396 757.668833,51.684523 764.273639,51.684523 C770.878445,51.684523 776.227318,57.033396 776.227318,63.638202 L776.227318,960.387299 C776.227319,966.992106 770.878446,972.347354 764.27364,972.347354" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M764.27364,75.560005 C757.668834,75.560005 752.319961,70.211132 752.319961,63.606326 C752.319961,41.719936 734.51376,23.913735 712.62737,23.913735 C706.022564,23.913735 700.673691,18.564862 700.673691,11.960056 C700.673691,5.35525000000001 706.016187,0 712.620994,0 C747.691496,0 776.227319,28.535824 776.227319,63.606325 C776.227319,70.211132 770.878446,75.560005 764.27364,75.560005" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M712.620994,23.913734 L311.315253,23.913734 C304.710447,23.913734 299.361574,18.564861 299.361574,11.960055 C299.361574,5.355249 304.710447,0 311.315253,0 L712.620993,0 C719.2258,0 724.581048,5.348873 724.581048,11.953679 C724.581048,18.558485 719.2258,23.913734 712.620994,23.913734" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M259.662607,75.560005 C253.057801,75.560005 247.708928,70.211132 247.708928,63.606325 C247.708928,28.535824 276.244752,0 311.315253,0 C317.920059,0 323.268932,5.348873 323.268932,11.953679 C323.268932,18.558485 317.920059,23.907358 311.315253,23.907358 C289.428863,23.907358 271.622662,41.713559 271.622662,63.599949 C271.622662,70.211132 266.273789,75.560005 259.662607,75.560005" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M259.662607,972.347354 C253.057801,972.347354 247.708928,966.998481 247.708928,960.393675 L247.708928,63.638202 C247.708928,57.033396 253.057801,51.684523 259.662607,51.684523 C266.267413,51.684523 271.616286,57.033396 271.616286,63.638202 L271.616286,960.387299 C271.622662,966.992106 266.273789,972.347354 259.662607,972.347354" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M311.315253,1023.993625 C276.244751,1023.993625 247.708928,995.457801 247.708928,960.3873 C247.708928,953.782494 253.057801,948.433621 259.662607,948.433621 C266.267413,948.433621 271.616286,953.782494 271.616286,960.3873 C271.616286,982.27369 289.422487,1000.079891 311.308877,1000.079891 C317.913683,1000.079891 323.262556,1005.428764 323.262556,1012.03357 C323.262556,1018.638376 317.92006,1023.993625 311.315253,1023.993625" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M511.971311,984.587922 C486.176864,984.587922 465.189391,963.600448 465.189391,937.806002 C465.189391,912.011555 486.176865,891.024082 511.971311,891.024082 C537.765758,891.024082 558.753231,912.011556 558.753231,937.806002 C558.753231,963.600448 537.765758,984.587922 511.971311,984.587922 M511.971311,914.937816 C499.360976,914.937816 489.103125,925.195667 489.103125,937.806002 C489.103125,950.409962 499.360976,960.674188 511.971311,960.674188 C524.575271,960.674188 534.839497,950.416337 534.839497,937.806002 C534.839497,925.195667 524.575271,914.937816 511.971311,914.937816" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M561.112091,75.560005 L456.155597,75.560005 C449.550791,75.560005 444.201918,70.211132 444.201918,63.606326 C444.201918,57.00152 449.550791,51.652647 456.155597,51.652647 L561.112091,51.652647 C567.716897,51.652647 573.06577,57.00152 573.06577,63.606326 C573.06577,70.211132 567.716897,75.560005 561.112091,75.560005" />
+            <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M712.691122,878.15236 L311.245125,878.15236 C299.208567,878.15236 289.416112,868.359906 289.416112,856.323347 L289.416113,126.785506 C289.416113,114.748948 299.208567,104.962869 311.245126,104.962869 L712.691123,104.962869 C724.727681,104.962869 734.520136,114.748948 734.520136,126.785506 L734.520134,856.329722 C734.520134,868.359905 724.72768,878.15236 712.691122,878.15236 M311.245125,120.907484 C308.000099,120.907484 305.360727,123.546856 305.360727,126.785507 L305.360727,856.329722 C305.360727,859.574748 308.000099,862.21412 311.245125,862.21412 L712.691122,862.21412 C715.936148,862.21412 718.57552,859.574748 718.57552,856.329722 L718.57552,126.785506 C718.57552,123.54048 715.936148,120.907483 712.691122,120.907483 L311.245125,120.907484" />
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <DrawingImage x:Key="delete_DrawingImage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,11.2 L12.1,11.2 L12.1,0 L0,0">
+            <DrawingGroup>
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M8.6,0.8 L3.6,0.8 C3.4,0.8 3.2,0.6 3.2,0.4 C3.2,0.2 3.3,0 3.5,0 L8.5,0 C8.7,0 8.9,0.2 8.9,0.4 C8.9,0.6 8.8,0.8 8.6,0.8" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M11.7,3.1 L0.4,3.1 C0.2,3.1 0,2.9 0,2.7 C0,2.5 0.2,2.3 0.4,2.3 L11.7,2.3 C11.9,2.3 12.1,2.5 12.1,2.7 C12.1,2.9 11.9,3.1 11.7,3.1" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M9.8,11.2 L2.3,11.2 C2.1,11.2 1.9,11 1.9,10.8 L1.9,2.7 C1.9,2.5 2.1,2.3 2.3,2.3 C2.5,2.3 2.7,2.5 2.7,2.7 L2.7,10.5 L9.5,10.5 L9.5,2.7 C9.5,2.5 9.7,2.3 9.9,2.3 C10.1,2.3 10.3,2.5 10.3,2.7 L10.3,10.9 C10.2,11.1 10,11.2 9.8,11.2" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M4.5,9.2 C4.3,9.2 4.2,9 4.2,8.8 L4.2,4.7 C4.2,4.5 4.4,4.3 4.6,4.3 C4.8,4.3 5,4.5 5,4.7 L5,8.8 C4.9,9 4.7,9.2 4.5,9.2" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M7.6,9.2 C7.3,9.2 7.2,9 7.2,8.8 L7.2,4.7 C7.2,4.5 7.4,4.3 7.6,4.3 C7.8,4.3 8,4.5 8,4.7 L8,8.8 C7.9,9 7.8,9.2 7.6,9.2" />
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <DrawingImage x:Key="delete_DrawingImage_MouseOver" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,11.2 L12.1,11.2 L12.1,0 L0,0">
+            <DrawingGroup>
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M8.6,0.8 L3.6,0.8 C3.4,0.8 3.2,0.6 3.2,0.4 C3.2,0.2 3.3,0 3.5,0 L8.5,0 C8.7,0 8.9,0.2 8.9,0.4 C8.9,0.6 8.8,0.8 8.6,0.8" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M11.7,3.1 L0.4,3.1 C0.2,3.1 0,2.9 0,2.7 C0,2.5 0.2,2.3 0.4,2.3 L11.7,2.3 C11.9,2.3 12.1,2.5 12.1,2.7 C12.1,2.9 11.9,3.1 11.7,3.1" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M9.8,11.2 L2.3,11.2 C2.1,11.2 1.9,11 1.9,10.8 L1.9,2.7 C1.9,2.5 2.1,2.3 2.3,2.3 C2.5,2.3 2.7,2.5 2.7,2.7 L2.7,10.5 L9.5,10.5 L9.5,2.7 C9.5,2.5 9.7,2.3 9.9,2.3 C10.1,2.3 10.3,2.5 10.3,2.7 L10.3,10.9 C10.2,11.1 10,11.2 9.8,11.2" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M4.5,9.2 C4.3,9.2 4.2,9 4.2,8.8 L4.2,4.7 C4.2,4.5 4.4,4.3 4.6,4.3 C4.8,4.3 5,4.5 5,4.7 L5,8.8 C4.9,9 4.7,9.2 4.5,9.2" />
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M12.1,11.2 M0,0 M7.6,9.2 C7.3,9.2 7.2,9 7.2,8.8 L7.2,4.7 C7.2,4.5 7.4,4.3 7.6,4.3 C7.8,4.3 8,4.5 8,4.7 L8,8.8 C7.9,9 7.8,9.2 7.6,9.2" />
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <ListView Width="513" Height="260" ItemsSource="{Binding Devices}">
+    <Control.Template>
+      <ControlTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Border Margin="30 0 0 0">
+            <lang:LangTextBlock FontSize="15pt" Foreground="#737373" LangText="Registered devices" LangKey="K0705" />
+          </Border>
+          <Grid Row="1" Margin="45 15">
+            <ScrollViewer Name="itemsHost">
+              <ItemsPresenter />
+            </ScrollViewer>
+            <lang:LangTextBlock Name="noDevicesTips" LangText="No device registered" LangKey="K0706" HorizontalAlignment="Center" Foreground="#737373" FontSize="10pt" VerticalAlignment="Center" />
+          </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+          <DataTrigger Value="true" Binding="{Binding Devices, Converter={StaticResource listCountToBooleanConverter}}">
+            <Setter TargetName="itemsHost" Property="UIElement.Visibility" Value="Visible" />
+            <Setter TargetName="noDevicesTips" Property="UIElement.Visibility" Value="Collapsed" />
+          </DataTrigger>
+          <DataTrigger Value="false" Binding="{Binding Devices, Converter={StaticResource listCountToBooleanConverter}}">
+            <Setter TargetName="itemsHost" Property="UIElement.Visibility" Value="Collapsed" />
+            <Setter TargetName="noDevicesTips" Property="UIElement.Visibility" Value="Visible" />
+          </DataTrigger>
+        </ControlTemplate.Triggers>
+      </ControlTemplate>
+    </Control.Template>
+    <ItemsControl.ItemContainerStyle>
+      <Style TargetType="{x:Type ListViewItem}">
+        <Setter Property="Height" Value="35" />
+        <Setter Property="Margin" Value="0 3" />
+        <Setter Property="Foreground" Value="#737373" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListViewItem}">
+              <Border BorderThickness="0" Background="{TemplateBinding Control.Background}">
+                <Grid Background="{TemplateBinding Control.Background}">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="15" />
+                  </Grid.ColumnDefinitions>
+                  <lang:LangTextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="{TemplateBinding Control.Foreground}" FontSize="10pt" LangText="{Binding Converter={StaticResource _IndexConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}}" LangKey="{Binding Converter={StaticResource _IndexConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}}" />
+                  <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Image Name="img" Source="{DynamicResource __DrawingImage1}" />
+                    <TextBlock Grid.Column="1" Margin="4 0 0 0" VerticalAlignment="Center" Foreground="{TemplateBinding Control.Foreground}" FontSize="10pt" Text="{Binding ModelName}" />
+                  </StackPanel>
+                  <lang:LangButton Name="btn" Grid.Column="2" LangContent="Details" LangKey="K0519" MinWidth="70" Height="27" Padding="8 0" Cursor="Hand" FontSize="10pt" BorderCornerRadius="5" Command="{Binding DataContext.DetailCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListView}}}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefaultBlueButtonStyle}}" />
+                  <lang:LangButton Grid.Column="3" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListView}}}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}">
+                    <Control.Template>
+                      <ControlTemplate TargetType="{x:Type lang:LangButton}">
+                        <Border Width="25" Height="25">
+                          <Image Name="icon" Source="{Binding delete_DrawingImage}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                          <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter TargetName="icon" Value="{StaticResource delete_DrawingImage_MouseOver}" Property="Image.Source" />
+                          </Trigger>
+                          <Trigger Property="UIElement.IsMouseOver" Value="False">
+                            <Setter TargetName="icon" Value="{StaticResource delete_DrawingImage}" Property="Image.Source" />
+                          </Trigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </Control.Template>
+                  </lang:LangButton>
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter TargetName="img" Value="{DynamicResource __DrawingImage}" Property="Image.Source" />
+                  <Setter Property="Foreground" Value="#43B5E2" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ItemsControl.ItemContainerStyle>
+  </ListView>
+</UserControl>

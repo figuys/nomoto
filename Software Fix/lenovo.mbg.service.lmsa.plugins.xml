@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PluginCatalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Plugins>
+		<Plugin PluginID="8ab04aa975e34f1ca4f9dc3a81374e2c" PluginNameKey="K0102" PluginName="Rescue" Version="7.1.4.13"  PluginIconPath="icon_rescue" PluginAssemblyName="lenovo.mbg.service.lmsa.flash" Description="Rescue" Install="true" ForceType="true" Bits="0" />
+
+		<Plugin PluginID="13f79fe4cfc98747c78794a943886bcd" PluginNameKey="K0481" PluginName="Backup&#x0a;&amp;Restore" Version="7.1.4.13"  PluginIconPath="icon_backup_restore"  PluginAssemblyName="lenovo.mbg.service.lmsa.phoneManager" Description="BackupRestore" Install="true" ForceType="true" Bits="0" />
+
+		<Plugin PluginID="02928af025384c75ae055aa2d4f256c8" PluginNameKey="K0433" PluginName="My Device" Version="7.1.4.13" PluginIconPath="icon_my_device" PluginAssemblyName="lenovo.mbg.service.lmsa.phoneManager" Description="MyDevice" Install="true" ForceType="true" Bits="0" />
+
+    <Plugin PluginID="985c66acdde2483ed96844a6b5ea4337" PluginNameKey="K1556" PluginName="Hardware Test" Version="6.9.2.2" PluginIconPath="icon_hw_test" PluginAssemblyName="lenovo.mbg.service.lmsa.phoneManager" Description="Hardware" Install="true" ForceType="true" Bits="0" />
+
+		<Plugin PluginID="dd537b5c6c074ae49cc8b0b2965ce54a" PluginNameKey="K0182" PluginName="Toolbox" Version="7.1.4.13"  PluginIconPath="icon_toolbox"  Description="Toolbox" Install="true" ForceType="true" Bits="0" />
+
+		<Plugin PluginID="a6099126929a4e74ac86f1c2405dcb32" PluginNameKey="K0258" PluginName="Support" Version="7.1.4.13"  PluginIconPath="icon_support"  PluginAssemblyName="lenovo.mbg.service.lmsa.support" Description="Support" Install="true" ForceType="true" Bits="0" />
+	</Plugins>
+</PluginCatalog>

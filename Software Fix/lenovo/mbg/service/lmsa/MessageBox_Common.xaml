@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.MessageBox_Common" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" x:Name="messageBox_Common" xmlns:lmsa="clr-namespace:lenovo.mbg.service.lmsa;assembly=Software Fix" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Triggers>
+    <EventTrigger RoutedEvent="Loaded">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation From="0" To="1" Duration="0:0:0.3" Storyboard.TargetProperty="Opacity" />
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </FrameworkElement.Triggers>
+  <Grid Background="#FFFFFF" Width="400" Height="200">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1.1*" />
+      <RowDefinition Height="0.8*" />
+      <RowDefinition Height="0.5*" />
+    </Grid.RowDefinitions>
+    <lang:LangTextBlock Grid.Row="0" Margin="0,24,0,0" FontSize="13" Foreground="#7F7F7F" HorizontalAlignment="Center" VerticalAlignment="Bottom" LangText="{Binding StrTitleTip, ElementName=messageBox_Common}" LangKey="{Binding StrTitleTip, ElementName=messageBox_Common}" />
+    <genericControls:MouseOverButton Name="TxbOk" Grid.Row="2" Background="#43B5E2" MinHeight="30" Height="30" MinWidth="100" HorizontalAlignment="Left" Margin="50 0 0 0" Click="TxbOk_Click">
+      <ContentControl.Content>
+        <lang:LangTextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Medium" FontSize="15" Foreground="#ffffff" LangText="{Binding StrButtonTitle_OK, ElementName=messageBox_Common}" LangKey="{Binding StrButtonTitle_OK, ElementName=messageBox_Common}" />
+      </ContentControl.Content>
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type genericControls:MouseOverButton}">
+          <Border Background="{TemplateBinding Control.Background}">
+            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" />
+          </Border>
+        </ControlTemplate>
+      </Control.Template>
+    </genericControls:MouseOverButton>
+    <genericControls:MouseOverButton Name="TxbCancel" Grid.Row="2" MinHeight="30" Height="30" MinWidth="100" HorizontalAlignment="Right" Margin="0 0 50 0" Click="TxbCancel_Click">
+      <ContentControl.Content>
+        <lang:LangTextBlock Foreground="#787878" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Center" LangText="{Binding StrButtonTitle_Cancel, ElementName=messageBox_Common}" LangKey="{Binding StrButtonTitle_Cancel, ElementName=messageBox_Common}" />
+      </ContentControl.Content>
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type genericControls:MouseOverButton}">
+          <Border Background="{TemplateBinding Control.Background}">
+            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" />
+          </Border>
+        </ControlTemplate>
+      </Control.Template>
+    </genericControls:MouseOverButton>
+    <Grid Name="gridCash" Row="0" RowSpan="3" Visibility="Collapsed">
+      <Image Name="imgCash" Height="50" Width="50" Source="/Software Fix;component/Resource/AssistantPictures/loading_icon.png" RenderTransformOrigin="0.5,0.5">
+        <UIElement.RenderTransform>
+          <RotateTransform x:Name="rotate" Angle="0" CenterX="0" CenterY="0" />
+        </UIElement.RenderTransform>
+      </Image>
+      <lang:LangTextBlock Margin="0,120,0,0" FontSize="13" Foreground="#7F7F7F" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" LangText="{Binding StrCashTip, ElementName=messageBox_Common}" LangKey="{Binding StrCashTip, ElementName=messageBox_Common}" />
+    </Grid>
+  </Grid>
+</Window>

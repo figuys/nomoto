@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.ViewV6.RightPicMessageBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.ViewV6" xmlns:generic="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="RightPicMessageBox" Height="434" Width="778" Style="{DynamicResource V6_DialogStyle}" WindowStartupLocation="CenterOwner">
+  <Grid>
+    <Grid Margin="40 0 20 0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="74" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="220" />
+      </Grid.ColumnDefinitions>
+      <Border Width="50" Height="50" CornerRadius="25" Background="#1A005D7F" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        <Path Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center" Fill="{DynamicResource V6_HighLightBkgBrushKey}" Data="M22.3328483,3.09286316 C27.7967654,4.15226544 31.8816928,8.31886775 31.8745901,13.3029522 C31.8745901,16.9401638 29.7023236,20.1430932 26.4069384,22.0234773 C25.8382061,22.347298 26.0974545,24.1032789 26.3640972,25.3438672 C26.4745022,25.85243 25.9837758,26.2719802 25.5357213,26.0585645 C23.7974074,25.2375263 20.5765287,23.7831835 19.5988013,23.7831835 C17.4978895,23.7831835 15.5176556,23.3319116 13.7863973,22.5355396 C20.9639621,22.5284841 26.7766483,17.5620102 26.7766483,11.4366228 C26.7766483,8.105452 25.0524455,5.12626756 22.3328483,3.09286316 M12.3538984,0 C19.1616405,0 24.7039587,4.85962491 24.7039587,10.8323306 C24.7039587,16.804754 19.1616405,21.6608229 12.3503424,21.6646611 C11.9377913,21.6964392 8.33642188,23.3389107 5.92980803,24.4553217 C5.05864734,24.8569226 4.14159747,24.0181045 4.38684778,23.0511015 C4.75650122,21.5935978 5.15494125,19.954513 5.16555275,19.6523669 C1.91972566,17.6190189 0,14.358855 0,10.8323306 C0,4.85962487 5.54226175,0 12.3538984,0 M12.3503424,3.02179984 C7.12078188,3.02179984 2.86544922,6.52360166 2.86544922,10.8285488 C2.86544922,13.3813533 4.40118459,15.7843547 6.97515569,17.2525828 C7.34102737,17.4625554 8.66729812,18.8241038 7.50454641,20.9570195 C9.49539184,19.2791574 11.4934622,18.63558 12.3503424,18.63558 C17.5795643,18.63558 21.8351792,15.134004 21.8351792,10.8285488 C21.8351792,6.52360166 17.5795643,3.02179984 12.3503424,3.02179984" />
+      </Border>
+      <lang:LangTextBlock Name="tbkTitle" Grid.Row="1" Margin="0 20 0 10" TextWrapping="Wrap" FontWeight="SemiBold" FontSize="14" Foreground="{DynamicResource V6_TitleBrushKey}" />
+      <lang:LangTextBlock Name="txtInfo" Grid.Row="2" TextWrapping="Wrap" LineHeight="16" HorizontalAlignment="Left" Foreground="{DynamicResource V6_ContentBrushKey}" />
+      <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Width="200" Height="300" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="{DynamicResource V6_ImageBkgBrushKey}">
+        <Image Name="img" Width="180" Stretch="Uniform" />
+      </Border>
+      <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 27">
+        <lang:LangTextBlock Name="txtTips" TextWrapping="Wrap" LineHeight="16" HorizontalAlignment="Center" Foreground="{DynamicResource V6_NoticeBrushKey}" />
+        <lang:LangButton Name="btnCancel" Style="{DynamicResource V6_CancelBtnStyle}" HorizontalAlignment="Center" Tag="False" MinWidth="100" Margin="0 0 60 0" Visibility="{Binding CancelBtnVisible}" Click="OnBtnCancel" />
+        <lang:LangButton Name="btnOk" Style="{DynamicResource V6_NormalBtnStyle}" HorizontalAlignment="Center" Tag="True" Click="OnBtnOk" />
+      </StackPanel>
+    </Grid>
+    <Button Name="btnClose" Style="{DynamicResource V6_WndCloseBtnStyle}" Click="OnBtnClose" />
+    <generic:PopupEx Name="pop" Placement="Bottom" Topmost="False" HorizontalOffset="-210" VerticalOffset="8" AllowsTransparency="True" UseLayoutRounding="True" StaysOpen="True" IsOpen="False" PlacementTarget="{Binding ElementName=btnClose}">
+      <Grid Width="350" Height="auto" Background="#00FFFFFF" Margin="20">
+        <Border Background="#FFFFFF" Margin="0 7 0 0" CornerRadius="5">
+          <UIElement.Effect>
+            <DropShadowEffect Color="Gray" BlurRadius="20" />
+          </UIElement.Effect>
+          <StackPanel Margin="11">
+            <lang:LangTextBlock Margin="0 3 0 10" LangKey="K1253" FontSize="13" Style="{DynamicResource V6_TitleTextStyle}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+              <Button Content="K1254" Style="{DynamicResource V6_CancelBtnStyle}" Width="150" Height="Auto" Padding="20 2" Click="OnBtnForce" />
+              <Button Content="K1255" Style="{DynamicResource V6_NormalBtnStyle}" Width="150" Height="Auto" Padding="20 2" Margin="15 0 0 0" Click="OnBtnConitue" />
+            </StackPanel>
+          </StackPanel>
+        </Border>
+        <Polygon Margin="215 0 10 0" VerticalAlignment="Top" Fill="#FFFFFFFF" Points="0,7 14,7 7,0" Stroke="#00FFFFFF" StrokeThickness="0" />
+      </Grid>
+    </generic:PopupEx>
+  </Grid>
+</Window>

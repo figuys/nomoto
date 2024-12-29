@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.Themes" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic">
+  <SolidColorBrush x:Key="TitleBar.Static.Background" Color="{DynamicResource {x:Static generic:ResourceColor.PrimaryBlueColor}}" />
+  <SolidColorBrush x:Key="TitleBar.OperateButton.Static.Foreground" Color="{DynamicResource {x:Static generic:ResourceColor.PrimaryBlueColor}}" />
+</ResourceDictionary>

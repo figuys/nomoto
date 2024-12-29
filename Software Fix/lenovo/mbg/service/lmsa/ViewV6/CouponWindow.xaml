@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.ViewV6.CouponWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.ViewV6" SizeToContent="WidthAndHeight" ShowInTaskbar="False" Style="{StaticResource V6_WindowStyle}" WindowStartupLocation="CenterOwner" Title="CouponWindow">
+  <Border Margin="25" CornerRadius="7">
+    <UIElement.Effect>
+      <DropShadowEffect Color="#CCCCCC" BlurRadius="10" ShadowDepth="1" Direction="315" />
+    </UIElement.Effect>
+    <Border.Background>
+      <ImageBrush ImageSource="{StaticResource v6_Couponcode_bg}" />
+    </Border.Background>
+    <Grid MinHeight="434" Width="778">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="168" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Button Style="{StaticResource v6_comm_img_button}" Panel.ZIndex="999" HorizontalAlignment="Right" VerticalAlignment="Top" Width="44" Height="44" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_Coupon_code_close_icon}" Grid.Column="1" Margin="0,-20,-20,0" Command="{Binding CloseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+      <StackPanel Margin="36 0">
+        <WrapPanel Margin="0 25 0 0">
+          <lang:LangTextBlock Style="{StaticResource v6_comm_text_style_10}" LangKey="K0230" VerticalAlignment="Bottom" LineHeight="50" />
+          <TextBlock Text="*" Foreground="#6EC2ED" FontSize="38" FontWeight="SemiBold" Margin="10 15 0 0">
+            <UIElement.Effect>
+              <DropShadowEffect BlurRadius="0" ShadowDepth="2" Color="#FFFFFF" />
+            </UIElement.Effect>
+          </TextBlock>
+          <TextBlock Foreground="#6EC2ED" FontSize="64" FontWeight="Bold" Margin="8 0 0 0" Text="{Binding Discount}">
+            <UIElement.Effect>
+              <DropShadowEffect BlurRadius="0" ShadowDepth="2" Color="#FFFFFF" />
+            </UIElement.Effect>
+          </TextBlock>
+          <lang:LangTextBlock Style="{StaticResource v6_comm_text_style_10}" LangKey="K1388" VerticalAlignment="Bottom" LineHeight="50" Margin="8 0 0 0" />
+        </WrapPanel>
+        <Grid Margin="0 10 0 0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Border Width="4" Height="4" CornerRadius="2" Background="#9FAEBF" VerticalAlignment="Top" Margin="0 6 0 0" />
+          <TextBlock Grid.Column="1" Style="{StaticResource v6_comm_text_style_6}" Margin="10 0 0 0" Text="{Binding SubText}">
+            <TextBlock.TextEffects>
+              <TextEffect Foreground="#6EC2ED" PositionStart="{Binding PositionStart}" PositionCount="{Binding PositionCount}" />
+            </TextBlock.TextEffects>
+          </TextBlock>
+        </Grid>
+        <Grid Margin="0 5 0 0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Border Width="4" Height="4" CornerRadius="2" Background="#9FAEBF" VerticalAlignment="Top" Margin="0 6 0 0" />
+          <lang:LangTextBlock Grid.Column="1" Style="{StaticResource v6_comm_text_style_6}" LangKey="K1389" Margin="10 0 0 0" />
+        </Grid>
+        <WrapPanel Margin="0 20 0 0">
+          <lang:LangTextBlock Style="{StaticResource v6_comm_text_style_6}" FontSize="22" Foreground="#FFFFFF" LangKey="K1392" />
+          <TextBlock Style="{StaticResource v6_comm_text_style_6}" FontWeight="Bold" FontSize="22" Foreground="#6EC2ED" Margin="8 0 8 0" Text="{Binding Code}" />
+        </WrapPanel>
+      </StackPanel>
+      <StackPanel Grid.Row="2" Margin="36 0 36 29" Visibility="{Binding TextVisibility}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="*" Foreground="#FFB687" VerticalAlignment="Top" />
+          <lang:LangTextBlock Grid.Column="1" Style="{StaticResource v6_comm_text_style_6}" FontSize="12" Foreground="#FFB687" LangKey="K1401" Margin="10 0 0 0" />
+        </Grid>
+        <Grid Margin="0 5 0 0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Text="*" Foreground="#FFB687" VerticalAlignment="Top" />
+          <lang:LangTextBlock Grid.Column="1" Style="{StaticResource v6_comm_text_style_6}" FontSize="12" Foreground="#FFB687" LangKey="K1393" Margin="10 0 0 0" />
+        </Grid>
+      </StackPanel>
+      <Button Grid.Column="1" Grid.RowSpan="3" Command="{Binding BuyCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border Background="#005D7F" Padding="8" CornerRadius="0 7 7 0">
+              <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <lang:LangTextBlock LangKey="K1394" FontSize="24" Foreground="#FFFFFF" FontWeight="Medium" TextWrapping="Wrap" />
+                <Image Width="32" Height="26" Source="{StaticResource v6_Icon_Get_it_3}" Margin="0 26 0 0" />
+              </StackPanel>
+            </Border>
+          </ControlTemplate>
+        </Control.Template>
+      </Button>
+    </Grid>
+  </Border>
+</Window>

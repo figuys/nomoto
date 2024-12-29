@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE res [
+  <!ELEMENT res ANY>
+  <!ELEMENT dirs ANY>
+  <!ELEMENT dir ANY>
+  <!ELEMENT files ANY>
+  <!ELEMENT file ANY>
+  <!ATTLIST dirs id ID #REQUIRED>
+  <!ATTLIST files id ID #REQUIRED>
+]>
+<res>
+  <dirs id="dirs">
+  </dirs>
+  <files id="files">
+  </files>
+</res>

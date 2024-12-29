@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.PlugInPanelModel" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:localporject="clr-namespace:lenovo.mbg.service.lmsa" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericConvert="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Name="plugInPanelModel" Margin="0 0 0 0" Padding="0 0 0 0" BorderThickness="0" Template="{DynamicResource PluginTemplate}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <sys:Boolean x:Key="trueValue">true</sys:Boolean>
+      <sys:Boolean x:Key="falseValue">false</sys:Boolean>
+      <genericConvert:SupperBooleanToVisibilityConverter x:Key="supperBooleanToVisibilityConverter" />
+      <ControlTemplate x:Key="PluginTemplate">
+        <Grid MinWidth="80" Background="{TemplateBinding Control.Background}">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="52" />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <Image Name="imgIcon" Grid.Row="0" VerticalAlignment="Center" Width="28" Height="29" HorizontalAlignment="Center" Margin="0 0 0 0" Source="{Binding IconImageSource, ElementName=plugInPanelModel}" />
+          <lang:LangTextBlock Name="txbTitle" Grid.Row="1" TextWrapping="Wrap" MaxWidth="125" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" TextAlignment="Center" FontSize="14" VerticalAlignment="Center" Margin="7 -10 7 0" LangText="{Binding strTitle, ElementName=plugInPanelModel}" LangKey="{Binding strTitle, ElementName=plugInPanelModel}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+          <DataTrigger Value="true" Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}">
+            <Setter Property="Control.Background" Value="#57C4EC" />
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+            <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+          </DataTrigger>
+          <DataTrigger Value="false" Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}">
+            <Setter Property="Control.Background" Value="#43B5E2" />
+            <Setter Property="Control.Foreground" Value="#ffffff" />
+          </DataTrigger>
+          <DataTrigger Value="true" Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}">
+            <Setter Property="Control.Background" Value="#ffffff" />
+            <Setter Property="Control.Foreground" Value="#43B5E2" />
+            <Setter TargetName="imgIcon" Property="Image.Source" Value="{Binding IconImageSourceSelected, ElementName=plugInPanelModel}" />
+            <Setter TargetName="imgIcon" Property="FrameworkElement.Width" Value="42" />
+            <Setter TargetName="imgIcon" Property="FrameworkElement.Height" Value="40" />
+          </DataTrigger>
+          <DataTrigger Value="false" Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}">
+            <Setter TargetName="txbTitle" Property="FrameworkElement.Margin" Value="7 -15 7 0" />
+          </DataTrigger>
+        </ControlTemplate.Triggers>
+      </ControlTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+</UserControl>

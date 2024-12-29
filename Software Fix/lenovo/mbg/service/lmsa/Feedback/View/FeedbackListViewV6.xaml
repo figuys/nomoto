@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.Feedback.View.FeedbackListViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.Feedback.View" xmlns:form="clr-namespace:lenovo.mbg.service.lmsa.common.Form.View;assembly=lenovo.mbg.service.lmsa.common" xmlns:localVM="clr-namespace:lenovo.mbg.service.lmsa.Feedback.ViewModel" xmlns:localBll="clr-namespace:lenovo.mbg.service.lmsa.Feedback.Business" xmlns:login="clr-namespace:lenovo.mbg.service.lmsa.Login.View" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:localConverters="clr-namespace:lenovo.mbg.service.lmsa.Login.Converters" xmlns:feedbackConverters="clr-namespace:lenovo.mbg.service.lmsa.Feedback.Converter" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:gif="clr-namespace:lenovo.themes.generic.Gif;assembly=lenovo.themes.generic" xmlns:attach="clr-namespace:lenovo.themes.generic.AttachedProperty;assembly=lenovo.themes.generic" Style="{DynamicResource V6_DialogStyle}" SizeToContent="WidthAndHeight" Foreground="#FF001429" FontSize="14">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/Global.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="feedbackListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="ItemContainerStyle">
+          <Setter.Value>
+            <Style TargetType="{x:Type ListBoxItem}">
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border BorderThickness="0">
+                      <ContentPresenter />
+                    </Border>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="feedbackSubContentListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Margin" Value="17 8 17 8" />
+        <Setter Property="ItemContainerStyle">
+          <Setter.Value>
+            <Style TargetType="{x:Type ListBoxItem}">
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border BorderThickness="0" Margin="0 0 0 0">
+                      <ContentPresenter />
+                    </Border>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <localVM:FeedbackSubContentTemplateSelector x:Key="feedbackSubContentTemplateSelector" />
+      <localVM:FeedbackItemTemplateSelector x:Key="feedbackItemTemplateSelector" />
+      <localBll:TokenImageUrlConverter x:Key="tokenImageUrlConverter" />
+      <feedbackConverters:HelpfulTemplateSelector x:Key="helpfulTemplateSelector" />
+      <DataTemplate x:Key="helpfulReadyOptionDataTemplate">
+        <Border BorderThickness="0 1 0 0" BorderBrush="#FFD4DCE3" Height="85" MinWidth="300">
+          <StackPanel Margin="0 11 0 0">
+            <lang:LangTextBlock LangText="Was this information helpful?" LangKey="K0808" Foreground="#FF345375" HorizontalAlignment="Center" />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 13 0 0">
+              <lang:LangButton LangKey="K0570" Style="{StaticResource V6_CancelBtnStyle}" Command="{Binding NoHelpfulCommand}" />
+              <lang:LangButton Margin="26 0 0 0" LangKey="K0571" Style="{StaticResource V6_NormalBtnStyle}" Command="{Binding HelpfulCommand}" />
+            </StackPanel>
+          </StackPanel>
+        </Border>
+      </DataTemplate>
+      <DataTemplate x:Key="helpfulNoDataTemplate">
+        <Border BorderThickness="0 1 0 0" BorderBrush="#FFD4DCE3" Height="85" MinWidth="300">
+          <lang:LangTextBlock Margin="20 0" LangText="Please reply to us with your further comments." LangKey="K0816" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" />
+        </Border>
+      </DataTemplate>
+      <DataTemplate x:Key="helpfulYesDataTemplate">
+        <Border BorderThickness="0 1 0 0" BorderBrush="#FFD4DCE3" Height="85" MinWidth="300">
+          <StackPanel Margin="20 0" VerticalAlignment="Center">
+            <lang:LangTextBlock LangText="Thank you!" LangKey="K0848" HorizontalAlignment="Center" />
+            <lang:LangTextBlock LangText="We appreciate your feedback." LangKey="K0849" HorizontalAlignment="Center" Margin="0 10 0 0" TextWrapping="Wrap" />
+          </StackPanel>
+        </Border>
+      </DataTemplate>
+      <DataTemplate x:Key="helpfulEmptyDataTemplate" />
+      <DataTemplate x:Key="feedbackForQuestion">
+        <Grid Margin="0 0 30 0" HorizontalAlignment="Right">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MaxWidth="560" />
+            <ColumnDefinition Width="65" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" Source="../../ResourceV6/feedback_user_avatar.png" />
+          <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" FontWeight="Medium" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="{Binding Title}" />
+          <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FF9FAEBF" Text="{Binding Date, StringFormat=yyyy-MM-dd HH:mm:ss}" />
+          <Border Grid.Row="2" CornerRadius="12 0 12 12" Background="#FFFFFFFF" />
+          <ListBox Grid.Row="2" Style="{StaticResource feedbackSubContentListBoxStyle}" ItemTemplateSelector="{StaticResource feedbackSubContentTemplateSelector}" ItemsSource="{Binding FeedbackContentItmes}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="feedbackForAnswer">
+        <Grid Margin="30 0 0 0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="auto" MaxWidth="560" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+          </Grid.RowDefinitions>
+          <Image Grid.Row="0" Grid.RowSpan="2" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" Source="../../ResourceV6/feedback_kefu_avatar.png" />
+          <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" FontWeight="Medium" VerticalAlignment="Bottom" Text="{Binding Title}" />
+          <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Foreground="#FF9FAEBF" Text="{Binding Date, StringFormat=yyyy-MM-dd HH:mm:ss}" />
+          <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" CornerRadius="0 12 12 12" Background="#FFFFFFFF" />
+          <ListBox Grid.Row="2" Grid.Column="1" Style="{StaticResource feedbackSubContentListBoxStyle}" ItemTemplateSelector="{StaticResource feedbackSubContentTemplateSelector}" ItemsSource="{Binding FeedbackContentItmes}" />
+          <ContentPresenter Grid.Row="3" Grid.Column="1" DataContext="{Binding}" Visibility="{Binding HelpfulCode, Converter={StaticResource notEqualsToVisibilityConverter}, ConverterParameter={x:Null}}" ContentTemplateSelector="{Binding DataTemplateSelector}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="feedbackSubContentForImage">
+        <Image Cursor="Hand" MinWidth="20" MaxWidth="520" Stretch="Uniform" attach:ImageDownloader.UrlConverter="{StaticResource tokenImageUrlConverter}" attach:ImageDownloader.Url="{Binding Content}" Tag="{Binding Content}" PreviewMouseDown="ImgContentPreviewMouseDown" />
+      </DataTemplate>
+      <DataTemplate x:Key="feedbackSubContentForString">
+        <TextBox TextWrapping="Wrap" MaxWidth="520" BorderThickness="0" IsReadOnly="True" Text="{Binding Content}" />
+      </DataTemplate>
+      <Style x:Key="v6_copy_textbox_style" TargetType="{x:Type TextBox}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#FF001429" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" Background="#FFFFFFFF">
+                <Grid Margin="18 15 0 15" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <lang:LangTextBlock LangText="Share with us anything that you want to when using Software Fix, like question, issue, or advice" LangKey="K0722" Foreground="#FF9FAEBF" TextWrapping="Wrap" Visibility="{Binding Path=Text.IsEmpty, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource bool2VisibilityConverter}}" />
+                  <ScrollViewer Name="PART_ContentHost" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource V6_CommonScrollViewerStyle}" />
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border Width="778" Height="586" CornerRadius="12" Background="#FFFFFFFF">
+    <ScrollViewer Background="#00FFFFFF" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" CanContentScroll="True" Style="{StaticResource V6_CommonScrollViewerStyle}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="55" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="227" />
+        </Grid.RowDefinitions>
+        <lang:LangTextBlock Grid.Row="0" Margin="29 0 0 0" LangText="Feedback for Software Fix" LangKey="K0716" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Medium" FontSize="16" />
+        <Button Grid.Row="0" Margin="0 0 22 0" Style="{StaticResource V6_WndCloseBtnStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Click="CloseBtnClick" />
+        <Border Grid.Row="1" Height="282" Background="#81D4DCE3">
+          <ListBox Margin="0 10" Style="{StaticResource feedbackListBoxStyle}" ItemTemplateSelector="{StaticResource feedbackItemTemplateSelector}" ItemsSource="{Binding FeedbackItems}" />
+        </Border>
+        <StackPanel Grid.Row="2" Margin="29 5 0 0" Orientation="Vertical">
+          <lang:LangTextBlock VerticalAlignment="Top">
+            <Run Text="*" Foreground="#FFFF4042" /> <lang:LangRun LangText="Comments:" LangKey="K0720" /></lang:LangTextBlock>
+          <DockPanel LastChildFill="True" HorizontalAlignment="Center" Height="92" Margin="-29 5 0 0" Width="719">
+            <Border Name="bdInvid" Background="#EE4848" DockPanel.Dock="Top" CornerRadius="4,4,0,0" Height="29" Visibility="Collapsed">
+              <lang:LangTextBlock VerticalAlignment="Center" FontWeight="Regular" LangText="The character is invalid" LangKey="K1761" Foreground="#FFFFFF" />
+            </Border>
+            <TextBox Name="txtComments" Width="719" BorderBrush="#FFD4DCE3" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Style="{StaticResource v6_copy_textbox_style}" Text="{Binding Comments}" TextChanged="TxtCommentsTextChanged" />
+          </DockPanel>
+          <CheckBox Margin="0 14 0 0" Style="{StaticResource v6_defaultCheckBoxStyle}" IsChecked="{Binding LogFileIsChekced}">
+            <ContentControl.Content>
+              <lang:LangTextBlock LangText="Upload logs" LangKey="K0728" />
+            </ContentControl.Content>
+          </CheckBox>
+          <lang:LangTextBlock Margin="34 5 0 20" LangText="Tick this option to upload application logs for analysis" LangKey="K0729" Foreground="#FF345375" />
+          <lang:LangButton Name="btnReply" LangKey="K0576" MinWidth="135" Style="{StaticResource V6_NormalBtnStyle}" IsEnabled="{Binding SubmitButtonIsEnabled, Mode=TwoWay}" Command="{Binding ReplyCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+        </StackPanel>
+      </Grid>
+    </ScrollViewer>
+  </Border>
+</Window>

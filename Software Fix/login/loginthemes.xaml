@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localConverters="clr-namespace:lenovo.mbg.service.lmsa.Login.Converters" xmlns:localViewModel="clr-namespace:lenovo.mbg.service.lmsa.Login.ViewModel" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:formViewModel="clr-namespace:lenovo.mbg.service.lmsa.common.Form.ViewModel;assembly=lenovo.mbg.service.lmsa.common" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/Global.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutScrollViewerStyle}}" />
+  <localConverters:ObjectToDoubleConverter x:Key="objectToDoubleConverter" />
+  <localConverters:PasswordLevelToForegroundConverter x:Key="passwordLevelToForegroundConverter" />
+  <formViewModel:FormItemVerifyWraningDataTemplateSelector x:Key="registerWraningDataTemplateSelector" />
+  <DataTemplate x:Key="emptyWraningDataTemplate" />
+  <DrawingImage x:Key="_____2_DrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,1024 L1024,1024 L1024,0 L0,0">
+        <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M0,0 L0,1024 L1024,1024 L1024,0 L0,0 M960,960 L64,960 L64,64 L960,64 L960,960" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="_____2_DrawingImage1">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,1024 L1024,1024 L1024,0 L0,0">
+        <GeometryDrawing Brush="#FF737373" Geometry="F1 M1024,1024 M0,0 M0,0 L0,1024 L1024,1024 L1024,0 L0,0 M960,960 L64,960 L64,64 L960,64 L960,960" />
+        <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M1024,1024 M0,0 M864,339.2 L460.8,742.4 C435.2,768 396.8,768 377.6,748.8 L179.2,550.4 C153.6,524.8 153.6,486.4 179.2,460.8 C204.8,435.2 243.2,435.2 268.8,460.8 L416,608 L774.4,249.6 C800,224 838.4,224 864,249.6 C889.6,275.2 889.6,320 864,339.2" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+  <DrawingImage x:Key="geometryLine">
+    <DrawingImage.Drawing>
+      <GeometryDrawing>
+        <GeometryDrawing.Pen>
+          <Pen Brush="#DEE2E4" />
+        </GeometryDrawing.Pen>
+        <GeometryDrawing.Geometry>
+          <LineGeometry StartPoint="0 0" EndPoint="0 20" />
+        </GeometryDrawing.Geometry>
+      </GeometryDrawing>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <BitmapImage x:Key="lenovoidimage" UriSource="pack://application:,,,/Software Fix;component/Resource/Images/LenovoID.png" />
+  <Style x:Key="CustomerBoxStyle" TargetType="{x:Type CheckBox}">
+    <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+    <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type CheckBox}">
+          <Grid Background="{TemplateBinding Control.Background}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Margin="5,0" Width="10" VerticalAlignment="Center" HorizontalAlignment="Right" Source="{StaticResource _____2_DrawingImage}" />
+            <Image Name="checkedImg" Grid.Column="0" Visibility="Collapsed" Margin="5,0" Width="10" VerticalAlignment="Center" HorizontalAlignment="Right" Source="{StaticResource _____2_DrawingImage1}" />
+            <ContentPresenter Grid.Column="1" VerticalAlignment="Center" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter TargetName="checkedImg" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="False">
+              <Setter TargetName="checkedImg" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <LinearGradientBrush x:Key="linearGradientBrush">
+    <Brush.RelativeTransform>
+      <TransformGroup>
+        <ScaleTransform CenterY="0.5" CenterX="0.5" />
+        <SkewTransform CenterY="0.5" CenterX="0.5" />
+        <TranslateTransform />
+      </TransformGroup>
+    </Brush.RelativeTransform>
+    <GradientStop Color="#FF4FC6F6" />
+    <GradientStop Color="#FF43B5E2" Offset="1" />
+  </LinearGradientBrush>
+  <Style x:Key="localButtonShadowEffectStyleOne" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Border Name="shadowEffectBorder" Background="{TemplateBinding Control.Background}" CornerRadius="15" Visibility="Hidden">
+              <UIElement.Effect>
+                <DropShadowEffect Color="#CCDCFC" BlurRadius="4" ShadowDepth="0" />
+              </UIElement.Effect>
+            </Border>
+            <Border Background="{TemplateBinding Control.Background}" CornerRadius="15">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="shadowEffectBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="dotLabelTemplate" TargetType="{x:Type Label}">
+    <DockPanel>
+      <Border DockPanel.Dock="Left" Width="30" Margin="35 0 0 0">
+        <Ellipse Width="4" Height="4" Fill="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" VerticalAlignment="Center" />
+      </Border>
+      <lang:LangTextBlock LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" Margin="0 0 0 0" Foreground="#6A6A6A" FontWeight="Medium" LineHeight="13" Opacity="0.8" FontSize="10px" VerticalAlignment="Center" TextWrapping="Wrap" />
+    </DockPanel>
+  </ControlTemplate>
+  <DataTemplate x:Key="errorWraningTextDataTemplate">
+    <Image Source="{DynamicResource userFormItemVerifyError}" Stretch="None" Margin="18 0 0 0" />
+  </DataTemplate>
+  <DataTemplate x:Key="correctWraningImageDataTemplate">
+    <Image Source="{DynamicResource userFormItemVerifyCorrect}" Stretch="None" Margin="18 0 0 0" />
+  </DataTemplate>
+  <DataTemplate x:Key="errorWraningProgressDataTemplate">
+    <ProgressBar Height="6" Width="72" Margin="18 0 0 0" Background="#C8C8C8" Minimum="0" Maximum="3" Value="{Binding WraningContent, Converter={StaticResource objectToDoubleConverter}}" Foreground="{Binding WraningContent, Converter={StaticResource passwordLevelToForegroundConverter}}" />
+  </DataTemplate>
+</ResourceDictionary>

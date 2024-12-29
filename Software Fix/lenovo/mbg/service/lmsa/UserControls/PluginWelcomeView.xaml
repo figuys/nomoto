@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.UserControls.PluginWelcomeView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.UserControls" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <BitmapImage x:Key="_plguin_welcome_image" UriSource="pack://application:,,,/Software Fix;component/Resource/Images/plugin_welcome.png" />
+      <ImageBrush x:Key="_plugin_welcome_image_brush" ImageSource="{StaticResource _plguin_welcome_image}" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Image Source="pack://application:,,,/Software Fix;component/Resource/Images/plugin_welcome.png" Stretch="Fill" />
+</UserControl>

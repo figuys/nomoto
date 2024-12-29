@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.UserControls.StartPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.UserControls" xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ControlTemplate x:Key="iconButtonTemplate" TargetType="{x:Type genericControls:IconButton}">
+        <DockPanel>
+          <Image DockPanel.Dock="Left" Width="30" Source="{TemplateBinding genericControls:IconButton.Icon}" />
+          <lang:LangTextBlock LangText="{TemplateBinding genericControls:IconButton.Header}" LangKey="{TemplateBinding genericControls:IconButton.Header}" Margin="10 0 0 0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" FontSize="18px" FontWeight="Bold" />
+        </DockPanel>
+      </ControlTemplate>
+      <ControlTemplate x:Key="dotLabelTemplate" TargetType="{x:Type Label}">
+        <DockPanel>
+          <Border DockPanel.Dock="Left" Width="30">
+            <Ellipse Width="6" Height="6" Fill="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" VerticalAlignment="Top" Margin="0 6" />
+          </Border>
+          <lang:LangTextBlock LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" Foreground="#8E8E8E" FontWeight="Medium" LineHeight="18" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" />
+        </DockPanel>
+      </ControlTemplate>
+      <ControlTemplate x:Key="buttonTemplate1" TargetType="{x:Type Button}">
+        <Grid>
+          <Border CornerRadius="8" Background="#BCC9E0">
+            <UIElement.Effect>
+              <DropShadowEffect Color="#BCC9E0" BlurRadius="8" ShadowDepth="2" Opacity="0.8" />
+            </UIElement.Effect>
+          </Border>
+          <Border CornerRadius="8" Background="#ffffff">
+            <ContentPresenter />
+          </Border>
+        </Grid>
+      </ControlTemplate>
+      <ControlTemplate x:Key="buttonTemplate2" TargetType="{x:Type Button}">
+        <Grid>
+          <Border CornerRadius="8" Background="#CCDCFC">
+            <UIElement.Effect>
+              <DropShadowEffect Color="#CCDCFC" BlurRadius="8" ShadowDepth="0" Opacity="0.46" />
+            </UIElement.Effect>
+          </Border>
+          <Border CornerRadius="8" Background="#ffffff">
+            <ContentPresenter />
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <FrameworkElement.Resources>
+      <ResourceDictionary>
+        <Thickness x:Key="ContentPanelMargin" Left="29" Right="29" />
+      </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid Row="1" Visibility="Visible">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="550" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="150*" />
+        <RowDefinition Height="110" />
+        <RowDefinition Height="20*" />
+        <RowDefinition Height="110" />
+        <RowDefinition Height="25*" />
+        <RowDefinition Height="110" />
+        <RowDefinition Height="80*" />
+      </Grid.RowDefinitions>
+      <Image Grid.Column="0" Grid.ColumnSpan="3" Stretch="None" Height="107" VerticalAlignment="Bottom" Margin="131,0,132,28" Source="{DynamicResource cloudImage}" />
+      <Image Grid.Column="1" Height="124" VerticalAlignment="Bottom" Margin="0,0,0,47" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=logoIconDrawingImage}}" />
+      <Button Grid.Column="1" Grid.Row="1" Template="{StaticResource buttonTemplate2}" Command="{Binding GoRescueCommandClick}">
+        <StackPanel VerticalAlignment="Center" Margin="{StaticResource ContentPanelMargin}">
+          <DockPanel>
+            <Image DockPanel.Dock="Left" Width="30" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=androidIconDrawingImage}}" />
+            <lang:LangTextBlock LangText="Rescue" LangKey="K0102" Margin="10 0 0 0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" />
+          </DockPanel>
+          <lang:LangLabel Template="{StaticResource dotLabelTemplate}" Margin="0 10 0 0" Content="Your device isn't working well and needs help? Refresh the Android OS to help resolve software related issues" LangKey="K0900" />
+        </StackPanel>
+      </Button>
+      <Button Grid.Column="1" Grid.Row="3" Template="{StaticResource buttonTemplate2}" Command="{Binding GoMyDeviceCommandClick}">
+        <StackPanel VerticalAlignment="Center" Margin="{StaticResource ContentPanelMargin}">
+          <DockPanel>
+            <Image DockPanel.Dock="Left" Width="30" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=deviceIconDrawingImage}}" />
+            <lang:LangTextBlock LangText="My Device" LangKey="K0433" Margin="10 0 0 0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" FontSize="18px" FontWeight="Bold" TextWrapping="Wrap" />
+          </DockPanel>
+          <lang:LangLabel Template="{StaticResource dotLabelTemplate}" Margin="0 10 0 0" Content="You can manage the Device data from your PC" LangKey="K0901" />
+        </StackPanel>
+      </Button>
+      <Button Grid.Column="1" Grid.Row="5" Template="{StaticResource buttonTemplate2}" Command="{Binding GoBackupRestoreCommandClick}">
+        <StackPanel VerticalAlignment="Center" Margin="{StaticResource ContentPanelMargin}">
+          <DockPanel>
+            <Image DockPanel.Dock="Left" Width="30" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=backupIconDrawingImage}}" />
+            <lang:LangTextBlock LangText="Backup &amp; restore" LangKey="K0481" Margin="10 0 0 0" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static generic:ResourceBursh.PrimaryBlueBrush}}" FontSize="18px" FontWeight="Bold" TextWrapping="Wrap" />
+          </DockPanel>
+          <lang:LangLabel Template="{StaticResource dotLabelTemplate}" Margin="0 10 0 0" Content="Backup and restore data between device and PC" LangKey="K0005" />
+        </StackPanel>
+      </Button>
+    </Grid>
+  </Grid>
+</UserControl>

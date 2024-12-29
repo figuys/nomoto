@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.LenovoId.LenovoIdWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:winform="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework" xmlns:WPF="clr-namespace:DotNetBrowser.Wpf;assembly=DotNetBrowser.Wpf" xmlns:genericControl="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" WindowStartupLocation="CenterScreen" WindowStyle="None" Title="LenovoIdWindow" ResizeMode="NoResize" UseLayoutRounding="True" AllowsTransparency="False" SizeToContent="WidthAndHeight" ShowInTaskbar="False" Padding="0" Background="#00FFFFFF" xmlns:lenovoid="clr-namespace:lenovo.mbg.service.lmsa.LenovoId;assembly=Software Fix">
+  <shell:WindowChrome.WindowChrome>
+    <shell:WindowChrome CaptionHeight="0" CornerRadius="0" GlassFrameThickness="-1" ResizeBorderThickness="0" />
+  </shell:WindowChrome.WindowChrome>
+  <Border Padding="10">
+    <UIElement.Effect>
+      <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#dfdfdf" />
+    </UIElement.Effect>
+    <Grid Background="#FFFFFF" Height="700" Width="1012">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="45" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Border Margin="0 0 0 0">
+        <Border.Background>
+          <ImageBrush ImageSource="/Software Fix;component/ResourceV6/lenovo_id_border.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <StackPanel Height="36" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
+          <Button Height="24" MinWidth="102" Style="{StaticResource v6_comm_base_button}" Content="K0284" gc6:ControlAttachPropertyV6.CornerRadius="12" Background="#FFFFFF" Foreground="#345375" Command="{Binding FeedBackCommand}" />
+          <Button Margin="27 0 0 0" ToolTipService.ToolTip="If login page is not fully loaded, please click here to reload." lang:LangToolTip.ToolTipKey="K0851" Height="24" Width="24" Style="{StaticResource v6_comm_img_button}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_icon_login_refresh}" Visibility="{Binding RefreshVisibility}" Command="{Binding RefreshCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+          <Button Margin="30 0 0 0" Height="24" Width="24" Style="{StaticResource v6_comm_img_button}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_icon_login_close}" Command="{Binding CloseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+        </StackPanel>
+      </Border>
+      <Grid Row="1">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="380" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="/Software Fix;component/ResourceV6/lenovo_id_sign.png" Stretch="UniformToFill" />
+        <integration:WindowsFormsHost Grid.Column="1" FrameworkElement.HorizontalAlignment="Right" shell:WindowChrome.IsHitTestVisibleInChrome="True" FrameworkElement.Width="600" FrameworkElement.Height="650" xmlns:integration="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" UIElement.Visibility="{Binding WinformBrowserVisibility}">
+          <winform:WebBrowser x:Name="_webbrowser" />
+        </integration:WindowsFormsHost>
+        <Border Grid.Column="1" HorizontalAlignment="Right" shell:WindowChrome.IsHitTestVisibleInChrome="True" Width="600" Height="600" Visibility="{Binding DoNetBrowserVisibility}">
+          <WPF:BrowserView Name="browserView" />
+        </Border>
+        <Grid Column="1" HorizontalAlignment="Right" Width="600" Height="600" Background="#FFFFFFFF">
+          <genericControl:GifPanel Width="600" Height="300" UriImageSource="pack://application:,,,/lenovo.themes.generic;component/Resource/Images/loading.gif" />
+        </Grid>
+      </Grid>
+    </Grid>
+  </Border>
+</Window>

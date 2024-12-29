@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.ViewV6.NoticeManagementViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:genericAP="clr-namespace:lenovo.themes.generic.AttachedProperty;assembly=lenovo.themes.generic" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:conv="clr-namespace:lenovo.mbg.service.lmsa.Converters" Background="#00FFFFFF" xmlns:viewv6="clr-namespace:lenovo.mbg.service.lmsa.ViewV6">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DrawingImage x:Key="v6_icon_host_notification">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,16 L13,16 L13,0 L0,0">
+            <DrawingGroup Opacity="1">
+              <DrawingGroup Opacity="1" Transform="1,0,0,1,-772,-3">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,772.1975,4.010457">
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M13,16 M0,0 M6.02336529,0 C7.02157076,0 7.84744107,0.791068641 7.91637515,1.78827022 C9.53398335,2.51073943 10.670057,4.12734374 10.670057,6.01868044 L10.670057,9.20771773 C11.5993284,9.9649886 12.0467306,10.9621902 12.0467306,12.2003264 C12.0467306,12.475728 11.805796,12.716328 11.5303943,12.716328 L8.03115372,12.716328 L8.02981519,12.7916201 C7.98985718,13.8859396 7.08039911,14.7464153 5.98554464,14.7257887 C4.89069018,14.705162 4.01428803,13.8110414 4.01557686,12.7159934 L0.516336252,12.7159934 C0.240934611,12.7159934 0,12.4750588 0,12.1999917 C0,10.9963226 0.447402193,9.96465396 1.37667359,9.20805236 L1.37667359,6.01901507 C1.37667359,4.1270091 2.51274722,2.51073941 4.13035542,1.78827022 C4.1992895,0.791068641 5.02515981,0 6.02336529,0 M7.0272597,12.716328 L5.01947107,12.7159934 L5.02114423,12.7748885 C5.05249523,13.3172558 5.50961635,13.7362748 6.05265767,13.7204229 C6.59569899,13.704571 7.0275994,13.2596005 7.0272597,12.716328 M6.02336529,1.00389421 C5.56023543,1.00389421 5.16470111,1.37901602 5.13190722,1.85753892 L5.09041294,2.45920618 L4.53960964,2.70516027 C3.23655495,3.28674964 2.38056781,4.5734074 2.38056781,6.01868044 L2.38056781,9.68523674 L2.01046549,9.986405 C1.45932756,10.4351457 1.13607362,11.0087039 1.0366881,11.7120992 L11.011381,11.7120992 L10.9946494,11.6010015 C10.881544,10.9427816 10.5679944,10.4197527 10.0362651,9.986405 L9.66616276,9.68523674 L9.66616276,6.01868044 C9.66616276,4.57307277 8.81017563,3.28674966 7.50712094,2.70516027 L6.95631764,2.45920618 L6.91482335,1.85753892 C6.88202947,1.37901601 6.48649515,1.00389421 6.02336529,1.00389421">
+                    <GeometryDrawing.Pen>
+                      <Pen Brush="#FFFFFFFF" Thickness="0.1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                    </GeometryDrawing.Pen>
+                  </GeometryDrawing>
+                </DrawingGroup>
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <DrawingImage x:Key="v6_device_icon_delete_white">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,16 L16,16 L16,0 L0,0">
+            <DrawingGroup Opacity="1">
+              <DrawingGroup Opacity="1" Transform="1,0,0,1,-637,-461">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,637,461">
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M16,16 M0,0 M9.71242082,12.5720868 C9.39604533,12.5720868 9.14110195,12.3171434 9.14110195,12.0007679 L9.14110195,5.71318872 C9.14110195,5.39681322 9.39604531,5.14186984 9.71242082,5.14186984 C10.0287963,5.14186984 10.2837397,5.3968132 10.2837397,5.71318872 L10.2837397,11.9976963 C10.2837397,12.3140718 10.0287963,12.5720868 9.71242082,12.5720868" />
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M16,16 M0,0 M6.28450759,12.5720868 C5.96813209,12.5720868 5.71318871,12.3171434 5.71318871,12.0007679 L5.71318871,5.71318872 C5.71318871,5.39681322 5.96813209,5.14186984 6.28450761,5.14186984 C6.6008831,5.14186984 6.85582649,5.3968132 6.85582649,5.71318872 L6.85582649,11.9976963 C6.85582649,12.3140718 6.6008831,12.5720868 6.28450759,12.5720868" />
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M16,16 M0,0 M15.4286811,2.85659436 L12.5720868,2.85659436 L12.5720868,1.71395662 C12.5720868,0.767901715 11.8103283,0 10.8704166,0 L5.14186985,0 C4.19581495,0 3.42791323,0.767901715 3.42791323,1.71395662 L3.42791323,2.85659436 L0.571318878,2.85659436 C0.254943382,2.85659436 0,3.11153772 0,3.42791324 C0,3.74428875 0.254943364,3.99923212 0.571318878,3.99923212 L15.4286811,3.99923212 C15.7450566,3.99923212 16,3.74428875 16,3.42791324 C16,3.11153772 15.7450566,2.85659436 15.4286811,2.85659436 M4.57055099,1.71395662 C4.57055099,1.40065273 4.82856596,1.14263774 5.14186987,1.14263774 L10.8704166,1.14263774 C11.1837205,1.14263774 11.429449,1.3945095 11.429449,1.71395662 L11.429449,2.85659436 L4.57055099,2.85659436 L4.57055099,1.71395662 L4.57055099,1.71395662" />
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M16,16 M0,0 M12.0007679,16 L4.00230372,16 C3.05624881,16 2.2883471,15.2320983 2.2883471,14.2860434 L2.2883471,5.70704549 C2.2883471,5.39066999 2.54329046,5.13572661 2.85966598,5.13572661 C3.17604149,5.13572661 3.43098486,5.39066998 3.43098486,5.70704549 L3.43098486,14.2860434 C3.43098486,14.6024189 3.68899983,14.8573623 4.00230373,14.8573623 L12.0038395,14.8573623 C12.320215,14.8573623 12.5751584,14.6024189 12.5751584,14.2860434 L12.5751584,5.72854674 C12.5751584,5.41217124 12.8301018,5.15722786 13.1464773,5.15722786 C13.4628528,5.15722786 13.7177961,5.41217123 13.7177961,5.72854674 L13.7177961,14.2860434 C13.7147245,15.2290267 12.9468228,16 12.0007679,16" />
+                </DrawingGroup>
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <Style x:Key="v6_TitleBarStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border Background="{TemplateBinding Control.Background}" Height="15" Width="15">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Background" Value="#3FFFFFFF" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_NotificationListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="#FF303133" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" Height="30" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="True" CornerRadius="10">
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{TemplateBinding Control.Foreground}" FontSize="13px" Margin="12 0 0 0" Text="{Binding noticeTitle}" />
+                  <TextBlock Name="txtDate" FontSize="14" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF9FAEBF" Margin="10 0 10 0" Visibility="Visible" Text="{Binding modifyDate, StringFormat={}{0:yyyy-MM-dd}}" />
+                  <Button Name="btn" Grid.Column="1" Visibility="Collapsed" Background="#00FFFFFF" BorderBrush="#00FFFFFF" HorizontalAlignment="Center" Style="{StaticResource V6_IconOnlyBtnStyle}" Tag="{Binding .}" Click="OnBtnDelte">
+                    <ContentControl.Content>
+                      <Image Stretch="Uniform" Source="{StaticResource v6_device_icon_delete_white}" />
+                    </ContentControl.Content>
+                  </Button>
+                  <Rectangle Width="3" Height="3" RadiusX="4" RadiusY="4" Fill="#FFFF4042" VerticalAlignment="Top" HorizontalAlignment="Left" IsHitTestVisible="False" Margin="6 5 0 0" Visibility="{Binding isChecked, Mode=TwoWay, ConverterParameter=INVERT, Converter={StaticResource boolToVisiableConverter}}" />
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Foreground" Value="#FFDBDCDD" />
+                </Trigger>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter TargetName="txtDate" Property="Visibility" Value="Hidden" />
+                  <Setter TargetName="btn" Property="Visibility" Value="Visible" />
+                  <Setter Property="Background" Value="#FF005D7F" />
+                </Trigger>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter TargetName="txtDate" Property="Visibility" Value="Hidden" />
+                  <Setter TargetName="btn" Property="Visibility" Value="Visible" />
+                  <Setter Property="Background" Value="#FF005D7F" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid Name="grid">
+      <Button Name="btnNotification" Style="{StaticResource V6_IconOnlyBtnStyle}" Click="OnBtnNotification">
+        <Image Source="{StaticResource v6_icon_host_notification}" />
+      </Button>
+      <Rectangle Name="redDot10" Width="4" Height="4" RadiusX="4" RadiusY="4" Fill="#FFFF4042" VerticalAlignment="Top" HorizontalAlignment="Right" IsHitTestVisible="False" Visibility="Collapsed" />
+    </Grid>
+    <genericControls:NonTopmostPopup Name="popupNotification" genericAP:PopupManager.AutoMove="True" Placement="Bottom" Width="290" Height="260" StaysOpen="False" AllowsTransparency="True" HorizontalOffset="-80" UseLayoutRounding="True">
+      <FrameworkElement.Resources>
+        <ResourceDictionary>
+          <SolidColorBrush x:Key="deletePersonalDataBackBround">#FF303133</SolidColorBrush>
+        </ResourceDictionary>
+      </FrameworkElement.Resources>
+      <Grid Name="menuContent" Margin="2 11 0 2">
+        <Polygon Margin="83 0 10 0" VerticalAlignment="Top" Fill="#FF303133" Points="0,7 14,7 7,0" Stroke="#00FFFFFF" StrokeThickness="0" />
+        <Border Background="#FF303133" CornerRadius="10" Margin="1 7 1 1" BorderThickness="0">
+          <ListBox Name="NotifyListBox" BorderThickness="0" Background="#FFFFFFFF" ItemContainerStyle="{StaticResource v6_NotificationListBoxItemStyle}" ScrollViewer.CanContentScroll="False" SelectionChanged="OnNotifySelected">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type ListBox}">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource V6_CommonScrollViewerStyle}">
+                  <ItemsPresenter />
+                </ScrollViewer>
+              </ControlTemplate>
+            </Control.Template>
+          </ListBox>
+        </Border>
+      </Grid>
+    </genericControls:NonTopmostPopup>
+  </Grid>
+</UserControl>
