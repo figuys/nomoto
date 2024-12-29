@@ -100,6 +100,8 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+!lenovo.**.log
+
 # Chutzpah Test files
 _Chutzpah*
 
