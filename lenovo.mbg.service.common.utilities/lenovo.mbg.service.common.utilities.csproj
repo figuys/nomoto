@@ -10,7 +10,9 @@
     <LangVersion>11.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup />
+  <PropertyGroup>
+    <RootNamespace>lenovo.mbg.service.common.utilities</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetBrowser">
       <HintPath>..\..\..\droid\fix\DotNetBrowser.dll</HintPath>
