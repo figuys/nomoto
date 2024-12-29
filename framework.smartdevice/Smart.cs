@@ -23,7 +23,7 @@ internal class Smart
 
     public static IHost Host => bases.Load<IHost>("lenovo.mbg.service.framework.hostcontroller.PluginViewOfHost");
 
-    public static IHostNavigation HostNavigation => bases.Load<IHostNavigation>("Software Fix.hostnavgationservice");
+    public static IHostNavigation HostNavigation => bases.Load<IHostNavigation>("Software Fix.HostNavigationService");
 
     public static IResourcesLoggingService ResourcesLoggingService => bases.Load<IResourcesLoggingService>("Software Fix.ResourcesLoggingService");
 

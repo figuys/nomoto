@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2E984EF-1628-4A0E-A217-DF7C1C255CAB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>application</RootNamespace>
+    <AssemblyName>application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Software Fix.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Software Fix.exe.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common.log\common.log.csproj">
+      <Project>{92c1ec5a-d0a9-4782-a313-4896a5b0ba23}</Project>
+      <Name>common.log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common.utilities\common.utilities.csproj">
+      <Project>{01e949aa-6e6b-4f0d-8ac1-d4631863e158}</Project>
+      <Name>common.utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common.webservices\common.webservices.csproj">
+      <Project>{7f9ccfce-0e7a-4019-a7e3-b35a47e4a3d4}</Project>
+      <Name>common.webservices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.devicemgt\framework.devicemgt.csproj">
+      <Project>{6bb2a649-0b8f-440e-ba6b-52be0de34b3b}</Project>
+      <Name>framework.devicemgt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.download\framework.download.csproj">
+      <Project>{c7245ad5-725b-49f6-b3ce-537cc53f9fcd}</Project>
+      <Name>framework.download</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.hostcontroller\framework.hostcontroller.csproj">
+      <Project>{98d6235a-8b83-4c17-be09-8f3dafd68f1a}</Project>
+      <Name>framework.hostcontroller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.pipes\framework.pipes.csproj">
+      <Project>{6eb63c69-a307-4468-84c0-0d90f4db13e1}</Project>
+      <Name>framework.pipes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.resources\framework.resources.csproj">
+      <Project>{8711edcf-c82d-4251-bfe1-b10f578b8d15}</Project>
+      <Name>framework.resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.services\framework.services.csproj">
+      <Project>{b7265f1c-c81a-449b-94af-badb91d89a13}</Project>
+      <Name>framework.services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.smartbase\framework.smartbase.csproj">
+      <Project>{b8499502-5b93-4dd4-ab61-58d488c42cda}</Project>
+      <Name>framework.smartbase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.smartdevice\framework.smartdevice.csproj">
+      <Project>{0e484453-d210-4e7d-99e0-a42fc9e08d70}</Project>
+      <Name>framework.smartdevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.socket\framework.socket.csproj">
+      <Project>{4577986e-0133-43ce-a9f1-bc46b85ee736}</Project>
+      <Name>framework.socket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\framework.updateversion\framework.updateversion.csproj">
+      <Project>{3bbf2cf4-9c07-44b9-8cd8-46e5a23c1c49}</Project>
+      <Name>framework.updateversion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\runtime.hostproxy\runtime.hostproxy.csproj">
+      <Project>{b1fe6697-7fd3-a573-f203-67b7c31169c7}</Project>
+      <Name>runtime.hostproxy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
