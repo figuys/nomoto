@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localControls="clr-namespace:lenovo.themes.generic.Controls" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:localMain="clr-namespace:lenovo.themes.generic">
+  <FontFamily x:Key="SystemFontKey">/lenovo.themes.generic;component/Resource/Font/#Montserrat, pack://application:,,,/lenovo.themes.generic;component/ResourceV6/Font/HanSans/SourceHanSansCN-Normal.otf#思源黑体 CN Normal</FontFamily>
+  <FontFamily x:Key="GothamMedium">/lenovo.themes.generic;component/Resource/Font/#Montserrat, pack://application:,,,/lenovo.themes.generic;component/ResourceV6/Font/HanSans/SourceHanSansCN-Medium.otf#思源黑体 CN Medium</FontFamily>
+  <FontFamily x:Key="GothamBook">/lenovo.themes.generic;component/Resource/Font/#Montserrat, pack://application:,,,/lenovo.themes.generic;component/ResourceV6/Font/HanSans/SourceHanSansCN-Medium.otf#思源黑体 CN Medium</FontFamily>
+</ResourceDictionary>

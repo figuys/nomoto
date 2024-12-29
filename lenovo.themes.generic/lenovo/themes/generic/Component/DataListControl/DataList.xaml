@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.themes.generic.Component.DataListControl.DataList" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.themes.generic.Component" xmlns:generic="clr-namespace:lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Background="#FFFFFFFF" xmlns:datalistcontrol="clr-namespace:lenovo.themes.generic.Component.DataListControl">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/lenovo.themes.generic;component/Themes/Global.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="ToolMenuButtonStyle" TargetType="{x:Type genericControls:IconButton}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=IconButtonStyle2}}">
+        <Setter Property="Margin" Value="10 0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="genericControls:IconButton.HeaderMargin" Value="5 0 5 0" />
+        <Setter Property="genericControls:IconButton.HeaderWidth" Value="*" />
+        <Setter Property="genericControls:IconButton.NormalBackground" Value="#00FFFFFF" />
+        <Setter Property="genericControls:IconButton.NormalForeground" Value="#FF494949" />
+        <Setter Property="genericControls:IconButton.DisabledForeground" Value="#d1d1cf" />
+      </Style>
+      <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutScrollViewerStyle}}" />
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Control.Template>
+    <ControlTemplate TargetType="{x:Type UserControl}">
+      <Grid Column="1" Background="{TemplateBinding Control.Background}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="53" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="#f1f1f1" BorderThickness="0 0 0 1">
+          <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5 0 0 0">
+            <StackPanel Orientation="Horizontal">
+              <FrameworkElement.Resources>
+                <ResourceDictionary>
+                  <Style x:Key="{x:Type genericControls:IconButton}" TargetType="{x:Type genericControls:IconButton}" BasedOn="{StaticResource ToolMenuButtonStyle}" />
+                </ResourceDictionary>
+              </FrameworkElement.Resources>
+              <CheckBox IsChecked="{Binding IsAllChecked, Mode=TwoWay}" Visibility="{Binding CheckAllBoxVisibility}" Command="{Binding CheckAllCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" />
+              <genericControls:IconButton IsEnabled="{Binding ImportEnable}" Visibility="{Binding ImportVisibility}" Command="{Binding ImportCommand}" CommandParameter="{Binding}">
+                <genericControls:IconButton.Header>
+                  <lang:LangTextBlock FontSize="9pt" LangText="Import" LangKey="K0429" />
+                </genericControls:IconButton.Header>
+                <genericControls:IconButton.Icon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarImportImage}}" />
+                </genericControls:IconButton.Icon>
+                <genericControls:IconButton.DisabledIcon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarImportDisabledImage}}" />
+                </genericControls:IconButton.DisabledIcon>
+              </genericControls:IconButton>
+              <genericControls:IconButton IsEnabled="{Binding ExportEnable}" Visibility="{Binding ExportVisibility}" Command="{Binding ExportCommand}" CommandParameter="{Binding}">
+                <genericControls:IconButton.Header>
+                  <lang:LangTextBlock FontSize="9pt" LangText="Export" LangKey="K0484" />
+                </genericControls:IconButton.Header>
+                <genericControls:IconButton.Icon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarExportImage}}" />
+                </genericControls:IconButton.Icon>
+                <genericControls:IconButton.DisabledIcon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarExportDisabledImage}}" />
+                </genericControls:IconButton.DisabledIcon>
+              </genericControls:IconButton>
+              <genericControls:IconButton IsEnabled="{Binding DeleteEnable}" Visibility="{Binding DeleteVisibility}" Command="{Binding DeleteCommand}" CommandParameter="{Binding}">
+                <genericControls:IconButton.Header>
+                  <lang:LangTextBlock FontSize="9pt" LangText="Delete" LangKey="K0583" />
+                </genericControls:IconButton.Header>
+                <genericControls:IconButton.Icon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarDeleteImage}}" />
+                </genericControls:IconButton.Icon>
+                <genericControls:IconButton.DisabledIcon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarDeleteDisabledImage}}" />
+                </genericControls:IconButton.DisabledIcon>
+              </genericControls:IconButton>
+              <genericControls:IconButton IsEnabled="{Binding RefreshEnable}" Visibility="{Binding RefreshVisibility}" Command="{Binding RefreshCommand}" CommandParameter="{Binding}">
+                <genericControls:IconButton.Header>
+                  <lang:LangTextBlock FontSize="9pt" LangText="Refresh" LangKey="K0473" />
+                </genericControls:IconButton.Header>
+                <genericControls:IconButton.Icon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarRefreshImage}}" />
+                </genericControls:IconButton.Icon>
+                <genericControls:IconButton.DisabledIcon>
+                  <Image Stretch="None" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarRefreshDisabledImage}}" />
+                </genericControls:IconButton.DisabledIcon>
+              </genericControls:IconButton>
+            </StackPanel>
+          </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+          <RadioButton Name="rbtnDetailList" Foreground="#aaaaaa" GroupName="ViewMode" FontSize="11" Margin="0 0 5 0" IsChecked="{Binding IsDetailMode, Mode=TwoWay}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type RadioButton}">
+                <Grid>
+                  <Image Name="imgView" Width="14" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarDetailListModelImagNormal}}" />
+                </Grid>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter TargetName="imgView" Property="Image.Source" Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarDetailListModelImagSelected}}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+          </RadioButton>
+          <RadioButton Name="rbtnIconList" IsChecked="False" Foreground="#aaaaaa" GroupName="ViewMode" FontSize="11" Margin="0 0 5 0">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type RadioButton}">
+                <Grid>
+                  <Image Name="imgView" Width="14" Source="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarIconListModeNormal}}" />
+                </Grid>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter TargetName="imgView" Property="Image.Source" Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=TopBarIconListModeSelected}}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+          </RadioButton>
+        </StackPanel>
+        <Border Grid.Row="1">
+          <Grid Name="VideoView">
+            <ContentPresenter Name="detailListContent" Content="{Binding DetailListContent, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding IsChecked, ElementName=rbtnDetailList, Converter={StaticResource booleanToVisibilityConverter}}" />
+            <ContentPresenter Name="iconListContent" Content="{Binding IconListContent, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding IsChecked, ElementName=rbtnIconList, Converter={StaticResource booleanToVisibilityConverter}}" />
+          </Grid>
+        </Border>
+      </Grid>
+    </ControlTemplate>
+  </Control.Template>
+</UserControl>

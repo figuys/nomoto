@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.themes.generic.ControlsV6.WarrantyInfoV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:local="clr-namespace:lenovo.themes.generic.ControlsV6">
+  <StackPanel>
+    <Image Width="25" Height="25" Source="{StaticResource v6_SecurityIcon}" HorizontalAlignment="Center" />
+    <lang:LangTextBlock LangKey="K1366" FontSize="11" Style="{StaticResource v6_comm_text_style_5}" HorizontalAlignment="Center" />
+    <Grid Margin="0 8 0 0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <lang:LangTextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_4}" FontSize="10">
+        <lang:LangRun LangKey="K0278" FontWeight="Regular" /> <Run Text=":" /></lang:LangTextBlock>
+      <lang:LangTextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_3}" FontSize="10" LangKey="{Binding WarrantyContent}" Foreground="{Binding StatusForeground}" />
+    </Grid>
+    <Grid Margin="0 4 0 0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="60" />
+      </Grid.ColumnDefinitions>
+      <lang:LangTextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_4}" FontSize="10">
+        <lang:LangRun LangKey="K0276" FontWeight="Regular" /> <Run Text=":" /></lang:LangTextBlock>
+      <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_3}" FontSize="10" Text="{Binding WarrantyStartDate}" />
+    </Grid>
+    <Grid Margin="0 4 0 0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="60" />
+      </Grid.ColumnDefinitions>
+      <lang:LangTextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_4}" FontSize="10">
+        <lang:LangRun LangKey="K0277" FontWeight="Regular" /> <Run Text=":" /></lang:LangTextBlock>
+      <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_3}" FontSize="10" Text="{Binding WarrantyEndDate}" />
+    </Grid>
+    <Grid Margin="0 4 0 0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="40" />
+      </Grid.ColumnDefinitions>
+      <lang:LangTextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_4}" FontSize="10">
+        <lang:LangRun LangKey="K0275" FontWeight="Regular" /> <Run Text=":" /></lang:LangTextBlock>
+      <TextBlock Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_3}" FontSize="10" Text="{Binding ExpriedDays}" />
+    </Grid>
+  </StackPanel>
+</UserControl>

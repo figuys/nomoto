@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localControls="clr-namespace:lenovo.themes.generic.Controls" xmlns:covert="clr-namespace:lenovo.themes.generic.Converter" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:localMain="clr-namespace:lenovo.themes.generic">
+  <BitmapImage x:Key="cloudImage" UriSource="/lenovo.themes.generic;component/Resource/cloud.png" />
+  <BitmapImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=magnifyingGlassToBig}" UriSource="/lenovo.themes.generic;component/Resource/images/magnifyingGlassToBig.png" />
+  <BitmapImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=magnifyingGlassToSmall}" UriSource="/lenovo.themes.generic;component/Resource/images/magnifyingGlassToSmall.png" />
+  <BitmapImage x:Key="searchingClose" UriSource="/lenovo.themes.generic;component/Resource/images/searchClose.png" />
+  <BitmapImage x:Key="generic_warnicon" UriSource="/lenovo.themes.generic;component/Resource/images/warnicong.png" />
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=backuprestorenav}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,26 L28,26 L28,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-343,-20">
+          <DrawingGroup Transform="1,0,0,1,343,20">
+            <DrawingGroup>
+              <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M2.3793122,21.4194723 L8.74264957,21.4194723 L8.46811355,23.7939694 L7.07591665,23.7939694 C6.60794765,23.7939694 6.21154018,24.2839538 6.2115402,24.8906535 C6.2115402,25.4968026 6.60794767,26 7.07548293,26 L16.6916168,26 C17.1591521,26 17.5555596,25.4968026 17.5555596,24.8906535 C17.5522506,24.28672 17.1673819,23.7981698 16.6916168,23.7939694 L15.2994199,23.7939694 L15.0244502,21.4194723 L21.3877876,21.4194723 C23.126082,21.4194723 24,20.3613264 24,18.1035446 L24,3.31592767 C24,1.05814594 23.126082,0 21.3877876,0 L2.3793122,0 C0.641017747,0 0,1.05814591 0,3.31592767 L0,18.1035446 C0,20.3613264 0.641017771,21.4194723 2.3793122,21.4194723 M2.34048667,17 C2.04723059,17 1.92,16.8307816 1.92,16.3914182 L1.92,3.40209508 C1.92,2.39585013 2.22326766,2 2.88778679,2 L21.1122132,2 C21.7867439,2 22.08,2.39585013 22.08,3.40209508 L22.08,16.3908139 C22.08,16.8295729 21.9527694,17 21.6595133,17 L2.34048667,17 M12.48,21 C11.9638899,21 11.52,20.5456642 11.52,19.9944649 C11.52,19.4649447 11.9638899,19 12.48,19 C12.9961101,19 13.44,19.4649447 13.44,19.9944649 C13.44,20.5456642 12.9961101,21 12.48,21 L12.48,21" />
+            </DrawingGroup>
+            <DrawingGroup Transform="1,0,0,1,4,3.84">
+              <DrawingGroup Transform="-1,0,0,1,12,0">
+                <DrawingGroup Transform="1,0,0,1,0.175345,0.175095">
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M0,2.5403 L0,2.5403 L3.0901,5.0809 L3.0901,0" />
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M2.98893337,3.93846591 C2.98893337,3.93846591 3.12192877,3.97347637 3.30536115,3.93846591 C4.25464451,3.93846591 8.77637,3.99268575 10.3585089,5.57482468 C8.77637,2.41054682 6.82403814,1.42375101 2.98893337,1.40704362 C2.98893337,3.09465848 2.98893337,3.93846591 2.98893337,3.93846591" />
+                </DrawingGroup>
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M3.2654517,5.42691806 C3.22593581,5.42728151 3.18752894,5.41385253 3.15685368,5.38893925 L0.0667464863,2.84751783 C0.0272965769,2.81506008 0.00443880694,2.76665366 0.00443880694,2.71556745 C0.00443880694,2.66448123 0.0272965769,2.61607481 0.0667464863,2.58361706 L3.15685368,0.0429550721 C3.20792885,0.000909922179 3.2786846,-0.00787511772 3.3384911,0.0204029559 C3.3982976,0.0486810296 3.43640731,0.108940499 3.43632284,0.175095316 L3.43632284,5.25603958 C3.43632284,5.30135738 3.41832027,5.34481909 3.38627574,5.37686362 C3.35423122,5.40890815 3.31076951,5.42691806 3.2654517,5.42691806 L3.2654517,5.42691806 M0.444561264,2.71537759 L3.09458069,4.89417276 L3.09458069,0.53658242 L0.444561264,2.71537759" />
+              </DrawingGroup>
+              <DrawingGroup Transform="1,0,0,-1,4.021667,11.49984">
+                <DrawingGroup Transform="1,0,0,1,0.175345,0.175095">
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M0,2.5403 L0,2.5403 L3.0901,5.0809 L3.0901,0" />
+                  <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M2.98893337,3.93846591 C2.98893337,3.93846591 3.12192877,3.97347637 3.30536115,3.93846591 C4.25464451,3.93846591 8.77637,3.99268575 10.3585089,5.57482468 C8.77637,2.41054682 6.82403814,1.42375101 2.98893337,1.40704362 C2.98893337,3.09465848 2.98893337,3.93846591 2.98893337,3.93846591" />
+                </DrawingGroup>
+                <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M3.2654517,5.42691806 C3.22593581,5.42728151 3.18752894,5.41385253 3.15685368,5.38893925 L0.0667464863,2.84751783 C0.0272965769,2.81506008 0.00443880694,2.76665366 0.00443880694,2.71556745 C0.00443880694,2.66448123 0.0272965769,2.61607481 0.0667464863,2.58361706 L3.15685368,0.0429550721 C3.20792885,0.000909922179 3.2786846,-0.00787511772 3.3384911,0.0204029559 C3.3982976,0.0486810296 3.43640731,0.108940499 3.43632284,0.175095316 L3.43632284,5.25603958 C3.43632284,5.30135738 3.41832027,5.34481909 3.38627574,5.37686362 C3.35423122,5.40890815 3.31076951,5.42691806 3.2654517,5.42691806 L3.2654517,5.42691806 M0.444561264,2.71537759 L3.09458069,4.89417276 L3.09458069,0.53658242 L0.444561264,2.71537759" />
+              </DrawingGroup>
+            </DrawingGroup>
+            <DrawingGroup Transform="1,0,0,1,18,12">
+              <GeometryDrawing Brush="#FF43B5E2">
+                <GeometryDrawing.Geometry>
+                  <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,10,14" />
+                </GeometryDrawing.Geometry>
+              </GeometryDrawing>
+              <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,26 M0,0 M10,12.4193194 C10,12.6388584 9.9564981,12.8430296 9.86949429,13.0318332 C9.78249049,13.2206367 9.66286026,13.3874863 9.5106036,13.532382 C9.35834694,13.6772777 9.17998913,13.791438 8.97553018,13.8748628 C8.77107123,13.9582876 8.55138662,14 8.31647635,14 L3.68352365,14 C3.44861338,14 3.22892877,13.9582876 3.02446982,13.8748628 C2.82001087,13.791438 2.64165306,13.6772777 2.4893964,13.532382 C2.33713974,13.3874863 2.21750951,13.2206367 2.13050571,13.0318332 C2.0435019,12.8430296 2,12.6388584 2,12.4193194 L2,3.59385291 C2,3.37431394 2.0435019,3.16794731 2.13050571,2.97475302 C2.21750951,2.78155872 2.33713974,2.61251371 2.4893964,2.46761799 C2.64165306,2.32272228 2.82001087,2.20856202 3.02446982,2.12513721 C3.22892877,2.0417124 3.44861338,2 3.68352365,2 L8.31647635,2 C8.55138662,2 8.77107123,2.0417124 8.97553018,2.12513721 C9.17998913,2.20856202 9.35834694,2.32272228 9.5106036,2.46761799 C9.66286026,2.61251371 9.78249049,2.78155872 9.86949429,2.97475302 C9.9564981,3.16794731 10,3.37431394 10,3.59385291 L10,12.4193194 L10,12.4193194 M8.94290376,4.22612515 L3.04404569,4.22612515 L3.04404569,11.7738749 L8.94290376,11.7738749 L8.94290376,4.22612515 M5.99347471,12.1427003 C5.81076672,12.1427003 5.65198478,12.208562 5.51712887,12.3402854 C5.38227296,12.4720088 5.31484502,12.6344676 5.31484502,12.8276619 C5.31484502,13.0120746 5.38227297,13.1723381 5.51712887,13.3084523 C5.65198477,13.4445664 5.81076672,13.5126235 5.99347471,13.5126235 C6.18488309,13.5126235 6.34584013,13.4445664 6.47634585,13.3084523 C6.60685156,13.1723381 6.67210441,13.0120747 6.67210441,12.8276619 C6.67210441,12.6344676 6.60685155,12.4720088 6.47634585,12.3402854 C6.34584014,12.208562 6.18488309,12.1427003 5.99347471,12.1427003 M7.03752039,3.10647641 C7.03752039,3.03622394 7.01576944,2.9813392 6.97226753,2.94182218 C6.92876563,2.90230517 6.88091354,2.88254666 6.82871126,2.88254666 L5.17128874,2.88254666 C5.12778684,2.88254666 5.08210984,2.90230517 5.03425775,2.94182218 C4.98640566,2.9813392 4.96247961,3.03622394 4.96247961,3.10647641 C4.96247961,3.17672888 4.98423056,3.23161362 5.02773247,3.27113063 C5.07123437,3.31064764 5.11908646,3.33040615 5.17128874,3.33040615 L6.82871126,3.33040615 C6.88091354,3.33040615 6.92876563,3.31064764 6.97226753,3.27113063 C7.01576944,3.23161362 7.03752039,3.17672888 7.03752039,3.10647641" />
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_search_gray}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,12 L12,12 L12,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-399,-224">
+          <DrawingGroup Transform="1,0,0,1,399,224">
+            <GeometryDrawing Brush="#FF949494" Geometry="F1 M12,12 M0,0 M5.28694478,9.60863121 C2.9009452,9.60863121 0.961507423,7.67022973 0.961507423,5.28735028 C0.961507423,2.90412165 2.9009452,0.966125668 5.28694478,0.966125668 C7.67213334,0.966125668 9.61238213,2.90412165 9.61238213,5.28735028 C9.61238213,7.67028605 7.67213334,9.60863121 5.28694478,9.60863121 M11.3940899,10.710335 L9.34875917,8.6662208 L9.34875921,8.66622075 C10.1414675,7.71886994 10.5752075,6.52260021 10.5738783,5.28734347 C10.5738783,2.370302 8.20639679,0.00553508682 5.28687723,0.00553508682 C2.36701976,0.00553508682 -1.12228293E-05,2.37036958 -1.12228293E-05,5.28739979 C-1.12228293E-05,8.20409208 2.36700849,10.5692082 5.28693355,10.5692082 C6.57388084,10.5692082 7.75205156,10.1086993 8.66903234,9.34529431 L10.7151628,11.3886088 L10.7151628,11.3886088 C10.9028742,11.575516 11.2063628,11.575516 11.3940742,11.3886088 L11.3940742,11.3886088 C11.5810985,11.2011925 11.5810985,10.8977468 11.3940742,10.7103316" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="combobox_clear">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,1024 L1024,1024 L1024,0 L0,0">
+        <GeometryDrawing Brush="#bfbfbf" Geometry="F1 M1024,1024 M0,0 M512.039909,121.103172 C295.852148,121.103172 120.597659,296.357661 120.597659,512.548492 C120.597659,728.735229 295.852148,903.991765 512.039909,903.991765 C728.21539,903.991765 903.469879,728.736252 903.469879,512.548492 C903.469879,296.358685 728.21539,121.103172 512.039909,121.103172 L512.039909,121.103172 M677.341722,677.535127 C677.335582,677.54229 677.329442,677.54843 677.322279,677.55457 C666.440441,688.436408 648.797619,688.447664 637.901454,677.571966 L512.091074,551.987736 L386.505821,677.81142 C386.498658,677.81756 386.492518,677.825746 386.486378,677.82984 C375.603517,688.712701 357.961718,688.723958 347.066577,677.849283 C336.151993,666.954142 336.133574,649.296993 347.014388,638.395713 L472.600665,512.572029 L346.774935,386.983706 C335.874677,376.101868 335.856258,358.444719 346.737073,347.543439 C346.744236,347.537299 346.750376,347.530136 346.756516,347.523996 C357.624028,336.656484 375.267873,336.646251 386.163014,347.520926 L511.986698,473.107203 L637.560695,347.28045 C637.567858,347.27431 637.573998,347.267147 637.579115,347.26203 C648.461976,336.379169 666.104799,336.368936 677.014266,347.256913 C687.91657,358.137728 687.930897,375.7959 677.052128,386.69718 L551.464828,512.52291 L677.290558,638.109187 C688.190815,648.991024 688.208211,666.650219 677.341722,677.535127 L677.341722,677.535127" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_close}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,19 L19,19 L19,0 L0,0">
+        <DrawingGroup>
+          <DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF888989" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <LineGeometry StartPoint="6.2,6.1" EndPoint="12.8,12.9" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+          <DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF888989" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <LineGeometry StartPoint="6.1,12.8" EndPoint="12.9,6.2" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="Radio_UnSelected_DrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-36,-16">
+          <DrawingGroup Transform="1,0,0,1,36,16">
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF979797" Thickness="0.9" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="6.05" RadiusY="6.05" Center="6.5,6.5" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="Radio_SomeSelected_DrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-58,-16">
+          <DrawingGroup Transform="1,0,0,1,58,16">
+            <GeometryDrawing Brush="#FF2EDE71">
+              <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="4.95" RadiusY="4.95" Center="6.45,6.75" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M14,14 M0,0 M6.60000768,0 C2.97000346,0 0,2.97000346 0,6.60000768 C0,10.2300119 2.97000346,13.2000154 6.60000768,13.2000154 C10.2300119,13.2000154 13.2000154,10.2300119 13.2000154,6.60000768 C13.2000154,2.97000346 10.2300119,0 6.60000768,0 M10.4775122,4.86750566 L6.1875072,9.15751066 C5.94000691,9.40501094 5.52750643,9.40501094 5.28000614,9.15751066 L2.64000307,6.60000768 C2.39250278,6.35250739 2.39250278,6.02250701 2.64000307,5.77500672 L2.72250317,5.69250662 C2.97000346,5.44500634 3.38250394,5.44500634 3.63000422,5.69250662 L5.77500672,7.83750912 L9.65251123,3.96000461 C9.90001152,3.71250432 10.312512,3.71250432 10.5600123,3.96000461 C10.8075126,4.2075049 10.8075126,4.62000538 10.4775122,4.86750566 L10.4775122,4.86750566" />
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF2EDE71" Thickness="0.9" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="6.15" RadiusY="6.15" Center="6.6,6.6" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="Radio_Selected_DrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-14,-16">
+          <DrawingGroup Transform="1,0,0,1,14,16">
+            <GeometryDrawing Brush="#FF2EDE71" Geometry="F1 M14,14 M0,0 M6.60000768,0 C2.97000346,0 0,2.97000346 0,6.60000768 C0,10.2300119 2.97000346,13.2000154 6.60000768,13.2000154 C10.2300119,13.2000154 13.2000154,10.2300119 13.2000154,6.60000768 C13.2000154,2.97000346 10.2300119,0 6.60000768,0 M10.4775122,4.86750566 L6.1875072,9.15751066 C5.94000691,9.40501094 5.52750643,9.40501094 5.28000614,9.15751066 L2.64000307,6.60000768 C2.39250278,6.35250739 2.39250278,6.02250701 2.64000307,5.77500672 L2.72250317,5.69250662 C2.97000346,5.44500634 3.38250394,5.44500634 3.63000422,5.69250662 L5.77500672,7.83750912 L9.65251123,3.96000461 C9.90001152,3.71250432 10.312512,3.71250432 10.5600123,3.96000461 C10.8075126,4.2075049 10.8075126,4.62000538 10.4775122,4.86750566 L10.4775122,4.86750566" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_close_mouseover}">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="#D67C7C">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#D67C7C" Thickness="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry Rect="0 0 14 14" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#fbfbfb" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="3,3" EndPoint="11,11" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#fbfbfb" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="11,3" EndPoint="3,11" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_close_normal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup>
+        <GeometryDrawing Brush="#00FFFFFF">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#00FFFFFF" Thickness="1" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <RectangleGeometry Rect="0 0 14 14" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#979797" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="3,3" EndPoint="11,11" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#979797" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="11,3" EndPoint="3,11" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_warning}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,5.7725,12.2206">
+          <DrawingGroup>
+            <GlyphRunDrawing ForegroundBrush="#FFD67C7C">
+              <GlyphRunDrawing.GlyphRun>
+                <GlyphRun BaselineOrigin="0,0" FontRenderingEmSize="10.6197" BidiLevel="0" IsSideways="False" CaretStops="1 1" ClusterMap="0" Characters="!" GlyphIndices="4" AdvanceWidths="3.01608" GlyphOffsets="0,0" Language="en-us">
+                  <GlyphRun.GlyphTypeface>
+                    <GlyphTypeface FontUri="C:\WINDOWS\FONTS\SEGOEUI.TTF" StyleSimulations="None" />
+                  </GlyphRun.GlyphTypeface>
+                </GlyphRun>
+              </GlyphRunDrawing.GlyphRun>
+            </GlyphRunDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImageDownloadButtonNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFA9AAAA" Geometry="F1 M15,16 M0,0 M7.5,10.5 C7.2,10.5 7,10.3 7,10 L7,2 C7,1.7 7.2,1.5 7.5,1.5 C7.8,1.5 8,1.7 8,2 L8,10 C8,10.3 7.8,10.5 7.5,10.5" />
+          <GeometryDrawing Brush="#FFA9AAAA" Geometry="F1 M15,16 M0,0 M7.5,10.8 L3.5,7.3 C3.3,7.1 3.3,6.8 3.5,6.6 C3.7,6.4 4,6.4 4.2,6.6 L7.5,9.5 L10.7,6.6 C10.9,6.4 11.2,6.4 11.4,6.6 C11.6,6.8 11.6,7.1 11.4,7.3 L7.5,10.8" />
+          <GeometryDrawing Brush="#FFA9AAAA" Geometry="F1 M15,16 M0,0 M13.5,14.5 L1.5,14.5 C1.2,14.5 1,14.3 1,14 L1,12 C1,11.7 1.2,11.5 1.5,11.5 C1.8,11.5 2,11.7 2,12 L2,13.5 L13,13.5 L13,12 C13,11.7 13.2,11.5 13.5,11.5 C13.8,11.5 14,11.7 14,12 L14,14 C14,14.3 13.8,14.5 13.5,14.5" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImageDownloadButtonMouseOver}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#ffffff" Geometry="F1 M15,16 M0,0 M7.5,10.5 C7.2,10.5 7,10.3 7,10 L7,2 C7,1.7 7.2,1.5 7.5,1.5 C7.8,1.5 8,1.7 8,2 L8,10 C8,10.3 7.8,10.5 7.5,10.5" />
+          <GeometryDrawing Brush="#ffffff" Geometry="F1 M15,16 M0,0 M7.5,10.8 L3.5,7.3 C3.3,7.1 3.3,6.8 3.5,6.6 C3.7,6.4 4,6.4 4.2,6.6 L7.5,9.5 L10.7,6.6 C10.9,6.4 11.2,6.4 11.4,6.6 C11.6,6.8 11.6,7.1 11.4,7.3 L7.5,10.8" />
+          <GeometryDrawing Brush="#ffffff" Geometry="F1 M15,16 M0,0 M13.5,14.5 L1.5,14.5 C1.2,14.5 1,14.3 1,14 L1,12 C1,11.7 1.2,11.5 1.5,11.5 C1.8,11.5 2,11.7 2,12 L2,13.5 L13,13.5 L13,12 C13,11.7 13.2,11.5 13.5,11.5 C13.8,11.5 14,11.7 14,12 L14,14 C14,14.3 13.8,14.5 13.5,14.5" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadTopNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#FFB014" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="7.5,1.3" EndPoint="7.5,9.3" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="F1 M15,16 M0,0 M3.9,6.2 L3.9,6.2 L7.5,9.4 L11.1,6.2">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#FFB014" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadBottomNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing Geometry="F1 M15,16 M0,0 M1.5,12.7 L1.5,12.7 L1.5,14.7 L13.5,14.7 L13.5,12.7">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#ffffff" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadDisableBottomNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing Geometry="F1 M15,16 M0,0 M1.5,12.7 L1.5,12.7 L1.5,14.7 L13.5,14.7 L13.5,12.7">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#ffffff" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadDisableTopNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing Brush="#ffffff" Geometry="F1 M15,16 M0,0 M7.5,9.8 C7.2,9.8 7,9.6 7,9.3 L7,1.3 C7,1 7.2,0.8 7.5,0.8 C7.8,0.8 8,1 8,1.3 L8,9.3 C8,9.6 7.8,9.8 7.5,9.8" />
+        <GeometryDrawing Brush="#ffffff" Geometry="F1 M15,16 M0,0 M7.5,10.1 L3.6,6.6 C3.4,6.4 3.4,6.1 3.6,5.9 C3.8,5.7 4.1,5.7 4.3,5.9 L7.6,8.8 L10.9,5.9 C11.1,5.7 11.4,5.7 11.6,5.9 C11.8,6.1 11.8,6.4 11.6,6.6 L7.5,10.1" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadBottomMouseOver}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing Geometry="F1 M15,16 M0,0 M1.5,12.7 L1.5,12.7 L1.5,14.7 L13.5,14.7 L13.5,12.7">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#ffffff" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_downloadTopMouseOver}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <GeometryDrawing>
+          <GeometryDrawing.Pen>
+            <Pen Brush="#ffffff" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+          <GeometryDrawing.Geometry>
+            <LineGeometry StartPoint="7.5,1.3" EndPoint="7.5,9.3" />
+          </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="F1 M15,16 M0,0 M3.9,6.2 L3.9,6.2 L7.5,9.4 L11.1,6.2">
+          <GeometryDrawing.Pen>
+            <Pen Brush="#ffffff" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+          </GeometryDrawing.Pen>
+        </GeometryDrawing>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_navigation_downloadTopNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,10 L9,10 L9,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M9,10 M0,0 M4.4,9.1 C4.1,9.1 3.9,8.9 3.9,8.6 L3.9,1.1 C3.9,0.8 4.1,0.6 4.4,0.6 C4.7,0.6 4.9,0.8 4.9,1.1 L4.9,8.6 C4.9,8.9 4.7,9.1 4.4,9.1" />
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M9,10 M0,0 M4.4,9.6 L0.2,5.6 C0,5.3 0,5 0.2,4.8 C0.4,4.6 0.7,4.6 0.9,4.8 L4.4,8.2 L8,4.8 C8.2,4.6 8.5,4.6 8.7,4.8 C8.9,5 8.9,5.3 8.7,5.5 L4.4,9.6" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=drawingImage_navigation_downloadBottomNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,2 L9,2 L9,0 L0,0">
+        <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M9,2 M0,0 M8.4,1.5 L0.6,1.5 C0.3,1.5 0.1,1.3 0.1,1 C0.1,0.7 0.3,0.5 0.6,0.5 L8.4,0.5 C8.7,0.5 8.9,0.7 8.9,1 C8.9,1.3 8.6,1.5 8.4,1.5" />
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarImportImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M14,14 M0,0 M9.4,12.2 L2.3,12.2 C2.1,12.2 1.9,12 1.9,11.8 L1.9,2.2 C1.9,2 2.1,1.8 2.3,1.8 L11.8,1.8 C12,1.8 12.2,2 12.2,2.2 L12.2,9.2 C12.2,9.4 12,9.6 11.8,9.6 C11.6,9.6 11.4,9.4 11.4,9.2 L11.4,2.6 L2.7,2.6 L2.7,11.4 L9.4,11.4 C9.6,11.4 9.8,11.6 9.8,11.8 C9.8,12 9.6,12.2 9.4,12.2" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M14,14 M0,0 M12,12.2 C11.9,12.2 11.8,12.2 11.7,12.1 L7.9,8.2 C7.8,8.1 7.8,7.8 7.9,7.7 C8,7.6 8.3,7.6 8.4,7.7 L12.2,11.5 C12.3,11.6 12.3,11.9 12.2,12 C12.2,12.1 12.1,12.2 12,12.2" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M14,14 M0,0 M8,10.9 C7.8,10.9 7.6,10.7 7.6,10.5 L7.6,7.7 C7.6,7.5 7.8,7.3 8,7.3 L10.6,7.2 C10.8,7.2 11,7.4 11,7.6 C11,7.8 10.8,8 10.6,8 L8.4,8.2 L8.4,10.6 C8.4,10.7 8.2,10.9 8,10.9 C8,10.9 8,10.9 8,10.9" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarImportDisabledImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M9.4,12.2 L2.3,12.2 C2.1,12.2 1.9,12 1.9,11.8 L1.9,2.2 C1.9,2 2.1,1.8 2.3,1.8 L11.8,1.8 C12,1.8 12.2,2 12.2,2.2 L12.2,9.2 C12.2,9.4 12,9.6 11.8,9.6 C11.6,9.6 11.4,9.4 11.4,9.2 L11.4,2.6 L2.7,2.6 L2.7,11.4 L9.4,11.4 C9.6,11.4 9.8,11.6 9.8,11.8 C9.8,12 9.6,12.2 9.4,12.2" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M12,12.2 C11.9,12.2 11.8,12.2 11.7,12.1 L7.9,8.2 C7.8,8.1 7.8,7.8 7.9,7.7 C8,7.6 8.3,7.6 8.4,7.7 L12.2,11.5 C12.3,11.6 12.3,11.9 12.2,12 C12.2,12.1 12.1,12.2 12,12.2" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M8,10.9 C7.8,10.9 7.6,10.7 7.6,10.5 L7.6,7.7 C7.6,7.5 7.8,7.3 8,7.3 L10.6,7.2 C10.8,7.2 11,7.4 11,7.6 C11,7.8 10.8,8 10.6,8 L8.4,8.2 L8.4,10.6 C8.4,10.7 8.2,10.9 8,10.9 C8,10.9 8,10.9 8,10.9" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarImportClickImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M9.4,12.2 L2.3,12.2 C2.1,12.2 1.9,12 1.9,11.8 L1.9,2.2 C1.9,2 2.1,1.8 2.3,1.8 L11.8,1.8 C12,1.8 12.2,2 12.2,2.2 L12.2,9.2 C12.2,9.4 12,9.6 11.8,9.6 C11.6,9.6 11.4,9.4 11.4,9.2 L11.4,2.6 L2.7,2.6 L2.7,11.4 L9.4,11.4 C9.6,11.4 9.8,11.6 9.8,11.8 C9.8,12 9.6,12.2 9.4,12.2" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12,12.2 C11.9,12.2 11.8,12.2 11.7,12.1 L7.9,8.2 C7.8,8.1 7.8,7.8 7.9,7.7 C8,7.6 8.3,7.6 8.4,7.7 L12.2,11.5 C12.3,11.6 12.3,11.9 12.2,12 C12.2,12.1 12.1,12.2 12,12.2" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M8,10.9 C7.8,10.9 7.6,10.7 7.6,10.5 L7.6,7.7 C7.6,7.5 7.8,7.3 8,7.3 L10.6,7.2 C10.8,7.2 11,7.4 11,7.6 C11,7.8 10.8,8 10.6,8 L8.4,8.2 L8.4,10.6 C8.4,10.7 8.2,10.9 8,10.9 C8,10.9 8,10.9 8,10.9" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarExportImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M12.2,13.6 L1.8,13.6 C1.6,13.6 1.4,13.4 1.4,13.2 L1.4,2.9 C1.4,2.7 1.6,2.5 1.8,2.5 L9.4,2.5 C9.6,2.5 9.8,2.7 9.8,2.9 C9.8,3.1 9.6,3.2 9.4,3.2 L2.2,3.2 L2.2,12.8 L11.9,12.8 L11.9,5.5 C11.9,5.3 12.1,5.1 12.3,5.1 C12.5,5.1 12.7,5.3 12.7,5.5 L12.7,13.2 C12.6,13.4 12.4,13.6 12.2,13.6" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M8.7,6.5 C8.6,6.5 8.5,6.5 8.4,6.4 C8.3,6.2 8.3,6 8.5,5.8 L12.7,1.7 C12.8,1.6 13.1,1.6 13.2,1.7 C13.3,1.8 13.3,2.1 13.2,2.2 L9,6.4 C8.9,6.4 8.8,6.5 8.7,6.5" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M13.2,5 C13,5 12.8,4.8 12.8,4.6 L12.7,2.2 L10.1,2.2 C9.9,2.2 9.8,2 9.8,1.8 C9.8,1.6 10,1.4 10.2,1.4 L13.2,1.4 C13.4,1.4 13.6,1.6 13.6,1.8 L13.7,4.6 C13.6,4.8 13.4,5 13.2,5 C13.2,5 13.2,5 13.2,5" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarExportDisabledImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M11.6,12.8 L2,12.8 C1.8,12.8 1.6,12.6 1.6,12.4 L1.6,2.9 C1.6,2.7 1.8,2.5 2,2.5 L9,2.5 C9.2,2.5 9.4,2.7 9.4,2.9 C9.4,3.1 9.2,3.3 9,3.3 L2.4,3.3 L2.4,12.1 L11.2,12.1 L11.2,5.4 C11.2,5.2 11.4,5 11.6,5 C11.8,5 12,5.2 12,5.4 L12,12.5 C12,12.6 11.8,12.8 11.6,12.8" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M8.4,6.3 C8.3,6.3 8.2,6.3 8.1,6.2 C8,6 8,5.8 8.2,5.6 L12,1.9 C12.1,1.8 12.4,1.8 12.5,1.9 C12.6,2 12.6,2.3 12.5,2.4 L8.7,6.2 C8.6,6.3 8.5,6.3 8.4,6.3" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M12.5,4.9 C12.3,4.9 12.1,4.7 12.1,4.5 L12,2.3 L9.7,2.3 C9.5,2.3 9.3,2.2 9.3,2 C9.3,1.8 9.5,1.6 9.7,1.6 L12.5,1.6 C12.7,1.6 12.9,1.8 12.9,2 L13,4.6 C12.9,4.7 12.7,4.9 12.5,4.9 C12.5,4.9 12.5,4.9 12.5,4.9" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarExportClickImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M11.6,12.6 L2,12.6 C1.8,12.6 1.6,12.4 1.6,12.2 L1.6,2.7 C1.6,2.5 1.8,2.3 2,2.3 L9,2.3 C9.2,2.3 9.4,2.5 9.4,2.7 C9.4,2.9 9.2,3.1 9,3.1 L2.4,3.1 L2.4,11.9 L11.2,11.9 L11.2,5.2 C11.2,5 11.4,4.8 11.6,4.8 C11.8,4.8 12,5 12,5.2 L12,12.3 C12,12.4 11.8,12.6 11.6,12.6" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M8.4,6.1 C8.3,6.1 8.2,6.1 8.1,6 C8,5.8 8,5.6 8.2,5.5 L12,1.7 C12.1,1.6 12.4,1.6 12.5,1.7 C12.6,1.8 12.6,2.1 12.5,2.2 L8.7,6 C8.6,6.1 8.5,6.1 8.4,6.1" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.5,4.7 C12.3,4.7 12.1,4.5 12.1,4.3 L12,2.1 L9.7,2.1 C9.5,2.1 9.3,2 9.3,1.8 C9.3,1.6 9.5,1.4 9.7,1.4 L12.5,1.4 C12.7,1.4 12.9,1.6 12.9,1.8 L13,4.4 C12.9,4.5 12.7,4.7 12.5,4.7 C12.5,4.7 12.5,4.7 12.5,4.7" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarDeleteImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M10.1,2.2 L4.6,2.2 C4.4,2.2 4.3,2 4.3,1.8 C4.3,1.6 4.5,1.4 4.7,1.4 L10.2,1.4 C10.4,1.4 10.6,1.6 10.6,1.8 C10.6,2 10.3,2.2 10.1,2.2" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M13.5,4.7 L1.2,4.7 C1,4.7 0.8,4.5 0.8,4.3 C0.8,4.1 1,4 1.2,4 L13.5,4 C13.7,4 13.9,4.2 13.9,4.4 C13.9,4.6 13.7,4.7 13.5,4.7" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M11.5,13.6 L3.3,13.6 C3.1,13.6 2.9,13.4 2.9,13.2 L2.9,4.3 C2.9,4.1 3.1,4 3.3,4 C3.5,4 3.7,4.2 3.7,4.4 L3.7,12.9 L11.2,12.9 L11.2,4.3 C11.2,4.1 11.4,3.9 11.6,3.9 C11.8,3.9 12,4.1 12,4.3 L12,13.2 C11.9,13.4 11.7,13.6 11.5,13.6" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M5.7,11.3 C5.5,11.3 5.3,11.1 5.3,10.9 L5.3,6.5 C5.3,6.3 5.5,6.1 5.7,6.1 C5.9,6.1 6.1,6.3 6.1,6.5 L6.1,11 C6.1,11.2 5.9,11.3 5.7,11.3" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M9,11.3 C8.8,11.3 8.6,11.1 8.6,10.9 L8.6,6.5 C8.6,6.3 8.8,6.1 9,6.1 C9.2,6.1 9.4,6.3 9.4,6.5 L9.4,11 C9.4,11.2 9.2,11.3 9,11.3" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarDeleteDisabledImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M9.5,2.1 L4.5,2.1 C4.3,2.1 4.1,2 4.1,1.8 C4.1,1.6 4.3,1.4 4.5,1.4 L9.5,1.4 C9.7,1.4 9.9,1.6 9.9,1.8 C9.9,2 9.7,2.1 9.5,2.1" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M12.7,4.5 L1.3,4.5 C1.1,4.5 1,4.3 1,4.1 C1,3.9 1.2,3.7 1.4,3.7 L12.7,3.7 C12.9,3.7 13.1,3.9 13.1,4.1 C13.1,4.3 12.9,4.5 12.7,4.5" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M10.8,12.6 L3.2,12.6 C3,12.6 2.8,12.4 2.8,12.2 L2.8,4.1 C2.8,3.9 3,3.7 3.2,3.7 C3.4,3.7 3.6,3.9 3.6,4.1 L3.6,11.9 L10.4,11.9 L10.4,4.1 C10.4,3.9 10.6,3.7 10.8,3.7 C11,3.7 11.2,3.9 11.2,4.1 L11.2,12.3 C11.2,12.5 11,12.6 10.8,12.6" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M5.5,10.6 C5.3,10.6 5.1,10.4 5.1,10.2 L5.1,6.1 C5.1,5.9 5.3,5.7 5.5,5.7 C5.7,5.7 5.9,5.9 5.9,6.1 L5.9,10.2 C5.9,10.4 5.7,10.6 5.5,10.6" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M8.5,10.6 C8.3,10.6 8.1,10.4 8.1,10.2 L8.1,6.1 C8.1,5.9 8.3,5.7 8.5,5.7 C8.7,5.7 8.9,5.9 8.9,6.1 L8.9,10.2 C8.9,10.4 8.7,10.6 8.5,10.6" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarDeleteClickDrawingImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M9.5,2.1 L4.5,2.1 C4.2,2.1 4.1,2 4.1,1.8 C4.1,1.6 4.3,1.4 4.5,1.4 L9.5,1.4 C9.7,1.4 9.9,1.6 9.9,1.8 C9.9,2 9.7,2.1 9.5,2.1" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.6,4.5 L1.3,4.5 C1.1,4.5 0.9,4.3 0.9,4.1 C0.9,3.9 1.1,3.7 1.3,3.7 L12.6,3.7 C12.8,3.7 13,3.9 13,4.1 C13,4.3 12.8,4.5 12.6,4.5" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M10.8,12.6 L3.2,12.6 C3,12.6 2.8,12.4 2.8,12.2 L2.8,4.1 C2.8,3.9 3,3.7 3.2,3.7 C3.4,3.7 3.6,3.9 3.6,4.1 L3.6,11.9 L10.4,11.9 L10.4,4.1 C10.4,3.9 10.6,3.7 10.8,3.7 C11,3.7 11.2,3.9 11.2,4.1 L11.2,12.3 C11.1,12.5 11,12.6 10.8,12.6" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M5.5,10.6 C5.3,10.6 5.1,10.4 5.1,10.2 L5.1,6.1 C5.1,5.9 5.3,5.7 5.5,5.7 C5.7,5.7 5.9,5.9 5.9,6.1 L5.9,10.2 C5.8,10.4 5.7,10.6 5.5,10.6" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M8.5,10.6 C8.3,10.6 8.1,10.4 8.1,10.2 L8.1,6.1 C8.1,5.9 8.3,5.7 8.5,5.7 C8.7,5.7 8.9,5.9 8.9,6.1 L8.9,10.2 C8.9,10.4 8.7,10.6 8.5,10.6" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarRefreshImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M7.7,13.8 C5.5,13.8 3.9,12.5 3.2,11.6 C2.2,10.3 1.5,7.2 3.4,4.8 C5.3,2.3 8.9,2.8 9,2.8 C9.2,2.8 9.4,3 9.3,3.3 C9.3,3.5 9.1,3.7 8.8,3.6 C8.8,3.6 5.6,3.1 4,5.3 C2.3,7.6 3.2,10.3 3.8,11.2 C4.4,12 6.3,13.5 8.7,13 C10.9,12.5 12.2,10.9 12.4,9.4 C12.7,8 11.8,6.1 11.8,6.1 C11.7,5.9 11.8,5.7 12,5.6 C12.2,5.5 12.4,5.6 12.5,5.8 C12.5,5.9 13.4,8 13.1,9.60000000000001 C12.8,11.3 11.3,13.3 8.7,13.9 C8.4,13.7 8,13.8 7.7,13.8" />
+          <GeometryDrawing Brush="#FF494949" Geometry="F1 M15,15 M0,0 M7.4,5.2 C7.3,5.2 7.2,5.2 7.1,5.1 C7,4.9 7,4.7 7.2,4.5 L8.6,3.1 L7.2,1.9 C7,1.8 7,1.5 7.1,1.4 C7.3,1.2 7.5,1.2 7.7,1.4 L9.4,2.9 C9.5,2.9 9.5,3 9.5,3.1 C9.5,3.2 9.5,3.3 9.4,3.4 L7.7,5.1 C7.7,5.2 7.5,5.2 7.4,5.2" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarRefreshDisabledImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M7,12.8 C5,12.8 3.5,11.6 2.9,10.8 C1.9,9.5 1.3,6.7 3,4.5 C4.8,2.2 8,2.6 8.2,2.7 C8.4,2.7 8.5,2.9 8.5,3.1 C8.5,3.3 8.3,3.4 8.1,3.4 C8.1,3.4 5.2,3 3.7,5 C2,7 2.8,9.5 3.4,10.3 C4,11.1 5.7,12.4 7.9,11.9 C9.9,11.5 11.1,9.9 11.3,8.6 C11.5,7.4 10.8,5.6 10.8,5.5 C10.7,5.3 10.8,5.1 11,5 C11.2,4.9 11.4,5 11.5,5.2 C11.5,5.3 12.4,7.2 12.1,8.7 C11.8,10.3 10.4,12.1 8.1,12.6 C7.7,12.7 7.3,12.8 7,12.8" />
+          <GeometryDrawing Brush="#FFD1D1D1" Geometry="F1 M14,14 M0,0 M6.8,4.9 C6.7,4.9 6.6,4.9 6.5,4.8 C6.4,4.7 6.4,4.4 6.5,4.3 L7.8,3 L6.5,1.9 C6.3,1.8 6.3,1.5 6.5,1.4 C6.6,1.2 6.9,1.2 7,1.4 L8.6,2.8 C8.6,2.8 8.7,2.9 8.7,3 C8.7,3.1 8.7,3.2 8.6,3.3 L7,4.8 C6.9,4.9 6.8,4.9 6.8,4.9" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarDetailListModelImagNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFAAAAAA">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,3.1" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.4,3.6 L4.6,3.6 C4.3,3.6 4.1,3.4 4.1,3.1 C4.1,2.8 4.3,2.6 4.6,2.6 L12.4,2.6 C12.7,2.6 12.9,2.8 12.9,3.1 C12.9,3.4 12.7,3.6 12.4,3.6" />
+          <GeometryDrawing Brush="#FFAAAAAA">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,7" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.4,7.5 L4.6,7.5 C4.4,7.5 4.1,7.3 4.1,7 C4.1,6.7 4.3,6.5 4.6,6.5 L12.4,6.5 C12.7,6.5 12.9,6.7 12.9,7 C12.9,7.3 12.7,7.5 12.4,7.5" />
+          <GeometryDrawing Brush="#FFAAAAAA">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,10.9" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.4,11.4 L4.6,11.4 C4.3,11.4 4.1,11.2 4.1,10.9 C4.1,10.6 4.3,10.4 4.6,10.4 L12.4,10.4 C12.7,10.4 12.9,10.6 12.9,10.9 C12.9,11.2 12.7,11.4 12.4,11.4" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarDetailListModelImagSelected}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF43B5E2">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,3.1" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M12.4,3.6 L4.6,3.6 C4.3,3.6 4.1,3.4 4.1,3.1 C4.1,2.8 4.3,2.6 4.6,2.6 L12.4,2.6 C12.7,2.6 12.9,2.8 12.9,3.1 C12.9,3.4 12.7,3.6 12.4,3.6" />
+          <GeometryDrawing Brush="#FF43B5E2">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,7" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M12.4,7.5 L4.6,7.5 C4.4,7.5 4.1,7.3 4.1,7 C4.1,6.7 4.3,6.5 4.6,6.5 L12.4,6.5 C12.7,6.5 12.9,6.7 12.9,7 C12.9,7.3 12.7,7.5 12.4,7.5" />
+          <GeometryDrawing Brush="#FF43B5E2">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry RadiusX="0.7" RadiusY="0.7" Center="1.8,10.9" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M12.4,11.4 L4.6,11.4 C4.3,11.4 4.1,11.2 4.1,10.9 C4.1,10.6 4.3,10.4 4.6,10.4 L12.4,10.4 C12.7,10.4 12.9,10.6 12.9,10.9 C12.9,11.2 12.7,11.4 12.4,11.4" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarIconListModeNormal}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M6.1,6.5 L1.3,6.5 C1.1,6.5 1,6.3 1,6.1 L1,1.4 C1,1.2 1.1,1 1.3,1 L6,1 C6.2,1 6.4,1.2 6.4,1.4 L6.4,6.1 C6.4,6.3 6.3,6.5 6.1,6.5 M1.7,5.7 L5.7,5.7 L5.7,1.7 L1.7,1.7 L1.7,5.7" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.6,6.5 L7.9,6.5 C7.7,6.5 7.5,6.3 7.5,6.1 L7.5,1.4 C7.5,1.2 7.7,1 7.9,1 L12.6,1 C12.8,1 13,1.2 13,1.4 L13,6.1 C13,6.3 12.8,6.5 12.6,6.5 M8.3,5.7 L12.3,5.7 L12.3,1.7 L8.3,1.7 L8.3,5.7" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M6.1,13 L1.3,13 C1.1,13 1,12.8 1,12.6 L1,7.9 C1,7.7 1.2,7.5 1.4,7.5 L6.1,7.5 C6.3,7.5 6.5,7.7 6.5,7.9 L6.5,12.6 C6.4,12.8 6.3,13 6.1,13 M1.7,12.2 L5.7,12.2 L5.7,8.2 L1.7,8.2 L1.7,12.2" />
+          <GeometryDrawing Brush="#FFAAAAAA" Geometry="F1 M14,14 M0,0 M12.6,13 L7.9,13 C7.7,13 7.5,12.8 7.5,12.6 L7.5,7.9 C7.5,7.7 7.7,7.5 7.9,7.5 L12.6,7.5 C12.8,7.5 13,7.7 13,7.9 L13,12.6 C13,12.8 12.8,13 12.6,13 M8.3,12.2 L12.3,12.2 L12.3,8.2 L8.3,8.2 L8.3,12.2" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=TopBarIconListModeSelected}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M6.1,6.5 L1.4,6.5 C1.2,6.5 1,6.3 1,6.1 L1,1.4 C1,1.2 1.2,1 1.4,1 L6.1,1 C6.3,1 6.5,1.2 6.5,1.4 L6.5,6.1 C6.5,6.3 6.3,6.5 6.1,6.5 M1.8,5.7 L5.8,5.7 L5.8,1.7 L1.8,1.7 L1.8,5.7" />
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M12.7,6.5 L7.9,6.5 C7.7,6.5 7.5,6.3 7.5,6.1 L7.5,1.4 C7.6,1.2 7.7,1 7.9,1 L12.6,1 C12.9,1 13,1.2 13,1.4 L13,6.1 C13,6.3 12.9,6.5 12.7,6.5 M8.3,5.7 L12.3,5.7 L12.3,1.7 L8.3,1.7 L8.3,5.7" />
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M6.1,13 L1.4,13 C1.2,13 1,12.8 1,12.6 L1,7.9 C1,7.7 1.2,7.5 1.4,7.5 L6.1,7.5 C6.3,7.5 6.5,7.7 6.5,7.9 L6.5,12.6 C6.5,12.8 6.3,13 6.1,13 M1.8,12.2 L5.8,12.2 L5.8,8.2 L1.8,8.2 L1.8,12.2" />
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M12.7,13 L7.9,13 C7.7,13 7.5,12.8 7.5,12.6 L7.5,7.9 C7.5,7.7 7.7,7.5 7.9,7.5 L12.6,7.5 C12.8,7.5 13,7.7 13,7.9 L13,12.6 C13,12.8 12.9,13 12.7,13 M8.3,12.2 L12.3,12.2 L12.3,8.2 L8.3,8.2 L8.3,12.2" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=album_videoDrawingImage}">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF43B5E2">
+            <GeometryDrawing.Geometry>
+              <RectangleGeometry RadiusX="0" RadiusY="0" Rect="1.4,1.4,11.1,11.1" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M14,14 M0,0 M2.5,3.3 L2.5,10.5 L11.5,10.5 L11.5,3.3 L2.5,3.3 M5.3,10 L3.5,10 L3.5,9.2 L5.3,9.2 L5.3,10 M5.3,4.6 L3.5,4.6 L3.5,3.8 L5.3,3.8 L5.3,4.6 M7.9,10 L6.1,10 L6.1,9.2 L7.9,9.2 L7.9,10 M7.9,4.6 L6.1,4.6 L6.1,3.8 L7.9,3.8 L7.9,4.6 M10.5,10 L8.7,10 L8.7,9.2 L10.5,9.2 L10.5,10 M10.5,4.6 L8.7,4.6 L8.7,3.8 L10.5,3.8 L10.5,4.6" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=androidIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,28 L25,28 L25,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-116,-336">
+          <DrawingGroup Transform="1,0,0,1,114,334">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M25,28 M0,0 M6.99999324,23.0003647 L6.99999324,11.334327 L21.999973,11.334327 L21.999973,23.0003332 C21.999973,23.6419604 21.4374758,24.1669338 20.7499831,24.1669338 L19.4999932,24.1669338 L19.4999932,28.250036 C19.4999932,29.2183441 18.6624855,30 17.6249915,30 C16.5874976,30 15.7499899,29.2183441 15.7499899,28.250036 L15.7499899,24.1669338 L13.2499763,24.1669338 L13.2499763,28.2500675 C13.2499763,29.2183757 12.4124686,30 11.3749746,30 C10.3374807,30 9.49997295,29.2183757 9.49997295,28.2500675 L9.49997295,24.1669969 L8.24994928,24.1669969 C7.56249036,24.1669969 6.99999324,23.6419919 6.99999324,23.0003647 M3.87500169,11.3342955 C4.91249564,11.3342955 5.75000338,12.1159513 5.75000338,13.0842279 L5.75000338,21.2504638 C5.75000338,22.2187404 4.91252945,23.0003647 3.87500169,23.0003647 C2.83747393,23.0003647 2,22.2187404 2,21.2504638 L2,13.0842279 C2,12.1159513 2.83750774,11.3342955 3.87500169,11.3342955 M25.1249983,11.3342955 C26.1625261,11.3342955 27,12.1159513 27,13.0842279 L27,21.2504638 C27,22.2187404 26.1624923,23.0003647 25.1249983,23.0003647 C24.0875044,23.0003647 23.2499966,22.2187404 23.2499966,21.2504638 L23.2499966,13.0842279 C23.2499966,12.1159513 24.0875044,11.3342955 25.1249983,11.3342955 M18.9124767,4.52131251 C20.7812574,5.79295829 22.0000068,7.84616529 22.0000068,10.1676948 L6.99999324,10.1676948 C6.99999324,7.85196958 8.21248779,5.79876259 10.0687249,4.52131251 L8.43123856,2.99307895 C8.18746839,2.7655442 8.18746839,2.39807541 8.43123856,2.17060375 C8.67497491,1.94313208 9.06872628,1.94313208 9.31249645,2.17060375 L11.1687336,3.9030287 C12.1749871,3.43638214 13.3000151,3.16805958 14.4999932,3.16805958 C15.6937638,3.16805958 16.812537,3.43638214 17.8125019,3.89719285 L19.662518,2.17643959 C19.9062543,1.94899947 20.3000057,1.94899947 20.543742,2.17643959 C20.7875122,2.40397434 20.7875122,2.77144313 20.543742,2.99894634 L18.9124767,4.52131251 M11.9999865,7.8344936 L11.9999527,7.8344936 L11.9999527,6.66786144 L10.7499966,6.66786144 L10.7499966,7.8344936 L11.9999865,7.8344936 M18.2500034,7.8344936 L18.2500034,6.66786144 L17.0000473,6.66786144 L17.0000473,7.8344936 L18.2500034,7.8344936 M15.7724141,12.8798113 C15.7880497,12.8276007 15.7743696,12.7710157 15.7366098,12.731714 C15.6787687,12.6715112 15.5830752,12.6695965 15.5228723,12.7274376 L11.6233751,16.4739522 C11.5937082,16.5024552 11.5769401,16.5418186 11.5769401,16.5829592 C11.5769401,16.6664456 11.6446192,16.7341246 11.7281056,16.7341246 L14.6181591,16.7341246 L15.7724141,12.8798113 M12.9547449,20.588438 C12.9391094,20.6406486 12.9527895,20.6972336 12.9905493,20.7365352 C13.0483903,20.7967381 13.1440838,20.7986528 13.2042867,20.7408117 L17.1037839,16.994297 C17.1334508,16.965794 17.1502189,16.9264306 17.1502189,16.8852901 C17.1502189,16.8018037 17.0825398,16.7341246 16.9990534,16.7341246 L14.1089999,16.7341246 L12.9547449,20.588438" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=androidIconDrawingImage_white}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,30 L28,30 L28,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-248,-17">
+          <DrawingGroup Transform="1,0,0,1,248,17">
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,30 M0,0 M5.99999324,23.0003647 L5.99999324,11.334327 L20.999973,11.334327 L20.999973,23.0003332 C20.999973,23.6419604 20.4374758,24.1669338 19.7499831,24.1669338 L18.4999932,24.1669338 L18.4999932,28.250036 C18.4999932,29.2183441 17.6624855,30 16.6249915,30 C15.5874976,30 14.7499899,29.2183441 14.7499899,28.250036 L14.7499899,24.1669338 L12.2499763,24.1669338 L12.2499763,28.2500675 C12.2499763,29.2183757 11.4124686,30 10.3749746,30 C9.33748069,30 8.49997295,29.2183757 8.49997295,28.2500675 L8.49997295,24.1669969 L7.24994928,24.1669969 C6.56249036,24.1669969 5.99999324,23.6419919 5.99999324,23.0003647 M2.87500169,11.3342955 C3.91249564,11.3342955 4.75000338,12.1159513 4.75000338,13.0842279 L4.75000338,21.2504638 C4.75000338,22.2187404 3.91252945,23.0003647 2.87500169,23.0003647 C1.83747393,23.0003647 1,22.2187404 1,21.2504638 L1,13.0842279 C1,12.1159513 1.83750774,11.3342955 2.87500169,11.3342955 M24.1249983,11.3342955 C25.1625261,11.3342955 26,12.1159513 26,13.0842279 L26,21.2504638 C26,22.2187404 25.1624923,23.0003647 24.1249983,23.0003647 C23.0875044,23.0003647 22.2499966,22.2187404 22.2499966,21.2504638 L22.2499966,13.0842279 C22.2499966,12.1159513 23.0875044,11.3342955 24.1249983,11.3342955 M17.9124767,4.52131251 C19.7812574,5.79295829 21.0000068,7.84616529 21.0000068,10.1676948 L5.99999324,10.1676948 C5.99999324,7.85196958 7.21248779,5.79876259 9.06872493,4.52131251 L7.43123856,2.99307895 C7.18746839,2.7655442 7.18746839,2.39807541 7.43123856,2.17060375 C7.67497491,1.94313208 8.06872628,1.94313208 8.31249645,2.17060375 L10.1687336,3.9030287 C11.1749871,3.43638214 12.3000151,3.16805958 13.4999932,3.16805958 C14.6937638,3.16805958 15.812537,3.43638214 16.8125019,3.89719285 L18.662518,2.17643959 C18.9062543,1.94899947 19.3000057,1.94899947 19.543742,2.17643959 C19.7875122,2.40397434 19.7875122,2.77144313 19.543742,2.99894634 L17.9124767,4.52131251 M10.9999865,7.8344936 L10.9999527,7.8344936 L10.9999527,6.66786144 L9.74999662,6.66786144 L9.74999662,7.8344936 L10.9999865,7.8344936 M17.2500034,7.8344936 L17.2500034,6.66786144 L16.0000473,6.66786144 L16.0000473,7.8344936 L17.2500034,7.8344936 M14.7724141,12.8798113 C14.7880497,12.8276007 14.7743696,12.7710157 14.7366098,12.731714 C14.6787687,12.6715112 14.5830752,12.6695965 14.5228723,12.7274376 L10.6233751,16.4739522 C10.5937082,16.5024552 10.5769401,16.5418186 10.5769401,16.5829592 C10.5769401,16.6664456 10.6446192,16.7341246 10.7281056,16.7341246 L13.6181591,16.7341246 L14.7724141,12.8798113 M11.9547449,20.588438 C11.9391094,20.6406486 11.9527895,20.6972336 11.9905493,20.7365352 C12.0483903,20.7967381 12.1440838,20.7986528 12.2042867,20.7408117 L16.1037839,16.994297 C16.1334508,16.965794 16.1502189,16.9264306 16.1502189,16.8852901 C16.1502189,16.8018037 16.0825398,16.7341246 15.9990534,16.7341246 L13.1089999,16.7341246 L11.9547449,20.588438" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=backupIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,27 L27,27 L27,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-546,-283">
+          <DrawingGroup Transform="1,0,0,1,546,280">
+            <DrawingGroup Transform="1,0,0,1,4.8,0">
+              <GeometryDrawing Brush="#FF43B5E2">
+                <GeometryDrawing.Geometry>
+                  <RectangleGeometry RadiusX="0.972" RadiusY="0.972" Rect="12.3867,3.888,8.0411,12.636" />
+                </GeometryDrawing.Geometry>
+              </GeometryDrawing>
+              <DrawingGroup Transform="-0.629320391049837,0.777145961456971,-0.777145961456971,-0.629320391049837,23.2409552530453,24.0855543080501">
+                <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M27,27 M0,0 M2.81177421,1.68337096 L2.81177421,0.181004553 L0.183600703,2.80965753 L2.81177421,5.43726971 L2.81177421,3.8980075 C4.68857155,3.8980075 6.00297406,4.49903476 6.94113299,5.81233214 C6.56614891,3.93592071 5.43979569,2.05849187 2.81177421,1.68335927 L2.81177421,1.68337096" />
+              </DrawingGroup>
+              <DrawingGroup Transform="0.656059028990507,-0.754709580222772,0.754709580222772,0.656059028990507,0.168509657864909,5.88124244380818">
+                <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M27,27 M0,0 M2.81177421,1.68337096 L2.81177421,0.181004553 L0.183600703,2.80965753 L2.81177421,5.43726971 L2.81177421,3.8980075 C4.68857155,3.8980075 6.00297406,4.49903476 6.94113299,5.81233214 C6.56614891,3.93592071 5.43979569,2.05849187 2.81177421,1.68335927 L2.81177421,1.68337096" />
+              </DrawingGroup>
+            </DrawingGroup>
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M27,27 M0,0 M15.4753938,8.748 L15.4753938,11.08706 L2.34325739,11.08706 L2.34325739,20.5704202 L19.1557283,20.5704202 L19.1557283,18.6256481 L21.384,18.5656904 L21.253631,21.8046197 C21.2277318,22.4480655 20.6985687,22.956358 20.0546018,22.956358 L12.195205,22.956358 L12.2830005,27.0731264 L14.9888367,27.0731264 L14.9888367,29.16 L5.98094047,29.16 L5.98094047,27.0731264 L8.79792334,27.0731264 L8.79792334,22.956358 L1.2,22.956358 C0.5372583,22.956358 -1.25110518E-15,22.4190997 -1.77635684E-15,21.756358 L-1.77635684E-15,9.948 C-1.85751929E-15,9.2852583 0.5372583,8.748 1.2,8.748 L15.4753938,8.748" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <BitmapImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=logoIconDrawingImage}" UriSource="/lenovo.themes.generic;component/Resource/logo.png" />
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=toolBoxIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,29 L25,29 L25,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-548,-438">
+          <DrawingGroup Transform="1,0,0,1,547,438">
+            <DrawingGroup Transform="1,0,0,1,4.663272,0">
+              <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M25,29 M0,0 M5.07151741,14.7798947 L8.08294084,12.083904 L5.61647424,10.0802955 L1.42212189,12.94704 L5.07151741,14.7798947 M5.00680514,5.38755762 L4.88411367,3.67566026 L2.43131122,2.20972401 L1.81785386,2.82167844 L1.08170543,3.5546456 L0.469271066,4.16463316 L1.94156993,6.48652578 L3.53553687,6.60950692 L9.91141262,12.7192072 L8.56282783,14.0631464 C9.07699702,14.5432256 9.52652528,14.9269669 9.91141262,15.2143701 L14.7304758,12.7192072 L12.3642211,10.39733 L11.2599974,11.3742934 L5.00680514,5.38755762 M10.8929256,9.29737592 L11.8744582,8.31943011 C13.8354774,9.17537879 15.7975115,8.80840302 17.1471213,7.70944447 C18.4967291,6.60851714 18.4967291,4.40862165 18.4967291,4.40862165 L17.5151965,4.04164588 L15.5521314,6.11953655 L12.3641935,3.06467677 L14.4499577,0.987766643 L14.0818825,0.00982083326 C14.0818825,0.00982083326 11.9961183,0.00982083326 10.6475475,1.35375995 C9.42063275,2.57570002 8.92986646,4.65260245 9.91139904,6.48551063 L8.92986646,7.34145931 L10.8929316,9.29635885 L10.8929256,9.29737592" />
+            </DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FF43B5E2" Opacity="1" Transform="0.743144825477394,-0.669130606358858,0.669130606358858,0.743144825477394,-10.3799341843737,13.9680829640467" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="EvenOdd" Transform="0.743144825477394,-0.669130606358858,0.669130606358858,0.743144825477394,-10.3799341843737,13.9680829640467" Figures="M25,29z M0,0z M10.4001855,18.359298L14.8380078,18.2968592 15.7076982,22.6910838 22.3368303,24.4361436C22.4377502,24.4627098 22.4980257,24.5660577 22.4714594,24.6669776 22.4637968,24.6960862 22.4492911,24.7229431 22.4291501,24.7453119L19.6883806,27.7892448C18.9947135,28.5596403,17.9357947,28.8898746,16.9271752,28.6503542L9.06302808,26.7828277C8.19852299,26.5775306,7.48032342,25.9787071,7.12293044,25.1652046L4.10802191,18.3026315C3.65980226,17.2823882,3.8510049,16.0941723,4.59665696,15.2660418L7.36959724,12.1863796C7.43942635,12.1088265 7.55890321,12.102565 7.63645629,12.1723941 7.65619133,12.1901636 7.6719592,12.2118934 7.68273162,12.2361665L10.4001855,18.359298z" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M25,29 M0,0 M4.44536943,12.9970016 L12.7364913,16.7120323 C12.8317261,16.7547045 12.8743366,16.8665002 12.8316644,16.961735 C12.8208081,16.9859637 12.8049679,17.0076327 12.7851762,17.0253295 L9.74911384,19.7400306 C9.69406245,19.7892549 9.61537952,19.8018971 9.54767907,19.7723956 L1.1679201,16.12079 C1.07225094,16.0791007 1.0284916,15.9677497 1.07018087,15.8720805 C1.08112095,15.8469751 1.09738737,15.8245476 1.1178536,15.8063514 L4.24255302,13.0282252 C4.29812541,12.9788166 4.37750953,12.9665954 4.44536943,12.9970016" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M25,29 M0,0 M13.2889686,16.6903163 L22.5558805,12.136996 C22.6217946,12.1046089 22.7005038,12.1133478 22.7577086,12.1594045 L25.782216,14.5944961 C25.8635025,14.6599415 25.8763442,14.7788911 25.8108989,14.8601776 C25.7937138,14.8815222 25.7720919,14.8988737 25.7475324,14.9110288 L16.6692399,19.4040948 L13.2637648,17.0145852 C13.1783384,16.9546443 13.1576783,16.8368008 13.2176192,16.7513744 C13.2358854,16.7253419 13.2604264,16.7043406 13.2889686,16.6903163" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M25,29 M0,0 M1.29893492,10.2105745 L8.13925118,7.803936 C8.20217626,7.78179698 8.27211214,7.79447629 8.32326014,7.83729665 L10.0624269,9.29330159 C10.1424451,9.36029166 10.1530065,9.47946542 10.0860164,9.55948363 C10.0700037,9.5786104 10.0503624,9.59437737 10.0282255,9.60587501 L4.75223286,12.3461618 C4.69659781,12.375058 4.63025323,12.3744792 4.57513077,12.3446168 L1.27164046,10.5549635 C1.1798824,10.505254 1.14579538,10.3905718 1.19550495,10.2988137 C1.21783954,10.2575867 1.25470444,10.2261361 1.29893492,10.2105745" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M25,29 M0,0 M19.7046936,9.25606337 L23.0671528,7.80820405 C23.1251617,7.78322566 23.1918148,7.78888111 23.244786,7.82327606 L25.2332901,9.11444019 C25.3208158,9.17127187 25.3456982,9.28829662 25.2888665,9.3758223 C25.2700208,9.40484628 25.2435666,9.42813757 25.2123894,9.44315549 L21.9079398,11.0348993 C21.8463142,11.0645842 21.7734572,11.0586462 21.7174517,11.0193742 L19.6709381,9.58432563 C19.5854936,9.52441054 19.5647979,9.4065733 19.624713,9.32112878 C19.6448262,9.29244548 19.6725174,9.26991832 19.7046936,9.25606337" />
+            <GeometryDrawing Brush="#FF43B5E2">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="21.7059,10.3576,1,2.5894" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FF43B5E2">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="3.7663,11.2208,1,2.5894" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=toolBoxIconDrawingImage_white}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,30 L28,30 L28,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-434,-17">
+          <DrawingGroup Transform="1,0,0,1,434,17">
+            <DrawingGroup Transform="1,0,0,1,5.663272,1">
+              <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M28,30 M0,0 M5.07151741,14.7798947 L8.08294084,12.083904 L5.61647424,10.0802955 L1.42212189,12.94704 L5.07151741,14.7798947 M5.00680514,5.38755762 L4.88411367,3.67566026 L2.43131122,2.20972401 L1.81785386,2.82167844 L1.08170543,3.5546456 L0.469271066,4.16463316 L1.94156993,6.48652578 L3.53553687,6.60950692 L9.91141262,12.7192072 L8.56282783,14.0631464 C9.07699702,14.5432256 9.52652528,14.9269669 9.91141262,15.2143701 L14.7304758,12.7192072 L12.3642211,10.39733 L11.2599974,11.3742934 L5.00680514,5.38755762 M10.8929256,9.29737592 L11.8744582,8.31943011 C13.8354774,9.17537879 15.7975115,8.80840302 17.1471213,7.70944447 C18.4967291,6.60851714 18.4967291,4.40862165 18.4967291,4.40862165 L17.5151965,4.04164588 L15.5521314,6.11953655 L12.3641935,3.06467677 L14.4499577,0.987766643 L14.0818825,0.00982083326 C14.0818825,0.00982083326 11.9961183,0.00982083326 10.6475475,1.35375995 C9.42063275,2.57570002 8.92986646,4.65260245 9.91139904,6.48551063 L8.92986646,7.34145931 L10.8929316,9.29635885 L10.8929256,9.29737592" />
+            </DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FFFFFFFF" Opacity="1" Transform="0.743144825477394,-0.669130606358858,0.669130606358858,0.743144825477394,-10.79220961621,14.8940687449281" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="EvenOdd" Transform="0.743144825477394,-0.669130606358858,0.669130606358858,0.743144825477394,-10.79220961621,14.8940687449281" Figures="M28,30z M0,0z M11.4001855,19.359298L15.8380078,19.2968592 16.7076982,23.6910838 23.3368303,25.4361436C23.4377502,25.4627098 23.4980257,25.5660577 23.4714594,25.6669776 23.4637968,25.6960862 23.4492911,25.7229431 23.4291501,25.7453119L20.6883806,28.7892448C19.9947135,29.5596403,18.9357947,29.8898746,17.9271752,29.6503542L10.0630281,27.7828277C9.19852299,27.5775306,8.48032342,26.9787071,8.12293044,26.1652046L5.10802191,19.3026315C4.65980226,18.2823882,4.8510049,17.0941723,5.59665696,16.2660418L8.36959724,13.1863796C8.43942635,13.1088265 8.55890321,13.102565 8.63645629,13.1723941 8.65619133,13.1901636 8.6719592,13.2118934 8.68273162,13.2361665L11.4001855,19.359298z" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M5.44536943,13.9970016 L13.7364913,17.7120323 C13.8317261,17.7547045 13.8743366,17.8665002 13.8316644,17.961735 C13.8208081,17.9859637 13.8049679,18.0076327 13.7851762,18.0253295 L10.7491138,20.7400306 C10.6940625,20.7892549 10.6153795,20.8018971 10.5476791,20.7723956 L2.1679201,17.12079 C2.07225094,17.0791007 2.0284916,16.9677497 2.07018087,16.8720805 C2.08112095,16.8469751 2.09738737,16.8245476 2.1178536,16.8063514 L5.24255302,14.0282252 C5.29812541,13.9788166 5.37750953,13.9665954 5.44536943,13.9970016" />
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M14.2889686,17.6903163 L23.5558805,13.136996 C23.6217946,13.1046089 23.7005038,13.1133478 23.7577086,13.1594045 L26.782216,15.5944961 C26.8635025,15.6599415 26.8763442,15.7788911 26.8108989,15.8601776 C26.7937138,15.8815222 26.7720919,15.8988737 26.7475324,15.9110288 L17.6692399,20.4040948 L14.2637648,18.0145852 C14.1783384,17.9546443 14.1576783,17.8368008 14.2176192,17.7513744 C14.2358854,17.7253419 14.2604264,17.7043406 14.2889686,17.6903163" />
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M2.29893492,11.2105745 L9.13925118,8.803936 C9.20217626,8.78179698 9.27211214,8.79447629 9.32326014,8.83729665 L11.0624269,10.2933016 C11.1424451,10.3602917 11.1530065,10.4794654 11.0860164,10.5594836 C11.0700037,10.5786104 11.0503624,10.5943774 11.0282255,10.605875 L5.75223286,13.3461618 C5.69659781,13.375058 5.63025323,13.3744792 5.57513077,13.3446168 L2.27164046,11.5549635 C2.1798824,11.505254 2.14579538,11.3905718 2.19550495,11.2988137 C2.21783954,11.2575867 2.25470444,11.2261361 2.29893492,11.2105745" />
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M20.7046936,10.2560634 L24.0671528,8.80820405 C24.1251617,8.78322566 24.1918148,8.78888111 24.244786,8.82327606 L26.2332901,10.1144402 C26.3208158,10.1712719 26.3456982,10.2882966 26.2888665,10.3758223 C26.2700208,10.4048463 26.2435666,10.4281376 26.2123894,10.4431555 L22.9079398,12.0348993 C22.8463142,12.0645842 22.7734572,12.0586462 22.7174517,12.0193742 L20.6709381,10.5843256 C20.5854936,10.5244105 20.5647979,10.4065733 20.624713,10.3211288 C20.6448262,10.2924455 20.6725174,10.2699183 20.7046936,10.2560634" />
+            <GeometryDrawing Brush="#FFFFFFFF">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="22.7059,11.3576,1,2.5894" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FFFFFFFF">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="4.7663,12.2208,1,2.5894" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=downloadIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L15,16 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-841,-12">
+          <DrawingGroup Transform="1,0,0,1,838.866667,11">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M15,16 M0,0 M8.54495142,14.8908316 C8.92027515,15.31267 9.80311074,15.31267 10.2126506,14.8908316 L12.3592096,12.8 L15.9103488,12.8 C16.4016898,12.8 16.8,13.2054133 16.8,13.7055164 L16.8,15.846617 C16.8,16.3467201 16.4016898,16.7521334 15.9103488,16.7521334 L3.28965126,16.7521334 C2.79831018,16.7521334 2.4,16.3467201 2.4,15.846617 L2.4,13.7055164 C2.4,13.2054134 2.79831018,12.8 3.28965124,12.8 L6.52064436,12.8 L8.54495142,14.8908316" />
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M15,16 M0,0 M13.7918747,7.5659908 C14.0419254,7.56594097 14.2447236,7.76860769 14.2447236,8.01865836 C14.2447236,8.14579815 14.1913161,8.2670902 14.0974869,8.35288468 L9.94523853,12.00801 C9.7034823,12.2208223 9.34124131,12.2208222 9.09948514,12.0080099 L4.94723952,8.3528847 C4.76270167,8.18414995 4.7498906,7.89776619 4.91862495,7.71322656 C5.00452548,7.61928063 5.12600589,7.56583705 5.25330448,7.56598987 L7.71179044,7.56598987 L7.71179044,2.50551653 C7.71179052,2.00541325 8.11720369,1.6 8.61730685,1.6 L10.4283397,1.6 C10.9284429,1.6 11.3338561,2.00541325 11.3338561,2.50551641 L11.3338561,7.56644295 L13.7918747,7.5659908" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=minimizeWinIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-933,-14">
+          <DrawingGroup Transform="1,0,0,1,933,14">
+            <GeometryDrawing Brush="#FFFFFFFF">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="1" RadiusY="1" Rect="0,6,14,2" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=normalWinIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L15,14 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-958,-14">
+          <DrawingGroup Transform="1,0,0,1,958,14">
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FFFFFFFF" Thickness="2" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="1.44" RadiusY="1.44" Rect="3,2,10,10" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=normalWinIconDrawingImage_gray}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L15,14 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-958,-14">
+          <DrawingGroup Transform="1,0,0,1,958,14">
+            <GeometryDrawing>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#C9C9C9" Thickness="2" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+              </GeometryDrawing.Pen>
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="1.44" RadiusY="1.44" Rect="3,2,10,10" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=closeIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-982,-14">
+          <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,990.353553390593,9.99999989160847">
+            <GeometryDrawing Brush="#FFFDFDFE" Geometry="M15,15 M0,0 M6.5,7.2 L6.5,1.7 C6.5,1.14771525 6.94771525,0.7 7.5,0.7 C8.05228475,0.7 8.5,1.14771525 8.5,1.7 L8.5,7.2 L14,7.2 C14.5522847,7.2 15,7.64771525 15,8.2 C15,8.75228475 14.5522847,9.2 14,9.2 L8.5,9.2 L8.5,14.7 C8.5,15.2522847 8.05228475,15.7 7.5,15.7 C6.94771525,15.7 6.5,15.2522847 6.5,14.7 L6.5,9.2 L1,9.2 C0.44771525,9.2 2.50117807E-12,8.75228475 2.50111043E-12,8.2 C2.50104279E-12,7.64771525 0.44771525,7.2 1,7.2 L6.5,7.2" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=closeIconDrawingImage_gray}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-982,-14">
+          <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,990.353553390593,9.99999989160847">
+            <GeometryDrawing Brush="#C9C9C9" Geometry="M15,15 M0,0 M6.5,7.2 L6.5,1.7 C6.5,1.14771525 6.94771525,0.7 7.5,0.7 C8.05228475,0.7 8.5,1.14771525 8.5,1.7 L8.5,7.2 L14,7.2 C14.5522847,7.2 15,7.64771525 15,8.2 C15,8.75228475 14.5522847,9.2 14,9.2 L8.5,9.2 L8.5,14.7 C8.5,15.2522847 8.05228475,15.7 7.5,15.7 C6.94771525,15.7 6.5,15.2522847 6.5,14.7 L6.5,9.2 L1,9.2 C0.44771525,9.2 2.50117807E-12,8.75228475 2.50111043E-12,8.2 C2.50104279E-12,7.64771525 0.44771525,7.2 1,7.2 L6.5,7.2" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=bellIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,12 L12,12 L12,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-983,-14">
+          <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,989.353553390593,8.99999989160847">
+            <GeometryDrawing Brush="#FF43B5E2">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="1" RadiusY="1" Rect="1.3642,7.2,15,2" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FF43B5E2" Opacity="1" Transform="-6.12303176911189E-17,1,-1,-6.12303176911189E-17,15.7,0.7" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="1" RadiusY="1" Rect="1.3642,7.2,15,2" Transform="-6.12303176911189E-17,1,-1,-6.12303176911189E-17,15.7,0.7" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=settingIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,16 L16,16 L16,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-876,-12">
+          <DrawingGroup Transform="1,0,0,1,875.733333,11.44">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M16,16 M0,0 M15.5591254,7.33292945 L15.0839283,7.16223567 L15.0839284,7.16223571 C14.6563756,7.01740078 14.310728,6.69720206 14.1335342,6.28181814 L14.1335342,6.28181814 C13.9505083,5.87244179 13.9505083,5.40442885 14.1335342,4.9950525 L14.3524837,4.54102258 C14.5251576,4.1775221 14.4491808,3.7456051 14.1618518,3.46157687 L13.6597176,2.95986212 L13.6597176,2.95986213 C13.3752949,2.67356898 12.9415299,2.59745326 12.5767101,2.76981936 L12.1215433,2.98750587 L12.1215432,2.98750588 C11.7103112,3.16991629 11.2411793,3.16991629 10.8299472,2.98750586 L10.8299472,2.98750587 C10.4140824,2.81230752 10.092703,2.46787682 9.94655065,2.04074508 L9.84225595,1.62334131 L9.84225596,1.62334134 C9.70440693,1.24863662 9.34756594,0.999761229 8.9484984,1.00000017 L8.24537276,1.00000017 C7.84615233,1.00000017 7.48906315,1.24947575 7.35299716,1.62472404 L7.18239551,2.09879505 L7.1823956,2.09879479 C7.0360884,2.52583296 6.71475994,2.87020871 6.29899903,3.04555557 L6.29899901,3.04555558 C5.88776695,3.22796599 5.41863503,3.22796599 5.00740298,3.04555556 L4.5515459,2.82717844 L4.55154593,2.82717845 C4.18714913,2.65504256 3.75389922,2.73116467 3.46992037,3.01722122 L2.96640569,3.51893597 L2.96640563,3.51893603 C2.67918934,3.80120432 2.6026293,4.23472532 2.77577371,4.59838174 L2.99472321,5.05241166 L2.99472324,5.05241174 C3.17774918,5.46178809 3.17774918,5.92980103 2.99472317,6.33917738 L2.99472315,6.33917744 C2.81834279,6.75513464 2.47238945,7.07561526 2.04432894,7.21959502 L1.56913184,7.3902888 L1.56913185,7.39028879 C1.23520944,7.53458698 1.01382555,7.85797202 1,8.22164181 L1,8.92238321 C1.00138138,9.32320192 1.2562476,9.67910122 1.636128,9.81109406 L2.1113251,9.98178784 L2.11132509,9.98178783 C2.5387399,10.1268542 2.88430581,10.4469774 3.0617193,10.8622054 L3.06171933,10.8622055 C3.24474528,11.2715818 3.24474528,11.7395948 3.06171927,12.1489711 L2.84276976,12.603001 C2.67009591,12.9665015 2.74607273,13.3984185 3.03340169,13.6817547 L3.53691637,14.1834694 L3.53691643,14.1834695 C3.82133911,14.4697626 4.25510411,14.5458783 4.61992395,14.3735122 L5.07578103,14.1551351 L5.0757811,14.1551351 C5.48701316,13.9727247 5.95614508,13.9727247 6.36737713,14.1551352 L6.36737705,14.1551351 C6.78365601,14.3297394 7.10524171,14.6743914 7.25077362,15.1018959 L7.42206551,15.5752763 C7.55744141,15.9491434 7.91522068,16.2 8.31444111,16.2 L9.01756675,16.2 C9.41678718,16.2 9.77387636,15.9505246 9.90994235,15.5752763 L10.0812342,15.1122625 L10.0812342,15.1122625 C10.2307903,14.6841832 10.5552527,14.3399471 10.9736098,14.1655017 L10.9736099,14.1655017 C11.3784413,13.9858151 11.8403442,13.9858151 12.2451756,14.1655017 L12.7100117,14.3838788 L12.7100117,14.3838788 C13.0748316,14.5562449 13.5085966,14.4801289 13.7930193,14.1938361 L14.296534,13.6921213 C14.5838631,13.4087837 14.6598382,12.9768682 14.4871659,12.6126756 L14.2682164,12.1586457 L14.2682163,12.1586456 C14.0879439,11.7518134 14.0879439,11.2876961 14.2682164,10.8808639 L14.2682164,10.880864 C14.4452632,10.4653761 14.7909657,10.1451257 15.2186106,10.0004449 L15.6938077,9.82975115 C16.0274124,9.6528389 16.2256414,9.2969396 16.1973223,8.92168983 L16.1973223,8.22094843 L16.1973224,8.22094973 C16.1934583,7.81976715 15.9379991,7.46430894 15.5591236,7.33292949 L15.5591254,7.33292945 M11.3901014,9.13038927 L11.3901013,9.13038954 C11.1061952,10.5293059 9.83191452,11.5024377 8.40837611,11.4074452 L8.4083761,11.4074452 C6.9851123,11.3161382 5.84947746,10.1843257 5.75266598,8.76066762 L5.75266589,8.76066622 C5.66093189,7.33706605 6.63857255,6.06615476 8.03747316,5.7904599 L8.03747284,5.79045996 C8.97094211,5.60448808 9.93570218,5.89542109 10.6109927,6.56652697 L10.6109928,6.56652706 C11.2839483,7.23636473 11.5765099,8.1991165 11.3900951,9.13038681 L11.3901014,9.13038927" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=supportIconDrawingImage_white}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,30 L28,30 L28,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-341,-17">
+          <DrawingGroup Transform="1,0,0,1,341,17">
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M6.834352,3.72760503 L9.58145979,3.72760503 L9.58145979,5.84841786 C9.58145979,6.37020766 10.004454,6.79320186 10.5262438,6.79320186 L18.2396112,6.79320186 C18.761401,6.79320186 19.1843952,6.37020766 19.1843952,5.84841786 L19.1843952,3.72760503 L22.0264787,3.72760503 C23.5918481,3.72760503 24.8608307,4.99658764 24.8608307,6.56195703 L24.8608307,26.8073285 C24.8608307,28.3726978 23.5918481,29.6416805 22.0264787,29.6416805 L6.834352,29.6416805 C5.26898261,29.6416805 4,28.3726978 4,26.8073285 L4,6.56195703 C4,4.99658764 5.26898261,3.72760503 6.834352,3.72760503 M19.4368733,16.084851 C19.3076247,15.7288214 19.1344535,15.3886635 18.9209941,15.0715192 C18.8364471,14.9422955 18.8364472,14.7785208 18.9209941,14.6492971 L19.3159638,14.0658626 C19.4217875,13.9100507 19.3982261,13.7048904 19.2595396,13.5745491 L18.8484491,13.1907109 C18.7122004,13.0588779 18.4987008,13.0334608 18.33257,13.1292968 L17.7199638,13.4977819 C17.5854595,13.5821421 17.4111351,13.5821421 17.2766305,13.4977819 C16.735534,13.161618 16.1345861,12.9222787 15.5032976,12.7915191 C15.3448364,12.7581468 15.2199134,12.6421475 15.1808738,12.4921254 L15.0277202,11.8165686 C14.9826224,11.6354499 14.8120732,11.5080549 14.6166297,11.5094194 L14.0120839,11.5094194 C13.8175174,11.5057615 13.6479355,11.6349662 13.6090538,11.8165687 L13.4478412,12.4844476 C13.4135202,12.6355476 13.2856228,12.7512642 13.1254174,12.7761647 C12.4940428,12.9063405 11.8912592,13.1401282 11.3440211,13.4670732 C11.2095169,13.5514334 11.0351924,13.5514334 10.9006879,13.4670732 L10.2880817,13.0985881 C10.1244792,12.9978037 9.90906085,13.0202431 9.77220249,13.1523255 L9.3691724,13.5361637 C9.23048528,13.6665051 9.20692489,13.8716654 9.31274812,14.0274772 L9.69159715,14.6032352 C9.77953506,14.7342979 9.77953506,14.9020708 9.69159716,15.0331338 C9.349003,15.5510303 9.106073,16.1229368 8.97420353,16.7220225 C8.93819726,16.8708848 8.81614554,16.9871252 8.65984009,17.0214162 L7.9505069,17.174952 C7.75982372,17.2119823 7.62415959,17.3734888 7.62796844,17.5587902 L7.62796844,18.1038407 C7.623469,18.2909709 7.75858058,18.4550345 7.95050689,18.4953554 L8.65177972,18.6412134 C8.80930299,18.675803 8.92988409,18.7966861 8.95808285,18.9482837 C9.09109009,19.5519139 9.33974684,20.1270372 9.69159688,20.6448504 C9.77614386,20.7740741 9.77614386,20.9378488 9.69159689,21.0670725 L9.3046875,21.6581835 C9.19886387,21.8139953 9.22242523,22.0191557 9.36111165,22.149497 L9.76414174,22.5333352 C9.90100018,22.6654181 10.1164184,22.6878565 10.2800209,22.5870727 L10.8845667,22.2185875 C11.0232759,22.1384788 11.197251,22.1384788 11.3359603,22.2185875 C11.7047678,22.4498623 12.1029226,22.6355899 12.5208695,22.7713146 C12.4833243,22.3316679 12.6412385,21.8971948 12.9561424,21.5737396 C13.276441,21.2384621 13.7295955,21.0463405 14.2055359,21.0440434 L14.3748088,21.0440434 L15.3340213,21.1361646 L15.7854149,20.7139424 L17.9295407,18.6949554 L17.8731164,17.7814197 C17.8418808,17.3397752 18.0054795,16.9057388 18.32451,16.5838445 C18.6169839,16.2912208 19.0137214,16.1132503 19.4368733,16.0848545 M14.116873,19.577776 C13.1196807,19.577776 12.3113013,18.8078869 12.3113013,17.858184 C12.3113013,16.9084771 13.1196848,16.138592 14.1168729,16.138592 C15.1140651,16.138592 15.9224445,16.9084811 15.9224445,17.858184 C15.9224445,18.8078909 15.114061,19.577776 14.1168729,19.577776 M22.0001416,18.9175736 L21.9437221,18.3264597 C21.9598847,18.2764383 21.9598847,18.222945 21.9437221,18.1729239 C21.9241887,18.1368014 21.8998022,18.1032537 21.8711768,18.073126 C21.8108336,18.0117769 21.7256359,17.9782012 21.6374196,17.9810048 C21.5427791,17.9777063 21.4514018,18.0142011 21.3875404,18.0808028 L20.7749342,18.6488829 C20.7566279,18.6547344 20.7368163,18.6547344 20.7185099,18.6488829 L20.6782069,18.6488829 L20.5492373,18.5260546 L19.8802072,17.8735301 C19.8399042,17.8504998 19.8802072,17.7814089 19.8802072,17.7814089 L20.4766913,17.2210053 C20.4981227,17.2017801 20.5146641,17.1781497 20.525055,17.1519145 C20.612683,17.0292708 20.5957213,16.8645008 20.4847519,16.7603998 C20.4653231,16.7403558 20.4437061,16.7223416 20.4202672,16.7066624 L20.2509942,16.7066624 L19.6545101,16.652925 L19.6303284,16.652925 C19.6191907,16.6530686 19.6080558,16.6533716 19.5969277,16.6538338 C18.9831702,16.6793255 18.5073193,17.1738479 18.5340861,17.7583788 L18.6227527,18.9406008 L16.2771181,21.1361559 L16.1320276,21.2743373 L15.6242102,21.7502965 L14.3828771,21.635145 L14.2700287,21.635145 C13.9614563,21.6335287 13.6673448,21.7595765 13.4639685,21.9805992 C13.2602658,22.1874564 13.1552679,22.4652284 13.1737862,22.748276 L13.1737862,22.9401958 L13.2140892,23.3086809 C13.1988625,23.3588326 13.1988625,23.4120656 13.2140892,23.4622167 C13.2336226,23.4983391 13.2580091,23.5318869 13.2866346,23.5620146 C13.3469778,23.6233638 13.4321755,23.6569395 13.5203918,23.6541359 C13.6079487,23.6471142 13.6903889,23.611918 13.7541489,23.5543378 L14.3586948,22.9862578 L14.4231797,22.9862578 L14.4634827,22.9862578 L15.0519064,23.5543378 L15.2614825,23.7539341 C15.2872835,23.7826625 15.2872835,23.8250039 15.2614825,23.8537321 L14.6649984,24.4141357 C14.6000626,24.4719089 14.5622923,24.5521536 14.5602107,24.6367614 C14.5535644,24.7258582 14.5890353,24.8131284 14.6569379,24.8747417 C14.6742249,24.8948165 14.6963469,24.910618 14.7214227,24.9208023 L14.8906956,24.9208023 L15.4871797,24.9745397 L15.5677858,24.9745397 C15.8724194,24.9734445 16.1634525,24.8542591 16.3738459,24.6444385 C16.5788336,24.4378769 16.6865363,24.1606498 16.6720886,23.8767623 L16.583422,22.6945403 L16.8655426,22.425854 L18.9290511,20.4913113 L19.0741416,20.3608063 L19.5497176,19.9155532 L20.7910507,20.0307047 L20.9038991,20.0307047 C21.2113673,20.0274536 21.5034907,19.9022581 21.7099592,19.6852505 C21.913662,19.4783933 22.0186599,19.2006213 22.0001416,18.9175736" />
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M28,30 M0,0 M11.2937325,2 L17.5670982,2 C18.088888,2 18.5118822,2.4229942 18.5118822,2.944784 L18.5118822,5.17819419 C18.5118822,5.69998398 18.088888,6.12297819 17.5670982,6.12297819 L11.2937325,6.12297819 C10.7719427,6.12297819 10.3489485,5.69998398 10.3489485,5.17819419 L10.3489485,2.944784 C10.3489485,2.4229942 10.7719427,2 11.2937325,2" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=deviceIconDrawingImage_white}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,30 L26,30 L26,0 L0,0">
+        <DrawingGroup>
+          <DrawingGroup Transform="1,0,0,1,-0.5,-0.2">
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="M26,30 M0,0 M7,3 L20,3 C21.6568542,3 23,4.34314575 23,6 L23,27 C23,28.6568542 21.6568542,30 20,30 L7,30 C5.34314575,30 4,28.6568542 4,27 L4,6 C4,4.34314575 5.34314575,3 7,3 M11.5,5 C11.2238576,5 11,5.22385763 11,5.5 C11,5.77614237 11.2238576,6 11.5,6 L15,6 C15.2761424,6 15.5,5.77614237 15.5,5.5 C15.5,5.22385763 15.2761424,5 15,5 L11.5,5 M11.8,26 C11.3581722,26 11,26.3581722 11,26.8 L11,27.2 C11,27.6418278 11.3581722,28 11.8,28 L14.7,28 C15.1418278,28 15.5,27.6418278 15.5,27.2 L15.5,26.8 C15.5,26.3581722 15.1418278,26 14.7,26 L11.8,26 M9.5,7 C8.3954305,7 7.5,7.8954305 7.5,9 L7.5,23 C7.5,24.1045695 8.3954305,25 9.5,25 L17.5,25 C18.6045695,25 19.5,24.1045695 19.5,23 L19.5,9 C19.5,7.8954305 18.6045695,7 17.5,7 L9.5,7" />
+            <GeometryDrawing Brush="#FFFFFFFF">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0.8" RadiusY="0.8" Rect="12.5,10,2,8" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FFFFFFFF">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0.8" RadiusY="0.8" Rect="12.5,19,2,2" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=deviceIconDrawingImage}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,30 L26,30 L26,0 L0,0">
+        <DrawingGroup>
+          <DrawingGroup Transform="1,0,0,1,-0.5,-0.2">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="M26,30 M0,0 M7,3 L20,3 C21.6568542,3 23,4.34314575 23,6 L23,27 C23,28.6568542 21.6568542,30 20,30 L7,30 C5.34314575,30 4,28.6568542 4,27 L4,6 C4,4.34314575 5.34314575,3 7,3 M11.5,5 C11.2238576,5 11,5.22385763 11,5.5 C11,5.77614237 11.2238576,6 11.5,6 L15,6 C15.2761424,6 15.5,5.77614237 15.5,5.5 C15.5,5.22385763 15.2761424,5 15,5 L11.5,5 M11.8,26 C11.3581722,26 11,26.3581722 11,26.8 L11,27.2 C11,27.6418278 11.3581722,28 11.8,28 L14.7,28 C15.1418278,28 15.5,27.6418278 15.5,27.2 L15.5,26.8 C15.5,26.3581722 15.1418278,26 14.7,26 L11.8,26 M9.5,7 C8.3954305,7 7.5,7.8954305 7.5,9 L7.5,23 C7.5,24.1045695 8.3954305,25 9.5,25 L17.5,25 C18.6045695,25 19.5,24.1045695 19.5,23 L19.5,9 C19.5,7.8954305 18.6045695,7 17.5,7 L9.5,7" />
+            <GeometryDrawing Brush="#FF43B5E2">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0.8" RadiusY="0.8" Rect="12.5,10,2,8" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FF43B5E2">
+              <GeometryDrawing.Geometry>
+                <RectangleGeometry RadiusX="0.8" RadiusY="0.8" Rect="12.5,19,2,2" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=cutIconDrawingImage_blue}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,11 L11,11 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-252,-525">
+          <DrawingGroup Transform="1,0,0,1,252,524.335061">
+            <GeometryDrawing Brush="#43B5E2" Geometry="F1 M11,11 M0,0 M4.13602198,6.73298263 L5.01801917,5.8509845 L4.4790207,5.31198546 L5.31201881,4.47898647 L5.85101729,5.01798551 L9.96699844,1.00000172 C10.4569961,1.48999991 10.4569961,2.22499892 9.96699844,2.71499884 L6.68400506,5.89999397 L7.56600226,6.78199209 C7.86000189,6.58599213 8.25199969,6.48799214 8.64399921,6.48799214 C9.81999604,6.48799214 10.8,7.46799025 10.8,8.64399521 C10.8,9.81999328 9.82000293,10.8 8.64399921,10.8 C7.46800238,10.8 6.48799842,9.82000017 6.48799842,8.64399521 C6.48799842,8.30099613 6.58599812,7.95799705 6.73299725,7.66399711 L5.85100006,6.73299985 L5.01800195,7.56599885 C5.21400171,7.85999879 5.31200158,8.251997 5.31200158,8.64399693 C5.31200158,9.819995 4.33200451,10.8 3.15600079,10.8 C1.98000396,10.8 1,9.82000189 1,8.64399693 C1,7.46799886 1.97999707,6.48799387 3.15600079,6.48799387 C3.49899951,6.48799387 3.84199823,6.58599368 4.13599786,6.73299296 L4.13602198,6.73298263 M3.74402246,7.95797983 C3.59702299,7.8109802 3.35202295,7.71298073 3.10702411,7.71298073 C2.61702643,7.71298073 2.17602784,8.10498066 2.17602784,8.64397798 C2.17602784,9.18297703 2.56802736,9.57497524 3.10702411,9.57497524 C3.64602258,9.57497524 4.03802038,9.18297531 4.03802038,8.64397798 C4.03802038,8.39897889 3.94002067,8.20297892 3.79302154,8.00697896 L3.7440216,7.95797914 L3.74402246,7.95797983 M8.64399921,7.76197986 C8.15400153,7.76197986 7.71300294,8.15397979 7.71300294,8.69297711 C7.71300294,9.23197616 8.10500245,9.62397437 8.64399921,9.62397437 C9.18299768,9.62397437 9.57499548,9.23197444 9.57499548,8.69297711 C9.57499548,8.15397807 9.18299596,7.76197986 8.64399921,7.76197986 M1.83301706,1 L4.57701024,3.74399607 L3.69501305,4.57699506 L1.78402488,2.66600488 C1.6370254,2.47000491 1.49002524,2.17600668 1.49002524,1.83300588 C1.49002524,1.4900068 1.63702471,1.24500771 1.83302395,1 L1.83301706,1" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=cutIconDrawingImage_gray}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,11 L11,11 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-252,-525">
+          <DrawingGroup Transform="1,0,0,1,252,524.335061">
+            <GeometryDrawing Brush="#FF8B9093" Geometry="F1 M11,11 M0,0 M4.13602198,6.73298263 L5.01801917,5.8509845 L4.4790207,5.31198546 L5.31201881,4.47898647 L5.85101729,5.01798551 L9.96699844,1.00000172 C10.4569961,1.48999991 10.4569961,2.22499892 9.96699844,2.71499884 L6.68400506,5.89999397 L7.56600226,6.78199209 C7.86000189,6.58599213 8.25199969,6.48799214 8.64399921,6.48799214 C9.81999604,6.48799214 10.8,7.46799025 10.8,8.64399521 C10.8,9.81999328 9.82000293,10.8 8.64399921,10.8 C7.46800238,10.8 6.48799842,9.82000017 6.48799842,8.64399521 C6.48799842,8.30099613 6.58599812,7.95799705 6.73299725,7.66399711 L5.85100006,6.73299985 L5.01800195,7.56599885 C5.21400171,7.85999879 5.31200158,8.251997 5.31200158,8.64399693 C5.31200158,9.819995 4.33200451,10.8 3.15600079,10.8 C1.98000396,10.8 1,9.82000189 1,8.64399693 C1,7.46799886 1.97999707,6.48799387 3.15600079,6.48799387 C3.49899951,6.48799387 3.84199823,6.58599368 4.13599786,6.73299296 L4.13602198,6.73298263 M3.74402246,7.95797983 C3.59702299,7.8109802 3.35202295,7.71298073 3.10702411,7.71298073 C2.61702643,7.71298073 2.17602784,8.10498066 2.17602784,8.64397798 C2.17602784,9.18297703 2.56802736,9.57497524 3.10702411,9.57497524 C3.64602258,9.57497524 4.03802038,9.18297531 4.03802038,8.64397798 C4.03802038,8.39897889 3.94002067,8.20297892 3.79302154,8.00697896 L3.7440216,7.95797914 L3.74402246,7.95797983 M8.64399921,7.76197986 C8.15400153,7.76197986 7.71300294,8.15397979 7.71300294,8.69297711 C7.71300294,9.23197616 8.10500245,9.62397437 8.64399921,9.62397437 C9.18299768,9.62397437 9.57499548,9.23197444 9.57499548,8.69297711 C9.57499548,8.15397807 9.18299596,7.76197986 8.64399921,7.76197986 M1.83301706,1 L4.57701024,3.74399607 L3.69501305,4.57699506 L1.78402488,2.66600488 C1.6370254,2.47000491 1.49002524,2.17600668 1.49002524,1.83300588 C1.49002524,1.4900068 1.63702471,1.24500771 1.83302395,1 L1.83301706,1" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=refreshIconDrawingImage_gray}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,10 L11,10 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-323,-526">
+          <DrawingGroup Transform="1,0,0,1,322.664987,526">
+            <GeometryDrawing Brush="#FF8B9093" Geometry="F1 M11,10 M0,0 M10.7277251,4.0565875 C10.3265376,1.7548125 8.31447505,0 5.90000004,0 C3.19826252,0 1,2.19765 1,4.9 C1,7.60235 3.19826252,9.8 5.90000004,9.8 L5.90000011,9.8 C7.25926203,9.79790719 8.55700599,9.23318006 9.48496264,8.2399625 L9.48496267,8.23996246 C9.68469796,8.01109035 9.66107748,7.66363633 9.43220565,7.46390104 C9.21388194,7.27337143 8.88518477,7.2849027 8.68074949,7.49026313 L8.68074951,7.49026312 C7.964403,8.26541441 6.95546141,8.70410413 5.89999949,8.69933812 L5.89999943,8.69933812 C3.80256016,8.69697595 2.10274823,6.99743988 2.1000494,4.90000062 L2.1000493,4.90012443 C2.10166932,2.80207267 3.80182315,1.10153341 5.89987492,1.09943752 L5.89987514,1.09943752 C7.45283062,1.1010064 8.8490818,2.04590123 9.42787516,3.48696252 L8.21757515,3.24135002 L8.21757519,3.24135003 C7.94826085,3.10082914 7.61602362,3.20523675 7.47550272,3.47455175 C7.33498182,3.74386609 7.43938943,4.07610332 7.70870444,4.21662421 C7.75422018,4.24037304 7.8028367,4.25763252 7.85313864,4.26790003 L9.99505116,5.38693753 L9.99505113,5.38693752 C10.2642248,5.5277283 10.5965663,5.42365297 10.7373571,5.15447941 C10.7785333,5.07575575 10.8,4.98822969 10.8,4.89938752 C10.8,4.65438752 10.781625,4.41428752 10.747325,4.17908752 L10.747325,4.17908818 C10.7454798,4.13764155 10.7389039,4.09654156 10.7277252,4.05658818 L10.7277251,4.0565875" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=refreshIconDrawingImage_blue}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,10 L11,10 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-323,-526">
+          <DrawingGroup Transform="1,0,0,1,322.664987,526">
+            <GeometryDrawing Brush="#43B5E2" Geometry="F1 M11,10 M0,0 M10.7277251,4.0565875 C10.3265376,1.7548125 8.31447505,0 5.90000004,0 C3.19826252,0 1,2.19765 1,4.9 C1,7.60235 3.19826252,9.8 5.90000004,9.8 L5.90000011,9.8 C7.25926203,9.79790719 8.55700599,9.23318006 9.48496264,8.2399625 L9.48496267,8.23996246 C9.68469796,8.01109035 9.66107748,7.66363633 9.43220565,7.46390104 C9.21388194,7.27337143 8.88518477,7.2849027 8.68074949,7.49026313 L8.68074951,7.49026312 C7.964403,8.26541441 6.95546141,8.70410413 5.89999949,8.69933812 L5.89999943,8.69933812 C3.80256016,8.69697595 2.10274823,6.99743988 2.1000494,4.90000062 L2.1000493,4.90012443 C2.10166932,2.80207267 3.80182315,1.10153341 5.89987492,1.09943752 L5.89987514,1.09943752 C7.45283062,1.1010064 8.8490818,2.04590123 9.42787516,3.48696252 L8.21757515,3.24135002 L8.21757519,3.24135003 C7.94826085,3.10082914 7.61602362,3.20523675 7.47550272,3.47455175 C7.33498182,3.74386609 7.43938943,4.07610332 7.70870444,4.21662421 C7.75422018,4.24037304 7.8028367,4.25763252 7.85313864,4.26790003 L9.99505116,5.38693753 L9.99505113,5.38693752 C10.2642248,5.5277283 10.5965663,5.42365297 10.7373571,5.15447941 C10.7785333,5.07575575 10.8,4.98822969 10.8,4.89938752 C10.8,4.65438752 10.781625,4.41428752 10.747325,4.17908752 L10.747325,4.17908818 C10.7454798,4.13764155 10.7389039,4.09654156 10.7277252,4.05658818 L10.7277251,4.0565875" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=copyIconDrawingImage_gray}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,12 L11,12 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-871,-277">
+          <DrawingGroup Transform="1,0,0,1,871,277">
+            <GeometryDrawing Brush="#FF8B9093" Geometry="F1 M11,12 M0,0 M8.25260744,1.40163847 L8.25260744,2.65215843 L9.68551077,2.65215843 L8.25260744,1.40163847 L8.25260744,1.40163847 M10.0595305,3.44064089 L8.25260744,3.44064089 L8.25260741,3.44064089 C7.75363542,3.44064087 7.34913792,3.08762489 7.34913792,2.65215843 C7.34913792,2.65215843 7.34913792,2.65215843 7.34913792,2.65215843 L7.34913792,1.07520737 L2.83180639,1.07520737 L2.83180639,8.96001809 L10.0595305,8.96001809 L10.0595305,3.44064089 L10.0595305,3.44064089 M2.83180643,0.286724796 L8.25260744,0.286724796 L10.9630159,2.65215843 L10.9630159,8.96001809 L10.9630159,8.96000423 C10.9630159,9.39547069 10.5585184,9.74848669 10.0595464,9.74848669 C10.0595464,9.74848669 10.0595464,9.74848669 10.0595464,9.74848669 L2.83180643,9.74848669 L2.83180645,9.74848669 C2.33283446,9.74848669 1.92832109,9.39548455 1.92832109,8.96001809 C1.92832109,8.96001809 1.92832109,8.96001809 1.92832109,8.96001809 L1.92832109,1.07519351 L1.92832109,1.07520725 C1.92832109,0.639740792 2.33281858,0.286724796 2.83179057,0.286724796 C2.83179057,0.286724796 2.83179057,0.286724796 2.83179057,0.286724796 L2.83180643,0.286724796 M4.18700271,4.22912334 L6.89741116,4.22912334 L6.89741114,4.22912334 C7.1469011,4.22912334 7.34915382,4.40563481 7.34915382,4.6233715 C7.34915382,4.8411082 7.1469011,5.01761966 6.89741114,5.01761966 L4.18700269,5.01761966 L4.18700267,5.01761966 C3.93751271,5.01761966 3.73525999,4.8411082 3.73525999,4.6233715 C3.73525999,4.40563481 3.93751271,4.22912334 4.18700267,4.22912334 L4.18700271,4.22912334 M4.18700271,5.80608826 L8.70433425,5.80608826 L8.70433423,5.80608826 C8.95382101,5.80608826 9.15606897,5.98259556 9.15606897,6.20032949 C9.15606897,6.41806341 8.95382101,6.59457072 8.70433423,6.59457072 L4.18700269,6.59457072 L4.18700267,6.59457072 C3.93751589,6.59457072 3.73526793,6.41806341 3.73526793,6.20032949 C3.73526793,5.98259556 3.93751589,5.80608826 4.18700267,5.80608826 L4.18700271,5.80608826 M4.18700271,7.38305317 L6.89741116,7.38305317 L6.89741114,7.38305317 C7.14689793,7.38305316 7.34914588,7.55956048 7.34914588,7.7772944 C7.34914588,7.99502832 7.14689793,8.17153563 6.89741114,8.17153563 L4.18700269,8.17153563 L4.18700268,8.17153563 C3.93751272,8.17153563 3.73526,7.99502417 3.73526,7.77728747 C3.73526,7.55955078 3.93751272,7.38303931 4.18700268,7.38303931 L4.18700271,7.38305317 M8.25260744,9.74848669 L9.15607693,9.74848669 L9.15607693,10.536983 L9.15607693,10.5369691 C9.15607693,10.9724356 8.75157943,11.3254516 8.25260744,11.3254516 C8.25260744,11.3254516 8.25260744,11.3254516 8.25260744,11.3254516 L1.02488335,11.3254516 L1.02488337,11.3254516 C0.52591138,11.3254516 0.121398002,10.9724495 0.121398002,10.536983 C0.121398002,10.5369784 0.121398002,10.5369738 0.121398002,10.5369691 L0.121398002,2.65215843 L0.121398002,2.65217217 C0.121398002,2.21670571 0.525895498,1.86368971 1.02486748,1.86368971 C1.02486748,1.86368971 1.02486748,1.86368971 1.02486748,1.86368971 L1.92833697,1.86368971 L1.92833697,2.65215831 L1.0248516,2.65215831 L1.0248516,10.5369829 L8.25260746,10.5369829 L8.25260746,9.74848657 L8.25260744,9.74848669" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=copyIconDrawingImage_blue}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:svg="clr-namespace:SharpVectors.Runtime;assembly=SharpVectors.Runtime">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,12 L11,12 L11,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-871,-277">
+          <DrawingGroup Transform="1,0,0,1,871,277">
+            <GeometryDrawing Brush="#43B5E2" Geometry="F1 M11,12 M0,0 M8.25260744,1.40163847 L8.25260744,2.65215843 L9.68551077,2.65215843 L8.25260744,1.40163847 L8.25260744,1.40163847 M10.0595305,3.44064089 L8.25260744,3.44064089 L8.25260741,3.44064089 C7.75363542,3.44064087 7.34913792,3.08762489 7.34913792,2.65215843 C7.34913792,2.65215843 7.34913792,2.65215843 7.34913792,2.65215843 L7.34913792,1.07520737 L2.83180639,1.07520737 L2.83180639,8.96001809 L10.0595305,8.96001809 L10.0595305,3.44064089 L10.0595305,3.44064089 M2.83180643,0.286724796 L8.25260744,0.286724796 L10.9630159,2.65215843 L10.9630159,8.96001809 L10.9630159,8.96000423 C10.9630159,9.39547069 10.5585184,9.74848669 10.0595464,9.74848669 C10.0595464,9.74848669 10.0595464,9.74848669 10.0595464,9.74848669 L2.83180643,9.74848669 L2.83180645,9.74848669 C2.33283446,9.74848669 1.92832109,9.39548455 1.92832109,8.96001809 C1.92832109,8.96001809 1.92832109,8.96001809 1.92832109,8.96001809 L1.92832109,1.07519351 L1.92832109,1.07520725 C1.92832109,0.639740792 2.33281858,0.286724796 2.83179057,0.286724796 C2.83179057,0.286724796 2.83179057,0.286724796 2.83179057,0.286724796 L2.83180643,0.286724796 M4.18700271,4.22912334 L6.89741116,4.22912334 L6.89741114,4.22912334 C7.1469011,4.22912334 7.34915382,4.40563481 7.34915382,4.6233715 C7.34915382,4.8411082 7.1469011,5.01761966 6.89741114,5.01761966 L4.18700269,5.01761966 L4.18700267,5.01761966 C3.93751271,5.01761966 3.73525999,4.8411082 3.73525999,4.6233715 C3.73525999,4.40563481 3.93751271,4.22912334 4.18700267,4.22912334 L4.18700271,4.22912334 M4.18700271,5.80608826 L8.70433425,5.80608826 L8.70433423,5.80608826 C8.95382101,5.80608826 9.15606897,5.98259556 9.15606897,6.20032949 C9.15606897,6.41806341 8.95382101,6.59457072 8.70433423,6.59457072 L4.18700269,6.59457072 L4.18700267,6.59457072 C3.93751589,6.59457072 3.73526793,6.41806341 3.73526793,6.20032949 C3.73526793,5.98259556 3.93751589,5.80608826 4.18700267,5.80608826 L4.18700271,5.80608826 M4.18700271,7.38305317 L6.89741116,7.38305317 L6.89741114,7.38305317 C7.14689793,7.38305316 7.34914588,7.55956048 7.34914588,7.7772944 C7.34914588,7.99502832 7.14689793,8.17153563 6.89741114,8.17153563 L4.18700269,8.17153563 L4.18700268,8.17153563 C3.93751272,8.17153563 3.73526,7.99502417 3.73526,7.77728747 C3.73526,7.55955078 3.93751272,7.38303931 4.18700268,7.38303931 L4.18700271,7.38305317 M8.25260744,9.74848669 L9.15607693,9.74848669 L9.15607693,10.536983 L9.15607693,10.5369691 C9.15607693,10.9724356 8.75157943,11.3254516 8.25260744,11.3254516 C8.25260744,11.3254516 8.25260744,11.3254516 8.25260744,11.3254516 L1.02488335,11.3254516 L1.02488337,11.3254516 C0.52591138,11.3254516 0.121398002,10.9724495 0.121398002,10.536983 C0.121398002,10.5369784 0.121398002,10.5369738 0.121398002,10.5369691 L0.121398002,2.65215843 L0.121398002,2.65217217 C0.121398002,2.21670571 0.525895498,1.86368971 1.02486748,1.86368971 C1.02486748,1.86368971 1.02486748,1.86368971 1.02486748,1.86368971 L1.92833697,1.86368971 L1.92833697,2.65215831 L1.0248516,2.65215831 L1.0248516,10.5369829 L8.25260746,10.5369829 L8.25260746,9.74848657 L8.25260744,9.74848669" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="home_android_icon_drawingimage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,28 L25,28 L25,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-116,-336">
+          <DrawingGroup Transform="1,0,0,1,114,334">
+            <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M25,28 M0,0 M6.99999324,23.0003647 L6.99999324,11.334327 L21.999973,11.334327 L21.999973,23.0003332 C21.999973,23.6419604 21.4374758,24.1669338 20.7499831,24.1669338 L19.4999932,24.1669338 L19.4999932,28.250036 C19.4999932,29.2183441 18.6624855,30 17.6249915,30 C16.5874976,30 15.7499899,29.2183441 15.7499899,28.250036 L15.7499899,24.1669338 L13.2499763,24.1669338 L13.2499763,28.2500675 C13.2499763,29.2183757 12.4124686,30 11.3749746,30 C10.3374807,30 9.49997295,29.2183757 9.49997295,28.2500675 L9.49997295,24.1669969 L8.24994928,24.1669969 C7.56249036,24.1669969 6.99999324,23.6419919 6.99999324,23.0003647 M3.87500169,11.3342955 C4.91249564,11.3342955 5.75000338,12.1159513 5.75000338,13.0842279 L5.75000338,21.2504638 C5.75000338,22.2187404 4.91252945,23.0003647 3.87500169,23.0003647 C2.83747393,23.0003647 2,22.2187404 2,21.2504638 L2,13.0842279 C2,12.1159513 2.83750774,11.3342955 3.87500169,11.3342955 M25.1249983,11.3342955 C26.1625261,11.3342955 27,12.1159513 27,13.0842279 L27,21.2504638 C27,22.2187404 26.1624923,23.0003647 25.1249983,23.0003647 C24.0875044,23.0003647 23.2499966,22.2187404 23.2499966,21.2504638 L23.2499966,13.0842279 C23.2499966,12.1159513 24.0875044,11.3342955 25.1249983,11.3342955 M18.9124767,4.52131251 C20.7812574,5.79295829 22.0000068,7.84616529 22.0000068,10.1676948 L6.99999324,10.1676948 C6.99999324,7.85196958 8.21248779,5.79876259 10.0687249,4.52131251 L8.43123856,2.99307895 C8.18746839,2.7655442 8.18746839,2.39807541 8.43123856,2.17060375 C8.67497491,1.94313208 9.06872628,1.94313208 9.31249645,2.17060375 L11.1687336,3.9030287 C12.1749871,3.43638214 13.3000151,3.16805958 14.4999932,3.16805958 C15.6937638,3.16805958 16.812537,3.43638214 17.8125019,3.89719285 L19.662518,2.17643959 C19.9062543,1.94899947 20.3000057,1.94899947 20.543742,2.17643959 C20.7875122,2.40397434 20.7875122,2.77144313 20.543742,2.99894634 L18.9124767,4.52131251 M11.9999865,7.8344936 L11.9999527,7.8344936 L11.9999527,6.66786144 L10.7499966,6.66786144 L10.7499966,7.8344936 L11.9999865,7.8344936 M18.2500034,7.8344936 L18.2500034,6.66786144 L17.0000473,6.66786144 L17.0000473,7.8344936 L18.2500034,7.8344936 M15.7724141,12.8798113 C15.7880497,12.8276007 15.7743696,12.7710157 15.7366098,12.731714 C15.6787687,12.6715112 15.5830752,12.6695965 15.5228723,12.7274376 L11.6233751,16.4739522 C11.5937082,16.5024552 11.5769401,16.5418186 11.5769401,16.5829592 C11.5769401,16.6664456 11.6446192,16.7341246 11.7281056,16.7341246 L14.6181591,16.7341246 L15.7724141,12.8798113 M12.9547449,20.588438 C12.9391094,20.6406486 12.9527895,20.6972336 12.9905493,20.7365352 C13.0483903,20.7967381 13.1440838,20.7986528 13.2042867,20.7408117 L17.1037839,16.994297 C17.1334508,16.965794 17.1502189,16.9264306 17.1502189,16.8852901 C17.1502189,16.8018037 17.0825398,16.7341246 16.9990534,16.7341246 L14.1089999,16.7341246 L12.9547449,20.588438" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="home_android_icon_white_drawingimage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,28 L25,28 L25,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-116,-336">
+          <DrawingGroup Transform="1,0,0,1,114,334">
+            <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M25,28 M0,0 M6.99999324,23.0003647 L6.99999324,11.334327 L21.999973,11.334327 L21.999973,23.0003332 C21.999973,23.6419604 21.4374758,24.1669338 20.7499831,24.1669338 L19.4999932,24.1669338 L19.4999932,28.250036 C19.4999932,29.2183441 18.6624855,30 17.6249915,30 C16.5874976,30 15.7499899,29.2183441 15.7499899,28.250036 L15.7499899,24.1669338 L13.2499763,24.1669338 L13.2499763,28.2500675 C13.2499763,29.2183757 12.4124686,30 11.3749746,30 C10.3374807,30 9.49997295,29.2183757 9.49997295,28.2500675 L9.49997295,24.1669969 L8.24994928,24.1669969 C7.56249036,24.1669969 6.99999324,23.6419919 6.99999324,23.0003647 M3.87500169,11.3342955 C4.91249564,11.3342955 5.75000338,12.1159513 5.75000338,13.0842279 L5.75000338,21.2504638 C5.75000338,22.2187404 4.91252945,23.0003647 3.87500169,23.0003647 C2.83747393,23.0003647 2,22.2187404 2,21.2504638 L2,13.0842279 C2,12.1159513 2.83750774,11.3342955 3.87500169,11.3342955 M25.1249983,11.3342955 C26.1625261,11.3342955 27,12.1159513 27,13.0842279 L27,21.2504638 C27,22.2187404 26.1624923,23.0003647 25.1249983,23.0003647 C24.0875044,23.0003647 23.2499966,22.2187404 23.2499966,21.2504638 L23.2499966,13.0842279 C23.2499966,12.1159513 24.0875044,11.3342955 25.1249983,11.3342955 M18.9124767,4.52131251 C20.7812574,5.79295829 22.0000068,7.84616529 22.0000068,10.1676948 L6.99999324,10.1676948 C6.99999324,7.85196958 8.21248779,5.79876259 10.0687249,4.52131251 L8.43123856,2.99307895 C8.18746839,2.7655442 8.18746839,2.39807541 8.43123856,2.17060375 C8.67497491,1.94313208 9.06872628,1.94313208 9.31249645,2.17060375 L11.1687336,3.9030287 C12.1749871,3.43638214 13.3000151,3.16805958 14.4999932,3.16805958 C15.6937638,3.16805958 16.812537,3.43638214 17.8125019,3.89719285 L19.662518,2.17643959 C19.9062543,1.94899947 20.3000057,1.94899947 20.543742,2.17643959 C20.7875122,2.40397434 20.7875122,2.77144313 20.543742,2.99894634 L18.9124767,4.52131251 M11.9999865,7.8344936 L11.9999527,7.8344936 L11.9999527,6.66786144 L10.7499966,6.66786144 L10.7499966,7.8344936 L11.9999865,7.8344936 M18.2500034,7.8344936 L18.2500034,6.66786144 L17.0000473,6.66786144 L17.0000473,7.8344936 L18.2500034,7.8344936 M15.7724141,12.8798113 C15.7880497,12.8276007 15.7743696,12.7710157 15.7366098,12.731714 C15.6787687,12.6715112 15.5830752,12.6695965 15.5228723,12.7274376 L11.6233751,16.4739522 C11.5937082,16.5024552 11.5769401,16.5418186 11.5769401,16.5829592 C11.5769401,16.6664456 11.6446192,16.7341246 11.7281056,16.7341246 L14.6181591,16.7341246 L15.7724141,12.8798113 M12.9547449,20.588438 C12.9391094,20.6406486 12.9527895,20.6972336 12.9905493,20.7365352 C13.0483903,20.7967381 13.1440838,20.7986528 13.2042867,20.7408117 L17.1037839,16.994297 C17.1334508,16.965794 17.1502189,16.9264306 17.1502189,16.8852901 C17.1502189,16.8018037 17.0825398,16.7341246 16.9990534,16.7341246 L14.1089999,16.7341246 L12.9547449,20.588438" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="comm_close_default_drawingimage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-982,-14">
+          <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,990.353553390593,9.99999989160847">
+            <GeometryDrawing Brush="#C9C9C9" Geometry="M15,15 M0,0 M6.5,7.2 L6.5,1.7 C6.5,1.14771525 6.94771525,0.7 7.5,0.7 C8.05228475,0.7 8.5,1.14771525 8.5,1.7 L8.5,7.2 L14,7.2 C14.5522847,7.2 15,7.64771525 15,8.2 C15,8.75228475 14.5522847,9.2 14,9.2 L8.5,9.2 L8.5,14.7 C8.5,15.2522847 8.05228475,15.7 7.5,15.7 C6.94771525,15.7 6.5,15.2522847 6.5,14.7 L6.5,9.2 L1,9.2 C0.44771525,9.2 2.50117807E-12,8.75228475 2.50111043E-12,8.2 C2.50104279E-12,7.64771525 0.44771525,7.2 1,7.2 L6.5,7.2" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="comm_close_default_drawingimage1">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-982,-14">
+          <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,990.353553390593,9.99999989160847">
+            <GeometryDrawing Brush="#43B5E2" Geometry="M15,15 M0,0 M6.5,7.2 L6.5,1.7 C6.5,1.14771525 6.94771525,0.7 7.5,0.7 C8.05228475,0.7 8.5,1.14771525 8.5,1.7 L8.5,7.2 L14,7.2 C14.5522847,7.2 15,7.64771525 15,8.2 C15,8.75228475 14.5522847,9.2 14,9.2 L8.5,9.2 L8.5,14.7 C8.5,15.2522847 8.05228475,15.7 7.5,15.7 C6.94771525,15.7 6.5,15.2522847 6.5,14.7 L6.5,9.2 L1,9.2 C0.44771525,9.2 2.50117807E-12,8.75228475 2.50111043E-12,8.2 C2.50104279E-12,7.64771525 0.44771525,7.2 1,7.2 L6.5,7.2" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="searchDrawingImage">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup>
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M6.5,9.8 C4.3,9.8 2.5,8 2.5,5.8 C2.5,3.6 4.3,1.8 6.5,1.8 C8.7,1.8 10.5,3.6 10.5,5.8 C10.5,8 8.7,9.8 6.5,9.8 M6.5,2.9 C4.9,2.9 3.5,4.2 3.5,5.9 C3.5,7.6 4.8,8.9 6.5,8.9 C8.1,8.9 9.5,7.6 9.5,5.9 C9.5,4.2 8.1,2.9 6.5,2.9" />
+          <GeometryDrawing Brush="#FF43B5E2" Geometry="F1 M14,14 M0,0 M10.9,12.1 C10.8,12.1 10.6,12 10.5,11.9 L8.1,9 C7.9,8.8 7.9,8.5 8.1,8.3 C8.3,8.1 8.6,8.1 8.8,8.4 L11.3,11.3 C11.5,11.5 11.5,11.8 11.2,12 C11.2,12.1 11.1,12.1 10.9,12.1" />
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <DrawingImage x:Key="arrowUpwardsDrawingImageOne">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,14 L14,14 L14,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-293,-176">
+          <DrawingGroup Transform="-1.83690953073357E-16,1,-1,-1.83690953073357E-16,307,176">
+            <GeometryDrawing Brush="#FF00B7E7" Geometry="F1 M14,14 M0,0 M13.4512701,7.53136898 L0.538124843,7.53136898 L0.53812482,7.53136898 C0.2409707,7.53136898 7.99043433E-05,7.20690383 7.99043433E-05,6.80665542 C7.99043433E-05,6.40640701 0.2409707,6.08194186 0.53812482,6.08194186 L13.4512701,6.08194186 L13.4512701,6.08194186 C13.7484242,6.08194186 13.989315,6.40640701 13.989315,6.80665542 C13.989315,7.20690383 13.7484242,7.53136898 13.4512701,7.53136898 L13.4512701,7.53136898 M4.30449394,12.6043945 L4.30449392,12.6043945 C4.16177137,12.6045888 4.02487429,12.5281698 3.9240962,12.3920454 L0.157769167,7.31903353 L0.157769215,7.3190336 C-0.0523207484,7.03653804 -0.052611854,6.57813055 0.157119854,6.29515223 C0.157336091,6.29486048 0.157552512,6.29456897 0.157769119,6.29427771 L3.92409615,1.2212658 L3.92409616,1.22126578 C4.1341836,0.93828746 4.47480586,0.938285194 4.68489582,1.22126015 C4.89498578,1.50423507 4.89498747,1.9630324 4.6849,2.24601071 L1.29896228,6.80666152 L4.6849,11.367301 L4.68490003,11.367301 C4.89528615,11.6493966 4.89605682,12.1078029 4.68662205,12.3911801 C4.58545861,12.5280598 4.4478851,12.6048199 4.30449367,12.6043945 L4.30449394,12.6043945" />
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+</ResourceDictionary>

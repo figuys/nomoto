@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.themes.generic.Controls.Windows.GifDisplayWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="ConnectView" Height="600" Width="800" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF" xmlns:windows="clr-namespace:lenovo.themes.generic.Controls.Windows">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="SelDotItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Width="20" Height="20">
+                <Border Name="dot" Width="8" Height="8" CornerRadius="4" Background="#FFD3D3D3" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter TargetName="dot" Property="Border.Background" Value="#43B5E2" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <ItemsPanelTemplate x:Key="HorizontalPannel">
+        <WrapPanel Orientation="Horizontal" />
+      </ItemsPanelTemplate>
+      <Style x:Key="DotListStyleKey" TargetType="{x:Type ListBox}">
+        <Setter Property="Margin" Value="0 10 0 18" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="ItemsPanel" Value="{StaticResource HorizontalPannel}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SelDotItemStyle}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Grid>
+                <ItemsPresenter />
+                <Rectangle Fill="#00FFFFFF" />
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border CornerRadius="8" Background="#FFFFFFFF">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="45" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <DockPanel>
+        <lang:LangTextBlock Margin="25 0 0 0" VerticalAlignment="Center" FontSize="15pt" Foreground="#43B5E2" LangText="{Binding Title}" LangKey="{Binding Title}" />
+        <Button Style="{StaticResource WndCloseBtnStyle}" Margin="0 10 10 0" Command="{Binding CloseCommand}" />
+      </DockPanel>
+      <Grid Row="1">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Width="80" Tag="Back" Margin="20 0 0 0" CommandParameter="False" Style="{StaticResource IconBtnExStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding IsBackBtnEnable}" Command="{Binding BtnCommand}" Visibility="{Binding IsMultiItemVisible}">
+          <Path Width="32" Height="32" Fill="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}">
+            <Path.Data>
+              <GeometryGroup>
+                <EllipseGeometry RadiusX="14" RadiusY="14" Center="16, 16" />
+                <PathGeometry Transform="-1.2,0,0,1,20,9" Figures="M39,36z M0,0z M1.60429106,13.8087081C1.77323436,13.8087081,1.92387927,13.7352357,2.02913302,13.6189066L8.27207712,7.37598789 8.27207713,7.37598789C8.37965822,7.26857305,8.44003201,7.1227364,8.43985509,6.97071151L8.43985509,6.97070417C8.44004822,6.82084011,8.38107091,6.67695927,8.27574695,6.57034707L8.27574695,6.56910522 2.01812866,0.31151227 2.00834587,0.301729474C1.90428328,0.201265742 1.7462886,0.209857368 1.60920275,0.138868741 0.794975112,-0.281081828 0.463171078,0.394792751 0.463171078,0.711897248L0.463171068,0.711902841C0.462894661,0.860561794,0.520922254,1.00340226,0.624793745,1.10975088L0.628493974,1.11345111 0.628493973,1.11345111C0.629746272,1.1146569,0.630979829,1.11588201,0.632194201,1.11712599L6.48577797,6.97068442 0.624819088,12.8316686C0.521973017,12.9357059 0.365270882,13.1083748 0.458334159,13.2368943 1.2615118,14.3559853 1.28842716,13.8087063 1.6042898,13.8087063L1.60429106,13.8087081z" />
+              </GeometryGroup>
+            </Path.Data>
+          </Path>
+        </Button>
+        <genericControls:GifPanel Grid.Row="0" Width="270" Height="432" VerticalAlignment="Center" IsRepeatFoever="False" UriImageSource="{Binding TutorialImageUri}" />
+        <Button Grid.Row="0" Width="80" Tag="Next" Margin="0 0 20 0" CommandParameter="True" Style="{StaticResource IconBtnExStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" IsEnabled="{Binding IsNextBtnEnable}" Command="{Binding BtnCommand}" Visibility="{Binding IsMultiItemVisible}">
+          <Path Width="32" Height="32" Fill="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}">
+            <Path.Data>
+              <GeometryGroup>
+                <EllipseGeometry RadiusX="14" RadiusY="14" Center="16, 16" />
+                <PathGeometry Transform="1.2,0,0,1,12,9" Figures="M39,36z M0,0z M1.60429106,13.8087081C1.77323436,13.8087081,1.92387927,13.7352357,2.02913302,13.6189066L8.27207712,7.37598789 8.27207713,7.37598789C8.37965822,7.26857305,8.44003201,7.1227364,8.43985509,6.97071151L8.43985509,6.97070417C8.44004822,6.82084011,8.38107091,6.67695927,8.27574695,6.57034707L8.27574695,6.56910522 2.01812866,0.31151227 2.00834587,0.301729474C1.90428328,0.201265742 1.7462886,0.209857368 1.60920275,0.138868741 0.794975112,-0.281081828 0.463171078,0.394792751 0.463171078,0.711897248L0.463171068,0.711902841C0.462894661,0.860561794,0.520922254,1.00340226,0.624793745,1.10975088L0.628493974,1.11345111 0.628493973,1.11345111C0.629746272,1.1146569,0.630979829,1.11588201,0.632194201,1.11712599L6.48577797,6.97068442 0.624819088,12.8316686C0.521973017,12.9357059 0.365270882,13.1083748 0.458334159,13.2368943 1.2615118,14.3559853 1.28842716,13.8087063 1.6042898,13.8087063L1.60429106,13.8087081z" />
+              </GeometryGroup>
+            </Path.Data>
+          </Path>
+        </Button>
+        <lang:LangTextBlock Grid.Row="1" VerticalAlignment="Bottom" Margin="0 5" FontSize="14" TextWrapping="Wrap" Foreground="#FF494949" HorizontalAlignment="Center" LangText="{Binding GifNote}" LangKey="{Binding GifNote}" />
+        <ListBox Grid.Row="2" Style="{StaticResource DotListStyleKey}" ItemsSource="{Binding UriArr}" SelectedIndex="{Binding Index}" Visibility="{Binding IsMultiItemVisible}" />
+      </Grid>
+    </Grid>
+  </Border>
+</Window>

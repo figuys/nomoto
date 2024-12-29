@@ -1,0 +1,1713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:localControls="clr-namespace:lenovo.themes.generic.Controls" xmlns:convert="clr-namespace:lenovo.themes.generic.Converter" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:localMain="clr-namespace:lenovo.themes.generic">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/Images.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/Global.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/HeaderTextBox.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/ComboBox.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/Menu.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/CheckBox.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/TextBox.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/LeftNavigation.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/RsaComboboxStyle.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/SearchTextBox.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/Themes/ComboboxStyle.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <DropShadowEffect x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultDropShadowEffect}" Color="#CCDCFC" BlurRadius="8" ShadowDepth="0" />
+  <sys:Boolean x:Key="trueValue">true</sys:Boolean>
+  <sys:Boolean x:Key="falseValue">false</sys:Boolean>
+  <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+  <convert:NullVisibleConverter x:Key="NullVisibleConverter" />
+  <convert:CompareValueConverter x:Key="CompareValueConverter" />
+  <convert:NullEmptyArrayVisibleConveter x:Key="NullEmptyArrayVisibleConveter" />
+  <convert:SupperBooleanToVisibilityConverter x:Key="supperBooleanToVisibilityConverter" />
+  <convert:EqualsToVisibilityConverter x:Key="equalsToVisibilityConverter" />
+  <convert:NotEqualsToVisibilityConverter x:Key="notEqualsToVisibilityConverter" />
+  <convert:StringIsNullOrEmptyToVisibilityConverter x:Key="stringIsNullOrEmptyToVisibilityConverter" />
+  <convert:RescueProgressPercentMarginConverter x:Key="RescueProgressPercentMarginConverter" />
+  <convert:TrueToFalseConverter x:Key="_TrueToFalseConverter" />
+  <convert:CategoryForcgroundConverter x:Key="_CategoryForcgroundConverter" />
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=DefalutLoadingButtonTemplate}" TargetType="{x:Type localControls:LoadingButton}">
+    <Grid Name="TempleteRoot" Background="#FFFFFFFF">
+      <Grid Name="TemplateAnimationRoot" Width="{TemplateBinding localControls:LoadingButton.ProgressBarPanelSize}" Height="{TemplateBinding localControls:LoadingButton.ProgressBarPanelSize}" RenderTransformOrigin="0.5,0.5">
+        <UIElement.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform />
+            <SkewTransform />
+            <RotateTransform />
+            <TranslateTransform />
+          </TransformGroup>
+        </UIElement.RenderTransform>
+        <Ellipse Fill="{TemplateBinding localControls:LoadingButton.EllipseFill}" StrokeThickness="{TemplateBinding localControls:LoadingButton.EllipseStrokeThickness}" Stroke="{TemplateBinding localControls:LoadingButton.EllipseStroke}" />
+        <Rectangle Fill="{TemplateBinding localControls:LoadingButton.RectangleFill}" HorizontalAlignment="Right" Width="{TemplateBinding localControls:LoadingButton.RectangleWidth}" Height="{TemplateBinding localControls:LoadingButton.RectangleHeight}" RadiusY="{TemplateBinding localControls:LoadingButton.RectangleRadiusY}" RadiusX="{TemplateBinding localControls:LoadingButton.RectangleRadiusX}" StrokeThickness="0">
+          <UIElement.Effect>
+            <BlurEffect RenderingBias="Performance" KernelType="Gaussian" Radius="{Binding RectangleEffectRadius, RelativeSource={RelativeSource TemplatedParent}}" />
+          </UIElement.Effect>
+        </Rectangle>
+      </Grid>
+      <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="localControls:LoadingButton.IsLoading" Value="True">
+        <TriggerBase.EnterActions>
+          <BeginStoryboard Name="roteAnimation">
+            <Storyboard RepeatBehavior="Forever">
+              <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="TemplateAnimationRoot">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="360" />
+              </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.EnterActions>
+        <TriggerBase.ExitActions>
+          <StopStoryboard BeginStoryboardName="roteAnimation" />
+        </TriggerBase.ExitActions>
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=speciallyuttonTemplate}" TargetType="{x:Type Button}">
+    <Grid Background="{TemplateBinding Control.Background}">
+      <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Name="root" Background="{Binding Background}">
+      <ContentControl Name="contentPanel" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding ContentControl.Content}" Foreground="{Binding Foreground}" />
+      <UIElement.InputBindings>
+        <MouseBinding Gesture="LeftClick" Command="{Binding ClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+      </UIElement.InputBindings>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="UIElement.IsMouseOver" Value="True">
+        <Setter TargetName="root" Property="Panel.Background" Value="{Binding MouseOverBackground}" />
+        <Setter TargetName="contentPanel" Property="Control.Foreground" Value="{Binding MouseOverForeground}" />
+      </Trigger>
+      <Trigger Property="UIElement.IsEnabled" Value="False">
+        <Setter TargetName="root" Property="Panel.Background" Value="{Binding DisabledBackground}" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Visibility" Value="{Binding Visibility}" />
+    <Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
+    <Setter Property="Content" Value="{Binding Content}" />
+    <Setter Property="Foreground" Value="{Binding Foreground}" />
+    <Setter Property="Template" Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultButtonTemplate}}" />
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=DefaultBlueButtonStyle}" TargetType="{x:Type lang:LangButton}">
+    <Setter Property="MinWidth" Value="80" />
+    <Setter Property="Width" Value="120" />
+    <Setter Property="Height" Value="25" />
+    <Setter Property="Background" Value="{DynamicResource {x:Static localMain:ResourceBursh.PrimaryBlueBrush}}" />
+    <Setter Property="BorderBrush" Value="#00FFFFFF" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Foreground" Value="#ffffff" />
+    <Setter Property="lang:LangButton.MouseOverBackground" Value="#43B5E2" />
+    <Setter Property="lang:LangButton.MouseOverForeground" Value="#ffffff" />
+    <Setter Property="lang:LangButton.DisabledBackground" Value="#b3b3b3" />
+    <Setter Property="lang:LangButton.BorderCornerRadius" Value="8" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type lang:LangButton}">
+          <Border Name="border" CornerRadius="{TemplateBinding lang:LangButton.BorderCornerRadius}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="True">
+            <ContentPresenter Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="border" Property="Border.Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{Binding MouseOverForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter TargetName="border" Property="Border.Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{Binding MouseOverForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="border" Property="Border.Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=DefaultGrayButtonStyle}" TargetType="{x:Type lang:LangButton}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=DefaultBlueButtonStyle}}">
+    <Setter Property="Background" Value="#efefef" />
+    <Setter Property="Foreground" Value="#898989" />
+    <Setter Property="lang:LangButton.MouseOverBackground" Value="#d6d7d8" />
+    <Setter Property="lang:LangButton.MouseOverForeground" Value="#898989" />
+    <Setter Property="lang:LangButton.DisabledBackground" Value="#43B5E2" />
+  </Style>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultIconButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Name="root" Background="{Binding Background}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Image Name="icon" Grid.Column="0" VerticalAlignment="Center" Stretch="None" Margin="5 0" Source="{Binding IconSource}" />
+      <ContentControl Name="contentPanel" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding ContentControl.Content}" Foreground="{Binding Foreground}" />
+      <UIElement.InputBindings>
+        <MouseBinding Gesture="LeftClick" Command="{Binding ClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+      </UIElement.InputBindings>
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="UIElement.IsMouseOver" Value="True">
+        <Setter TargetName="root" Property="Panel.Background" Value="{Binding MouseOverBackground}" />
+        <Setter TargetName="contentPanel" Property="Control.Foreground" Value="{Binding MouseOverForeground}" />
+        <Setter TargetName="icon" Property="Image.Source" Value="{Binding IconMouseOverSource}" />
+      </Trigger>
+      <Trigger Property="UIElement.IsEnabled" Value="False">
+        <Setter TargetName="contentPanel" Property="Control.Foreground" Value="{Binding DisabledBackground}" />
+        <Setter TargetName="icon" Property="Image.Source" Value="{Binding IconDisabledSource}" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultIconButtonStyle}" TargetType="{x:Type Button}">
+    <Setter Property="Visibility" Value="{Binding Visibility}" />
+    <Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
+    <Setter Property="Content" Value="{Binding Content}" />
+    <Setter Property="Template" Value="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultIconButtonTemplate}}" />
+  </Style>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=downloadButtonTemplate}" TargetType="{x:Type Button}">
+    <Grid Height="16">
+      <UIElement.InputBindings>
+        <MouseBinding Gesture="LeftClick" Command="{Binding ClickCommand}" />
+      </UIElement.InputBindings>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="3" />
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0" ClipToBounds="True">
+        <Rectangle Name="topPanel" Fill="{Binding TopBackgroundBrush}" />
+      </Border>
+      <Border Name="bottomPanel" Grid.Row="1" Background="{Binding BottomBackgroundBrush}" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="UIElement.IsEnabled" Value="False">
+        <Setter TargetName="bottomPanel" Property="Border.Background" Value="{Binding BottomDisabledBackgroundBrush}" />
+        <Setter TargetName="topPanel" Property="Shape.Fill" Value="{Binding TopDisabledBackgroundBrush}" />
+      </Trigger>
+      <DataTrigger Value="true" Binding="{Binding IsDownloading}">
+        <TriggerBase.EnterActions>
+          <BeginStoryboard Name="downloadingStoryboard">
+            <Storyboard TargetName="topPanel" TargetProperty="Margin" RepeatBehavior="Forever">
+              <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00">
+                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0 -22 0 0" />
+                <SplineThicknessKeyFrame KeyTime="00:00:01" Value="0 13 0 0" />
+              </ThicknessAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.EnterActions>
+      </DataTrigger>
+      <DataTrigger Value="false" Binding="{Binding IsDownloading}">
+        <TriggerBase.EnterActions>
+          <StopStoryboard BeginStoryboardName="downloadingStoryboard" />
+        </TriggerBase.EnterActions>
+      </DataTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+  <Style x:Key="EmptyCheckBoxStyle" TargetType="{x:Type CheckBox}">
+    <Setter Property="BorderBrush" Value="#8E8F8F" />
+    <Setter Property="Foreground" Value="#73797C" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type CheckBox}">
+          <Grid Background="{TemplateBinding Control.Background}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="32" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Margin="8 0">
+              <Path Width="16" Height="16" Stretch="Fill" Fill="{TemplateBinding Control.BorderBrush}" Data="F1 M22,54 L22,22 L54,22 L54,54 L22,54 M26,26 L26,50 L50,50 L50,26 L26,26" />
+              <Path Name="path" Width="10" Height="10" Stretch="Fill" Fill="#43B5E2" Visibility="Collapsed" Data="F1 M23.7501,33.25 L34.8334,44.3333 L52.2499,22.1668 L56.9999,26.9168 L34.8334,53.8333 L19.0001,38 L23.7501,33.25" />
+            </Grid>
+            <lang:LangTextBlock Grid.Column="1" VerticalAlignment="Center" LangKey="{TemplateBinding ContentControl.Content}" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+              <Setter TargetName="path" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="FocusVisual">
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF" />
+  <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070" />
+  <Style x:Key="OptionMarkFocusVisual">
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121" />
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=CheckBoxDefaultStyle}" TargetType="{x:Type CheckBox}">
+    <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+    <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}" />
+    <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}" />
+    <Setter Property="Foreground" Value="#FF494949" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontSize" Value="{Binding ContentFontSize}" />
+    <Setter Property="UIElement.Opacity" Value="1" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type CheckBox}">
+          <Grid Name="templateRoot" Background="#00FFFFFF" SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Name="checkBoxBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="0 0 6 0" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+              <Grid Name="markGrid">
+                <Path Name="optionMark" Data="F1 M9.97498,1.22334 L4.6983,9.09834 L4.52164,9.09834 L0,5.19331 L1.27664,3.52165 L4.255,6.08833 L8.33331,1.52588E-05 L9.97498,1.22334" Fill="#43B5E2" Margin="1" Opacity="0" Stretch="None" />
+                <Rectangle Name="indeterminateMark" Margin="2,-16,2,20" Opacity="0" Fill="{StaticResource OptionMark.Static.Glyph}" />
+              </Grid>
+            </Border>
+            <ContentPresenter Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+              <Setter TargetName="optionMark" Property="UIElement.Opacity" Value="1" />
+              <Setter TargetName="indeterminateMark" Property="UIElement.Opacity" Value="0" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="{x:Null}">
+              <Setter TargetName="optionMark" Property="UIElement.Opacity" Value="0" />
+              <Setter TargetName="indeterminateMark" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=languageSelectWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Width="526" MinHeight="145" Height="auto">
+      <Border Background="{Binding Background}" Opacity="{Binding Opacity}">
+        <UIElement.Effect>
+          <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#DFDFDF" />
+        </UIElement.Effect>
+      </Border>
+      <Grid Width="450">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="21" />
+          <RowDefinition MinHeight="29" Height="auto" />
+          <RowDefinition MinHeight="75" Height="auto" />
+          <RowDefinition MinHeight="35" Height="auto" />
+          <RowDefinition Height="26" />
+          <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" HorizontalAlignment="Left">
+          <TextBlock TextWrapping="Wrap" FontWeight="Bold" Text="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+        </Border>
+        <Grid Row="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <CheckBox Name="cb1" Grid.Row="0" Grid.Column="0" Content="English" CommandParameter="en-US" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language1Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb2" Grid.Row="0" Grid.Column="1" Content="Português" CommandParameter="pt-BR" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language2Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb4" Grid.Row="0" Grid.Column="2" Content="Polski" CommandParameter="pl-PL" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language4Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb3" Grid.Row="0" Grid.Column="3" Content="Español" CommandParameter="es-ES" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language3Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb5" Grid.Row="1" Grid.Column="0" Content="Pусский" CommandParameter="ru-RU" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language5Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb6" Grid.Row="1" Grid.Column="1" Content="日本語" CommandParameter="ja-JP" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language6Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb7" Grid.Row="1" Grid.Column="2" Content="Italiano" CommandParameter="it-IT" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language7Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb8" Grid.Row="1" Grid.Column="3" Content="简体中文" CommandParameter="zh-CN" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language8Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb9" Grid.Row="2" Grid.Column="0" Content="Deutsch" CommandParameter="de-DE" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language9Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb10" Grid.Row="2" Grid.Column="1" Content="Slovák" CommandParameter="sk-SK" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language10Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb11" Grid.Row="2" Grid.Column="2" Content="Српски" CommandParameter="sr-RS" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language11Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb12" Grid.Row="2" Grid.Column="3" Content="Română" CommandParameter="ro-RO" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language12Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb13" Grid.Row="3" Grid.Column="0" Content="български" CommandParameter="bg-BG" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language13Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb14" Grid.Row="3" Grid.Column="1" Content="Čeština" CommandParameter="cs-CZ" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language14Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+          <CheckBox Name="cb15" Grid.Row="3" Grid.Column="2" Content="Français" CommandParameter="fr-FR" Style="{StaticResource EmptyCheckBoxStyle}" IsChecked="{Binding Language15Checked, Mode=TwoWay}" Command="{Binding SelectLanguageClickCommand}" />
+        </Grid>
+        <Border Grid.Row="3" HorizontalAlignment="Left">
+          <Image Margin="0 -5" Height="15" Width="3" Stretch="Fill" Source="{Binding TitleIconImageSource}" />
+        </Border>
+        <Border Grid.Row="3" Margin="15">
+          <TextBlock Margin="0 5" TextWrapping="Wrap" FontWeight="Bold" Text="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+        </Border>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+          <Button Width="160" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=speciallyuttonTemplate}}" Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <lang:LangTextBlock LangText="{Binding CancelButtonText}" LangKey="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+          </Button>
+          <Button Width="160" Margin="100 0 0 0" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=speciallyuttonTemplate}}" Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <lang:LangTextBlock LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </StackPanel>
+        <Border>
+          <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+        </Border>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultOKCancelWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Background="#00FFFFFF" Width="430" MinHeight="200" Height="auto">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Padding="26 26 26 5">
+          <lang:LangTextBlock LineHeight="35" FontSize="16" Foreground="#545454" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Bottom" LangText="{Binding Title}" LangKey="{Binding Title}" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Padding="26 5 26 26">
+          <lang:LangTextBlock LineHeight="25" FontSize="14" Foreground="#545454" FontWeight="Medium" TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" />
+        </Border>
+      </Grid>
+      <Grid Column="0" Row="1" ColumnSpan="2" Margin="0 17 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding CancelButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding CancelButtonText}" LangKey="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+          </Button>
+        </Border>
+        <Border Grid.Column="3" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+      <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=AutoOKCancelWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Background="#00FFFFFF" MinWidth="430" Width="auto" MinHeight="200" Height="auto">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Padding="26 26 26 5">
+          <TextBlock FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Padding="26 5 26 26">
+          <TextBlock TextWrapping="Wrap" Width="430" Text="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+        </Border>
+      </Grid>
+      <Grid Column="0" Row="1" ColumnSpan="2" Margin="0 17 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding CancelButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <TextBlock Text="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+          </Button>
+        </Border>
+        <Border Grid.Column="3" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <TextBlock Text="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+      <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultOKCancelPrivacyWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Background="#00FFFFFF" Width="430" MinHeight="200" Height="auto">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Border Grid.Column="0" Grid.Row="0" Padding="26 26 26 5">
+        <lang:LangTextBlock FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Bottom" LangText="{Binding Title}" LangKey="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+      </Border>
+      <Border Grid.Column="0" Grid.Row="1" Padding="26 5 26 26">
+        <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+      </Border>
+      <Border Grid.Row="2" Padding="26 5 26 6">
+        <lang:LangTextBlock VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap">
+          <lang:LangRun FontSize="13" Foreground="{Binding ContentForeground}" LangText="{Binding PrivacyTipsText}" LangKey="{Binding PrivacyTipsText}" /> <lang:LangRun FontSize="11" Text="(" Foreground="{Binding ContentForeground}" /> <lang:LangRun FontSize="12" Foreground="#44B6E3" TextDecorations="Underline" Cursor="Hand" LangText="{Binding PrivacyUrlText}" LangKey="{Binding PrivacyUrlText}"><ContentElement.InputBindings><MouseBinding Gesture="LeftClick" Command="{Binding ShowPrivacyPageClickCommand}" /></ContentElement.InputBindings></lang:LangRun> <lang:LangRun FontSize="11" Text=")" Foreground="{Binding ContentForeground}" /></lang:LangTextBlock>
+      </Border>
+      <Grid Column="0" Row="3" ColumnSpan="2" Margin="0 20 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding CancelButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding CancelButtonText}" LangKey="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+          </Button>
+        </Border>
+        <Border Grid.Column="3" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultOKCancelNoImageWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Background="#00FFFFFF" Width="430" MinHeight="200" Height="auto">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Border Grid.Column="0" Grid.Row="0" Padding="26 26 26 5">
+        <lang:LangTextBlock FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Bottom" LangText="{Binding Title}" LangKey="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+      </Border>
+      <Border Grid.Column="0" Grid.Row="1" Padding="26 5 26 26">
+        <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+      </Border>
+      <Grid Column="0" Row="2" ColumnSpan="2" Margin="0 17 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding CancelButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding CancelButtonText}" LangKey="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+          </Button>
+        </Border>
+        <Border Grid.Column="3" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="8" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=restartNowOrLaterWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid Width="386" MinHeight="145" Height="auto">
+      <Border Background="{Binding Background}" Opacity="{Binding Opacity}">
+        <UIElement.Effect>
+          <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#DFDFDF" />
+        </UIElement.Effect>
+      </Border>
+      <Grid Background="#00FFFFFF">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="810*" />
+          <ColumnDefinition Width="20*" />
+        </Grid.ColumnDefinitions>
+        <Grid Column="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*" />
+            <ColumnDefinition Width="658*" />
+            <ColumnDefinition Width="10*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="31" />
+            <RowDefinition MinHeight="19" Height="auto" />
+            <RowDefinition MinHeight="55" Height="auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+          </Grid.RowDefinitions>
+          <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Right">
+            <Image Margin="0 27 15 0" Height="15" Width="3" Stretch="Fill" Source="{Binding TitleIconImageSource}" />
+          </Border>
+          <Border Grid.Column="1" Grid.Row="1">
+            <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Title}" LangKey="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+          </Border>
+          <Border Grid.Column="1" Grid.Row="2">
+            <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+          </Border>
+          <Grid Column="0" Row="4" ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition Width="20" />
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1">
+              <Button Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=speciallyuttonTemplate}}" Background="{Binding CancelButtonBackground}" Command="{Binding CancelButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+                <lang:LangTextBlock Margin="5 0 5 0" LangText="{Binding CancelButtonText}" LangKey="{Binding CancelButtonText}" FontSize="{Binding CancelButtonTextFontSize}" Foreground="{Binding CancelButtonForeground}" />
+              </Button>
+            </Border>
+            <Border Grid.Column="3">
+              <Button Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=speciallyuttonTemplate}}" Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+                <lang:LangTextBlock Margin="5 0 5 0" LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+              </Button>
+            </Border>
+          </Grid>
+        </Grid>
+        <Border Grid.Column="1">
+          <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+        </Border>
+      </Grid>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultNoticeWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#00FFFFFF" Width="500" MinHeight="200" MaxHeight="480">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Padding="7 0 12 5">
+          <TextBlock FontSize="14" TextWrapping="Wrap" VerticalAlignment="Bottom" FontWeight="Bold" Text="{Binding Title}" Foreground="{Binding TitleForeground}" />
+        </Border>
+        <Border Grid.Column="0" Visibility="Visible" Grid.Row="1" Margin="0 0 0 10">
+          <Line Margin="0" X1="0" Y1="0.1" X2="490" Y2="0.1" Stroke="#D8D8D8" HorizontalAlignment="Center" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Margin="0 10 0 0" Padding="20 5 15 10">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBlock FontSize="14" TextWrapping="Wrap" Text="{Binding Content}" Foreground="{Binding ContentForeground}" />
+          </ScrollViewer>
+        </Border>
+      </Grid>
+      <Grid Column="0" Row="1" ColumnSpan="2" Margin="0 17 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="60" Height="25">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="16" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock FontSize="14" LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+      <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultOKWindowTemplate}" TargetType="{x:Type UserControl}">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#00FFFFFF" Width="500" MinHeight="240">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Padding="26 16 26 5">
+          <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Margin="0 0 8 0" Visibility="{Binding WarnIconVisibility}">
+              <Image Width="24" Height="24" Source="{StaticResource generic_warnicon}" />
+            </Border>
+            <Border Grid.Column="1">
+              <lang:LangTextBlock FontSize="16" Foreground="#545454" LineHeight="35" TextWrapping="Wrap" VerticalAlignment="Bottom" FontWeight="SemiBold" LangText="{Binding Title}" LangKey="{Binding Title}" />
+            </Border>
+          </Grid>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Margin="0 0 0 10" Visibility="{Binding ShowLine}">
+          <Line Margin="0" X1="0" Y1="0.2" X2="380" Y2="0.2" Stroke="#D8D8D8" HorizontalAlignment="Center" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Padding="26 5 26 6">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <lang:LangTextBlock LineHeight="25" FontSize="14" Foreground="#545454" FontWeight="Medium" TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" />
+          </ScrollViewer>
+        </Border>
+      </Grid>
+      <Grid Column="0" Row="1" ColumnSpan="2" Margin="0 10">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" CornerRadius="6" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}">
+              <lang:LangRun LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" /> <Run Text="{Binding CountDownTip}" /></lang:LangTextBlock>
+          </Button>
+        </Border>
+      </Grid>
+      <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="{Binding ContentIconImageSource}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultOKWindowTemplateEx}" TargetType="{x:Type UserControl}">
+    <Grid Background="#00FFFFFF" Width="430" MinHeight="200" Height="auto">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid Column="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Padding="20 26 20 5">
+          <lang:LangTextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" FontWeight="Bold" LangText="{Binding Title}" LangKey="{Binding Title}" FontSize="{Binding TitleFontSize}" Foreground="{Binding TitleForeground}" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" Padding="20 5 20 26">
+          <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Content}" LangKey="{Binding Content}" FontSize="{Binding ContentFontSize}" Foreground="{Binding ContentForeground}" />
+        </Border>
+      </Grid>
+      <Grid Column="0" Row="1" ColumnSpan="2" Margin="0 17 0 17">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" MinWidth="120" Height="28">
+          <Button Background="{Binding OKButtonBackground}" Command="{Binding OKButtonClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Name="_rootBorder" Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter Name="_content" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="_rootBorder" Property="Border.Background" Value="{Binding OKButtonMouseOverBackground}" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Control.Template>
+            <lang:LangTextBlock LangText="{Binding OKButtonText}" LangKey="{Binding OKButtonText}" FontSize="{Binding OKButtonTextFontSize}" Foreground="{Binding OKButtonForeground}" />
+          </Button>
+        </Border>
+      </Grid>
+      <Border Grid.Column="0" Grid.Row="0">
+        <Image Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15 50 0 0" Stretch="Uniform" Source="{Binding ContentIconImageSource}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <DataTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultContentPresenterTemplateForTextBlock}">
+    <Border>
+      <TextBlock TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Text="{Binding}" />
+    </Border>
+  </DataTemplate>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultPopupWindowStyle}" TargetType="{x:Type Window}">
+    <Setter Property="Window.WindowStyle" Value="None" />
+    <Setter Property="Window.SizeToContent" Value="WidthAndHeight" />
+    <Setter Property="Window.AllowsTransparency" Value="True" />
+    <Setter Property="Width" Value="auto" />
+    <Setter Property="Height" Value="auto" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Window}">
+          <Border BorderThickness="20" Background="#00FFFFFF">
+            <Border Background="#FFFFFF" CornerRadius="15">
+              <UIElement.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#DFDFDF" />
+              </UIElement.Effect>
+              <ContentPresenter Margin="10" />
+            </Border>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=defaultPluginMainViewTemplate}" TargetType="{x:Type localControls:PluginMainPanel}">
+    <Grid Background="#00FFFFFF">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="26px" />
+      </Grid.RowDefinitions>
+      <Border Grid.Row="0" BorderThickness="0" Margin="0" Padding="0" Background="#00FFFFFF">
+        <ContentPresenter Content="{TemplateBinding localControls:PluginMainPanel.Content}" />
+      </Border>
+      <Border Grid.Row="1" BorderThickness="0" Margin="0" Padding="0" Background="#00FFFFFF">
+        <ContentPresenter Content="{TemplateBinding localControls:PluginMainPanel.StateBar}" />
+      </Border>
+    </Grid>
+  </ControlTemplate>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=tooltipPopupStyle}" TargetType="{x:Type Popup}">
+    <Style.Triggers>
+      <DataTrigger Value="True" Binding="{Binding PlacementTarget.IsMouseOver, RelativeSource={RelativeSource Self}}">
+        <TriggerBase.EnterActions>
+          <BeginStoryboard Name="OpenPopupStoryBoard">
+            <Storyboard>
+              <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" FillBehavior="HoldEnd">
+                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="True" />
+              </BooleanAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.EnterActions>
+        <TriggerBase.ExitActions>
+          <PauseStoryboard BeginStoryboardName="OpenPopupStoryBoard" />
+          <BeginStoryboard Name="ClosePopupStoryBoard">
+            <Storyboard>
+              <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" FillBehavior="HoldEnd">
+                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="False" />
+              </BooleanAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.ExitActions>
+      </DataTrigger>
+      <Trigger Property="UIElement.IsMouseOver" Value="True">
+        <TriggerBase.EnterActions>
+          <PauseStoryboard BeginStoryboardName="ClosePopupStoryBoard" />
+        </TriggerBase.EnterActions>
+        <TriggerBase.ExitActions>
+          <PauseStoryboard BeginStoryboardName="OpenPopupStoryBoard" />
+          <ResumeStoryboard BeginStoryboardName="ClosePopupStoryBoard" />
+        </TriggerBase.ExitActions>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=lenovoPopupStyle}" TargetType="{x:Type localControls:LenovoPopup}">
+    <Style.Triggers>
+      <MultiDataTrigger>
+        <MultiDataTrigger.Conditions>
+          <Condition Value="True" Binding="{Binding PlacementTarget.IsMouseOver, RelativeSource={RelativeSource Self}}" />
+          <Condition Value="True" Binding="{Binding IsCanShow, RelativeSource={RelativeSource Self}}" />
+        </MultiDataTrigger.Conditions>
+        <TriggerBase.EnterActions>
+          <BeginStoryboard Name="OpenPopupStoryBoard">
+            <Storyboard>
+              <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" FillBehavior="HoldEnd">
+                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="True" />
+              </BooleanAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.EnterActions>
+        <TriggerBase.ExitActions>
+          <PauseStoryboard BeginStoryboardName="OpenPopupStoryBoard" />
+          <BeginStoryboard Name="ClosePopupStoryBoard">
+            <Storyboard>
+              <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" FillBehavior="HoldEnd">
+                <DiscreteBooleanKeyFrame KeyTime="0:0:0.1" Value="False" />
+              </BooleanAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </TriggerBase.ExitActions>
+      </MultiDataTrigger>
+      <Trigger Property="UIElement.IsMouseOver" Value="True">
+        <TriggerBase.EnterActions>
+          <PauseStoryboard BeginStoryboardName="ClosePopupStoryBoard" />
+        </TriggerBase.EnterActions>
+        <TriggerBase.ExitActions>
+          <PauseStoryboard BeginStoryboardName="OpenPopupStoryBoard" />
+          <ResumeStoryboard BeginStoryboardName="ClosePopupStoryBoard" />
+        </TriggerBase.ExitActions>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="{x:Type localControls:ProgressBarCtrl}" TargetType="{x:Type localControls:ProgressBarCtrl}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type localControls:ProgressBarCtrl}">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Name="PART_Text" HorizontalAlignment="Left" Foreground="{TemplateBinding Control.BorderBrush}" VerticalAlignment="Center" />
+            <Border Name="PART_Border" Grid.Row="1" Background="{TemplateBinding Control.Background}" Height="6">
+              <Border Name="PART_Progress" Background="{TemplateBinding Control.BorderBrush}" HorizontalAlignment="Left" />
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=IconButtonStyle2}" TargetType="{x:Type localControls:IconButton}">
+    <Setter Property="localControls:IconButton.NormalBackground" Value="#FF808080" />
+    <Setter Property="localControls:IconButton.NormalForeground" Value="#494949" />
+    <Setter Property="localControls:IconButton.MouseOverBackground" Value="{Binding NormalBackground, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.MouseOverForeground" Value="{Binding NormalForeground, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.MouseOverIcon" Value="{Binding Icon, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.MouseOverHeader" Value="{Binding Header, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.DisabledBackground" Value="{Binding NormalBackground, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.DisabledForeground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.DisabledIcon" Value="{Binding Icon, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="localControls:IconButton.DisabledHeader" Value="{Binding Header, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type localControls:IconButton}">
+          <Border Name="TemplateRoot" CornerRadius="{TemplateBinding localControls:IconButton.CornerRadius}" Background="{TemplateBinding localControls:IconButton.NormalBackground}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}">
+            <Grid HorizontalAlignment="Center">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{TemplateBinding localControls:IconButton.IconWidth}" />
+                <ColumnDefinition Width="{TemplateBinding localControls:IconButton.HeaderWidth}" />
+              </Grid.ColumnDefinitions>
+              <ContentPresenter Name="IconContentSite" Content="{TemplateBinding localControls:IconButton.Icon}" Margin="{TemplateBinding localControls:IconButton.IconMargin}" HorizontalAlignment="{TemplateBinding localControls:IconButton.IconHorizontalAlignment}" VerticalAlignment="{TemplateBinding localControls:IconButton.IconVerticalAlignment}" />
+              <ContentPresenter Name="HeaderContentSite" Grid.Column="1" Margin="{TemplateBinding localControls:IconButton.HeaderMargin}" HorizontalAlignment="{TemplateBinding localControls:IconButton.HeaderHorizontalAlignment}" VerticalAlignment="{TemplateBinding localControls:IconButton.HeaderVerticalAlignment}" Content="{TemplateBinding localControls:IconButton.Header}" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="IconContentSite" Property="ContentPresenter.Content" Value="{Binding MouseOverIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="HeaderContentSite" Property="ContentPresenter.Content" Value="{Binding MouseOverHeader, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="TemplateRoot" Property="Border.Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="TemplateRoot" Property="UIElement.Opacity" Value="20" />
+              <Setter Property="Foreground" Value="{Binding MouseOverForeground, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="UIElement.IsMouseOver" Value="False">
+              <Setter Property="Foreground" Value="{Binding NormalForeground, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="IconContentSite" Property="ContentPresenter.Content" Value="{Binding DisabledIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="HeaderContentSite" Property="ContentPresenter.Content" Value="{Binding DisabledHeader, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter TargetName="TemplateRoot" Property="Border.Background" Value="{Binding DisabledBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Setter Property="Foreground" Value="{Binding DisabledForeground, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=BlueIconButtonDefaultStyle}" TargetType="{x:Type localControls:IconButton}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=IconButtonStyle2}}">
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="localControls:IconButton.HeaderMargin" Value="5 0 5 0" />
+    <Setter Property="localControls:IconButton.HeaderWidth" Value="*" />
+    <Setter Property="localControls:IconButton.NormalBackground" Value="#43B5E2" />
+    <Setter Property="localControls:IconButton.NormalForeground" Value="#fbfbfb" />
+    <Setter Property="localControls:IconButton.MouseOverBackground" Value="#43B5E2" />
+    <Setter Property="localControls:IconButton.DisabledBackground" Value="#d6d7d8" />
+    <Setter Property="localControls:IconButton.DisabledForeground" Value="#898989" />
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonShadowEffectStyleZero}" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource {x:Static localMain:ResourceBursh.PrimaryBlueBrush}}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="5 0 5 0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Border Name="shadowEffectBorder" Background="{TemplateBinding Control.Background}" CornerRadius="4" Visibility="Hidden">
+              <UIElement.Effect>
+                <DropShadowEffect Color="#CCDCFC" BlurRadius="4" ShadowDepth="0" />
+              </UIElement.Effect>
+            </Border>
+            <Border Background="{TemplateBinding Control.Background}" CornerRadius="4">
+              <ContentPresenter />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="shadowEffectBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonShadowEffectStyleOne}" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource {x:Static localMain:ResourceBursh.PrimaryBlueBrush}}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="5 0 5 0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Border Name="shadowEffectBorder" Background="{TemplateBinding Control.Background}" CornerRadius="8" Visibility="Hidden">
+              <UIElement.Effect>
+                <DropShadowEffect Color="#CCDCFC" BlurRadius="4" ShadowDepth="0" />
+              </UIElement.Effect>
+            </Border>
+            <Border Background="{TemplateBinding Control.Background}" CornerRadius="8">
+              <ContentPresenter />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="shadowEffectBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonShadowEffectStyleTwo}" TargetType="{x:Type localControls:MouseOverButton}" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="{DynamicResource {x:Static localMain:ResourceBursh.PrimaryBlueBrush}}" />
+    <Setter Property="localControls:MouseOverButton.CornerRadius" Value="4" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="5 0 5 0" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type localControls:MouseOverButton}">
+          <Grid>
+            <Border Name="shadowEffectBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" CornerRadius="{TemplateBinding localControls:MouseOverButton.CornerRadius}" Visibility="Hidden">
+              <UIElement.Effect>
+                <DropShadowEffect Color="#CCDCFC" BlurRadius="4" ShadowDepth="0" />
+              </UIElement.Effect>
+            </Border>
+            <Border Background="{TemplateBinding Control.Background}" Padding="{TemplateBinding Control.Padding}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="{TemplateBinding localControls:MouseOverButton.CornerRadius}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="shadowEffectBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="UIElement.Opacity" Value="0.7" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonShadowEffectStyleThree}" TargetType="{x:Type localControls:MouseOverButton}" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonShadowEffectStyleTwo}}">
+    <Setter Property="Background" Value="{DynamicResource {x:Static localMain:ResourceBursh.PrimaryBlueBrush}}" />
+    <Setter Property="localControls:MouseOverButton.CornerRadius" Value="15" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="5 0 5 0" />
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=buttonTranslateStyleOne}" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="{ComponentResourceKey TypeInTargetAssembly=localMain:ComponentResources, ResourceId=DialogCloseButtonDaultStyle}" TargetType="{x:Type Button}">
+    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" />
+    <Setter Property="Background" Value="#ffffff" />
+    <Setter Property="Foreground" Value="#C9C9C9" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Width" Value="17" />
+    <Setter Property="Height" Value="17" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid Width="{TemplateBinding FrameworkElement.Width}" Height="{TemplateBinding FrameworkElement.Height}">
+            <Border Name="bk" Background="{TemplateBinding Control.Background}" />
+            <Rectangle Name="tmp" Visibility="Collapsed" Fill="#C9C9C9" />
+            <Image Width="15" Height="15">
+              <Image.Source>
+                <DrawingImage>
+                  <DrawingImage.Drawing>
+                    <DrawingGroup ClipGeometry="M0,0 L0,15 L15,15 L15,0 L0,0">
+                      <DrawingGroup Transform="1,0,0,1,-982,-14">
+                        <DrawingGroup Transform="0.707106781186547,0.707106781186548,-0.707106781186548,0.707106781186547,990.353553390593,9.99999989160847">
+                          <GeometryDrawing Geometry="M15,15 M0,0 M6.5,7.2 L6.5,1.7 C6.5,1.14771525 6.94771525,0.7 7.5,0.7 C8.05228475,0.7 8.5,1.14771525 8.5,1.7 L8.5,7.2 L14,7.2 C14.5522847,7.2 15,7.64771525 15,8.2 C15,8.75228475 14.5522847,9.2 14,9.2 L8.5,9.2 L8.5,14.7 C8.5,15.2522847 8.05228475,15.7 7.5,15.7 C6.94771525,15.7 6.5,15.2522847 6.5,14.7 L6.5,9.2 L1,9.2 C0.44771525,9.2 2.50117807E-12,8.75228475 2.50111043E-12,8.2 C2.50104279E-12,7.64771525 0.44771525,7.2 1,7.2 L6.5,7.2" Brush="{Binding Fill, ElementName=tmp}" />
+                        </DrawingGroup>
+                      </DrawingGroup>
+                    </DrawingGroup>
+                  </DrawingImage.Drawing>
+                </DrawingImage>
+              </Image.Source>
+            </Image>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="bk" Property="Border.Background" Value="#D67C7C" />
+              <Setter TargetName="tmp" Property="Shape.Fill" Value="#FFFFFF" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="LineStyleKey" TargetType="{x:Type Border}">
+    <Setter Property="Background" Value="#F4FAFE" />
+    <Setter Property="BorderBrush" Value="#DBE5EC" />
+    <Setter Property="BorderThickness" Value="0 0 0 1" />
+  </Style>
+  <Style x:Key="TabHeaderStyleKey" TargetType="{x:Type RadioButton}">
+    <Setter Property="MinWidth" Value="150" />
+    <Setter Property="Height" Value="40" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="VerticalAlignment" Value="Bottom" />
+    <Setter Property="Background" Value="#E1E6E8" />
+    <Setter Property="Foreground" Value="#676767" />
+    <Setter Property="RadioButton.GroupName" Value="Header" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <Border Name="Bd" CornerRadius="8 8 0 0" Background="{TemplateBinding Control.Background}" BorderThickness="1 1 1 0">
+            <ContentPresenter Margin="15 0" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter Property="Background" Value="#FFFFFFFF" />
+              <Setter Property="Foreground" Value="#43B5E2" />
+              <Setter TargetName="Bd" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect BlurRadius="8" ShadowDepth="0" Opacity="0.5" Color="#43B5E2" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="AndroidVersionBtnStyle" TargetType="{x:Type RadioButton}">
+    <Setter Property="Height" Value="40" />
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="BorderBrush" Value="#A4AEB4" />
+    <Setter Property="Foreground" Value="#676767" />
+    <Setter Property="Background" Value="#FFFFFFFF" />
+    <Setter Property="RadioButton.GroupName" Value="AndroidVer" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <Border BorderBrush="{TemplateBinding Control.BorderBrush}" Background="{TemplateBinding Control.Background}" BorderThickness="1" CornerRadius="15">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0">
+              <Path Width="16" Height="16" Stretch="Fill" Fill="{TemplateBinding Control.Foreground}" Margin="5 0 5 0" HorizontalAlignment="Left" Data="M6.54053265,2.08288045 L6.54053265,1.65679915 L6.11760873,1.65679915 L6.11760873,2.08288045 L6.54053265,2.08288045 M4.3846522,2.08288045 L4.3846522,1.65679915 L3.96172828,1.65679915 L3.96172828,2.08288045 L4.3846522,2.08288045 M6.76230982,0.900928448 C7.47405983,1.39161761 7.82993483,2.05670669 7.82993483,2.89619567 L2.67232611,2.89619567 C2.67232611,2.04375756 3.02161083,1.37866849 3.72018028,0.900928448 L3.15585193,0.35830503 C3.04840175,0.254987547 3.04840175,0.158144627 3.15585193,0.0677762686 C3.26330211,-0.0225920895 3.36401875,-0.0225920895 3.45800184,0.0677762686 L4.10270293,0.687681164 C4.45198766,0.506944448 4.83479684,0.41657609 5.25113048,0.41657609 C5.65399702,0.41657609 6.03007266,0.506944448 6.37935739,0.687681164 L7.02405848,0.0677762686 C7.13150866,-0.0225920895 7.2322253,-0.0225920895 7.32620839,0.0677762686 C7.42019148,0.158144627 7.42019148,0.254987547 7.32620839,0.35830503 L6.76230982,0.900928448 M8.89755984,3.32268932 C9.07205894,3.32268932 9.22320552,3.38399195 9.35099961,3.50659536 C9.47879369,3.62919877 9.54254746,3.77453203 9.54226189,3.94259514 L9.54226189,6.82887233 C9.54226189,7.00960905 9.47850716,7.15811071 9.35099961,7.27437732 C9.22349206,7.39064392 9.07234547,7.44877723 8.89755984,7.44877723 C8.72277421,7.44877723 8.57162762,7.39064392 8.44412007,7.27437732 C8.31661252,7.15811071 8.25285875,7.00960905 8.25285875,6.82887233 L8.25285875,3.94259514 C8.25285875,3.77480754 8.31661252,3.62947429 8.44412007,3.50659536 C8.57162762,3.38371643 8.72277421,3.32241473 8.89755984,3.32268932 M1.60470109,3.32268932 C1.77920019,3.32268932 1.93034678,3.38399195 2.05814086,3.50659536 C2.18593494,3.62919877 2.24968872,3.77453203 2.24940314,3.94259514 L2.24940314,6.82887233 C2.24940314,7.00960905 2.18564841,7.15811071 2.05814086,7.27437732 C1.93063331,7.39064392 1.77948672,7.44877723 1.60470109,7.44877723 C1.42991546,7.44877723 1.27876887,7.39064392 1.15126132,7.27437732 C1.02375377,7.15811071 0.96,7.00960905 0.96,6.82887233 L0.96,3.94259514 C0.96,3.77480754 1.02375377,3.62947429 1.15126132,3.50659536 C1.27876887,3.38371643 1.42991546,3.32241473 1.60470109,3.32268932 M2.6723261,7.44877722 L2.6723261,3.32269023 L7.82993482,3.32269023 L7.82993482,7.44877722 C7.82993482,7.56504382 7.78967682,7.66188674 7.70916082,7.73930598 C7.62864481,7.81672521 7.52792818,7.85543483 7.40701091,7.85543483 L6.96388636,7.85543483 L6.96388636,9.3084919 C6.96388636,9.48922862 6.90013258,9.63773028 6.77262503,9.75399689 C6.64511748,9.8702635 6.49397089,9.9283968 6.31918526,9.9283968 C6.14439963,9.9283968 5.99325305,9.8702635 5.8657455,9.75399689 C5.73823795,9.63773028 5.67448417,9.48922862 5.67448417,9.3084919 L5.67448417,7.85543483 L4.82820654,7.85543483 L4.82820654,9.3084919 C4.82820654,9.48922862 4.76445276,9.63773028 4.63694522,9.75399689 C4.50943767,9.8702635 4.35829108,9.9283968 4.18350545,9.9283968 C4.00871982,9.9283968 3.85757323,9.8702635 3.73006568,9.75399689 C3.60255813,9.63773028 3.53880436,9.48922862 3.53880436,9.3084919 L3.53880436,7.85543483 L3.09567981,7.85543483 C2.97476253,7.85543483 2.8740459,7.81672521 2.79352989,7.73930598 C2.71301389,7.66188674 2.67275589,7.56504382 2.67275589,7.44877722 L2.6723261,7.44877722" />
+              <lang:LangTextBlock LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" FontSize="12" FontWeight="Bold" TextWrapping="Wrap" />
+            </StackPanel>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter Property="Foreground" Value="#FFFFFF" />
+              <Setter Property="Background" Value="#43B5E2" />
+              <Setter Property="BorderBrush" Value="#43B5E2" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ButtonRbtnBtnStyle" TargetType="{x:Type RadioButton}">
+    <Setter Property="Height" Value="40" />
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="BorderBrush" Value="#FFE2E2E2" />
+    <Setter Property="Foreground" Value="#FF6E6E6E" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="RadioButton.GroupName" Value="AndroidVer" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <Border BorderBrush="{TemplateBinding Control.BorderBrush}" Background="{TemplateBinding Control.Background}" BorderThickness="1" CornerRadius="6">
+            <lang:LangTextBlock LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8 0" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter Property="Foreground" Value="#FFFFFF" />
+              <Setter Property="Background" Value="#43B5E2" />
+              <Setter Property="BorderBrush" Value="#43B5E2" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="IconRbtnStyle" TargetType="{x:Type RadioButton}">
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="26" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#808080" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <Border Background="#00FFFFFF" BorderBrush="{TemplateBinding Control.Foreground}" BorderThickness="1" CornerRadius="6">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <ContentPresenter Grid.Row="0" />
+              <lang:LangTextBlock Grid.Column="1" LangText="{TemplateBinding FrameworkElement.Tag}" LangKey="{TemplateBinding FrameworkElement.Tag}" Foreground="{TemplateBinding Control.Foreground}" FontSize="12" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0 0 8 0" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+              <Setter Property="Foreground" Value="#43B5E2" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+    <VirtualizingStackPanel Orientation="Horizontal" />
+  </ItemsPanelTemplate>
+  <Style x:Key="ConnectInfoItemStyle" TargetType="{x:Type ListBoxItem}">
+    <Setter Property="Width" Value="234" />
+    <Setter Property="Height" Value="390" />
+    <Setter Property="Foreground" Value="#979797" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+          <Grid Width="{TemplateBinding FrameworkElement.Width}" Height="{TemplateBinding FrameworkElement.Height}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="356" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Margin="10 0" Width="218" Height="356" Stretch="UniformToFill" VerticalAlignment="Top" Source="{Binding Content.ImgSource, RelativeSource={RelativeSource TemplatedParent}}" />
+            <Grid Row="1">
+              <Ellipse Width="28" Height="28" Stroke="{TemplateBinding Control.Foreground}" StrokeThickness="1" />
+              <TextBlock FontSize="12" Foreground="{TemplateBinding Control.Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Content.Sequence, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Border Width="104" Height="1" Background="{TemplateBinding Control.Foreground}" HorizontalAlignment="Left" Visibility="{Binding Content.LeftLineVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+              <Border Width="104" Height="1" Background="{TemplateBinding Control.Foreground}" HorizontalAlignment="Right" Visibility="{Binding Content.RightLineVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="NormalBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <Setter Property="Background" Value="#43B5E2" />
+    <Setter Property="BorderBrush" Value="#00FFFFFF" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Padding" Value="20 0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border CornerRadius="5" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="True">
+            <lang:LangTextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="{TemplateBinding Control.Foreground}" FontWeight="{TemplateBinding Control.FontWeight}" FontSize="{TemplateBinding Control.FontSize}" LangKey="{TemplateBinding ContentControl.Content}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="UIElement.Opacity" Value="0.8" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFB3B3B3" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="IconBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="32" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Name="bd" Background="#00FFFFFF">
+            <ContentPresenter />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+              <Setter TargetName="bd" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect Color="#43B5E2" ShadowDepth="0" BlurRadius="10" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+              <Setter TargetName="bd" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect Color="#43B5E2" ShadowDepth="0" BlurRadius="10" />
+                </Setter.Value>
+              </Setter>
+              <Setter Property="RenderTransform">
+                <Setter.Value>
+                  <TranslateTransform X="2" Y="2" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="IconBtnExStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="80" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Background" Value="#43B5E2" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="#00FFFFFF">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <ContentPresenter Grid.Row="0" />
+              <lang:LangTextBlock Grid.Row="1" LangText="{TemplateBinding FrameworkElement.Tag}" LangKey="{TemplateBinding FrameworkElement.Tag}" Foreground="#808080" HorizontalAlignment="Center" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFD3D3D3" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="IconTextBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="MinWidth" Value="120" />
+    <Setter Property="Width" Value="Auto" />
+    <Setter Property="Height" Value="Auto" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="Padding" Value="15 0" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <Setter Property="Background" Value="#43B5E2" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}" CornerRadius="8" MinWidth="{TemplateBinding FrameworkElement.MinWidth}" HorizontalAlignment="{TemplateBinding FrameworkElement.HorizontalAlignment}">
+            <Grid Margin="{TemplateBinding Control.Padding}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <ContentPresenter Grid.Column="0" VerticalAlignment="Center" />
+              <lang:LangTextBlock Grid.Column="1" Margin="10 0 0 0" LangKey="{TemplateBinding FrameworkElement.Tag}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{TemplateBinding Control.FontSize}" Foreground="{TemplateBinding Control.Foreground}" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFD3D3D3" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="WndCloseBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="24" />
+    <Setter Property="Height" Value="24" />
+    <Setter Property="Margin" Value="10" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#C1C1C1" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid Background="{TemplateBinding Control.Background}">
+            <Line X1="6" Y1="6" X2="18" Y2="18" StrokeThickness="2" Stroke="{TemplateBinding Control.Foreground}" SnapsToDevicePixels="True" />
+            <Line X1="18" Y1="6" X2="6" Y2="18" StrokeThickness="2" Stroke="{TemplateBinding Control.Foreground}" SnapsToDevicePixels="True" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="Background" Value="#FFFF0000" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Background" Value="#FFFF0000" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+              <Setter Property="RenderTransform">
+                <Setter.Value>
+                  <TranslateTransform X="2" Y="2" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="WndMinSizeBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="24" />
+    <Setter Property="Height" Value="24" />
+    <Setter Property="Margin" Value="10" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#4A4B4B" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}">
+            <Rectangle Width="14" Height="3" Fill="{TemplateBinding Control.Foreground}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="Background" Value="#3F43B5E2" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Background" Value="#3F43B5E2" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+              <Setter Property="RenderTransform">
+                <Setter.Value>
+                  <TranslateTransform X="2" Y="2" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="WndMaxSizeBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="24" />
+    <Setter Property="Height" Value="24" />
+    <Setter Property="Margin" Value="10" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#4A4B4B" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}">
+            <Border Width="12" Height="12" BorderThickness="2" BorderBrush="{TemplateBinding Control.Foreground}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter Property="Background" Value="#3F43B5E2" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter Property="Background" Value="#3F43B5E2" />
+              <Setter Property="Foreground" Value="#FFFFFF" />
+              <Setter Property="RenderTransform">
+                <Setter.Value>
+                  <TranslateTransform X="2" Y="2" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="NormalRadioButtonStyle" TargetType="{x:Type RadioButton}">
+    <Setter Property="Foreground" Value="#FF494949" />
+    <Setter Property="BorderBrush" Value="#8E8F8F" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <Grid Background="{TemplateBinding Control.Background}">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="28" />
+              <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Viewbox>
+              <Grid Width="20" Height="20">
+                <Path StrokeThickness="1" Stroke="{TemplateBinding Control.BorderBrush}" Data="F1 M22,22 M0,0 M11,17.1 C7.7,17.1 5,14.4 5,11.1 C5,7.8 7.7,5.1 11,5.1 C14.3,5.1 17,7.8 17,11.1 C17,14.4 14.3,17.1 11,17.1 M11,5.8 C8.1,5.8 5.8,8.2 5.8,11 C5.8,13.8 8.2,16.2 11,16.2 C13.8,16.2 16.2,13.8 16.2,11 C16.2,8.2 13.9,5.8 11,5.8" />
+                <Path Name="path" Fill="{TemplateBinding Control.BorderBrush}" Visibility="Collapsed">
+                  <Path.Data>
+                    <EllipseGeometry RadiusX="2.6" RadiusY="2.6" Center="11,11.1" />
+                  </Path.Data>
+                </Path>
+              </Grid>
+            </Viewbox>
+            <lang:LangTextBlock Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" LangText="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" LangKey="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+              <Setter Property="BorderBrush" Value="#43B5E2" />
+              <Setter TargetName="path" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="RedioBtnKey" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="32" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#43B5E2" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}">
+            <Path Name="path" Height="{TemplateBinding FrameworkElement.Width}" Width="{TemplateBinding FrameworkElement.Height}" Stretch="Fill" Fill="{TemplateBinding Control.Foreground}">
+              <Path.Data>
+                <GeometryGroup>
+                  <PathGeometry Figures="M56,56z M0,0z M27.9556963,6L27.955696,6C40.1057687,5.97574455 49.9750575,15.8056111 49.9993799,27.9556838 50.0236353,40.1057565 40.1937688,49.9750453 28.0436961,49.9993677 15.8936233,50.0236231 6.02433451,40.1937566 6,28.0436839 6,28.0290321 6,28.0143802 6,27.9997285L6,27.9999541C5.98676138,15.8629869 15.8149897,6.01329182 27.9519569,6 27.9531377,6 27.9543185,6 27.9554993,6L27.9556963,6z" />
+                  <PathGeometry Figures="M56,56z M0,0z M37.3011525,21.6638473L37.3011524,21.6638472C33.6675431,16.9994121,26.987781,16.0607586,22.2093497,19.5430748L22.20935,19.5430746C20.6754841,20.6608993,19.4716015,22.1718327,18.7245975,23.9166109L18.1702054,22.0422345 18.1702054,22.0422346C18.0416608,21.6073946 17.5849489,21.3590951 17.1501089,21.4876363 17.1498795,21.4877041 17.1496501,21.487772 17.1494207,21.48784L17.1494207,21.48784C16.7185984,21.6110578 16.4692375,22.060193 16.5924549,22.4910154 16.5932961,22.4939568 16.594154,22.4968935 16.5950285,22.4998252L17.8094127,26.6005698 17.8094127,26.6005697C17.9117751,26.9521524,18.2352314,27.1929461,18.6014007,27.1901618L18.6014015,27.1901616C18.8242489,27.1427657,19.0445301,27.0840235,19.2613894,27.0141653L23.397334,25.509385 23.397334,25.509385C23.8222245,25.3558953,24.0426781,24.8874288,23.890126,24.462201L23.890126,24.462201C23.7289234,24.0399801,23.2592194,23.8246987,22.8341419,23.9782091L20.0621817,24.9901973 20.0621821,24.9901963C20.6717418,23.3306424,21.7586762,21.8885364,23.1861384,20.8454516L23.1861381,20.8454519C27.2442749,17.8916047,32.9140166,18.6898833,35.9987468,22.6494282L35.9987471,22.6494285C37.4461597,24.527251,38.0686745,26.9124835,37.7235233,29.2581589L37.7235236,29.258157C37.3804658,31.6241008,36.0949974,33.750674,34.1595753,35.154078L34.1595753,35.1540779C30.1030928,38.1074954,24.435564,37.3134191,21.3469666,33.3589016L21.3469667,33.3589016C21.0713257,32.9986263,20.556779,32.9279246,20.1941825,33.2005036L20.1941824,33.2005037C19.8375418,33.4661346 19.763764,33.9705862 20.0293949,34.3272272 20.0315062,34.3300619 20.0336361,34.3328826 20.0357845,34.3356891L20.035785,34.3356897C23.6715685,39.0029608,30.3556447,39.9417001,35.1363963,36.4564578L35.1363962,36.4564579C37.4279266,34.8005606,38.9491081,32.2853733,39.3515367,29.4869615L39.3515367,29.4869612C39.762886,26.7088006,39.0222969,23.8830992,37.3011644,21.6638467L37.3011525,21.6638473z" />
+                </GeometryGroup>
+              </Path.Data>
+            </Path>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="path" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect Color="#43B5E2" BlurRadius="10" ShadowDepth="1" Direction="315" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="NextCircleBtnKey" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="32" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#43B5E2" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}" Height="{TemplateBinding FrameworkElement.Width}" Width="{TemplateBinding FrameworkElement.Height}">
+            <Path Name="path" Stretch="Fill" Fill="{TemplateBinding Control.Foreground}" Margin="7">
+              <Path.Data>
+                <GeometryGroup>
+                  <EllipseGeometry RadiusX="20" RadiusY="20" Center="10, 10" />
+                  <GeometryGroup>
+                    <PathGeometry Figures="M17.7333334,8L17.7333333,8C18.4328935,8 19,8.44771563 19,9 19,9.55228437 18.4328935,10 17.7333333,10L1.26666672,10 1.26666666,10C0.567106457,10 0,9.55228437 0,9 0,8.44771563 0.567106457,8 1.26666666,8L17.7333333,8 17.7333334,8z" />
+                    <PathGeometry Figures="M18.1350697,8.99998659L12.3350268,2.16040539 12.3350267,2.16040529C11.8705979,1.64528211 11.8936662,0.834215204 12.3865526,0.348831772 12.8794413,-0.136547657 13.6554998,-0.112438677 14.1199324,0.4026821 14.1370053,0.421618461 14.1535224,0.441093791 14.1694608,0.461081096L20.6917501,8.1503236 20.6917501,8.15032365C21.10275,8.63533464,21.10275,9.36463526,20.69175,9.84964625L14.1682345,17.5388887 14.1682345,17.5388887C13.7346645,18.0825983 12.9614493,18.1560305 12.4412081,17.7029007 11.920967,17.249772 11.8507043,16.4416767 12.2842755,15.8979671 12.3002139,15.8779799 12.3167311,15.8585045 12.3338039,15.8395681L18.135073,8.99998692 18.1350697,8.99998659z" />
+                  </GeometryGroup>
+                </GeometryGroup>
+              </Path.Data>
+            </Path>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="path" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect Color="#43B5E2" BlurRadius="10" ShadowDepth="1" Direction="315" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Foreground" Value="#FFB3B3B3" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="BackCircleBtnKey" TargetType="{x:Type Button}">
+    <Setter Property="Width" Value="32" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Foreground" Value="#43B5E2" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Background="{TemplateBinding Control.Background}" Height="{TemplateBinding FrameworkElement.Width}" Width="{TemplateBinding FrameworkElement.Height}">
+            <Path Name="path" Stretch="Fill" Fill="{TemplateBinding Control.Foreground}" Margin="7">
+              <Path.Data>
+                <GeometryGroup>
+                  <EllipseGeometry RadiusX="20" RadiusY="20" Center="10, 10" />
+                  <GeometryGroup Transform="-1,0,0,1,20, 0">
+                    <PathGeometry Figures="M17.7333334,8L17.7333333,8C18.4328935,8 19,8.44771563 19,9 19,9.55228437 18.4328935,10 17.7333333,10L1.26666672,10 1.26666666,10C0.567106457,10 0,9.55228437 0,9 0,8.44771563 0.567106457,8 1.26666666,8L17.7333333,8 17.7333334,8z" />
+                    <PathGeometry Figures="M18.1350697,8.99998659L12.3350268,2.16040539 12.3350267,2.16040529C11.8705979,1.64528211 11.8936662,0.834215204 12.3865526,0.348831772 12.8794413,-0.136547657 13.6554998,-0.112438677 14.1199324,0.4026821 14.1370053,0.421618461 14.1535224,0.441093791 14.1694608,0.461081096L20.6917501,8.1503236 20.6917501,8.15032365C21.10275,8.63533464,21.10275,9.36463526,20.69175,9.84964625L14.1682345,17.5388887 14.1682345,17.5388887C13.7346645,18.0825983 12.9614493,18.1560305 12.4412081,17.7029007 11.920967,17.249772 11.8507043,16.4416767 12.2842755,15.8979671 12.3002139,15.8779799 12.3167311,15.8585045 12.3338039,15.8395681L18.135073,8.99998692 18.1350697,8.99998659z" />
+                  </GeometryGroup>
+                </GeometryGroup>
+              </Path.Data>
+            </Path>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="path" Property="UIElement.Effect">
+                <Setter.Value>
+                  <DropShadowEffect Color="#43B5E2" BlurRadius="10" ShadowDepth="1" Direction="315" />
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Foreground" Value="#FFB3B3B3" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.themes.generic.ControlsV6.WarrantyInfoBase" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:lc6="clr-namespace:lenovo.themes.generic.ControlsV6" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Name="warrantybase">
+  <Control.Template>
+    <ControlTemplate>
+      <StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <Image Width="16" Height="20" Source="{StaticResource v6_warranty_security}" />
+          <lang:LangTextBlock Name="text1" Margin="15 0 0 0" FontSize="20" Foreground="{StaticResource v6_comm_warranty_title}" FontWeight="Medium" LangKey="K1366" />
+        </StackPanel>
+        <lang:LangTextBlock Name="text2" Margin="0 11 0 0" FontSize="14" FontWeight="Medium" TextWrapping="Wrap">
+          <lang:LangRun Name="label3" Foreground="{StaticResource v6_comm_warranty_label}" LangKey="K1367" /> <lang:LangRun Name="label1" Foreground="{DynamicResource v6_comm_warranty_label_df}" LangKey="{Binding WarrantyContent}" /></lang:LangTextBlock>
+        <lang:LangTextBlock Name="text3" Margin="0 6 0 0" Visibility="Hidden" FontSize="14" FontWeight="Medium" TextWrapping="Wrap">
+          <lang:LangRun Foreground="{StaticResource v6_comm_warranty_label}" LangKey="K1368" /> <Run Name="NewLine" Text="&#xA;" /> <lang:LangRun Name="label2" Foreground="{DynamicResource v6_comm_warranty_label_df}" LangKey="{Binding MonthContent}" /> <Image Name="warnimg" Cursor="Hand" Margin="0 0 0 -3" Width="15" Height="14" ToolTipService.InitialShowDelay="10" ToolTipService.HorizontalOffset="-100" Source="{StaticResource v6_warranty_warn_icon_red}" Visibility="{Binding TipIconVisibility}"><FrameworkElement.ToolTip><ToolTip><Control.Template><ControlTemplate TargetType="{x:Type ToolTip}"><Grid Width="225" MinHeight="73"><Path Margin="-10 5 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Data="M0,0 L-12,10 L12,10" Fill="#303133" /><Border Margin="0 14 0 0" CornerRadius="8" Background="#303133" Padding="12 18"><lang:LangTextBlock FontWeight="Medium" FontSize="14" Foreground="#FFFFFFFF" LineHeight="15" TextWrapping="Wrap" LangKey="{Binding MonthTip}" /></Border></Grid></ControlTemplate></Control.Template></ToolTip></FrameworkElement.ToolTip></Image></lang:LangTextBlock>
+        <lc6:WarrantyProgressView Margin="0 6 0 0" HorizontalAlignment="Left" StartValue="0" Width="{Binding Width, ElementName=warrantybase}" DataContext="{Binding}" EndValue="{Binding MonthDiff}" />
+      </StackPanel>
+      <ControlTemplate.Triggers>
+        <DataTrigger Value="-1" Binding="{Binding Path=MonthType}">
+          <Setter TargetName="label1" Property="TextElement.Foreground" Value="#9FAEBF" />
+          <Setter TargetName="label3" Property="TextElement.Foreground" Value="#9FAEBF" />
+        </DataTrigger>
+        <DataTrigger Value="0" Binding="{Binding Path=MonthType}">
+          <Setter TargetName="text3" Property="UIElement.Visibility" Value="Visible" />
+          <Setter TargetName="label1" Value="{DynamicResource v6_comm_warranty_label_red}" Property="TextElement.Foreground" />
+          <Setter TargetName="label2" Value="{DynamicResource v6_comm_warranty_label_red}" Property="TextElement.Foreground" />
+          <Setter TargetName="warnimg" Value="{DynamicResource v6_warranty_warn_icon_red}" Property="Image.Source" />
+        </DataTrigger>
+        <DataTrigger Value="1" Binding="{Binding Path=MonthType}">
+          <Setter TargetName="text3" Property="UIElement.Visibility" Value="Visible" />
+          <Setter TargetName="label1" Value="{DynamicResource v6_comm_warranty_label_warn}" Property="TextElement.Foreground" />
+          <Setter TargetName="label2" Value="{DynamicResource v6_comm_warranty_label_warn}" Property="TextElement.Foreground" />
+          <Setter TargetName="warnimg" Value="{DynamicResource v6_warranty_warn_icon_yellow}" Property="Image.Source" />
+        </DataTrigger>
+        <DataTrigger Value="2" Binding="{Binding Path=MonthType}">
+          <Setter TargetName="text3" Property="UIElement.Visibility" Value="Visible" />
+        </DataTrigger>
+        <DataTrigger Value="False" Binding="{Binding Path=Detail}">
+          <Setter TargetName="text1" Property="TextBlock.FontSize" Value="16" />
+          <Setter TargetName="text2" Property="TextBlock.FontSize" Value="12" />
+          <Setter TargetName="text3" Property="TextBlock.FontSize" Value="12" />
+        </DataTrigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate>
+  </Control.Template>
+</UserControl>

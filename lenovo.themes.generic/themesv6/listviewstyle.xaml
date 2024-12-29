@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6" xmlns:gc="clr-namespace:lenovo.themes.generic.Controls" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="./CheckBoxStyle.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="v6_listview_button_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer>
+            <ItemsPresenter />
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="MinWidth" Value="144" />
+          <Setter Property="Height" Value="38" />
+          <Setter Property="BorderThickness" Value="0 0 0 2" />
+          <Setter Property="Foreground" Value="#001429" />
+          <Setter Property="FontWeight" Value="SemiBold" />
+          <Setter Property="Background" Value="#00FFFFFF" />
+          <Setter Property="Margin" Value="25 0" />
+          <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <Border Name="Bd" BorderBrush="#00FFFFFF" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" Padding="15 0" Height="{TemplateBinding FrameworkElement.Height}" MinWidth="{TemplateBinding FrameworkElement.MinWidth}" Cursor="Hand">
+                  <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="auto" />
+                      <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Name="img" Visibility="Collapsed" Width="25" Margin="0 0 10 0" Stretch="None" Source="{Binding PrevImage}" />
+                    <lang:LangTextBlock Grid.Column="1" HorizontalAlignment="Center" Foreground="{TemplateBinding Control.Foreground}" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_9}" LangKey="{Binding Text}" />
+                  </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter Property="Foreground" Value="#005D7F" />
+                    <Setter TargetName="img" Property="Image.Source" Value="{Binding PrevImageSelected}" />
+                  </Trigger>
+                  <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter Property="Foreground" Value="#005D7F" />
+                    <Setter TargetName="img" Property="Image.Source" Value="{Binding PrevImageSelected}" />
+                  </Trigger>
+                  <DataTrigger Value="True" Binding="{Binding HasPrevImage}">
+                    <Setter TargetName="img" Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="v6_listview_line_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer>
+            <Border Width="525" BorderBrush="#D4DCE3" BorderThickness="0 0 0 1" Padding="10 0">
+              <ItemsPresenter />
+            </Border>
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="MinWidth" Value="144" />
+          <Setter Property="Height" Value="38" />
+          <Setter Property="Foreground" Value="#001429" />
+          <Setter Property="FontWeight" Value="SemiBold" />
+          <Setter Property="Background" Value="#FFFFFF" />
+          <Setter Property="Margin" Value="0 0 20 0" />
+          <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <Border Name="Bd" BorderBrush="#00FFFFFF" Margin="0 0 0 -1" BorderThickness="0 0 0 2" Background="{TemplateBinding Control.Background}" Padding="0 8" Height="{TemplateBinding FrameworkElement.Height}" MinWidth="{TemplateBinding FrameworkElement.MinWidth}" Cursor="Hand">
+                  <lang:LangTextBlock HorizontalAlignment="Center" Foreground="{TemplateBinding Control.Foreground}" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_5}" LangKey="{Binding Text}" />
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter Property="Foreground" Value="#005D7F" />
+                  </Trigger>
+                  <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter Property="Foreground" Value="#005D7F" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="v6_listview_border_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer>
+            <ItemsPresenter />
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel HorizontalAlignment="Left" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="MinHeight" Value="56" />
+          <Setter Property="Foreground" Value="#001429" />
+          <Setter Property="FontWeight" Value="SemiBold" />
+          <Setter Property="Background" Value="#D4DCE3" />
+          <Setter Property="Margin" Value="0 5" />
+          <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <Border Name="Bd" BorderBrush="{TemplateBinding Control.BorderBrush}" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" Width="{Binding Width, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="auto" />
+                      <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Name="img" Visibility="Hidden" Width="12" Height="19" Source="{StaticResource v6_Tutorials_Icon_Selected}" />
+                    <Border Margin="-1 0 0 0" Padding="16 9" Grid.Column="1" Background="{TemplateBinding Control.Background}" CornerRadius="4">
+                      <lang:LangTextBlock Grid.Column="1" HorizontalAlignment="Left" Foreground="{TemplateBinding Control.Foreground}" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_9}" LangKey="{Binding Text}" />
+                    </Border>
+                  </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter Property="Foreground" Value="#FFFFFF" />
+                    <Setter Property="Background" Value="#005D7F" />
+                  </Trigger>
+                  <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#005D7F" />
+                    <Setter TargetName="img" Property="Visibility" Value="Visible" />
+                    <Setter Property="Foreground" Value="#FFFFFF" />
+                    <Setter Property="Background" Value="#005D7F" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="v6_listview_category_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+            <ItemsPresenter />
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="MinWidth" Value="130" />
+          <Setter Property="MaxWidth" Value="220" />
+          <Setter Property="MinHeight" Value="104" />
+          <Setter Property="Foreground" Value="#001429" />
+          <Setter Property="FontWeight" Value="SemiBold" />
+          <Setter Property="Background" Value="#DCE3EB" />
+          <Setter Property="Margin" Value="20 10" />
+          <Setter Property="IsEnabled" Value="{Binding IsEnabled, Mode=TwoWay}" />
+          <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <Border Name="Bd" CornerRadius="2" Background="{TemplateBinding Control.Background}" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" MinWidth="{TemplateBinding FrameworkElement.MinWidth}" BorderBrush="#FFD4DCE3" BorderThickness="1" Opacity="{Binding Opacity}">
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="*" />
+                      <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" Height="30" Background="#FFFFFFFF" />
+                    <Border Name="bdSelected" Grid.Row="0" Grid.RowSpan="2" Background="#756EC2ED" Visibility="Hidden" />
+                    <Image Grid.Row="0" Width="54" Height="54" Margin="0 10" Stretch="UniformToFill" Source="{Binding CenterIconSelectedSource}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#00FFFFFF" Height="30" VerticalAlignment="Bottom">
+                      <CheckBox Name="ckBox" Margin="4 0 0 0" IsEnabled="False" Style="{StaticResource v6_BackupCheckBoxStyle}" />
+                      <lang:LangTextBlock Margin="0 0 10 0" VerticalAlignment="Center" FontSize="14" Style="{StaticResource v6_comm_text_style_3}" LangKey="{Binding Value}" />
+                    </StackPanel>
+                  </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FF6EC2ED" />
+                  </Trigger>
+                  <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                    <Setter TargetName="bdSelected" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FF6EC2ED" />
+                    <Setter TargetName="ckBox" Property="ToggleButton.IsChecked" Value="True" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="v6_listview_devicelist_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+            <ItemsPresenter />
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Vertical" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="Foreground" Value="#001429" />
+          <Setter Property="FontWeight" Value="SemiBold" />
+          <Setter Property="Margin" Value="7 8 7 0" />
+          <Setter Property="Background" Value="#00FFFFFF" />
+          <Setter Property="IsEnabled" Value="{Binding IsEnabled, Mode=TwoWay}" />
+          <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <Border Name="Bd" VerticalAlignment="Center" Background="{TemplateBinding Control.Background}" Opacity="{Binding Opacity}">
+                  <Grid>
+                    <Path Name="normalBd" Visibility="Visible" Grid.RowSpan="2" Fill="#0F6EC2ED" Stroke="#5A6D86AB" StrokeThickness="2">
+                      <Path.Data>
+                        <PathGeometry>
+                          <PathFigure IsClosed="True" StartPoint="0,7">
+                            <ArcSegment Point="7,0" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="170,0" />
+                            <ArcSegment Point="177,7" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="177,7" />
+                            <LineSegment Point="177,143" />
+                            <ArcSegment Point="170,150" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="170,150" />
+                            <LineSegment Point="7,150" />
+                            <ArcSegment Point="0,143" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="0,143" />
+                          </PathFigure>
+                        </PathGeometry>
+                      </Path.Data>
+                    </Path>
+                    <Path Name="selectedBd" Visibility="Hidden" Grid.RowSpan="2" Fill="#0F6EC2ED" Stroke="#005D7F" StrokeThickness="2">
+                      <Path.Data>
+                        <PathGeometry>
+                          <PathFigure IsClosed="True" StartPoint="0,7">
+                            <ArcSegment Point="7,0" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="170,0" />
+                            <ArcSegment Point="177,7" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="177,7" />
+                            <LineSegment Point="177,60" />
+                            <LineSegment Point="192,75" />
+                            <LineSegment Point="177,90" />
+                            <LineSegment Point="177,143" />
+                            <ArcSegment Point="170,150" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="170,150" />
+                            <LineSegment Point="7,150" />
+                            <ArcSegment Point="0,143" Size="7,7" SweepDirection="Clockwise" />
+                            <LineSegment Point="0,143" />
+                          </PathFigure>
+                        </PathGeometry>
+                      </Path.Data>
+                    </Path>
+                    <Border Padding="1 2" Width="176" Height="150" HorizontalAlignment="Left" VerticalAlignment="Center">
+                      <Grid>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="*" />
+                          <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Button Name="c1" IsHitTestVisible="True" Visibility="Visible" Panel.ZIndex="9999" Margin="0 -10 -16 0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="24" Height="24" Style="{StaticResource v6_comm_img_button}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_round_close_gray_icon}" Command="{Binding DataContext.RemoveDeviceCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListView}}}" CommandParameter="{Binding Content, RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" />
+                        <StackPanel Name="c2" Margin="0 7 0 0" Visibility="Visible" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                          <Image Name="lenovoimg" Visibility="Visible" Width="73" Height="24" Source="{StaticResource v6_lenovo_logo}" />
+                          <Image Name="motoimg" Visibility="Collapsed" Width="28" Height="28" Source="{StaticResource v6_icon_moto_logo_black}" />
+                          <TextBlock Margin="0 8 0 0" HorizontalAlignment="Center" LineHeight="20" FontSize="18" Foreground="#010101" Style="{StaticResource v6_comm_text_style_8}" Text="{Binding ModelName}" />
+                          <Grid Name="imei" HorizontalAlignment="Center" Margin="0 6 0 0">
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="auto" />
+                              <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="IMEI:" Style="{DynamicResource v6_comm_text_style_4}" FontSize="14" />
+                            <TextBlock Grid.Column="1" Style="{DynamicResource v6_comm_text_style_4}" FontSize="14" Text="{Binding IMEI}" />
+                          </Grid>
+                          <Border Name="status" Margin="0 8 0 0" Padding="5 0" Height="22" MinWidth="70" BorderBrush="#722177B8" Background="#E7F4FF" BorderThickness="1" CornerRadius="3" HorizontalAlignment="Center">
+                            <lang:LangTextBlock Name="statusText" Foreground="#005D7F" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Style="{StaticResource v6_comm_text_style_5}" LangKey="{Binding StatusKey}" />
+                          </Border>
+                          <Grid Name="progress" Margin="0 8 0 0" Width="152" Visibility="Collapsed">
+                            <ProgressBar Height="22" Maximum="1" Minimum="0" Padding="1" gc6:ControlAttachPropertyV6.CommVisibility="Collapsed" BorderBrush="#732177B8" BorderThickness="1" gc6:ControlAttachPropertyV6.MouseOverBackground="#E7F4FF" gc6:ControlAttachPropertyV6.MouseOverForeground="#6ECCFF" gc6:ControlAttachPropertyV6.CornerRadius="3.6" Style="{StaticResource v6_comm_progressbar_style}" Value="{Binding Percentage}" />
+                            <Border VerticalAlignment="Center" HorizontalAlignment="Center" Width="152" Padding="3">
+                              <lang:LangTextBlock LangKey="K0103" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Foreground="#FF005D7F" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource v6_comm_text_style_5}" />
+                            </Border>
+                          </Grid>
+                        </StackPanel>
+                        <Button Name="c3" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" Width="36" Height="36" Style="{StaticResource v6_comm_img_button}" gc6:ControlAttachPropertyV6.ImageSource="{StaticResource v6_add_device_icon}" Command="{Binding DataContext.ClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListView}}}" CommandParameter="{Binding Content, RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" />
+                        <lang:LangTextBlock Name="c4" Visibility="Collapsed" Grid.Row="1" LangKey="K1635" FontSize="14" HorizontalAlignment="Center" Margin="0 0 0 20" Style="{StaticResource v6_comm_text_style_4}" />
+                      </Grid>
+                    </Border>
+                    <gc:PopupEx x:Name="pop" Placement="Center" HorizontalOffset="105" VerticalOffset="-50" AllowsTransparency="True" UseLayoutRounding="True" StaysOpen="False" PlacementTarget="{Binding ElementName=Bd}" DataContext="{Binding}" IsOpen="{Binding ShowTip}">
+                      <Grid Width="320" Height="auto" Background="#00FFFFFF" Margin="20">
+                        <Border Background="#D9000000" Margin="0 0 0 7" CornerRadius="5">
+                          <UIElement.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="20" />
+                          </UIElement.Effect>
+                          <StackPanel Margin="11">
+                            <lang:LangTextBlock Foreground="#FFFFFFFF" LangKey="K1656" TextWrapping="Wrap" Style="{StaticResource v6_Gotham_Book}" />
+                          </StackPanel>
+                        </Border>
+                        <Polygon Margin="40 0 0 0" VerticalAlignment="Bottom" Fill="#D9000000" Points="0,0 7,7 14,0" Stroke="#00FFFFFF" StrokeThickness="0" />
+                      </Grid>
+                    </gc:PopupEx>
+                  </Grid>
+                  <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                      <i:InvokeCommandAction PassEventArgsToCommand="True" Command="{Binding DataContext.ClickCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListView}}}" />
+                    </i:EventTrigger>
+                  </i:Interaction.Triggers>
+                </Border>
+                <ControlTemplate.Triggers>
+                  <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                    <Setter TargetName="selectedBd" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="normalBd" Property="Visibility" Value="Hidden" />
+                  </Trigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="True" Binding="{Binding IsSelected}" />
+                      <Condition Value="TRUE" Binding="{Binding NeedOperator}" />
+                    </MultiDataTrigger.Conditions>
+                    <TriggerBase.EnterActions>
+                      <BeginStoryboard Name="selectedFillAnimation">
+                        <Storyboard>
+                          <ColorAnimationUsingKeyFrames Storyboard.TargetName="selectedBd" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0:0:1" RepeatBehavior="Forever">
+                            <DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#0FFFB207" />
+                          </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                      </BeginStoryboard>
+                      <BeginStoryboard Name="selectedStrokeAnimation">
+                        <Storyboard>
+                          <ColorAnimationUsingKeyFrames Storyboard.TargetName="selectedBd" Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)" Duration="0:0:1" RepeatBehavior="Forever">
+                            <DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#FFB207" />
+                          </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                      </BeginStoryboard>
+                    </TriggerBase.EnterActions>
+                    <TriggerBase.ExitActions>
+                      <StopStoryboard BeginStoryboardName="selectedFillAnimation" />
+                      <StopStoryboard BeginStoryboardName="selectedStrokeAnimation" />
+                    </TriggerBase.ExitActions>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="False" Binding="{Binding IsSelected}" />
+                      <Condition Value="TRUE" Binding="{Binding NeedOperator}" />
+                    </MultiDataTrigger.Conditions>
+                    <TriggerBase.EnterActions>
+                      <BeginStoryboard Name="normalFillAnimation">
+                        <Storyboard>
+                          <ColorAnimationUsingKeyFrames Storyboard.TargetName="normalBd" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" Duration="0:0:1" RepeatBehavior="Forever">
+                            <DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#0FFFB207" />
+                          </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                      </BeginStoryboard>
+                      <BeginStoryboard Name="normalStrokeAnimation">
+                        <Storyboard>
+                          <ColorAnimationUsingKeyFrames Storyboard.TargetName="normalBd" Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)" Duration="0:0:1" RepeatBehavior="Forever">
+                            <DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#FFB207" />
+                          </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                      </BeginStoryboard>
+                    </TriggerBase.EnterActions>
+                    <TriggerBase.ExitActions>
+                      <StopStoryboard BeginStoryboardName="normalFillAnimation" />
+                      <StopStoryboard BeginStoryboardName="normalStrokeAnimation" />
+                    </TriggerBase.ExitActions>
+                  </MultiDataTrigger>
+                  <DataTrigger Binding="{Binding Id}" Value="{x:Null}">
+                    <Setter TargetName="c1" Property="Visibility" Value="Collapsed" />
+                    <Setter TargetName="c2" Property="Visibility" Value="Collapsed" />
+                    <Setter TargetName="c3" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="c4" Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding IMEI}" Value="{x:Null}">
+                    <Setter TargetName="imei" Property="Visibility" Value="Collapsed" />
+                  </DataTrigger>
+                  <DataTrigger Value="FALSE" Binding="{Binding IsEnabled}">
+                    <Setter TargetName="c3" Property="Visibility" Value="Collapsed" />
+                    <Setter TargetName="c4" Property="lang:LangTextBlock.LangKey" Value="K1646" />
+                    <Setter TargetName="c4" Property="TextBlock.Foreground" Value="#93A2AD" />
+                    <Setter TargetName="normalBd" Property="Shape.Stroke" Value="#D4DCE3" />
+                  </DataTrigger>
+                  <DataTrigger Value="TRUE" Binding="{Binding IsRescuing}">
+                    <Setter TargetName="c1" Property="Visibility" Value="Collapsed" />
+                    <Setter TargetName="progress" Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Status}" Value="{x:Null}">
+                    <Setter TargetName="status" Property="Visibility" Value="Collapsed" />
+                  </DataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="True" Binding="{Binding IsSelected}" />
+                      <Condition Value="PASS" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="selectedBd" Property="Shape.Stroke" Value="#005D7F" />
+                      <Setter TargetName="selectedBd" Property="Shape.Fill" Value="#EBF9F4" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#8000B972" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFDAF1E8" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FF00B972" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="False" Binding="{Binding IsSelected}" />
+                      <Condition Value="PASS" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="normalBd" Property="Shape.Stroke" Value="#4000B972" />
+                      <Setter TargetName="normalBd" Property="Shape.Fill" Value="#EBF9F4" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#8000B972" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFDAF1E8" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FF00B972" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="True" Binding="{Binding IsSelected}" />
+                      <Condition Value="FAIL" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="selectedBd" Property="Shape.Stroke" Value="#005D7F" />
+                      <Setter TargetName="selectedBd" Property="Shape.Fill" Value="#F6F3F3" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#73EE4848" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFF2F0" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FFFF4042" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="False" Binding="{Binding IsSelected}" />
+                      <Condition Value="FAIL" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="normalBd" Property="Shape.Stroke" Value="#40FF4042" />
+                      <Setter TargetName="normalBd" Property="Shape.Fill" Value="#F6F3F3" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#73EE4848" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFF2F0" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FFFF4042" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="True" Binding="{Binding IsSelected}" />
+                      <Condition Value="QUIT" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="selectedBd" Property="Shape.Stroke" Value="#005D7F" />
+                      <Setter TargetName="selectedBd" Property="Shape.Fill" Value="#F6F3F3" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#73EE4848" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFF2F0" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FFFF4042" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                      <Condition Value="False" Binding="{Binding IsSelected}" />
+                      <Condition Value="QUIT" Binding="{Binding Status}" />
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                      <Setter TargetName="normalBd" Property="Shape.Stroke" Value="#40FF4042" />
+                      <Setter TargetName="normalBd" Property="Shape.Fill" Value="#F6F3F3" />
+                      <Setter TargetName="status" Property="Border.BorderBrush" Value="#73EE4848" />
+                      <Setter TargetName="status" Property="Border.Background" Value="#FFF2F0" />
+                      <Setter TargetName="statusText" Property="TextBlock.Foreground" Value="#FFFF4042" />
+                    </MultiDataTrigger.Setters>
+                  </MultiDataTrigger>
+                  <DataTrigger Value="True" Binding="{Binding IsMotorola}">
+                    <Setter TargetName="lenovoimg" Property="Visibility" Value="Collapsed" />
+                    <Setter TargetName="motoimg" Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter TargetName="Bd" Property="UIElement.Opacity" Value="0.7" />
+                  </Trigger>
+                </ControlTemplate.Triggers>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="v6_listview_message_style" TargetType="{x:Type ListView}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <ScrollViewer>
+            <ItemsPresenter />
+          </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemsPanel">
+      <Setter.Value>
+        <ItemsPanelTemplate>
+          <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </ItemsPanelTemplate>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="ItemContainerStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type ListViewItem}">
+          <Setter Property="BorderThickness" Value="0" />
+          <Setter Property="BorderBrush" Value="#00FFFFFF" />
+          <Setter Property="Foreground" Value="#00FFFFFF" />
+          <Setter Property="FontWeight" Value="Regular" />
+          <Setter Property="Background" Value="#FFFFFF" />
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListViewItem}">
+                <lang:LangTextBlock FontSize="14" FontWeight="{TemplateBinding Control.FontWeight}" VerticalAlignment="Center" TextWrapping="Wrap" LangKey="{Binding Title}" Foreground="{Binding Foreground}" />
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

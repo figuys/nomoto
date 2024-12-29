@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.themes.generic.Component.Progress.CommonProgressWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.themes.generic.Component.Progress" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" Title="CommonProgressWindow" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <local:ProgressPercentMarginConverter x:Key="_ProgressPercentMarginConverter" />
+      <Style x:Key="ProgressStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ProgressBar}">
+              <Grid>
+                <Border Name="PART_Track" BorderThickness="0" Background="#dcdbdd" />
+                <Border Name="PART_Indicator" BorderThickness="0" HorizontalAlignment="Left" Background="#43B5E2" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <DataTrigger Value="Failed" Binding="{Binding ProgressStatus}">
+                  <Setter TargetName="PART_Indicator" Property="Border.Background" Value="#ff0000" />
+                </DataTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid MinHeight="200" MinWidth="500" Margin="-10 0" MaxWidth="1010">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Padding="4">
+      <lang:LangTextBlock FontSize="14pt" LangText="{Binding Title}" LangKey="{Binding Title}" />
+    </Border>
+    <StackPanel Grid.Row="1" VerticalAlignment="Center">
+      <Border Name="messageborder" Margin="20 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <ListBox OverridesDefaultStyle="True" ItemsSource="{Binding MessageSources}">
+          <Control.Template>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <ItemsPresenter />
+            </ControlTemplate>
+          </Control.Template>
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemContainerStyle>
+            <Style TargetType="{x:Type ListBoxItem}">
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <ContentPresenter />
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </ItemsControl.ItemContainerStyle>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <ListView ItemsSource="{Binding}">
+                <Control.Template>
+                  <ControlTemplate>
+                    <ItemsPresenter />
+                  </ControlTemplate>
+                </Control.Template>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Border>
+                      <lang:LangTextBlock TextWrapping="Wrap" LangText="{Binding Message}" LangKey="{Binding Message}" Foreground="{Binding Foreground}" FontSize="{Binding FontSize}" />
+                    </Border>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" />
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                  <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                          <ContentPresenter />
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ItemsControl.ItemContainerStyle>
+              </ListView>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ListBox>
+      </Border>
+      <Border Margin="0 10 0 3">
+        <TextBlock Foreground="#43B5E2" Text="{Binding Percent, Mode=TwoWay, StringFormat={}{0:p0}}">
+          <FrameworkElement.Margin>
+            <MultiBinding Converter="{StaticResource _ProgressPercentMarginConverter}">
+              <Binding Path="ActualWidth" ElementName="progress" />
+              <Binding Path="Percent" />
+            </MultiBinding>
+          </FrameworkElement.Margin>
+        </TextBlock>
+      </Border>
+      <ProgressBar Name="progress" Height="3" Maximum="1" Style="{DynamicResource ProgressStyle}" Value="{Binding Percent, Mode=OneWay}" />
+      <Border Margin="0 6 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <ListView BorderThickness="0" BorderBrush="#00FFFFFF" ItemsSource="{Binding Contents}">
+          <Control.Template>
+            <ControlTemplate>
+              <ItemsPresenter />
+            </ControlTemplate>
+          </Control.Template>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <lang:LangTextBlock LangText="{Binding Message}" LangKey="{Binding Message}" Foreground="{Binding Foreground}" FontSize="{Binding FontSize}" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel VerticalAlignment="Center" Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemContainerStyle>
+            <Style TargetType="{x:Type ListViewItem}">
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <ContentPresenter />
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </ItemsControl.ItemContainerStyle>
+        </ListView>
+      </Border>
+      <TextBlock Margin="0 2 0 0" HorizontalAlignment="Center" Foreground="#4A4A4A" Text="{Binding CurrentResourceRate}" />
+    </StackPanel>
+    <lang:LangButton Margin="0 10" Grid.Row="2" IsEnabled="{Binding IsEnabled}" LangContent="{Binding ButtonContent}" LangKey="{Binding ButtonContent}" Command="{Binding ClickCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefaultBlueButtonStyle}}" />
+  </Grid>
+</Window>
