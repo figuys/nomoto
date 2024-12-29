@@ -10,8 +10,9 @@
     <LangVersion>11.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup />
-  <ItemGroup />
+  <PropertyGroup>
+    <RootNamespace>lenovo.mbg.service.framework.hostcontroller</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="lenovo.mbg.service.common.utilities">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.common.utilities.dll</HintPath>
