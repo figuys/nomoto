@@ -12,6 +12,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace />
+    <UserSecretsId>e82f26cf-1785-4897-a879-869c94248004</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="resource\icons\icon-gps-2x.png" />
@@ -67,6 +68,8 @@
     <Reference Include="lenovo.mbg.service.framework.services">
       <HintPath>..\..\..\droid\fix\lenovo.mbg.service.framework.services.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="lenovo.themes.generic">
