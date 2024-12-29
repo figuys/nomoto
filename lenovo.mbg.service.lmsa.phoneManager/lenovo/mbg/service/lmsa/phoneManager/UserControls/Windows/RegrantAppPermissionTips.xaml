@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows.RegrantAppPermissionTips" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" Background="#FBFBFB" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" SizeToContent="Height" Title="ResetToDefaultSmsAppletTips" Width="500" Height="auto" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <SolidColorBrush x:Key="ThemeBrushKey">#43B5E2</SolidColorBrush>
+      <BitmapImage x:Key="bitImgMapAppPermissionTips2" UriSource="/lenovo.mbg.service.lmsa.phoneManager;component/Assets/Images/app_permission_tips2.png" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="40" />
+      <RowDefinition Height="60" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+    <lang:LangTextBlock Grid.Row="0" VerticalAlignment="Center" Margin="30 0 0 0" LangText="Warning" LangKey="K0071" Foreground="#898989" FontSize="12pt" />
+    <lang:LangTextBlock Grid.Row="1" VerticalAlignment="Top" Margin="30 0 0 0" LangText="Cannot set ringtone" LangKey="K0553" Foreground="#898989" FontSize="14" />
+    <lang:LangTextBlock Grid.Row="2" Foreground="#898989" FontSize="13" HorizontalAlignment="Center" TextWrapping="Wrap" Width="390" Margin="30 0 20 0" LangText="Retry on your device, turn off &quot;Allow modify system settings&quot;, and then turn it on again." LangKey="K0421" />
+    <Grid Row="3" HorizontalAlignment="Left" Margin="10 0 30 0">
+      <Image Grid.Column="0" Grid.Row="1" Source="{StaticResource bitImgMapAppPermissionTips2}" HorizontalAlignment="Left" Stretch="UniformToFill" Panel.ZIndex="0" />
+      <StackPanel Grid.Row="1" Width="300" Margin="50 20 0 0" HorizontalAlignment="Left">
+        <lang:LangTextBlock FontSize="8pt" Margin="0 0 10 0" Foreground="#ACACAC" LangText="Allow Modify system settings" LangKey="K0747" />
+        <lang:LangTextBlock Margin="0 10 0 0" Foreground="#ACACAC" TextWrapping="Wrap" FontSize="8pt" LineHeight="5" LangText="This permission allows an app to modify system settings." LangKey="K0748" />
+      </StackPanel>
+    </Grid>
+    <lang:LangButton Name="btnIsReady" Grid.Row="4" LangContent="OK" LangKey="K0327" Height="25" Width="95" Background="{StaticResource ThemeBrushKey}" Click="btnIsReady_Click">
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Name="rootBorder" Height="{TemplateBinding FrameworkElement.Height}" Width="{TemplateBinding FrameworkElement.Width}" Opacity="0.8" Background="{TemplateBinding Control.Background}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="12" TextBlock.Foreground="#FBFBFB" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="rootBorder" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Control.Template>
+    </lang:LangButton>
+    <lang:LangButton Name="btnCancel" LangContent="Cancel" LangKey="K0208" Height="12" Width="12" Margin="0 12 12 0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnCancel_Click">
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Image Name="img_normal" Source="{StaticResource bitImgWindowCloseNormal}" />
+            <Image Name="img_bk" Source="{StaticResource bitImgWindowCloseBK}" Visibility="Collapsed" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="img_normal" Property="UIElement.Visibility" Value="Collapsed" />
+              <Setter TargetName="img_bk" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Control.Template>
+    </lang:LangButton>
+  </Grid>
+</Window>

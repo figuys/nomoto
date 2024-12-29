@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.MusicMgtViewV7" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:localV6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6" xmlns:behavior="clr-namespace:lenovo.themes.generic.Behaviors;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:genericControlsV6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:genericConvert="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" x:Name="musicView">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/Global.xaml" />
+        <ResourceDictionary Source="../Themes/MenuNavigationIcon.xaml" />
+        <ResourceDictionary Source="../ThemesV6/MenuNavigationV6.xaml" />
+        <ResourceDictionary Source="/lenovo.mbg.service.lmsa.phoneManager;component/ThemesV6/IconSvgDrawingIamge.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+      <genericConvert:CompareValueConverter x:Key="CompareValueConverter" />
+      <genericConvert:FileSize2StrConverter x:Key="FileSize2StrConverter" />
+      <localV6:MusicPlayerVisibleConvert x:Key="musicPlayerVisibleConvert" />
+      <Style x:Key="v7_AlbumListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid Width="200" Background="{TemplateBinding Control.Background}" Height="42" Cursor="Hand" ToolTipService.ToolTip="{Binding AlbumPath}">
+                <UIElement.InputBindings>
+                  <MouseBinding MouseAction="LeftClick" Command="{Binding SingleClickCommand}" CommandParameter="{Binding}" />
+                </UIElement.InputBindings>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                  <CheckBox Margin="5 0 0 0" Style="{StaticResource v7_my_device_checkbox}" IsChecked="{Binding IsSelectedAllMusics, Mode=TwoWay}" Command="{Binding SingleClickCommand}" CommandParameter="{Binding}" />
+                  <Image Grid.Row="2" Margin="5 0 0 0" Width="19" Height="16" Source="{StaticResource v7_device_musics_default_icon}" />
+                  <TextBlock Margin="8 0 0 0" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Foreground="#FF001429" Text="{Binding AlbumName}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Width="30" VerticalAlignment="Center">
+                  <TextBlock Margin="0 0 5 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" Foreground="#FF6D86AB" Text="{Binding FileCount}" />
+                </StackPanel>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter Property="Background" Value="#FFCEEAF9" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <StackPanel Orientation="Vertical">
+    <StackPanel Margin="0 10" Orientation="Horizontal">
+      <lang:LangButton Style="{StaticResource v7_device_import_button}" Margin="14 0 0 0" LangKey="{Binding ButtonTextDisplay}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding MusicToolImportBtn}" CommandParameter="{Binding}" />
+      <lang:LangButton Style="{StaticResource v7_device_export_button}" Margin="13 0 0 0" LangKey="{Binding ButtonTextDisplay}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding MusicToolExportBtn}" CommandParameter="{Binding}" />
+      <TextBox Name="txbSearch" Margin="14 0 0 0" Style="{StaticResource v6_SearchTextBoxStyle}" local:ControlAttachProperty.LeftClickCommand="{Binding MusicSearchCommand}" Text="{Binding SearchText}">
+        <UIElement.InputBindings>
+          <KeyBinding Key="Enter" Command="{Binding MusicSearchCommand}" CommandParameter="{Binding Text, ElementName=txbSearch}" />
+        </UIElement.InputBindings>
+      </TextBox>
+      <genericControls:IconButton Name="btnDelete" Margin="5 0 0 0" LangKey="K0583" ToolTip="K0583" Icon="{StaticResource v6_device_icon_delete}" DisabledIcon="{StaticResource v6_device_icon_delete_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding MusicToolDeleteBtn}" CommandParameter="{Binding}" />
+      <genericControls:IconButton Margin="0 0 0 0" LangKey="K0473" ToolTip="K0473" Icon="{StaticResource v7_device_icon_refresh}" DisabledIcon="{StaticResource v7_device_icon_refresh_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding MusicToolRefreshBtn}" CommandParameter="{Binding}" />
+      <Line Margin="60 0 0 0" X1="0" Y1="0" X2="0" Y2="20" VerticalAlignment="Center" Stroke="#D9EBEFF2" StrokeThickness="1" />
+      <StackPanel Margin="0 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right" Visibility="{Binding StorageSelectPanelVisibility}">
+        <genericControlsV6:SdCardView Name="ddlStorageSelect" TitleMaxWidth="120" DataContext="{Binding SdCarVm}" IsEnabled="{Binding PicToolRefreshBtn.IsEnabled}" />
+      </StackPanel>
+      <CheckBox Name="ckFocusedAlbumAll" Margin="1000 0 0 0" IsChecked="{Binding FocusedAlbum.IsSelectedAllMusics}" />
+    </StackPanel>
+    <Grid Width="auto" Height="504">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="200" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Border Grid.Column="0" BorderBrush="#D9EBEFF2" BorderThickness="0 1 1 0">
+        <StackPanel>
+          <Border BorderBrush="#D9EBEFF2" BorderThickness="0 0 0 1">
+            <StackPanel Orientation="Horizontal" Height="40">
+              <CheckBox Name="ckbAllItems" Style="{StaticResource v7_my_device_checkbox}" Margin="5 0 0 0" IsChecked="{Binding IsSelectedAllAlbumMusic}" IsEnabled="{Binding AllAlbumMusicCount, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" Click="OnCheckBoxSelectAllAlbums" />
+              <lang:LangTextBlock Margin="8 0 0 0" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" LangText="Music" LangKey="K0476" FontSize="14" FontWeight="Bold" Foreground="#FF272727" />
+            </StackPanel>
+          </Border>
+          <ListBox Name="lbAblums" SelectionMode="Single" BorderThickness="0" Height="450" Background="#00FFFFFF" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemContainerStyle="{StaticResource v7_AlbumListBoxItemStyle}" ItemsSource="{Binding Albums}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <WrapPanel />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+          </ListBox>
+        </StackPanel>
+      </Border>
+      <Border Grid.Column="1" BorderBrush="#D9EBEFF2">
+        <StackPanel Orientation="Vertical">
+          <DataGrid Name="MusicListData" Height="440" Style="{StaticResource v6_MyDeviceDataGrid}" ItemsSource="{Binding FocusedAlbum.CachedAllMusics}" MouseDoubleClick="SongList_DBClick">
+            <DataGrid.Columns>
+              <DataGridTemplateColumn SortMemberPath="DisplayName" Width="2*" MinWidth="100" Header="Name">
+                <DataGridColumn.HeaderTemplate>
+                  <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                      <CheckBox Style="{StaticResource v7_my_device_checkbox}" Margin="-2 0 0 0" IsChecked="{Binding Path=IsChecked, Mode=TwoWay, ElementName=ckFocusedAlbumAll}" IsEnabled="{Binding ElementName=ckbAllItems, Path=IsEnabled}" Click="CheckAll_Click" />
+                      <lang:LangTextBlock Margin="5 0 0 0" LangKey="K0487" IsHitTestVisible="False" />
+                    </StackPanel>
+                  </DataTemplate>
+                </DataGridColumn.HeaderTemplate>
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                      <CheckBox Margin="2 0 0 0" Style="{StaticResource v7_my_device_checkbox}" IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                      <TextBlock Margin="5 0 0 0" Text="{Binding DisplayName}" />
+                    </StackPanel>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTextColumn Width="100" Header="K0546" Binding="{Binding Artist}">
+                <DataGridColumn.HeaderTemplate>
+                  <DataTemplate>
+                    <lang:LangTextBlock LangText="Artist" LangKey="K0546" IsHitTestVisible="False" />
+                  </DataTemplate>
+                </DataGridColumn.HeaderTemplate>
+              </DataGridTextColumn>
+              <DataGridTextColumn Width="80" Header="K0547" Binding="{Binding AlbumName}">
+                <DataGridColumn.HeaderTemplate>
+                  <DataTemplate>
+                    <lang:LangTextBlock LangText="Album" LangKey="K0547" IsHitTestVisible="False" />
+                  </DataTemplate>
+                </DataGridColumn.HeaderTemplate>
+              </DataGridTextColumn>
+              <DataGridTextColumn Width="80" SortMemberPath="Duration" Header="K0513" Binding="{Binding DurationString}">
+                <DataGridColumn.HeaderTemplate>
+                  <DataTemplate>
+                    <lang:LangTextBlock LangText="Duration" LangKey="K0513" IsHitTestVisible="False" />
+                  </DataTemplate>
+                </DataGridColumn.HeaderTemplate>
+              </DataGridTextColumn>
+              <DataGridTextColumn Width="80" SortMemberPath="Size" Header="K0378" Binding="{Binding Size, Converter={StaticResource FileSize2StrConverter}}">
+                <DataGridColumn.HeaderTemplate>
+                  <DataTemplate>
+                    <lang:LangTextBlock LangText="Size" LangKey="K0378" IsHitTestVisible="False" />
+                  </DataTemplate>
+                </DataGridColumn.HeaderTemplate>
+              </DataGridTextColumn>
+              <DataGridTemplateColumn Width="45">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <Border Margin="0" Background="#00FFFFFF">
+                      <Grid>
+                        <Menu Name="menum" Padding="0" Background="#00FFFFFF" VerticalAlignment="Center">
+                          <genericControls:MouseOverMenuItem BorderThickness="0" Background="#00FFFFFF" Padding="0" Margin="3" Tag="RootItem" ToolTip="Set as ringtone" lang:LangToolTip.ToolTipKey="K0548" MouseOverForeground="#00FFFFFF" MouseOverBackground="#00FFFFFF" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutMenuItemControlTemplate}}">
+                            <MenuItem.Icon>
+                              <Image Margin="3 0 0 0" Source="{StaticResource v6_icon_music_edit}" Width="16" Height="17" />
+                            </MenuItem.Icon>
+                            <genericControls:MouseOverMenuItem.MouseOverIcon>
+                              <Image Margin="3 0 0 0" Source="{StaticResource v6_icon_music_edit}" Width="16" Height="17" />
+                            </genericControls:MouseOverMenuItem.MouseOverIcon>
+                            <genericControls:MouseOverMenuItem Name="call" MinWidth="150" Height="32" Margin="0" BorderThickness="0" Background="{StaticResource V6_ThemeFgdBrushKey}" MouseOverBackground="#FFE2E7EC" Tag="Call" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutMenuItemControlTemplate}}" Click="SetMusicNotify">
+                              <HeaderedItemsControl.Header>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Call" LangKey="K0549" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{StaticResource V6_TitleBrushKey}" />
+                              </HeaderedItemsControl.Header>
+                              <genericControls:MouseOverMenuItem.MouseOverHeader>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Call" LangKey="K0549" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{StaticResource V6_TitleBrushKey}" />
+                              </genericControls:MouseOverMenuItem.MouseOverHeader>
+                            </genericControls:MouseOverMenuItem>
+                            <genericControls:MouseOverMenuItem Name="notification" MinWidth="150" Height="32" Margin="0" BorderThickness="0" Background="{StaticResource V6_ThemeFgdBrushKey}" MouseOverBackground="#FFE2E7EC" Tag="Notification" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutMenuItemControlTemplate}}" Click="SetMusicNotify">
+                              <HeaderedItemsControl.Header>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Notification" LangKey="K0550" VerticalAlignment="Center" Foreground="{StaticResource V6_TitleBrushKey}" HorizontalAlignment="Left" />
+                              </HeaderedItemsControl.Header>
+                              <genericControls:MouseOverMenuItem.MouseOverHeader>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Notification" LangKey="K0550" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{StaticResource V6_TitleBrushKey}" />
+                              </genericControls:MouseOverMenuItem.MouseOverHeader>
+                              <genericControls:MouseOverMenuItem.TipsContent>
+                                <Path Fill="#FF008000" Margin="0 8 -2 0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                  <Path.Data>
+                                    <EllipseGeometry Center="0,0" RadiusX="2" RadiusY="2" />
+                                  </Path.Data>
+                                </Path>
+                              </genericControls:MouseOverMenuItem.TipsContent>
+                            </genericControls:MouseOverMenuItem>
+                            <genericControls:MouseOverMenuItem Name="alarm" MinWidth="150" Height="32" Margin="0" BorderThickness="0" Tag="Alarm" Background="{StaticResource V6_ThemeFgdBrushKey}" MouseOverBackground="#FFE2E7EC" IsEnabled="{Binding IsEnabled, ElementName=menum}" Template="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutMenuItemControlTemplate}}" Click="SetMusicNotify">
+                              <HeaderedItemsControl.Header>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Alarm" LangKey="K0551" VerticalAlignment="Center" Foreground="{StaticResource V6_TitleBrushKey}" HorizontalAlignment="Left" />
+                              </HeaderedItemsControl.Header>
+                              <genericControls:MouseOverMenuItem.MouseOverHeader>
+                                <lang:LangTextBlock Margin="5 0 3 0" FontSize="12" LangText="Alarm" LangKey="K0551" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{StaticResource V6_TitleBrushKey}" />
+                              </genericControls:MouseOverMenuItem.MouseOverHeader>
+                            </genericControls:MouseOverMenuItem>
+                          </genericControls:MouseOverMenuItem>
+                        </Menu>
+                      </Grid>
+                    </Border>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+            </DataGrid.Columns>
+          </DataGrid>
+          <Grid Visibility="{Binding AllAlbumMusicCount, Converter={StaticResource musicPlayerVisibleConvert}}">
+            <localV6:MusicPlayerControlV7 Margin="20 0 30 0" Height="58" VerticalAlignment="Bottom" />
+          </Grid>
+        </StackPanel>
+      </Border>
+    </Grid>
+    <Border BorderThickness="0 1 0 0" BorderBrush="#FFE8EDF3">
+      <StackPanel Orientation="Horizontal" Height="30" Margin="0 0 140 0" HorizontalAlignment="Right">
+        <TextBlock FontSize="14" Foreground="#FF001429" VerticalAlignment="Center">
+          <Run Foreground="#FF005D7F" Text="{Binding AllAlbumMusicCount}" /> <lang:LangRun LangText="items," LangKey="K1795" /> <Run Foreground="#FF005D7F" Text="{Binding AllAlbumMusicSelectedCount}" /> <lang:LangRun LangText="items selected." LangKey="K1796" /></TextBlock>
+        <lang:LangButton Margin="10 0 0 0" LangKey="K0764" Style="{StaticResource V7_OnlyTextBtnStyle}" Visibility="{Binding IsSelectedAllAlbumMusic, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:Collapsed:Visible}" IsEnabled="{Binding AllAlbumMusicCount, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" Click="SelectAllItemClick" />
+        <lang:LangButton Margin="10 0 0 0" LangKey="K1774" Style="{StaticResource V7_OnlyTextBtnStyle}" Visibility="{Binding IsSelectedAllAlbumMusic, Converter={StaticResource booleanToVisibilityConverter}}" Click="UnselectAllItemClick" />
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

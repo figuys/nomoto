@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.HomeView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:localControls="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <SolidColorBrush x:Key="ProgressBar.Progress" Color="#43B5E2" />
+      <SolidColorBrush x:Key="ProgressBar.Background" Color="#F1F1F1" />
+      <Style x:Key="ProgressBarStyle1" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}" />
+        <Setter Property="Background" Value="{StaticResource ProgressBar.Background}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ProgressBar}">
+              <Grid Name="TemplateRoot">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Determinate" />
+                    <VisualState x:Name="Indeterminate">
+                      <Storyboard RepeatBehavior="Forever">
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="0.25" />
+                          <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25" />
+                          <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
+                          <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5" />
+                          <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5" />
+                          <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5" />
+                        </PointAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border CornerRadius="5" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" />
+                <Border Name="PART_Track" CornerRadius="5" />
+                <Grid Name="PART_Indicator" ClipToBounds="True" HorizontalAlignment="Left">
+                  <Border Name="Animation" Background="{TemplateBinding Control.Foreground}" CornerRadius="5" RenderTransformOrigin="0.5,0.5">
+                    <UIElement.RenderTransform>
+                      <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                      </TransformGroup>
+                    </UIElement.RenderTransform>
+                  </Border>
+                </Grid>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ProgressBar.Orientation" Value="Vertical">
+                  <Setter TargetName="TemplateRoot" Property="FrameworkElement.LayoutTransform">
+                    <Setter.Value>
+                      <RotateTransform Angle="-90" />
+                    </Setter.Value>
+                  </Setter>
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="55*" MinHeight="55" />
+      <RowDefinition Height="482*" MinHeight="482" MaxHeight="482" />
+      <RowDefinition Height="55*" MinHeight="55" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="101*" MinWidth="101" />
+      <ColumnDefinition Width="714*" MinWidth="714" MaxWidth="714" />
+      <ColumnDefinition Width="68*" MinWidth="68" />
+    </Grid.ColumnDefinitions>
+    <Grid Column="1" Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="93*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="75*" />
+        <ColumnDefinition Width="84*" />
+        <ColumnDefinition Width="460*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="361*" />
+        <RowDefinition Height="36*" />
+        <RowDefinition Height="33*" />
+        <RowDefinition Height="25*" />
+        <RowDefinition Height="36*" />
+      </Grid.RowDefinitions>
+      <Border Grid.ColumnSpan="3" Width="169" Height="345" Margin="0 8 0 0" CornerRadius="40.82" BorderBrush="#43B5E2" BorderThickness="2">
+        <Grid>
+          <Border CornerRadius="2" Background="#43B5E2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="4" Width="40.5" Margin="0 9 0 0" Opacity="0.7" />
+          <Border Background="#F2F7F9" Width="155" Height="272" Margin="0 36 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" />
+          <Image HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Height="87" Margin="0 70 0 0" Source="{DynamicResource bitImgCut_phone_frame_bk_android}" />
+          <Image Width="155" Height="272" Margin="0 36 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="{Binding ScreenImgSource}" />
+        </Grid>
+      </Border>
+      <genericControls:MouseOverButton Width="110" Grid.Row="1" Grid.RowSpan="3" Margin="-20 0 0 0" MinHeight="15" VerticalAlignment="Center" Effect="{x:Null}" Command="{Binding ShotCommand}" IsEnabled="{Binding ShotButtonEnabled}">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type genericControls:MouseOverButton}">
+            <Border CornerRadius="5">
+              <DockPanel HorizontalAlignment="Center" Background="#00FFFFFF">
+                <Image Name="icon" DockPanel.Dock="Left" Width="9.8" Height="9.8" VerticalAlignment="Center" Margin="0 0 5 0" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=cutIconDrawingImage_gray}}" />
+                <lang:LangTextBlock Name="text" TextWrapping="Wrap" LangText="Capture screen" LangKey="K0472" Foreground="#8B9093" VerticalAlignment="Center" />
+                <Image Name="hoverIcon" DockPanel.Dock="Left" Width="9.8" Height="9.8" VerticalAlignment="Center" Visibility="Collapsed" Margin="0 0 5 0" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=cutIconDrawingImage_blue}}" />
+                <lang:LangTextBlock Name="hoverText" TextWrapping="Wrap" Visibility="Collapsed" LangText="Capture screen" LangKey="K0472" Foreground="#43B5E2" VerticalAlignment="Center" />
+              </DockPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="UIElement.IsMouseOver" Value="True">
+                <Setter TargetName="icon" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="text" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="hoverIcon" Property="UIElement.Visibility" Value="Visible" />
+                <Setter TargetName="hoverText" Property="UIElement.Visibility" Value="Visible" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+      </genericControls:MouseOverButton>
+      <Line Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" X1="0.5" Y1="2.5" X2="0.5" Y2="12.5" Stroke="#8ABCD0" MinHeight="15" VerticalAlignment="Center" />
+      <genericControls:MouseOverButton Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" MinHeight="15" VerticalAlignment="Center" Effect="{x:Null}" Command="{Binding RefreshCommand}" IsEnabled="{Binding RefreshButtonEnabled}">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type genericControls:MouseOverButton}">
+            <Border CornerRadius="5">
+              <DockPanel HorizontalAlignment="Left" Margin="5 0 0 0">
+                <Image Name="icon" DockPanel.Dock="Left" Width="9.8" Height="9.8" VerticalAlignment="Center" Margin="0 0 5 0" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=refreshIconDrawingImage_gray}}" />
+                <lang:LangTextBlock Name="text" TextWrapping="Wrap" LangText="Refresh" LangKey="K0473" Foreground="#8B9093" VerticalAlignment="Center" />
+                <Image Name="hoverIcon" DockPanel.Dock="Left" Width="9.8" Height="9.8" VerticalAlignment="Center" Visibility="Collapsed" Margin="0 0 5 0" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=refreshIconDrawingImage_blue}}" />
+                <lang:LangTextBlock Name="hoverText" TextWrapping="Wrap" Visibility="Collapsed" LangText="Refresh" LangKey="K0473" Foreground="#43B5E2" VerticalAlignment="Center" />
+              </DockPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="UIElement.IsMouseOver" Value="True">
+                <Setter TargetName="icon" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="text" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="hoverIcon" Property="UIElement.Visibility" Value="Visible" />
+                <Setter TargetName="hoverText" Property="UIElement.Visibility" Value="Visible" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+      </genericControls:MouseOverButton>
+      <Border Grid.Row="4" Grid.ColumnSpan="3" Height="35" VerticalAlignment="Bottom">
+        <genericControls:LComboBox Name="stepCombobox" BorderBrush="#43B5E2" BorderThickness="1" CornerRadius="8" DataLoading="False" IsEditable="False" IsTextSearchEnabled="False" ToggleButtonIsCheckedBorderBursh="#00FFFFFF" ToggleButtonIsCheckedBackground="#00FFFFFF" ToggleButtonIsCheckedArrowBackground="#43B5E2" ToggleButtonIsCheckedForeground="#43B5E2" ToggleButtonBackground="#00FFFFFF" ToggleButtonBorderBursh="#00FFFFFF" ToggleButtonArrowBackground="#43B5E2" ToggleButtonForeground="#43B5E2" DropDownBackground="#ffffff" DropDownBorderBrush="#C3C3C3" DropDownBorderThickness="1" DropDownItemBackground="#ffffff" DropDownItemForeground="#43B5E2" DropDownItemMouseOverBackground="#b9b9b9" DropDownItemSelectedBackground="#e2e2e2" DropDownItemMouseOverForeground="#ffffff" DropDownItemSelectedForeground="#43B5E2" DorpDownPanelVerticalOffset="10" EmptyTipsForeground="#43B5E2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=DefalutLComboBoxStyle}}" SelectedItem="{Binding ConnectedDeviceViewModel.SelectedItem, Mode=TwoWay}" ItemsSource="{Binding ConnectedDeviceViewModel.ConnectedDevices}" SelectionChanged="OnSelectedChanged">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <DockPanel>
+                <Image Name="item_left_icon" DockPanel.Dock="Left" Stretch="Uniform" Width="24" Height="24" VerticalAlignment="Center" Source="{Binding Icon}" />
+                <TextBlock Margin="15 0 0 0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding Value}" />
+              </DockPanel>
+              <DataTemplate.Triggers>
+                <DataTrigger Value="True" Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ListBoxItem, Mode=FindAncestor}}">
+                  <Setter TargetName="item_left_icon" Property="Image.Source" Value="{Binding HoverIcon}" />
+                </DataTrigger>
+              </DataTemplate.Triggers>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </genericControls:LComboBox>
+      </Border>
+      <localControls:DeviceInfoView Grid.Column="4" Grid.RowSpan="3" />
+      <genericControls:MouseOverButton Grid.Column="4" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom" MinWidth="150" Height="36" Command="{Binding GoToRescueCommand}" Visibility="{Binding IsEnabled}">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type genericControls:MouseOverButton}">
+            <Grid>
+              <Border Background="#FFA900" CornerRadius="8" BorderThickness="0">
+                <UIElement.Effect>
+                  <DropShadowEffect Color="#0287BB" BlurRadius="4" ShadowDepth="0" />
+                </UIElement.Effect>
+              </Border>
+              <Border BorderThickness="0" CornerRadius="8" Background="#FFA900">
+                <lang:LangTextBlock LangText="Rescue" LangKey="K0102" FontSize="12pt" Foreground="#ffffff" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+            </Grid>
+          </ControlTemplate>
+        </Control.Template>
+      </genericControls:MouseOverButton>
+    </Grid>
+  </Grid>
+</UserControl>

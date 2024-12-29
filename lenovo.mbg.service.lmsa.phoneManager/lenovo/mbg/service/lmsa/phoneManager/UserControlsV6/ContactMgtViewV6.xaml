@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.ContactMgtViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:localV6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:converters="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.ValueConverters" xmlns:converters1="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.Converters" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:iEx="clr-namespace:lenovo.themes.generic.Interactivity.Ex;assembly=lenovo.themes.generic" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:viewModelsV6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.ViewModelV6" x:Name="contactView">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="../Themes/MenuNavigationIcon.xaml" />
+        <ResourceDictionary Source="../ThemesV6/MenuNavigationV6.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <converters:ContactStatusConverter x:Key="ContactStatusConverter" />
+      <converters:PhoneCardsConverter x:Key="PhoneCardsConverter" />
+      <converters:CallStatusImageConverter x:Key="CallStatusImageConverter" />
+      <converters:CallStatusTextConverter x:Key="CallStatusTextConverter" />
+      <converters:CallSimUsedConverter x:Key="CallSimUsedConverter" />
+      <converters:CallDurationConverter x:Key="CallDurationConverter" />
+      <converters:CallDateConverter x:Key="CallDateConverter" />
+      <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+      <converters:BirthDayConverter x:Key="BirthDayConverter" />
+      <converters1:LangConverter x:Key="langConverter" />
+      <Style x:Key="DefaultTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource V6_ContentBrushKey}" />
+        <Setter Property="FontWeight" Value="Regular" />
+      </Style>
+      <Style x:Key="TextBlockSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="Height" Value="10" />
+        <Setter Property="Background" Value="#FFD4DCE3" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+      </Style>
+      <Style x:Key="AddTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Foreground" Value="{StaticResource V6_TipsBrushKey}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border Height="{TemplateBinding FrameworkElement.Height}" CornerRadius="4" BorderThickness="1" BorderBrush="{StaticResource V6_BorderBrushKey}">
+                <Grid Margin="12 5 0 5" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <lang:LangTextBlock LangKey="{TemplateBinding FrameworkElement.Tag}" Foreground="{TemplateBinding Control.Foreground}" Opacity="0.7" FontSize="14" Visibility="{Binding Path=Text.IsEmpty, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource bool2VisibilityConverter}}" />
+                  <Border Name="bd" BorderBrush="#E2E2E2" BorderThickness="0">
+                    <ScrollViewer Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+                  </Border>
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <EventSetter Event="PreviewTextInput" Handler="TextBox_PreviewTextInput" />
+      </Style>
+      <Style x:Key="leftNav" TargetType="{x:Type RadioButton}">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Foreground" Value="#d1d1cf" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RadioButton}">
+              <Border Name="bd" Width="14" Height="14" Background="{TemplateBinding Control.Background}">
+                <ContentPresenter Name="contentPresenter" VerticalAlignment="Center" HorizontalAlignment="Center" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                  <Setter Property="Foreground" Value="#FFFFFF" />
+                </Trigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="ToggleButton.IsChecked" Value="true" />
+                  </MultiTrigger.Conditions>
+                  <MultiTrigger.Setters>
+                    <Setter TargetName="bd" Property="Border.Background" Value="#FFFFFF" />
+                    <Setter Property="Foreground" Value="#43B5E2" />
+                  </MultiTrigger.Setters>
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="GroupListBoxItemContainerStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Height="42" Background="{TemplateBinding Control.Background}" BorderBrush="#00FFFFFF">
+                <Grid VerticalAlignment="Center">
+                  <lang:LangTextBlock Name="_contactName" Margin="8 0 0 0" FontSize="12" LangText="{Binding Name}" LangKey="{Binding Name}" />
+                  <TextBlock Name="address" Visibility="Collapsed" Text="{Binding Id}" />
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="ListBoxItem.IsSelected" Value="True">
+            <Setter Property="Background" Value="#99D4DCE3" />
+          </Trigger>
+          <Trigger Property="UIElement.IsMouseOver" Value="True">
+            <Setter Property="Background" Value="#99D4DCE3" />
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <localV6:SelectButtonKeyConvert x:Key="selectButtonKeyConvert" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel Margin="0 5 0 0">
+    <Grid Name="menuContent">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="45" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="30" />
+      </Grid.RowDefinitions>
+      <Border Name="Tab_Contact" Visibility="Visible" Grid.Row="0" Grid.RowSpan="2" CornerRadius="10">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Border Grid.Row="0" Margin="15 5">
+            <DockPanel>
+              <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right" Visibility="Collapsed">
+                <gc6:SdCardView Name="sdview" Margin="5 0 0 0" FontWeight="Regular" DataContext="{Binding SdCarVm}" IsEnabled="{Binding PicToolRefreshBtn.IsEnabled}" />
+              </StackPanel>
+              <StackPanel Orientation="Horizontal">
+                <lang:LangButton LangKey="K0429" Style="{StaticResource v7_device_import_button}" FontWeight="Regular" Command="{Binding ImportContactCommand}" />
+                <lang:LangButton LangKey="K0484" Style="{StaticResource v7_device_export_button}" Margin="10 0 5 0" FontWeight="Regular" IsEnabled="{Binding ContactExportToolBtnEnable}" Command="{Binding ExportContactCommand}" />
+                <TextBox Name="txbSearch" HorizontalAlignment="Right" Style="{StaticResource v6_SearchTextBoxStyle}" Width="162" FontWeight="Regular" local:ControlAttachProperty.LeftClickCommand="{Binding ContactSearchCommand}">
+                  <UIElement.InputBindings>
+                    <input:KeyBinding Key="Enter" Command="{Binding ContactSearchCommand}" CommandParameter="{Binding Text, ElementName=txbSearch}" />
+                  </UIElement.InputBindings>
+                </TextBox>
+                <genericControls:IconButton ToolTip="K0510" CommandParameter="add" Icon="{StaticResource v6_device_icon_add_contact}" DisabledIcon="{StaticResource v6_device_icon_add_contact_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" Command="{Binding AddContactCommand}" />
+                <genericControls:IconButton ToolTip="K0583" Icon="{StaticResource v6_device_icon_delete}" DisabledIcon="{StaticResource v6_device_icon_delete_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding ContactDeleteToolBtnEnable}" Command="{Binding DelContactCommand}" />
+                <genericControls:IconButton ToolTip="K0473" CommandParameter="contact" Icon="{StaticResource v7_device_icon_refresh}" DisabledIcon="{StaticResource v7_device_icon_refresh_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding ContactRefreshToolBtnEnable}" Command="{Binding RefreshAllCommand}" />
+                <TextBlock Name="txtHiddenValueListCount" Visibility="Collapsed" FontWeight="Regular" Text="{Binding ContactList.Count, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" />
+              </StackPanel>
+            </DockPanel>
+          </Border>
+          <DockPanel Grid.Row="1" Background="#00FFFFFF" Margin="0">
+            <DataGrid Name="ContactListData" Grid.Column="2" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" Style="{StaticResource v6_MyDeviceDataGrid}" CellStyle="{StaticResource GZDefaultDataGridCell}" CanUserResizeColumns="True" CanUserResizeRows="False" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding ContactList, Mode=TwoWay}" SelectedItem="{Binding SelectedContact}" CanUserSortColumns="{Binding ContactCanSort}" MouseDoubleClick="OnDataGridMouseDoubleClick">
+              <i:Interaction.Triggers>
+                <iEx:RoutedEventTrigger RoutedEvent="ScrollViewer.ScrollChanged">
+                  <iEx:InvokeCommandAction Command="{Binding ContactScrollViewChangedCommand}" />
+                </iEx:RoutedEventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                  <i:InvokeCommandAction Command="{Binding MouseDoubleClickCommand}" CommandParameter="{Binding ElementName=ContactListData, Path=SelectedItem}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <DataGrid.Columns>
+                <DataGridTextColumn Visibility="Collapsed" Width="0" Binding="{Binding LastName_FirstLetter}" />
+                <DataGridTemplateColumn CanUserResize="False" CanUserSort="False">
+                  <DataGridColumn.HeaderTemplate>
+                    <DataTemplate>
+                      <Border>
+                        <CheckBox Name="cbAll" Style="{StaticResource v6_comm_checkbox}" Margin="-2 0 0 0" DataContext="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=localV6:ContactMgtViewV6}}" IsChecked="{Binding IsAllContactSelected}" IsEnabled="{Binding ElementName=txtHiddenValueListCount, Path=Text}" Command="{Binding CheckAllContactClickCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" />
+                      </Border>
+                    </DataTemplate>
+                  </DataGridColumn.HeaderTemplate>
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                      <CheckBox Style="{StaticResource v6_comm_checkbox}" Command="{Binding CheckClickCommand}" CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}" IsChecked="{Binding isSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn SortMemberPath="Name" Width="*" MinWidth="185" Header="K0487" IsReadOnly="True">
+                  <DataGridColumn.HeaderTemplate>
+                    <DataTemplate>
+                      <lang:LangTextBlock LangText="Name" LangKey="K0487" FontWeight="Regular" />
+                    </DataTemplate>
+                  </DataGridColumn.HeaderTemplate>
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                      <StackPanel MinWidth="100" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image HorizontalAlignment="Left" Width="27" Height="27" Source="{StaticResource v6_icon_contact_default_image}" />
+                        <TextBlock Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontWeight="Regular" Text="{Binding Name}" />
+                      </StackPanel>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*" MinWidth="240" SortMemberPath="Number" Header="K0518" IsReadOnly="True">
+                  <DataGridColumn.HeaderTemplate>
+                    <DataTemplate>
+                      <lang:LangTextBlock LangText="Number" LangKey="K0518" FontWeight="Regular" />
+                    </DataTemplate>
+                  </DataGridColumn.HeaderTemplate>
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                      <Border MinWidth="100" BorderThickness="0">
+                        <TextBlock HorizontalAlignment="Left" Margin="0 0 10 0" TextTrimming="CharacterEllipsis" FontWeight="Regular" Text="{Binding Number}" ToolTip="{Binding Number}" />
+                      </Border>
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="300" MinWidth="140" IsReadOnly="True">
+                  <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                      <genericControls:IconButton Margin="-25,0" Foreground="#005D7F" LangKey="K0519" Style="{StaticResource v7_MenuTopIconTextboxButtonStyleForContact}" Cursor="Hand" FontWeight="Regular" FontSize="12" Command="{Binding ShowContactDetailClickCommand}" CommandParameter="{Binding}" />
+                    </DataTemplate>
+                  </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+              </DataGrid.Columns>
+            </DataGrid>
+          </DockPanel>
+        </Grid>
+      </Border>
+      <Border Grid.Row="2" VerticalAlignment="Bottom" Grid.ColumnSpan="2" BorderThickness="0 1 0 0" BorderBrush="#FFE8EDF3">
+        <StackPanel Orientation="Horizontal" Height="30" Margin="0 0 140 0" HorizontalAlignment="Right">
+          <TextBlock FontSize="14" Foreground="#FF001429" VerticalAlignment="Center">
+            <Run Foreground="#FF005D7F" Text="{Binding ContactTotalCount}" /> <lang:LangRun LangText="items," LangKey="K1795" /> <Run Foreground="#FF005D7F" Text="{Binding SelectContactCount}" /> <lang:LangRun LangText="items selected." LangKey="K1796" /></TextBlock>
+          <lang:LangButton Name="btn_all" Margin="10 0 0 0" Style="{StaticResource V7_OnlyTextBtnStyle}" LangKey="{Binding IsAllContactSelected, Converter={StaticResource selectButtonKeyConvert}}" IsEnabled="{Binding ContactTotalCount, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" Click="LangButton_Click" />
+        </StackPanel>
+      </Border>
+    </Grid>
+  </DockPanel>
+</UserControl>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.FolderTreeView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:localViews="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.ViewModels" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" x:Name="pageRoot">
+  <FrameworkElement.Resources>
+    <ResourceDictionary />
+  </FrameworkElement.Resources>
+  <TreeView BorderThickness="0" ItemsSource="{Binding TreeItems}">
+    <FrameworkElement.Resources>
+      <ResourceDictionary>
+        <DrawingImage x:Key="imgFolderClosed">
+          <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 L0,13 L7,13 L7,0 L0,0">
+              <DrawingGroup Transform="1,0,0,1,-163,-213">
+                <DrawingGroup Transform="1,0,0,1,163,213">
+                  <DrawingGroup Transform="-1,0,0,1,7,0">
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M7,13 M0,0 M6.44970263,11.8224522 C6.33124096,11.8224522 6.21277928,11.7809906 6.11800994,11.6980674 L0.218618459,6.23106104 C0.0350028603,6.06521469 0.0350028603,5.78682975 0.218618459,5.6209834 L6.11800994,0.153977042 C6.30162554,-0.0118693047 6.59185664,-0.0118693047 6.77547224,0.153977042 C6.95908784,0.319823389 6.95908784,0.598208328 6.77547224,0.764054675 L1.20777346,5.92306068 L6.77547224,11.0820667 C6.95908784,11.247913 6.95908784,11.526298 6.77547224,11.6921443 C6.68662598,11.7750675 6.56816431,11.8224522 6.44970263,11.8224522" />
+                  </DrawingGroup>
+                </DrawingGroup>
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="imgFolderExpand">
+          <DrawingImage.Drawing>
+            <DrawingGroup Transform="1,0,0,1,163,213">
+              <DrawingGroup Transform="-1,0,0,1,7,0">
+                <GeometryDrawing Brush="#FF000000" Geometry="F1 M7,13 M0,0 M6.44970263,11.8224522 C6.33124096,11.8224522 6.21277928,11.7809906 6.11800994,11.6980674 L0.218618459,6.23106104 C0.0350028603,6.06521469 0.0350028603,5.78682975 0.218618459,5.6209834 L6.11800994,0.153977042 C6.30162554,-0.0118693047 6.59185664,-0.0118693047 6.77547224,0.153977042 C6.95908784,0.319823389 6.95908784,0.598208328 6.77547224,0.764054675 L1.20777346,5.92306068 L6.77547224,11.0820667 C6.95908784,11.247913 6.95908784,11.526298 6.77547224,11.6921443 C6.68662598,11.7750675 6.56816431,11.8224522 6.44970263,11.8224522" />
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingImage.Drawing>
+        </DrawingImage>
+      </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <ItemsControl.ItemTemplate>
+      <HierarchicalDataTemplate DataType="localViews:FolderFileViewModel" ItemsSource="{Binding ChildFolders}">
+        <Border>
+          <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#494949" Text="{Binding DisplayName}" />
+        </Border>
+      </HierarchicalDataTemplate>
+    </ItemsControl.ItemTemplate>
+    <ItemsControl.ItemContainerStyle>
+      <Style TargetType="{x:Type TreeViewItem}">
+        <Setter Property="TreeViewItem.IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+        <Setter Property="TreeViewItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TreeViewItem}">
+              <Grid Name="rootContaniter">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="30" />
+                  <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Name="tr_headerContainer" Row="0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding MarginLeft}" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                  </Grid.ColumnDefinitions>
+                  <ToggleButton Name="tr_expandArrowButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{Binding ItemPadding, ElementName=pageRoot}" IsChecked="{Binding IsExpanded, Mode=TwoWay}">
+                    <Control.Template>
+                      <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Image Name="tr_expandArrowImg" Width="7" Height="12" Source="{StaticResource imgFolderClosed}" Stretch="None" RenderTransformOrigin="0.5,0.5" />
+                        <ControlTemplate.Triggers>
+                          <DataTrigger Value="true" Binding="{Binding IsExpanded}">
+                            <Setter TargetName="tr_expandArrowImg" Property="RenderTransform">
+                              <Setter.Value>
+                                <RotateTransform Angle="90" />
+                              </Setter.Value>
+                            </Setter>
+                          </DataTrigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </Control.Template>
+                  </ToggleButton>
+                  <ContentPresenter Name="PART_Header" Margin="11 0 0 0" Grid.Column="2" ContentSource="Header" />
+                </Grid>
+                <ItemsPresenter Name="tr_itemsHost" Grid.Row="1" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger SourceName="tr_headerContainer" Property="UIElement.IsMouseOver" Value="True">
+                  <Setter TargetName="tr_headerContainer" Property="Panel.Background" Value="#EFEFEF" />
+                </Trigger>
+                <Trigger Property="TreeViewItem.IsSelected" Value="True">
+                  <Setter TargetName="tr_headerContainer" Property="Panel.Background" Value="#EFEFEF" />
+                </Trigger>
+                <Trigger Property="TreeViewItem.IsExpanded" Value="True">
+                  <Setter TargetName="tr_itemsHost" Property="Visibility" Value="Visible" />
+                </Trigger>
+                <Trigger Property="TreeViewItem.IsExpanded" Value="False">
+                  <Setter TargetName="tr_itemsHost" Property="Visibility" Value="Collapsed" />
+                </Trigger>
+                <DataTrigger Value="true" Binding="{Binding IsLeafNode}">
+                  <Setter TargetName="tr_expandArrowButton" Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+                <DataTrigger Value="false" Binding="{Binding IsLeafNode}">
+                  <Setter TargetName="tr_expandArrowButton" Property="Visibility" Value="Visible" />
+                </DataTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <EventSetter Event="Selected" Handler="TreeViewItem_Selected" />
+      </Style>
+    </ItemsControl.ItemContainerStyle>
+  </TreeView>
+</UserControl>

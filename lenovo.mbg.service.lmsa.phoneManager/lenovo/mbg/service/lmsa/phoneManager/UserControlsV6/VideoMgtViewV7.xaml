@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.VideoMgtViewV7" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:phoneConverts="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.Converters" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:genericConvert="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:usercontrolsv6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+        <ResourceDictionary Source="../ThemesV6/MenuNavigationV6.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+      <genericConvert:CompareValueConverter x:Key="CompareValueConverter" />
+      <phoneConverts:FormatSizeConverter x:Key="formatSize" />
+      <DrawingImage x:Key="v7_VideoDataGridSmallIcon">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,20 L20,20 L20,0 L0,0">
+            <DrawingGroup.Transform>
+              <TranslateTransform X="1.4203" Y="0" />
+            </DrawingGroup.Transform>
+            <DrawingGroup Opacity="1">
+              <DrawingGroup Opacity="1" Transform="1,0,0,1,-225,-340">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,225,340">
+                  <GeometryDrawing>
+                    <GeometryDrawing.Brush>
+                      <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0.929010728" MappingMode="RelativeToBoundingBox" SpreadMethod="Pad" Opacity="1">
+                        <GradientStop Color="#FFD6F1FF" Offset="0" />
+                        <GradientStop Color="#FFB0DCF4" Offset="0.446377493" />
+                        <GradientStop Color="#FF80CDF7" Offset="1" />
+                      </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,20,20" />
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <DrawingGroup Opacity="1" Transform="1,0,0,1,3.5,5">
+                    <GeometryDrawing Brush="#FF4F97BC" Geometry="M20,20 M0,0 M5.51449576,0.908697453 L10.0708451,3.64250707 C10.5444254,3.92665523 10.6979905,4.54091549 10.4138423,5.01449576 C10.3293925,5.15524536 10.2115947,5.27304316 10.0708451,5.35749293 L5.51449576,8.09130255 C5.04091549,8.37545071 4.42665523,8.22188564 4.14250707,7.74830538 C4.04925783,7.59288997 4,7.41505357 4,7.23380962 L4,1.76619038 C4,1.21390563 4.44771525,0.766190379 5,0.766190379 C5.18124395,0.766190379 5.35908035,0.815448212 5.51449576,0.908697453" />
+                    <DrawingGroup Opacity="1" Transform="1,0,0,1,0,11.5">
+                      <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                          <Pen Thickness="0.7" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                            <Pen.Brush>
+                              <SolidColorBrush Color="#FFFFFFFF" Opacity="0.45" />
+                            </Pen.Brush>
+                          </Pen>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                          <LineGeometry StartPoint="-1.4203,0.7308" EndPoint="12.833,0.7308" />
+                        </GeometryDrawing.Geometry>
+                      </GeometryDrawing>
+                      <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                          <Pen Thickness="0.7" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter">
+                            <Pen.Brush>
+                              <SolidColorBrush Color="#FFFFFFFF" Opacity="0.45" />
+                            </Pen.Brush>
+                          </Pen>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                          <LineGeometry StartPoint="10.2447,0" EndPoint="10.2447,1.5448" />
+                        </GeometryDrawing.Geometry>
+                      </GeometryDrawing>
+                    </DrawingGroup>
+                  </DrawingGroup>
+                </DrawingGroup>
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+      <Style x:Key="v7_VideoListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid Width="125" Height="125" Margin="0 5 20 0">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+                <Border Name="borderBackground" Grid.Row="0" Grid.RowSpan="2" CornerRadius="2" Width="120" Height="120" Background="#80CEEAF9" Visibility="Hidden" />
+                <Image Name="imgDefaultVideoImage" Grid.Row="0" Grid.RowSpan="2" Width="72" Height="72" Stretch="UniformToFill" Source="pack://application:,,,/lenovo.mbg.service.lmsa.phoneManager;component/ResourcesV6/v7_video_default.png" Visibility="Hidden" />
+                <Image Grid.Row="0" Grid.RowSpan="2" Width="110" Height="110" Source="{Binding VideoImage}" />
+                <Border Name="albumChoose" Grid.Row="0" Grid.RowSpan="2" Width="125" Height="125" BorderThickness="2" CornerRadius="2" Visibility="Hidden" BorderBrush="{StaticResource V6_HighLightBkgBrushKey}" />
+                <Image Name="albumChooseIcon" Width="25" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Source="{StaticResource v6_icon_picture_selected}" />
+                <Grid Row="1" Height="24" Width="120" Background="#49005D7F">
+                  <Image Height="12" Width="18" Margin="5 0 0 0" HorizontalAlignment="Left" Source="{StaticResource v6_icon_video_default}" />
+                  <TextBlock Foreground="#FFFFFFFF" Margin="0 0 5 0" FontSize="14" HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding Duration}" />
+                </Grid>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <DataTrigger Binding="{Binding VideoImage}" Value="{x:Null}">
+                  <Setter TargetName="borderBackground" Property="Visibility" Value="Visible" />
+                  <Setter TargetName="imgDefaultVideoImage" Property="Visibility" Value="Visible" />
+                </DataTrigger>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter TargetName="albumChoose" Property="Visibility" Value="Visible" />
+                  <Setter TargetName="albumChooseIcon" Property="Visibility" Value="Visible" />
+                  <Setter TargetName="borderBackground" Property="Visibility" Value="Visible" />
+                </Trigger>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter TargetName="albumChoose" Property="Visibility" Value="Visible" />
+                  <Setter TargetName="borderBackground" Property="Visibility" Value="Visible" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v7_VideoListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ListBox.SelectionMode" Value="Multiple" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource v7_VideoListBoxItemStyle}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Background="{TemplateBinding Control.Background}">
+                <ItemsPresenter />
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+          <Setter.Value>
+            <ItemsPanelTemplate>
+              <WrapPanel />
+            </ItemsPanelTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v7_DateVideosListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <StackPanel Background="#00FFFFFF">
+                <Grid Margin="5 10" Width="590">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                  </Grid.ColumnDefinitions>
+                  <CheckBox Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource v7_my_device_checkbox}" IsChecked="{Binding IsGroupSelected}" Command="{Binding VideoSelectAllCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+                  <TextBlock Grid.Column="1" Margin="5 0 0 0" Foreground="#FF001429" FontSize="14" VerticalAlignment="Center" Text="{Binding GroupKey}" />
+                  <ToggleButton Name="ExpanderBtn" Grid.Column="2" Margin="5 0 0 0" IsChecked="True" ClickMode="Press">
+                    <Control.Template>
+                      <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Left" Width="20" Height="20">
+                          <Image Name="ExpanderIcon" Width="12" Height="7" RenderTransformOrigin="0.5,0.5" Source="{StaticResource v7_icon_pull_down}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                          <Trigger Property="ToggleButton.IsChecked" Value="False">
+                            <Setter TargetName="ExpanderIcon" Property="RenderTransform">
+                              <Setter.Value>
+                                <RotateTransform Angle="180" />
+                              </Setter.Value>
+                            </Setter>
+                          </Trigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </Control.Template>
+                  </ToggleButton>
+                  <Border Grid.Column="3" MinHeight="22" MinWidth="42" CornerRadius="12" HorizontalAlignment="Right" Background="{StaticResource V6_DisableBrushKey}">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="{StaticResource V6_ThemeFgdBrushKey}" Text="{Binding VideoCount}" />
+                  </Border>
+                </Grid>
+                <ListBox Style="{StaticResource v7_VideoListBoxStyle}" Visibility="{Binding ElementName=ExpanderBtn, Path=IsChecked, Converter={StaticResource booleanToVisibilityConverter}}" ItemsSource="{Binding Videos}" />
+              </StackPanel>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v7_VideosListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ListBox.SelectionMode" Value="Multiple" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource v7_DateVideosListBoxItemStyle}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Background="{TemplateBinding Control.Background}">
+                <ItemsPresenter />
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+          <Setter.Value>
+            <ItemsPanelTemplate>
+              <WrapPanel />
+            </ItemsPanelTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v7_AlbumListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid Width="200" Background="{TemplateBinding Control.Background}" Height="42" Cursor="Hand" ToolTipService.ToolTip="{Binding AlbumPath}">
+                <UIElement.InputBindings>
+                  <MouseBinding MouseAction="LeftClick" Command="{Binding SingleClickCommand}" CommandParameter="{Binding}" />
+                </UIElement.InputBindings>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto" />
+                  <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                  <CheckBox Margin="5 0 0 0" Style="{StaticResource v7_my_device_checkbox}" IsChecked="{Binding IsSelectedAllVideo, Mode=TwoWay}" Command="{Binding SingleClickCommand}" CommandParameter="{Binding}" />
+                  <Image Grid.Row="2" Margin="5 0 0 0" Width="19" Height="16" Source="{StaticResource v6_video_icon}" />
+                  <TextBlock Margin="8 0 0 0" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Foreground="#FF001429" Text="{Binding AlbumName}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Width="30" VerticalAlignment="Center">
+                  <TextBlock Margin="0 0 5 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12" Foreground="#FF6D86AB" Text="{Binding FileCount}" />
+                </StackPanel>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                  <Setter Property="Background" Value="#FFCEEAF9" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <StackPanel Orientation="Vertical">
+    <StackPanel Margin="0 10 0 10" Orientation="Horizontal">
+      <lang:LangButton Style="{StaticResource v7_device_import_button}" Margin="14 0 0 0" LangKey="{Binding ButtonTextDisplay}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding VideoToolImportBtn}" CommandParameter="{Binding}" />
+      <lang:LangButton Style="{StaticResource v7_device_export_button}" Margin="13 0 0 0" LangKey="{Binding ButtonTextDisplay}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding VideoToolExportBtn}" CommandParameter="{Binding}" />
+      <TextBox Name="txbSearch" Margin="10 0 0 0" HorizontalAlignment="Right" Style="{StaticResource v6_SearchTextBoxStyle}" local:ControlAttachProperty.LeftClickCommand="{Binding SearchCommand}">
+        <UIElement.InputBindings>
+          <KeyBinding Key="Enter" Command="{Binding SearchCommand}" CommandParameter="{Binding Text, ElementName=txbSearch}" />
+        </UIElement.InputBindings>
+      </TextBox>
+      <genericControls:IconButton LangKey="K0583" ToolTip="K0583" Icon="{StaticResource v6_device_icon_delete}" DisabledIcon="{StaticResource v6_device_icon_delete_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding VideoToolDeleteBtn}" CommandParameter="{Binding}" />
+      <genericControls:IconButton LangKey="K0473" ToolTip="K0473" Margin="-10 0 0 0" Icon="{StaticResource v7_device_icon_refresh}" DisabledIcon="{StaticResource v7_device_icon_refresh_disable}" Style="{StaticResource v7_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding IsEnabled}" Command="{Binding ClickCommand}" DataContext="{Binding VideoToolRefreshBtn}" CommandParameter="{Binding ElementName=txbSearch, Path=.}" />
+      <Line Margin="5 0" X1="0" Y1="0" X2="0" Y2="20" VerticalAlignment="Center" Stroke="#D9EBEFF2" StrokeThickness="1" />
+      <RadioButton Name="rbtListView" IsChecked="True" GroupName="ViewMode" Margin="5 0 5 0" Width="20" Height="20" Style="{StaticResource V6_PathIconRBtnStyle}">
+        <Path Stretch="Fill" Data="M0,0 L13,0 L13,1.6 L0,1.6 L0,0 M0,10.2857143 L8.125,10.2857143 L8.125,11.8857143 L0,11.8857143 L0,10.2857143 M0,5.14285714 L13,5.14285714 L13,6.74285714 L0,6.74285714 L0,5.14285714 L0,5.14285714" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=RadioButton}}" />
+      </RadioButton>
+      <RadioButton Name="rbtTileView" IsChecked="False" GroupName="ViewMode" Margin="5 0 10 0" Width="22" Height="22" Style="{StaticResource V6_PathIconRBtnStyle}">
+        <Path Stretch="Fill" Data="M4.7588815,0 L1.5461345,0 C0.693866289,0 0,0.692872528 0,1.54392011 L0,4.75206579 C0,5.60311337 0.693866289,6.2959859 1.5461345,6.2959859 L4.7588815,6.2959859 C5.61114971,6.2959859 6.30502138,5.60311337 6.30502138,4.75206579 L6.30502138,1.54392011 C6.30725143,0.692872528 5.61338514,0 4.7588815,0 M5.27650163,4.70973174 C5.27650163,5.01717251 5.02662349,5.26671236 4.71872216,5.26671236 L1.59074509,5.26671236 C1.28286337,5.26671236 1.03296562,5.01719209 1.03296562,4.70973174 L1.03296562,1.58846681 C1.03296562,1.28102604 1.28284376,1.0314862 1.59074509,1.0314862 L4.71648673,1.0314862 C5.02436845,1.0314862 5.2742662,1.28100646 5.2742662,1.58846681 L5.2742662,4.70973174 L5.27650163,4.70973174 M12.4538655,0 L9.2411185,0 C8.38885029,0 7.694984,0.692872528 7.694984,1.54392011 L7.694984,4.75206579 C7.694984,5.60311337 8.38885029,6.2959859 9.2411185,6.2959859 L12.4538655,6.2959859 C13.3061337,6.2959859 14,5.60311337 14,4.75206579 L14,1.54392011 C14,0.692872528 13.3061337,0 12.4538655,0 M12.9692502,4.75429802 C12.9692502,5.037243 12.7372163,5.26894459 12.4538655,5.26894459 L9.2411185,5.26894459 C8.95776771,5.26894459 8.7257338,5.037243 8.7257338,4.75429802 L8.7257338,1.54615234 C8.7257338,1.26320736 8.95776771,1.03150578 9.2411185,1.03150578 L12.4538655,1.03150578 C12.7372163,1.03150578 12.9692502,1.26320736 12.9692502,1.54615234 L12.9692502,4.75429802 L12.9692502,4.75429802 M4.7588815,7.7040141 L1.5461345,7.7040141 C0.693866289,7.7040141 0,8.39688663 0,9.24793421 L0,12.4560799 C0,13.3071275 0.693866289,14 1.5461345,14 L4.7588815,14 C5.61114971,14 6.30502138,13.3071275 6.30502138,12.4560799 L6.30502138,9.24793421 C6.30725143,8.39688663 5.61338514,7.7040141 4.7588815,7.7040141 M5.27650163,12.4137458 C5.27650163,12.7211866 5.02662349,12.9707265 4.71872216,12.9707265 L1.59074509,12.9707265 C1.28286337,12.9707265 1.03296562,12.7212062 1.03296562,12.4137458 L1.03296562,9.29248091 C1.03296562,8.98504014 1.28284376,8.73550029 1.59074509,8.73550029 L4.71648673,8.73550029 C5.02436845,8.73550029 5.2742662,8.98502056 5.2742662,9.29248091 L5.2742662,12.4137458 L5.27650163,12.4137458 M12.4538655,7.7040141 L9.2411185,7.7040141 C8.38885029,7.7040141 7.694984,8.39688663 7.694984,9.24793421 L7.694984,12.4560799 C7.694984,13.3071275 8.38885029,14 9.2411185,14 L12.4538655,14 C13.3061337,14 14,13.3071275 14,12.4560799 L14,9.24793421 C14,8.39688663 13.3061337,7.7040141 12.4538655,7.7040141 M12.9692502,12.4560799 C12.9692502,12.7390249 12.7372163,12.9707265 12.4538655,12.9707265 L9.2411185,12.9707265 C8.95776771,12.9707265 8.7257338,12.7390249 8.7257338,12.4560799 L8.7257338,9.24793421 C8.7257338,8.96498923 8.95776771,8.73328764 9.2411185,8.73328764 L12.4538655,8.73328764 C12.7372163,8.73328764 12.9692502,8.96498923 12.9692502,9.24793421 L12.9692502,12.4560799" Fill="{Binding Path=Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=RadioButton}}" />
+      </RadioButton>
+      <Line Margin="3 0" X1="0" Y1="0" X2="0" Y2="20" VerticalAlignment="Center" Stroke="#D9EBEFF2" StrokeThickness="1" />
+      <gc6:SdCardView Name="ddlStorageSelect" TitleMaxWidth="120" Margin="-5 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Right" DataContext="{Binding SdCarVm}" />
+      <CheckBox Name="ckFocusedAlbumAll" Margin="1000 0 0 0" IsChecked="{Binding FocusedAlbum.IsSelectedAllVideo}" />
+    </StackPanel>
+    <Grid Width="auto" Height="504">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="200" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Border Grid.Column="0" BorderBrush="#D9EBEFF2" BorderThickness="0 1 1 0">
+        <StackPanel>
+          <Border BorderBrush="#D9EBEFF2" BorderThickness="0 0 0 1">
+            <StackPanel Orientation="Horizontal" Height="40">
+              <CheckBox Name="ckbAllItems" Style="{StaticResource v7_my_device_checkbox}" Margin="5 0 0 0" IsChecked="{Binding IsSelectedAllAlbumVideo}" IsEnabled="{Binding AllAlbumVideoCount, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" Click="OnCheckBoxSelectAllAlbums" />
+              <lang:LangTextBlock Margin="8 0 0 0" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center" LangText="Videos" LangKey="K0477" FontSize="14" FontWeight="Bold" Foreground="#FF272727" />
+            </StackPanel>
+          </Border>
+          <ListBox Name="lbAblums" SelectionMode="Single" BorderThickness="0" Height="450" Background="#00FFFFFF" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemContainerStyle="{StaticResource v7_AlbumListBoxItemStyle}" ItemsSource="{Binding AlbumList}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <WrapPanel />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+          </ListBox>
+        </StackPanel>
+      </Border>
+      <Grid Name="VideoView" Column="1" Background="#00FFFFFF">
+        <DataGrid Style="{StaticResource v6_MyDeviceDataGrid}" Grid.ColumnSpan="2" Visibility="{Binding IsChecked, ElementName=rbtListView, Converter={StaticResource bool2VisibilityConverter}}" ItemsSource="{Binding FocusedAlbum.CachedAllVideos}">
+          <DataGrid.Columns>
+            <DataGridTemplateColumn SortMemberPath="VideoName" MinWidth="220" Width="*" Header="K0487" IsReadOnly="True">
+              <DataGridColumn.HeaderTemplate>
+                <DataTemplate>
+                  <StackPanel Orientation="Horizontal">
+                    <CheckBox Style="{StaticResource v7_my_device_checkbox}" Margin="-2 0 0 0" IsChecked="{Binding Path=IsChecked, Mode=TwoWay, ElementName=ckFocusedAlbumAll}" IsEnabled="{Binding ElementName=ckbAllItems, Path=IsEnabled}" Click="OnCheckBoxSelectAllInAlbum" />
+                    <lang:LangTextBlock Margin="10 0 0 0" LangText="Name" LangKey="K0487" />
+                  </StackPanel>
+                </DataTemplate>
+              </DataGridColumn.HeaderTemplate>
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <CheckBox Style="{StaticResource v7_my_device_checkbox}" IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Image Name="dirIcon" Margin="10 0 0 0" Width="20" Height="20" HorizontalAlignment="Left" Source="{StaticResource v7_VideoDataGridSmallIcon}" />
+                    <TextBlock VerticalAlignment="Center" Margin="8 0 0 0" Text="{Binding VideoName}" />
+                  </StackPanel>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn SortMemberPath="LongDuration" Width="120" Header="K0513" Binding="{Binding Duration}">
+              <DataGridColumn.HeaderTemplate>
+                <DataTemplate>
+                  <lang:LangTextBlock LangText="Duration" LangKey="K0513" />
+                </DataTemplate>
+              </DataGridColumn.HeaderTemplate>
+            </DataGridTextColumn>
+            <DataGridTextColumn SortMemberPath="Size" Width="100" Header="K0378" Binding="{Binding Size, Converter={StaticResource formatSize}}">
+              <DataGridColumn.HeaderTemplate>
+                <DataTemplate>
+                  <lang:LangTextBlock LangText="Size" LangKey="K0378" />
+                </DataTemplate>
+              </DataGridColumn.HeaderTemplate>
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="80" Header="K0568" Binding="{Binding Type}">
+              <DataGridColumn.HeaderTemplate>
+                <DataTemplate>
+                  <lang:LangTextBlock LangText="Type" LangKey="K0568" />
+                </DataTemplate>
+              </DataGridColumn.HeaderTemplate>
+            </DataGridTextColumn>
+            <DataGridTextColumn Width="150" Header="K0545" Binding="{Binding ModifiedDate}">
+              <DataGridColumn.HeaderTemplate>
+                <DataTemplate>
+                  <lang:LangTextBlock LangText="Modified Date" LangKey="K0545" />
+                </DataTemplate>
+              </DataGridColumn.HeaderTemplate>
+            </DataGridTextColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+        <ScrollViewer Name="VideoTileView" Background="#FFFFFF" Grid.ColumnSpan="2" Visibility="{Binding IsChecked, ElementName=rbtTileView, Converter={StaticResource bool2VisibilityConverter}}" PreviewMouseWheel="VideoTileList_PreviewMouseWheel">
+          <ListBox Name="lbTileView" Margin="20 0 0 0" BorderThickness="0" SelectionMode="Multiple" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource v7_VideosListBoxStyle}" ItemsSource="{Binding FocusedAlbum.CacheVideoGroupList}" />
+        </ScrollViewer>
+      </Grid>
+    </Grid>
+    <Border BorderThickness="0 1 0 0" BorderBrush="#FFE8EDF3">
+      <StackPanel Orientation="Horizontal" Height="30" Margin="0 0 140 0" HorizontalAlignment="Right">
+        <TextBlock FontSize="14" Foreground="#FF001429" VerticalAlignment="Center">
+          <Run Foreground="#FF005D7F" Text="{Binding AllAlbumVideoCount}" /> <lang:LangRun LangText="items," LangKey="K1795" /> <Run Foreground="#FF005D7F" Text="{Binding AllAlbumVideoSelectedCount}" /> <lang:LangRun LangText="items selected." LangKey="K1796" /></TextBlock>
+        <lang:LangButton Margin="10 0 0 0" LangKey="K0764" Style="{StaticResource V7_OnlyTextBtnStyle}" Visibility="{Binding IsSelectedAllAlbumVideo, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:Collapsed:Visible}" IsEnabled="{Binding AllAlbumVideoCount, Converter={StaticResource CompareValueConverter}, ConverterParameter=0:false:true}" Click="SelectAllItemClick" />
+        <lang:LangButton Margin="10 0 0 0" LangKey="K1774" Style="{StaticResource V7_OnlyTextBtnStyle}" Visibility="{Binding IsSelectedAllAlbumVideo, Converter={StaticResource booleanToVisibilityConverter}}" Click="UnselectAllItemClick" />
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

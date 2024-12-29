@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.ContactDetailViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:viewModelsV6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.ViewModelV6" Title="ContactDetailViewV6" Style="{DynamicResource V6_DialogStyle}" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/Global.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ScrollViewerStyleV6.xaml" />
+        <ResourceDictionary Source="../Themes/MenuNavigationIcon.xaml" />
+        <ResourceDictionary Source="../ThemesV6/MenuNavigationV6.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="DefaultTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource V6_ContentBrushKey}" />
+        <Setter Property="FontWeight" Value="Regular" />
+      </Style>
+      <Style x:Key="TextBlockSeparator" TargetType="{x:Type Separator}">
+        <Setter Property="Height" Value="10" />
+        <Setter Property="Background" Value="#FFD4DCE3" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+      </Style>
+      <Style x:Key="AddTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Foreground" Value="#FF001429" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border Height="{TemplateBinding FrameworkElement.Height}" CornerRadius="4" BorderThickness="1" ToolTip="{TemplateBinding FrameworkElement.Tag}" BorderBrush="{StaticResource V6_BorderBrushKey}">
+                <Grid Margin="12 5 0 5" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <lang:LangTextBlock LangKey="{TemplateBinding FrameworkElement.Tag}" Foreground="#FF9FAEBF" Opacity="0.7" FontSize="14" TextTrimming="CharacterEllipsis" Visibility="{Binding Path=Text.IsEmpty, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource bool2VisibilityConverter}}" />
+                  <Border Name="bd" BorderBrush="#E2E2E2" BorderThickness="0">
+                    <ScrollViewer Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+                  </Border>
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <EventSetter Event="PreviewTextInput" Handler="TextBox_PreviewTextInput" />
+        <EventSetter Event="TextChanged" Handler="TextBox_TextChanged" />
+      </Style>
+      <Style x:Key="AddNoteTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Foreground" Value="#FF001429" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border Height="{TemplateBinding FrameworkElement.Height}" CornerRadius="4" BorderThickness="1" ToolTip="{TemplateBinding FrameworkElement.Tag}" BorderBrush="{StaticResource V6_BorderBrushKey}">
+                <Grid Margin="12 5 0 5" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                  <lang:LangTextBlock LangKey="{TemplateBinding FrameworkElement.Tag}" Foreground="#FF9FAEBF" Opacity="0.7" FontSize="14" Visibility="{Binding Path=Text.IsEmpty, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource bool2VisibilityConverter}}" />
+                  <Border Name="bd" BorderBrush="#E2E2E2" BorderThickness="0" MinHeight="78">
+                    <ScrollViewer Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+                  </Border>
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <EventSetter Event="PreviewTextInput" Handler="TextBox_PreviewTextInput" />
+        <EventSetter Event="TextChanged" Handler="TextBox_TextChanged" />
+      </Style>
+      <DataTemplate x:Key="listViewDefaultRow">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+          <ComboBox Margin="0 0 0 8" Width="110" Style="{StaticResource v6_ContactComboBoxStyle}" ItemsSource="{Binding DetailTypeValues}" SelectedItem="{Binding Type, Mode=TwoWay}" />
+          <TextBox Margin="10 0 0 8" Height="28" Width="216" Style="{StaticResource AddTextBoxStyle}" Text="{Binding Content, Mode=TwoWay}" Tag="{Binding AddLangKey}" input:InputMethod.IsInputMethodEnabled="{Binding IsInputMethodEnabled}" />
+        </StackPanel>
+      </DataTemplate>
+      <DataTemplate x:Key="listViewLastRow">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+          <ComboBox Margin="0 0 0 0" Width="110" Style="{StaticResource v6_ContactComboBoxStyle}" ItemsSource="{Binding DetailTypeValues}" SelectedItem="{Binding Type, Mode=TwoWay}" />
+          <TextBox Margin="10 0 5 5" Height="28" Width="183" Style="{StaticResource AddTextBoxStyle}" Text="{Binding Content, Mode=TwoWay}" Tag="{Binding AddLangKey}" input:InputMethod.IsInputMethodEnabled="{Binding IsInputMethodEnabled}" />
+          <Button Command="{x:Static viewModelsV6:RawContactAddOrEditViewModelV6.ApplendTextboxPanelLineClickCommand}" VerticalAlignment="Top" CommandParameter="{Binding ContactInfoType}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Image Width="26" Height="26" Source="{StaticResource v6_icon_contact_add_list}" />
+              </ControlTemplate>
+            </Control.Template>
+          </Button>
+        </StackPanel>
+      </DataTemplate>
+      <viewModelsV6:ContactMgtTemplateSelectorV6 x:Key="contactMgtListTemplateSelector" DefaultRow="{StaticResource listViewDefaultRow}" LastRow="{StaticResource listViewLastRow}" />
+      <DataTemplate x:Key="contactSubItemDataTemplate">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="240" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Row="0" Grid.Column="0" Foreground="#FF9FAEBF" Style="{StaticResource DefaultTextBlock}">
+            <lang:LangRun LangText="{Binding Path=DisplayTitle}" LangKey="{Binding Path=DisplayTitle}" />
+            <Run Text=":" />
+          </TextBlock>
+          <ScrollViewer Grid.Row="0" Grid.Column="1" MaxHeight="100" Style="{StaticResource V6_CommonScrollViewerStyle}">
+            <TextBlock TextWrapping="WrapWithOverflow" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{StaticResource DefaultTextBlock}" Text="{Binding DisplayValue}" />
+          </ScrollViewer>
+          <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TextBlockSeparator}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="contactItemDataTemplate">
+        <StackPanel Orientation="Horizontal">
+          <lang:LangTextBlock Style="{StaticResource DefaultTextBlock}" LangText="{Binding Path=DisplayTitle}" LangKey="{Binding Path=DisplayTitle}" />
+        </StackPanel>
+      </DataTemplate>
+      <viewModelsV6:ContactDetailItemTemplateSelectorV6 x:Key="contactDetailItemTemplateSelector" SubRowTemplate="{StaticResource contactSubItemDataTemplate}" RowTemplate="{StaticResource contactItemDataTemplate}" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Border Width="780" Height="440" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" Panel.ZIndex="1" CornerRadius="12" Visibility="{Binding ContactDetailVisibility}" DataContext="{Binding ContactDetailViewModel}">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="55" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="72" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="#FFD4DCE3" BorderThickness="0 0 0 1">
+          <Grid VerticalAlignment="Center">
+            <lang:LangTextBlock Margin="29 0 0 0" Foreground="{StaticResource v6_DataGrid_HeaderForeground}" FontSize="20" LangText="Contact Detail" LangKey="K1436" />
+            <Button Margin="0 0 22 0" Style="{StaticResource V6_WndCloseBtnStyle}" HorizontalAlignment="Right" Click="OnBtnClose" />
+          </Grid>
+        </Border>
+        <Grid Row="1" Column="0" ColumnSpan="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid Column="0" MinWidth="300" Margin="39 11 14 0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="110" />
+              <RowDefinition Height="auto" />
+              <RowDefinition Height="auto" />
+              <RowDefinition Height="auto" />
+              <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Top">
+              <Image Width="98" Height="98" Source="{Binding AvatarImage}" />
+              <TextBlock Margin="23 0 0 0" FontSize="16" Foreground="#FF345375" FontWeight="Medium" Height="28" Width="210" Text="{Binding Name}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Height="28" Orientation="Horizontal" Visibility="Collapsed">
+              <lang:LangTextBlock LangText="Group" LangKey="K0515" />
+              <TextBlock Margin="23 0 0 0" Height="28" Text="{Binding ContactDetailGroup}" />
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Style="{StaticResource DefaultTextBlock}" TextTrimming="CharacterEllipsis" lang:LangToolTip.ToolTipKey="K0530">
+              <lang:LangRun LangText="Birthday" LangKey="K0530" />
+              <Run Text=":" />
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="6 0 0 0" Style="{StaticResource DefaultTextBlock}" Text="{Binding ContactDetailBirthday}" />
+            <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TextBlockSeparator}" />
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource DefaultTextBlock}" TextTrimming="CharacterEllipsis" lang:LangToolTip.ToolTipKey="K0604">
+              <lang:LangRun LangText="Notes" LangKey="K0604" />
+              <Run Text=":" />
+            </TextBlock>
+            <ScrollViewer Grid.Row="3" Grid.Column="1" Margin="6 0 0 0" Width="250" MaxHeight="144" Style="{StaticResource V6_CommonScrollViewerStyle}">
+              <TextBlock Style="{StaticResource DefaultTextBlock}" VerticalAlignment="Top" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="{Binding ContactDetailNotes}" />
+            </ScrollViewer>
+            <Separator Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource TextBlockSeparator}" />
+          </Grid>
+          <Line Grid.Column="1" X1="0" Y1="13" X2="0" Y2="310" Stroke="{StaticResource V6_SplitterBrushKey}" StrokeDashArray="4,5" StrokeThickness="1" />
+          <Grid Margin="22 13 14 0" Column="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource V6_CommonScrollViewerStyle}">
+              <StackPanel>
+                <ListBox BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemTemplateSelector="{StaticResource contactDetailItemTemplateSelector}" ItemsSource="{Binding ContactDataItemList}">
+                  <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                      <Setter Property="Margin" Value="0 3" />
+                      <Setter Property="Template">
+                        <Setter.Value>
+                          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Border Background="{TemplateBinding Control.Background}" BorderBrush="#00FFFFFF">
+                              <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" TextBlock.Foreground="{TemplateBinding Control.Foreground}" />
+                            </Border>
+                          </ControlTemplate>
+                        </Setter.Value>
+                      </Setter>
+                    </Style>
+                  </ItemsControl.ItemContainerStyle>
+                </ListBox>
+              </StackPanel>
+            </ScrollViewer>
+          </Grid>
+        </Grid>
+        <lang:LangButton Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" LangContent="Edit" LangKey="K0520" HorizontalAlignment="Right" Margin="0 0 48 26" Command="{Binding EditContactCommand}" CommandParameter="{Binding}">
+          <Control.Template>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid>
+                <TextBlock Name="txt" FontSize="14" Foreground="#FF005D7F" FontWeight="Medium" VerticalAlignment="Center" Text="{TemplateBinding ContentControl.Content}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter TargetName="txt" Property="TextBlock.TextDecorations" Value="Underline" />
+                </Trigger>
+                <Trigger Property="UIElement.IsMouseOver" Value="False">
+                  <Setter TargetName="txt" Property="TextBlock.TextDecorations" Value="" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Control.Template>
+        </lang:LangButton>
+      </Grid>
+    </Border>
+    <Border Width="780" Height="440" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" Panel.ZIndex="2" CornerRadius="12" DataContext="{Binding ContactAddOrEditViewModel}" Visibility="{Binding ContactAddPanelVisibility}">
+      <Grid>
+        <FrameworkElement.Resources>
+          <ResourceDictionary>
+            <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource V6_CommonScrollViewerStyle}" />
+          </ResourceDictionary>
+        </FrameworkElement.Resources>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="62" />
+          </Grid.RowDefinitions>
+          <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="#FFD4DCE3" BorderThickness="0 0 0 1">
+            <Grid VerticalAlignment="Center">
+              <lang:LangTextBlock Margin="29 0 0 0" Foreground="{StaticResource v6_DataGrid_HeaderForeground}" FontSize="20" LangText="{Binding Title}" LangKey="{Binding Title}" />
+              <Button Name="addorEditContactPanelCloseButton" Margin="0 0 22 0" Style="{StaticResource V6_WndCloseBtnStyle}" HorizontalAlignment="Right" Click="OnBtnClose" />
+            </Grid>
+          </Border>
+          <ListBox Name="listboxRawContact" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemsSource="{Binding RawContactAddOrEditViewModelList}">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type ListBox}">
+                <ItemsPresenter />
+              </ControlTemplate>
+            </Control.Template>
+            <ItemsControl.ItemContainerStyle>
+              <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Focusable" Value="False" />
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                      <ContentPresenter Focusable="False" />
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid MinHeight="405" Margin="0 0 10 0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid Column="0" Margin="39 11 14 0">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="100" />
+                      <RowDefinition Height="28" />
+                      <RowDefinition Height="34" />
+                      <RowDefinition Height="34" />
+                      <RowDefinition Height="110" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                      <Image Width="98" Height="98" Source="{Binding AvatarImage}" />
+                      <TextBox Margin="23 0 0 0" Height="28" Width="210" Style="{StaticResource AddTextBoxStyle}" Tag="K0487" Text="{Binding Name}" />
+                    </StackPanel>
+                    <Button Name="btn_Avatar" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Command="{Binding AddAvatarButtonClickCommand}">
+                      <Control.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                          <lang:LangTextBlock HorizontalAlignment="Center" VerticalAlignment="Center" LangText="+ Add avatar" LangKey="K0522" Style="{StaticResource DefaultTextBlock}" />
+                        </ControlTemplate>
+                      </Control.Template>
+                    </Button>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Height="28">
+                      <Border Width="110" BorderBrush="{StaticResource V6_BorderBrushKey}" BorderThickness="1" CornerRadius="4">
+                        <lang:LangTextBlock LangText="Group" LangKey="K0515" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12 0 0 0" Style="{StaticResource DefaultTextBlock}" lang:LangToolTip.ToolTipKey="K0515" TextTrimming="CharacterEllipsis" />
+                      </Border>
+                      <genericControls:MultiCheckBox Height="28" Foreground="#FF001429" Margin="10 0 0 0" Width="210" ItemsSource="{Binding PhoneGroupList}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" Height="28">
+                      <Border Width="110" BorderBrush="{StaticResource V6_BorderBrushKey}" BorderThickness="1" CornerRadius="4">
+                        <lang:LangTextBlock LangText="Birthday" LangKey="K0530" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12 0 0 0" Style="{StaticResource DefaultTextBlock}" TextTrimming="CharacterEllipsis" lang:LangToolTip.ToolTipKey="K0530" />
+                      </Border>
+                      <genericControls:CalendarTextBox Foreground="#FF001429" Height="28" Margin="10 0 0 0" Width="210" SelectedDateTime="{Binding Birthday, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center">
+                      <TextBox Height="98" Width="330" Style="{StaticResource AddNoteTextBoxStyle}" Tag="K0604" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" VerticalAlignment="Top" Text="{Binding Note}" />
+                    </StackPanel>
+                  </Grid>
+                  <Line Grid.Column="1" X1="0" Y1="13" X2="0" Y2="310" Stroke="{StaticResource V6_SplitterBrushKey}" StrokeDashArray="4,5" StrokeThickness="1" />
+                  <Grid Column="2" Height="305" Margin="18 13 0 0" VerticalAlignment="Top">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource V6_CommonScrollViewerStyle}">
+                      <StackPanel>
+                        <TextBlock Style="{StaticResource DefaultTextBlock}">
+                          <lang:LangRun Text="Telephone" LangText="Telephone" LangKey="K1342" />
+                          <Run Text=":" />
+                        </TextBlock>
+                        <ListBox Margin="0 6 0 6" BorderThickness="0" ItemTemplateSelector="{StaticResource contactMgtListTemplateSelector}" ItemsSource="{Binding PhoneNumberList}">
+                          <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                              <Setter Property="Padding" Value="0" />
+                              <Setter Property="Margin" Value="0 0 10 0" />
+                              <Setter Property="BorderThickness" Value="0" />
+                              <Setter Property="Template">
+                                <Setter.Value>
+                                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter />
+                                  </ControlTemplate>
+                                </Setter.Value>
+                              </Setter>
+                            </Style>
+                          </ItemsControl.ItemContainerStyle>
+                        </ListBox>
+                        <TextBlock Style="{StaticResource DefaultTextBlock}">
+                          <lang:LangRun LangText="Email" LangKey="K1250" />
+                          <Run Text=":" />
+                        </TextBlock>
+                        <ListBox Margin="0 6 0 6" BorderThickness="0" ItemTemplateSelector="{StaticResource contactMgtListTemplateSelector}" ItemsSource="{Binding EmailList}">
+                          <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                              <Setter Property="Padding" Value="0" />
+                              <Setter Property="Margin" Value="0" />
+                              <Setter Property="BorderThickness" Value="0" />
+                              <Setter Property="Template">
+                                <Setter.Value>
+                                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter />
+                                  </ControlTemplate>
+                                </Setter.Value>
+                              </Setter>
+                            </Style>
+                          </ItemsControl.ItemContainerStyle>
+                        </ListBox>
+                        <TextBlock Style="{StaticResource DefaultTextBlock}">
+                          <lang:LangRun LangText="Address" LangKey="K1251" />
+                          <Run Text=":" />
+                        </TextBlock>
+                        <ListBox Margin="0 6 0 6" BorderThickness="0" ItemTemplateSelector="{StaticResource contactMgtListTemplateSelector}" ItemsSource="{Binding AddressList}">
+                          <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                              <Setter Property="Padding" Value="0" />
+                              <Setter Property="Margin" Value="0" />
+                              <Setter Property="BorderThickness" Value="0" />
+                              <Setter Property="Template">
+                                <Setter.Value>
+                                  <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <ContentPresenter />
+                                  </ControlTemplate>
+                                </Setter.Value>
+                              </Setter>
+                            </Style>
+                          </ItemsControl.ItemContainerStyle>
+                        </ListBox>
+                      </StackPanel>
+                    </ScrollViewer>
+                  </Grid>
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ListBox>
+          <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <lang:LangButton LangContent="Cancel" LangKey="K0208" Style="{StaticResource V6_CancelBtnStyle}" Click="OnBtnClose" />
+            <lang:LangButton Name="btn_Save" Margin="40 0 0 0" LangContent="Save" LangKey="K0230" Style="{StaticResource V6_NormalBtnStyle}" Click="OnBtnSave" />
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>

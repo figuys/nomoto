@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.OnekeyCloneTransferViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:usercontrolsv6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6;assembly=lenovo.mbg.service.lmsa.phoneManager">
+  <Border Padding="12 25 12 0" HorizontalAlignment="Center">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto" />
+        <ColumnDefinition Width="95" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="12" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0 8" BorderThickness="0 0 0 1" BorderBrush="#D4DCE3">
+        <ComboBox Width="337" Style="{StaticResource v6_combobox}" gc6:ControlAttachPropertyV6.ToggleButtonVisibility="Collapsed" DisplayMemberPath="ModelName" SelectedValuePath="ModelName" gc6:ControlAttachPropertyV6.Label="From:" BorderThickness="0" FontSize="14" FontWeight="Medium" Foreground="#005D7F" IsTextSearchEnabled="False" Background="#00FFFFFF" ItemsSource="{Binding ConnectedDevices}" SelectedItem="{Binding SelectedMasterDevice}" />
+      </Border>
+      <Border Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0 8" BorderThickness="0 0 0 1" BorderBrush="#D4DCE3">
+        <ComboBox Width="337" Style="{StaticResource v6_combobox}" gc6:ControlAttachPropertyV6.ToggleButtonVisibility="Collapsed" DisplayMemberPath="ModelName" SelectedValuePath="ModelName" gc6:ControlAttachPropertyV6.Label="To:" BorderThickness="0" FontSize="14" FontWeight="Medium" Foreground="#005D7F" IsTextSearchEnabled="False" Background="#00FFFFFF" ItemsSource="{Binding ConnectedDevices}" SelectedItem="{Binding SelectedTargetDevice}" />
+      </Border>
+      <Border Grid.Row="2" Grid.Column="0" Background="#DCE3EB" CornerRadius="12" Width="337" Height="312" Padding="13">
+        <Grid Width="126" Height="271">
+          <Image Source="{DynamicResource v6_Mydevice_icon}" />
+          <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource v6_comm_text_style_1}">
+            <Run Text="SN:" /> <Run Text="{Binding SelectedMasterDevice.SN}" /></TextBlock>
+          <StackPanel VerticalAlignment="Bottom" Margin="0 0 0 30">
+            <Image Source="{DynamicResource v6_icon_confirm}" Width="20" Height="20" />
+            <TextBlock Text="Connected" HorizontalAlignment="Center" Style="{StaticResource v6_comm_text_style_2}" />
+          </StackPanel>
+        </Grid>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Image Source="{StaticResource v6_Icon_Step}" Width="53" Height="39" />
+      </Border>
+      <Border Grid.Row="2" Grid.Column="2" Background="#DCE3EB" CornerRadius="12" Width="337" Height="312" Padding="13">
+        <Grid Width="126" Height="271">
+          <Image Source="{DynamicResource v6_Mydevice_icon}" />
+          <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource v6_comm_text_style_1}">
+            <Run Text="SN:" /> <Run Text="{Binding SelectedTargetDevice.SN}" /></TextBlock>
+          <StackPanel VerticalAlignment="Bottom" Margin="0 0 0 30">
+            <Image Source="{DynamicResource v6_icon_confirm}" Width="20" Height="20" />
+            <TextBlock Text="Connected" HorizontalAlignment="Center" Style="{StaticResource v6_comm_text_style_2}" />
+          </StackPanel>
+        </Grid>
+      </Border>
+      <Border Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+        <StackPanel Margin="0 18 0 0">
+          <lang:LangTextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource v6_comm_text_style_5}">
+            <lang:LangRun LangKey="K0715" /> <lang:LangRun Foreground="#005D7F" LangKey="{Binding CurrentTransferResourceName}" /> <Run Text="(" Foreground="#005D7F" /> <Run Foreground="#005D7F" Text="{Binding CurrentResourceTransferedTotal}" /> <Run Text="/" Foreground="#005D7F" /> <Run Foreground="#005D7F" Text="{Binding CurrentTransferResourceTotal}" /> <Run Text=")" Foreground="#005D7F" /></lang:LangTextBlock>
+          <ProgressBar Style="{StaticResource v6_comm_progressbar_style}" Width="779" Margin="0 8 0 0" gc6:ControlAttachPropertyV6.CommVisibility="Collapsed" gc6:ControlAttachPropertyV6.MouseOverBackground="#E1E6EF" gc6:ControlAttachPropertyV6.MouseOverForeground="#005D7F" Height="6" Minimum="0" Maximum="{Binding ProgressMaxVal}" Value="{Binding ProgressCurrentValue}" />
+          <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 2 0 0" Style="{StaticResource v6_comm_text_style_6}" Text="{Binding Rate}" />
+          <Grid VerticalAlignment="Center" Margin="0 8 0 0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{StaticResource v6_warn_icon}" Width="15" Height="15" />
+            <lang:LangTextBlock Grid.Column="1" LangKey="K1178" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12 0 0 0" Style="{StaticResource v6_comm_text_style_7}" />
+          </Grid>
+          <Border HorizontalAlignment="Center" Margin="0 20 0 0">
+            <Button Style="{StaticResource v6_comm_base_button}" gc6:ControlAttachPropertyV6.CornerRadius="19" Background="#005D7F" BorderThickness="0" Foreground="#FFFFFF" Content="K0208" MinWidth="158" Height="38" Command="{Binding CancelCommand}" />
+          </Border>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Border>
+</UserControl>

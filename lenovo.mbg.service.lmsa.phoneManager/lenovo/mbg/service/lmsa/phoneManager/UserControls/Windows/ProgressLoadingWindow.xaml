@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows.ProgressLoadingWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" Background="#fbfbfb" WindowStartupLocation="CenterOwner" Title="ProgressLoadingWindow" Height="300" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <PathGeometry x:Key="pathKey">
+        <PathGeometry.Figures>
+          <PathFigure>
+            <PathFigure.Segments>
+              <LineSegment Point="410, 1" IsStroked="True" IsSmoothJoin="True" />
+            </PathFigure.Segments>
+          </PathFigure>
+        </PathGeometry.Figures>
+      </PathGeometry>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Background="#FFFFFF" Height="188" Width="470" Margin="-10 0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Border Grid.Row="0">
+      <lang:LangTextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="#aaaaaa" LangText="{Binding Message}" LangKey="{Binding Message}" />
+    </Border>
+    <Canvas Grid.Row="1">
+      <FrameworkElement.Resources>
+        <ResourceDictionary>
+          <Storyboard x:Key="pathStoryboard" Name="anima">
+            <DoubleAnimationUsingPath Storyboard.TargetName="animation" Storyboard.TargetProperty="(Canvas.Left)" Source="X" Duration="0:0:2" RepeatBehavior="Forever" PathGeometry="{StaticResource pathKey}" />
+          </Storyboard>
+        </ResourceDictionary>
+      </FrameworkElement.Resources>
+      <FrameworkElement.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+          <BeginStoryboard Name="loading" Storyboard="{StaticResource pathStoryboard}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Unloaded">
+          <ResumeStoryboard BeginStoryboardName="loading" />
+        </EventTrigger>
+      </FrameworkElement.Triggers>
+      <Path Data="{StaticResource pathKey}" StrokeThickness="0" />
+      <Border Background="#EDEDED" Width="470" Height="10" />
+      <Rectangle Name="animation" Width="60" Height=" 10" Fill="#FF43B5E2" />
+    </Canvas>
+  </Grid>
+</Window>

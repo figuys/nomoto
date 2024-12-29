@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows.ResetToDefaultSmsAppletTipsForAndroidQ" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls.Windows" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" Background="#FBFBFB" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" SizeToContent="Height" Title="ResetToDefaultSmsAppletTips" Width="450" Height="auto" Style="{StaticResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=defaultPopupWindowStyle}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DrawingImage x:Key="LeftNavBarSMSImage">
+        <DrawingImage.Drawing>
+          <DrawingGroup ClipGeometry="M0,0 L0,22 L22,22 L22,0 L0,0">
+            <DrawingGroup Transform="1,0,0,1,-25,-410">
+              <DrawingGroup Transform="1,0,0,1,25,410">
+                <GeometryDrawing Brush="#FF43B5E2" Geometry="M22,22 M0,0 M0.729,5 L19.5884637,5 L21.2222047,5 C21.6248203,5 21.9512047,5.32638442 21.9512047,5.729 C21.9512047,5.94776971 21.8529559,6.15497434 21.6835732,6.29342901 L19.5884637,8.00598715 L19.5884637,18.271 C19.5884637,18.6736156 19.2620793,19 18.8594637,19 L0.729,19 C0.326384417,19 1.72044849E-15,18.6736156 0,18.271 L0,5.729 C-1.60328491E-16,5.32638442 0.326384417,5 0.729,5 M5.06236158,8.5 C4.67576225,8.5 4.36236158,8.81340068 4.36236158,9.2 C4.36236158,9.58659932 4.67576225,9.9 5.06236158,9.9 L12.3870847,9.9 C12.773684,9.9 13.0870847,9.58659932 13.0870847,9.2 C13.0870847,8.81340068 12.773684,8.5 12.3870847,8.5 L5.06236158,8.5 M5.06236158,11.3 C4.67576225,11.3 4.36236158,11.6134007 4.36236158,12 C4.36236158,12.3865993 4.67576225,12.7 5.06236158,12.7 L14.5682655,12.7 C14.9548648,12.7 15.2682655,12.3865993 15.2682655,12 C15.2682655,11.6134007 14.9548648,11.3 14.5682655,11.3 L5.06236158,11.3 M5.06236158,14.1 C4.67576225,14.1 4.36236158,14.4134007 4.36236158,14.8 C4.36236158,15.1865993 4.67576225,15.5 5.06236158,15.5 L12.3870847,15.5 C12.773684,15.5 13.0870847,15.1865993 13.0870847,14.8 C13.0870847,14.4134007 12.773684,14.1 12.3870847,14.1 L5.06236158,14.1" />
+              </DrawingGroup>
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingImage.Drawing>
+      </DrawingImage>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+    <lang:LangTextBlock Grid.Row="0" VerticalAlignment="Center" Margin="30 0 0 0" LangText="Authorize" LangKey="K0454" Foreground="#898989" FontSize="14" />
+    <StackPanel Grid.Row="1" Width="300" HorizontalAlignment="Center">
+      <lang:LangTextBlock Foreground="#898989" FontSize="12" TextWrapping="Wrap" Margin="0 10 0 0" LangText="Set Messages as your default SMS app in your device." />
+      <lang:LangTextBlock Foreground="#898989" FontSize="12" TextWrapping="Wrap" Margin="0 10 0 0" LangText="If you don't notice the change of SMS after setting, reboot the device." />
+    </StackPanel>
+    <Border Grid.Row="2" Width="300" Background="#F7F7F7" BorderThickness="2">
+      <UIElement.Effect>
+        <DropShadowEffect BlurRadius="10" ShadowDepth="1" Color="#DFDFDF" />
+      </UIElement.Effect>
+      <StackPanel Margin="2">
+        <lang:LangTextBlock Foreground="#212121" LangText="Set Messages as your default SMS app?" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="14" FontWeight="Bold" />
+        <DockPanel Margin="0 10 0 0">
+          <Image DockPanel.Dock="Left" Width="15" Height="15" Margin="15 0 15 0" Source="{DynamicResource {ComponentResourceKey TypeInTargetAssembly=generic:ComponentResources, ResourceId=logoIconDrawingImage}}" />
+          <Border DockPanel.Dock="Right" BorderBrush="#757575" BorderThickness="1" Width="12" Height="12" CornerRadius="10" Margin="10 0 20 0" />
+          <StackPanel>
+            <lang:LangTextBlock LangText="Mobile Assistant" LangKey="K0746" Foreground="#2C2C2C" FontSize="12" VerticalAlignment="Center" />
+            <lang:LangTextBlock LangText="Current default" Foreground="#767676" FontSize="10" Margin="0 5 0 0" />
+          </StackPanel>
+        </DockPanel>
+        <DockPanel Margin="0 10 0 0">
+          <Image Margin="15 0 15 0" Source="{DynamicResource LeftNavBarSMSImage}" DockPanel.Dock="Left" Width="15" Height="15" />
+          <Border DockPanel.Dock="Right" BorderBrush="#008577" BorderThickness="1" Width="12" Height="12" CornerRadius="10" Margin="10 0 20 0">
+            <Border DockPanel.Dock="Right" Background="#008577" Width="6" Height="6" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+          <lang:LangTextBlock LangText="Messages" Foreground="#2C2C2C" FontSize="12" />
+        </DockPanel>
+        <Grid>
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 20 0">
+            <lang:LangTextBlock Foreground="#008577" LangText="Cancel" LangKey="K0208" />
+            <lang:LangTextBlock Foreground="#008577" Margin="30 0 0 0" LangText="Set as default" />
+          </StackPanel>
+          <Path Stroke="#008577" Margin="0 27 12 0" HorizontalAlignment="Right">
+            <Path.Data>
+              <EllipseGeometry RadiusX="48" RadiusY="15" />
+            </Path.Data>
+          </Path>
+        </Grid>
+      </StackPanel>
+    </Border>
+    <lang:LangButton Name="btnIsReady" Grid.Row="4" LangContent="Confirm" LangKey="K0573" Height="25" Width="95" Background="{StaticResource ThemeBrushKey}" Click="btnIsReady_Click">
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border Name="rootBorder" Height="{TemplateBinding FrameworkElement.Height}" Width="{TemplateBinding FrameworkElement.Width}" Opacity="0.8" Background="{TemplateBinding Control.Background}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="12" TextBlock.Foreground="#FBFBFB" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="rootBorder" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Control.Template>
+    </lang:LangButton>
+    <lang:LangButton Name="btnCancel" LangContent="Cancel" LangKey="K0208" Height="12" Width="12" Margin="0 12 12 0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnCancel_Click">
+      <Control.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Grid>
+            <Image Name="img_normal" Source="{StaticResource bitImgWindowCloseNormal}" Stretch="None" />
+            <Image Name="img_bk" Source="{StaticResource bitImgWindowCloseBK}" Stretch="None" Visibility="Collapsed" />
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+              <Setter TargetName="img_normal" Property="UIElement.Visibility" Value="Collapsed" />
+              <Setter TargetName="img_bk" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Control.Template>
+    </lang:LangButton>
+  </Grid>
+</Window>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.AppMgtViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:comdll="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.common;assembly=lenovo.mbg.service.lmsa.phoneManager.common" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControls" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:usercontrolsv6="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DataGridStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="../Themes/MenuNavigationIcon.xaml" />
+        <ResourceDictionary Source="../ThemesV6/MenuNavigationV6.xaml" />
+        <ResourceDictionary Source="../Themes/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel Margin="0 25 0 0">
+    <ListBox Name="TopCategory" DockPanel.Dock="Top" Style="{StaticResource v6_TopAlbumListBoxStyle}" BorderThickness="0" SelectionChanged="AppsViewChange">
+      <ListBoxItem Name="tab1">
+        <TextBlock Style="{StaticResource v6_TopAlbumTextBoxStyle}">
+          <lang:LangRun LangText="My Apps" LangKey="K0483" /> <Run Text="(" /><Run Text="{Binding MyAppCount}" /><Run Text=")" /></TextBlock>
+      </ListBoxItem>
+      <ListBoxItem>
+        <TextBlock Style="{StaticResource v6_TopAlbumTextBoxStyle}">
+          <lang:LangRun LangText="System Apps" LangKey="K0482" /> <Run Text="(" /><Run Text="{Binding SystemAppCount}" /><Run Text=")" /></TextBlock>
+      </ListBoxItem>
+    </ListBox>
+    <DockPanel Margin="25 0" Dock="Top" Height="49">
+      <TextBox Name="txbSearch" DockPanel.Dock="Right" HorizontalAlignment="Right" Style="{StaticResource v6_SearchTextBoxStyle}" local:ControlAttachProperty.LeftClickCommand="{Binding SearchCommand}">
+        <UIElement.InputBindings>
+          <KeyBinding Key="Enter" Command="{Binding SearchCommand}" CommandParameter="{Binding Text, ElementName=txbSearch}" />
+        </UIElement.InputBindings>
+      </TextBox>
+      <StackPanel Orientation="Horizontal">
+        <lang:LangButton Name="btnExport" LangKey="K0484" IsEnabled="False" Style="{StaticResource v6_device_defalut_button}" Command="{Binding ExportApp}" CommandParameter="{Binding ItemsSource, ElementName=AppListData}" />
+        <genericControls:IconButton Name="btnUninstall" IsEnabled="False" LangKey="K0485" Icon="{StaticResource v6_device_icon_delete}" DisabledIcon="{StaticResource v6_device_icon_delete_disable}" Style="{StaticResource v6_MenuTopIconTextboxButtonStyle}" Command="{Binding UninstallApp}" Visibility="{Binding UninstallVisbility}" CommandParameter="{Binding ItemsSource, ElementName=AppListData}" />
+        <genericControls:IconButton LangKey="K0473" Icon="{StaticResource v6_device_icon_refresh}" DisabledIcon="{StaticResource v6_device_icon_refresh_disable}" Style="{StaticResource v6_MenuTopIconTextboxButtonStyle}" IsEnabled="{Binding IsEnabledAppRefreshBtn}" Command="{Binding Refresh}" CommandParameter="{Binding}" />
+      </StackPanel>
+    </DockPanel>
+    <DataGrid Name="AppListData" Grid.Row="1" Visibility="Visible" Margin="25 0" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserSortColumns="True" CanUserResizeColumns="True" BorderBrush="#00FFFFFF" CanUserResizeRows="False" SelectionMode="Single" Style="{StaticResource v6_DefaultDataGrid}" IsReadOnly="True" CellStyle="{StaticResource GZDefaultDataGridCell}" ItemsSource="{Binding MyAppList}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+      <DataGrid.Columns>
+        <DataGridTemplateColumn CanUserResize="False">
+          <DataGridColumn.HeaderTemplate>
+            <DataTemplate>
+              <CheckBox Style="{StaticResource v6_defaultCheckBoxStyle}" Margin="-2 0 0 0" IsChecked="{Binding Path=DataContext.IsAllSelected, ElementName=AppListData}" Click="CheckAllClick" />
+            </DataTemplate>
+          </DataGridColumn.HeaderTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <CheckBox Style="{StaticResource v6_defaultCheckBoxStyle}" IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="CellCheckBoxClick" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn SortMemberPath="AppName" MinWidth="180" Width="3*" Header="K0487" IsReadOnly="True">
+          <DataGridColumn.HeaderTemplate>
+            <DataTemplate>
+              <lang:LangTextBlock LangText="Name" LangKey="K0487" />
+            </DataTemplate>
+          </DataGridColumn.HeaderTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Image HorizontalAlignment="Left" Width="30" Height="30" Source="{Binding AppImage}" />
+                <TextBlock Margin="5 0 0 0" VerticalAlignment="Center" Text="{Binding AppName}" />
+              </StackPanel>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn SortMemberPath="LSize" Width="120" Header="K1188" Binding="{Binding Size, Converter={StaticResource _FormatSizeConverterEx}}">
+          <DataGridColumn.HeaderTemplate>
+            <DataTemplate>
+              <lang:LangTextBlock LangText="App size" LangKey="K1188" Foreground="#FF001429" />
+            </DataTemplate>
+          </DataGridColumn.HeaderTemplate>
+        </DataGridTextColumn>
+        <DataGridTextColumn SortMemberPath="LDataSize" Width="140" Header="K0488" Binding="{Binding DataSize, Converter={StaticResource _FormatSizeConverterEx}}">
+          <DataGridColumn.HeaderTemplate>
+            <DataTemplate>
+              <lang:LangTextBlock LangText="Data usage" LangKey="K0488" />
+            </DataTemplate>
+          </DataGridColumn.HeaderTemplate>
+        </DataGridTextColumn>
+        <DataGridTextColumn Width="120" Header="K0489" Visibility="{Binding UninstallVisbility}" Binding="{Binding Version}">
+          <DataGridColumn.HeaderTemplate>
+            <DataTemplate>
+              <lang:LangTextBlock LangText="Version" LangKey="K0489" />
+            </DataTemplate>
+          </DataGridColumn.HeaderTemplate>
+        </DataGridTextColumn>
+        <DataGridTemplateColumn Header="" Width="120" CanUserResize="False">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <genericControls:IconButton Name="gr_icon_uninstall" Icon="{StaticResource v6_device_icon_delete}" Style="{StaticResource v6_MenuTopIconTextboxButtonStyle}" Visibility="Hidden" CommandParameter="{Binding}" Click="btnUninstallClick" />
+              <DataTemplate.Triggers>
+                <MultiDataTrigger>
+                  <MultiDataTrigger.Conditions>
+                    <Condition Value="True" Binding="{Binding IsSelected, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Condition Value="True" Binding="{Binding Path=IsEnabled, ElementName=btnUninstall}" />
+                  </MultiDataTrigger.Conditions>
+                  <Setter TargetName="gr_icon_uninstall" Property="UIElement.Visibility" Value="Visible" />
+                </MultiDataTrigger>
+              </DataTemplate.Triggers>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+  </DockPanel>
+</UserControl>

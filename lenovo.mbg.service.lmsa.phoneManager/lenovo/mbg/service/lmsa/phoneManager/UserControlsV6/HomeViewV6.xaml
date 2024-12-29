@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.phoneManager.UserControlsV6.HomeViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:gc6="clr-namespace:lenovo.themes.generic.ControlsV6;assembly=lenovo.themes.generic" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.phoneManager.UserControlsV6">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <local:BoolToVisbileCoonvert x:Key="boolToVisbileCoonvert" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="276" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Border Margin="20 0 0 0" Padding="0 31">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="313" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Width="146" Visibility="{Binding IsPhone, Converter={StaticResource v6_BooleanToVisibilityConverter}}">
+          <Grid Visibility="{Binding IsWifi, Converter={StaticResource v6_CompareValueConverterV6}, ConverterParameter=false:Visible:Collapsed}">
+            <Image Panel.ZIndex="9" Source="{StaticResource v6_Mydevice_Phone_frame}" />
+            <Border Panel.ZIndex="1" Padding="5">
+              <Image Stretch="Fill" Source="{Binding ScreenImgSource}" />
+            </Border>
+          </Grid>
+          <Image Source="{StaticResource v6_Home_Device_Default}" Visibility="{Binding IsWifi, Converter={StaticResource v6_CompareValueConverterV6}, ConverterParameter=true:Visible:Collapsed}" />
+        </Grid>
+        <Grid Width="200" Visibility="{Binding IsTablet, Converter={StaticResource v6_BooleanToVisibilityConverter}}">
+          <Grid Visibility="{Binding IsWifi, Converter={StaticResource v6_CompareValueConverterV6}, ConverterParameter=false:Visible:Collapsed}">
+            <Image Panel.ZIndex="9" Source="{StaticResource v6_Mydevice_Tablet_frame}" />
+            <Border Panel.ZIndex="1" Padding="8">
+              <Image Stretch="Fill" Source="{Binding ScreenImgSource}" />
+            </Border>
+          </Grid>
+          <Image Source="{StaticResource v6_Home_Tablet_Default}" Visibility="{Binding IsWifi, Converter={StaticResource v6_CompareValueConverterV6}, ConverterParameter=true:Visible:Collapsed}" />
+        </Grid>
+        <Border Grid.Row="1" VerticalAlignment="Top" CornerRadius="17.5" MinHeight="35" Margin="10 14" Padding="7 7" Background="#E1E6EF" Visibility="{Binding IsWifi, Converter={StaticResource boolToVisbileCoonvert}}">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                  <i:InvokeCommandAction CommandParameter="0" Command="{Binding ClickCommand}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Image Width="11" Height="12" Source="{StaticResource v6_icon_shot}" />
+              <lang:LangTextBlock Grid.Column="1" Margin="5 0 0 0" LangKey="K1376" TextWrapping="Wrap" Foreground="#345375" FontSize="12" FontWeight="Medium" />
+            </Grid>
+            <Border Grid.Column="1" VerticalAlignment="Center" Margin="7 0">
+              <Line X1="0" Y1="0" X2="0" Y2="15" Stroke="#647EA6" StrokeThickness="1" />
+            </Border>
+            <Grid Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                  <i:InvokeCommandAction CommandParameter="1" Command="{Binding ClickCommand}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Image Width="12" Height="12" Source="{StaticResource v6_icon_refresh}" />
+              <lang:LangTextBlock Grid.Column="1" Margin="5 0 0 0" LangKey="K0473" TextWrapping="Wrap" Foreground="#345375" FontSize="12" FontWeight="Medium" />
+            </Grid>
+          </Grid>
+        </Border>
+      </Grid>
+    </Border>
+    <Border Grid.Column="1" Padding="0 31 21 31" HorizontalAlignment="Left">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Padding="0 0 0 18" BorderThickness="0 0 0 1" BorderBrush="#D4DCE3">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <ListBox VerticalAlignment="Top" Style="{StaticResource V6_DevInfoListBoxStyle}" ItemsSource="{Binding DeviceInfos}" />
+            <Border Margin="35 0 0 0" Grid.Column="1" VerticalAlignment="Top" Padding="10" Background="#99E8E9F3" BorderThickness="1" BorderBrush="#9DD4D6E7" CornerRadius="8" Visibility="{Binding Visibile}">
+              <gc6:WarrantyInfoBaseV6 Width="210" DataContext="{Binding WarrantyBaseVm}" />
+            </Border>
+          </Grid>
+        </Border>
+        <StackPanel Grid.Row="1" Margin="0 7 0 0">
+          <lang:LangTextBlock LangKey="K0463" LangText="Internal storage:" Foreground="#001429" FontSize="{StaticResource v6_comm_fontsize_14}" FontWeight="Medium" />
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 7 0 0">
+            <ProgressBar Maximum="100" Style="{StaticResource v6_comm_progressbar_style}" Width="252" gc6:ControlAttachPropertyV6.CommVisibility="Collapsed" gc6:ControlAttachPropertyV6.MouseOverBackground="#E1E6EF" gc6:ControlAttachPropertyV6.MouseOverForeground="#6EC2ED" Height="6" Minimum="0" Value="{Binding InternaUsedPer}" />
+            <TextBlock Margin="10 0 0 0" Foreground="#647EA6" FontSize="{StaticResource v6_comm_fontsize_12}">
+              <Run Foreground="#005D7F" Text="{Binding InternaUsed}" /> <Run Text="/" /> <Run Text="{Binding InternaTotal}" /></TextBlock>
+          </StackPanel>
+          <Border Margin="0 59 0 0" HorizontalAlignment="Left">
+            <Button Style="{StaticResource v6_comm_base_button}" gc6:ControlAttachPropertyV6.CornerRadius="19" Background="#005D7F" BorderThickness="0" Foreground="#FFFFFF" Content="K1017" MinWidth="158" Height="38" Command="{Binding StartRescueCommand}" />
+          </Border>
+        </StackPanel>
+      </Grid>
+    </Border>
+    <Separator Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="0 0 0 30" BorderThickness="1" BorderBrush="#FFE8EDF3" />
+  </Grid>
+</UserControl>
