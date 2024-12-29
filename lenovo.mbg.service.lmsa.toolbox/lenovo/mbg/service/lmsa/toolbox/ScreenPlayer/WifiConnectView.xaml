@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.toolbox.ScreenPlayer.WifiConnectView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.toolbox.ScreenPlayer" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="ConnectView" Height="600" Width="800" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF">
+  <Border CornerRadius="8" Background="#FFFFFFFF">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <DockPanel>
+        <lang:LangTextBlock Margin="25 0 0 0" VerticalAlignment="Center" FontSize="15pt" Foreground="#43B5E2" LangText="Use Screen Mirroring via WiFi" LangKey="K1037" />
+        <Button Style="{StaticResource WndCloseBtnStyle}" Margin="0 10 10 0" Command="{Binding CloseCommand}" CommandParameter="{x:Null}" />
+      </DockPanel>
+      <Grid Row="1" Margin="50 0 60 0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="0.45*" />
+          <ColumnDefinition Width="0.55*" />
+        </Grid.ColumnDefinitions>
+        <Image Width="424" Height="444" Margin="-55 -100 -180 -40" Source="pack://application:,,,/lenovo.mbg.service.lmsa.toolbox;component/Resources/mascreen.png" />
+        <StackPanel Grid.Column="1" Margin="0 20 0 0">
+          <lang:LangTextBlock TextWrapping="Wrap" FontSize="15" Foreground="#FF494949" LangText="1. Connect your device to the same WiFi with PC." LangKey="K1038" />
+          <lang:LangTextBlock VerticalAlignment="Center" Margin="0 8 0 0" FontSize="14" TextWrapping="Wrap" Foreground="#FF494949" LangText="If you don't have WiFi available, you can connect via mobile hotspot." LangKey="K1031" />
+          <lang:LangTextBlock VerticalAlignment="Center" FontSize="14" Foreground="#43B5E2" TextWrapping="Wrap" LangText="How to turn on mobile hotspot?" LangKey="K1068" Cursor="Hand" TextDecorations="Underline">
+            <i:Interaction.Triggers>
+              <i:EventTrigger i:EventTrigger.EventName="MouseLeftButtonDown">
+                <i:InvokeCommandAction i:InvokeCommandAction.Command="{Binding TutorialCommand}" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </lang:LangTextBlock>
+          <TextBlock TextWrapping="Wrap" FontSize="15" Foreground="#FF494949" Margin="0 30">
+            <lang:LangRun LangText="2. Use Mobile Assistant App to scan the following QR code to connect." LangKey="K1039" />
+          </TextBlock>
+          <Image Name="qcode" Grid.Column="1" Width="150" Height="150" VerticalAlignment="Top" Margin="0 50 0 0" Source="{Binding QrCodeImage}" />
+          <lang:LangTextBlock TextWrapping="Wrap" FontSize="15" Foreground="#FF494949" Margin="0 25 0 10" Visibility="Collapsed" LangText="3. Click the following &quot;Start&quot; button to start screen mirroring." />
+        </StackPanel>
+      </Grid>
+      <TextBlock Grid.Row="2" FontSize="15" TextWrapping="Wrap" Foreground="#FF494949" Margin="70 -30 60 0" FontWeight="Bold">
+        <lang:LangRun LangText="If you don't want to scan the QR code to connect, you can directly enter the IP in MA. Your IP address is" LangKey="K1067" /> <Run Foreground="#FFB000" Text="{Binding IPAddress}" /> <Run Text="." /></TextBlock>
+    </Grid>
+  </Border>
+</Window>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:convert="clr-namespace:lenovo.mbg.service.lmsa.toolbox.GifMaker.Comm" xmlns:cvt="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang">
+  <DrawingImage x:Key="playDrawingImage11">
+    <DrawingImage.Drawing>
+      <DrawingGroup ClipGeometry="M0,0 L0,72 L72,72 L72,0 L0,0">
+        <DrawingGroup Transform="1,0,0,1,-183,-126">
+          <DrawingGroup Transform="1,0,0,1,183,126">
+            <DrawingGroup>
+              <GeometryDrawing Brush="#FF000000">
+                <GeometryDrawing.Geometry>
+                  <EllipseGeometry RadiusX="31" RadiusY="31" Center="37,37" />
+                </GeometryDrawing.Geometry>
+              </GeometryDrawing>
+              <GeometryDrawing Brush="#FFFFFFFF">
+                <GeometryDrawing.Geometry>
+                  <EllipseGeometry RadiusX="31" RadiusY="31" Center="37,37" />
+                </GeometryDrawing.Geometry>
+              </GeometryDrawing>
+            </DrawingGroup>
+            <GeometryDrawing>
+              <GeometryDrawing.Brush>
+                <SolidColorBrush Color="#FF43B5E2" Opacity="1" Transform="-1.83690953073357E-16,1,-1,-1.83690953073357E-16,77,-2.99999999999999" />
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Geometry>
+                <PathGeometry FillRule="EvenOdd" Transform="-1.83690953073357E-16,1,-1,-1.83690953073357E-16,77,-2.99999999999999" Figures="M72,72z M0,0z M41.6641006,30.4961509L49.9270664,42.8905996C50.5397713,43.809657 50.2914236,45.0513957 49.3723662,45.6641006 49.0438312,45.8831239 48.6578158,46 48.2629658,46L31.7370342,46C30.6324647,46 29.7370342,45.1045695 29.7370342,44 29.7370342,43.60515 29.8539102,43.2191346 30.0729336,42.8905996L38.3358994,30.4961509C38.9486043,29.5770935 40.190343,29.3287458 41.1094004,29.9414507 41.329105,30.0879204 41.5176309,30.2764463 41.6641006,30.4961509z" />
+              </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingImage.Drawing>
+  </DrawingImage>
+  <convert:ZoomConverter x:Key="ZoomConverter" />
+  <convert:GifVisiableConverter x:Key="GifVisiableConverter" />
+  <convert:LangStringConverter x:Key="LangStringConverter" />
+  <convert:String2ImageConverter x:Key="String2ImageConverter" />
+  <convert:Color2BrushConverter x:Key="Color2BrushConverter" />
+  <convert:PlayerVisibleConverter x:Key="PlayerVisibleConverter" />
+  <cvt:CompareValueConverter x:Key="CompareValueConverter" />
+  <SolidColorBrush x:Key="ThemeBrushKey">#43B5E2</SolidColorBrush>
+  <SolidColorBrush x:Key="DefTextBrushKey">#FF494949</SolidColorBrush>
+  <SolidColorBrush x:Key="HighlightBrushKey">#FFFFB000</SolidColorBrush>
+  <Style x:Key="ToolBoxWindowStyle" TargetType="{x:Type Window}">
+    <Setter Property="Window.AllowsTransparency" Value="True" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="Window.ResizeMode" Value="NoResize" />
+    <Setter Property="Window.WindowStyle" Value="None" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Window}">
+          <Grid SnapsToDevicePixels="True">
+            <Rectangle Fill="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" RadiusX="7" RadiusY="7">
+              <UIElement.Effect>
+                <DropShadowEffect Color="#CCCCCC" BlurRadius="10" ShadowDepth="1" Direction="315" />
+              </UIElement.Effect>
+            </Rectangle>
+            <Grid Background="#FFFFFFFF" Margin="0 7">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <Border Grid.Column="0" Height="50" BorderBrush="#DFDFDF" BorderThickness="0 0 0 1" Margin="10 0">
+                <Grid>
+                  <TextBlock Grid.Row="0" Text="{TemplateBinding Window.Title}" Foreground="#43B5E2" FontSize="15pt" VerticalAlignment="Center" Margin="30 0 0 0" />
+                  <Button Grid.Row="0" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Style="{StaticResource WndCloseBtnStyle}" Command="{Binding CloseCmd}" />
+                </Grid>
+              </Border>
+              <ContentPresenter Grid.Row="1" />
+            </Grid>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="ToolBoxBlueBtnStyle" TargetType="{x:Type Button}">
+    <Setter Property="Background" Value="{StaticResource ThemeBrushKey}" />
+    <Setter Property="Foreground" Value="#FFFFFFFF" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Padding" Value="1" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Width" Value="120" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}">
+            <Grid Name="grid" Background="{TemplateBinding Control.Background}">
+              <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFB2B1B1" />
+              <Setter Property="BorderBrush" Value="#FFB2B1B1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="PlayerBtnStyle" TargetType="{x:Type ToggleButton}">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Width" Value="48" />
+    <Setter Property="Height" Value="48" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ToggleButton}">
+          <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}">
+            <Image Name="img" Stretch="UniformToFill" Source="{StaticResource playDrawingImage11}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+              <Setter TargetName="img" Property="Image.Source" Value="/lenovo.mbg.service.lmsa.toolBox;component/Resources/pause.jpg" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFB2B1B1" />
+              <Setter Property="BorderBrush" Value="#FFB2B1B1" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+  <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{x:Null}">
+    <Setter Property="Foreground" Value="{StaticResource ThemeBrushKey}" />
+    <Setter Property="Background" Value="#00FFFFFF" />
+    <Setter Property="BorderBrush" Value="#FFFF0000" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="UIElement.AllowDrop" Value="True" />
+    <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+    <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type TextBox}">
+          <Border BorderThickness="{TemplateBinding Control.BorderThickness}" BorderBrush="{StaticResource ThemeBrushKey}">
+            <ScrollViewer Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" VerticalAlignment="Center" Margin="2">
+              <Control.Template>
+                <ControlTemplate>
+                  <ScrollContentPresenter Content="{TemplateBinding ContentControl.Content}" CanContentScroll="False" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </ControlTemplate>
+              </Control.Template>
+            </ScrollViewer>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Background" Value="#FFDBDCDE" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

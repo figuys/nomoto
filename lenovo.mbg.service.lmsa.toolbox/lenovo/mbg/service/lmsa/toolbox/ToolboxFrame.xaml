@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.toolbox.ToolboxFrame" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.toolbox" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" xmlns:genericControls="clr-namespace:lenovo.themes.generic.Controls;assembly=lenovo.themes.generic" xmlns:list="clr-namespace:System.Collections;assembly=mscorlib" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ControlTemplate x:Key="iconButtonTemplate" TargetType="{x:Type genericControls:IconButton}">
+        <DockPanel>
+          <Image DockPanel.Dock="Left" Width="30" Source="{TemplateBinding genericControls:IconButton.Icon}" />
+          <lang:LangTextBlock LangText="{TemplateBinding genericControls:IconButton.Header}" LangKey="{TemplateBinding genericControls:IconButton.Header}" Margin="10 0 0 0" VerticalAlignment="Center" Foreground="#43B5E2" FontSize="18px" FontWeight="Bold" />
+        </DockPanel>
+      </ControlTemplate>
+      <ControlTemplate x:Key="dotLabelTemplate" TargetType="{x:Type Label}">
+        <DockPanel>
+          <Border DockPanel.Dock="Left" Width="24">
+            <Ellipse Width="6" Height="6" Fill="#43B5E2" VerticalAlignment="Center" />
+          </Border>
+          <lang:LangTextBlock LangText="{TemplateBinding ContentControl.Content}" LangKey="{TemplateBinding ContentControl.Content}" Margin="10 0 0 0" Foreground="#8E8E8E" FontWeight="Medium" LineHeight="18" FontSize="14px" VerticalAlignment="Center" TextWrapping="Wrap" />
+        </DockPanel>
+      </ControlTemplate>
+      <ControlTemplate x:Key="navigationButtonTemplate" TargetType="{x:Type Button}">
+        <Grid>
+          <Border CornerRadius="8" Background="#CCDCFC">
+            <UIElement.Effect>
+              <DropShadowEffect Color="#CCDCFC" BlurRadius="8" ShadowDepth="0" Opacity="0.46" />
+            </UIElement.Effect>
+          </Border>
+          <Border Background="#ffffff" CornerRadius="8" Padding="60 0 60 0">
+            <StackPanel VerticalAlignment="Center">
+              <StackPanel Orientation="Horizontal">
+                <Image DockPanel.Dock="Left" Width="24" Source="{Binding Content.Item0, RelativeSource={RelativeSource TemplatedParent}}" />
+                <lang:LangTextBlock Margin="10 0 0 0" VerticalAlignment="Center" Foreground="#43B5E2" FontSize="18px" FontWeight="Bold" LangText="{Binding Content.Item1, RelativeSource={RelativeSource TemplatedParent}}" LangKey="{Binding Content.Item1, RelativeSource={RelativeSource TemplatedParent}}" />
+              </StackPanel>
+              <Label Margin="0 10 0 0" Template="{StaticResource dotLabelTemplate}" Content="{Binding Content.Item2, RelativeSource={RelativeSource TemplatedParent}}" />
+            </StackPanel>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Background="#FAFBFD">
+    <FrameworkElement.Resources>
+      <ResourceDictionary>
+        <Thickness x:Key="ContentPanelMargin" Left="60" Right="60" />
+      </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="68*" />
+      <ColumnDefinition Width="430" />
+      <ColumnDefinition Width="19" />
+      <ColumnDefinition Width="430" />
+      <ColumnDefinition Width="68*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="140" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="140" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Source="{DynamicResource cloudImage}" Width="620" Height="106.9" />
+    <Button Grid.Column="1" Grid.Row="1" Template="{StaticResource navigationButtonTemplate}" Command="{x:Static local:ToolboxFrame.ClickCommand}" CommandParameter="CLIPBOARD">
+      <generic:Items Item0="{DynamicResource ToolBox.clipboardDrawingImage}" Item1="Clipboard" Item2="Copy text between device and PC" />
+    </Button>
+    <Button Grid.Column="3" Grid.Row="1" Template="{StaticResource navigationButtonTemplate}" Command="{x:Static local:ToolboxFrame.ClickCommand}" CommandParameter="GIFMAKER">
+      <generic:Items Item0="{DynamicResource ToolBox.gifDrawingImage}" Item1="GIF Maker" Item2="Make animated GIFs from pictures on PC" />
+    </Button>
+    <Button Grid.Column="1" Grid.Row="3" Template="{StaticResource navigationButtonTemplate}" Command="{x:Static local:ToolboxFrame.ClickCommand}" CommandParameter="RINGTONEMAKER">
+      <generic:Items Item0="{DynamicResource ToolBox.RingoneMakerDrawingImage}" Item1="Ringtone Maker" Item2="Make ringtone from your music" />
+    </Button>
+    <Button Grid.Column="3" Grid.Row="3" Template="{StaticResource navigationButtonTemplate}" Command="{x:Static local:ToolboxFrame.ClickCommand}" CommandParameter="SCREENCAPTURE">
+      <generic:Items Item0="{DynamicResource ToolBox.ScreenRecorderDrawingImage}" Item1="Screen Recorder" Item2="Record device screen" />
+    </Button>
+    <Button Grid.Row="5" Grid.Column="1" Template="{StaticResource navigationButtonTemplate}" Visibility="Hidden" Command="{x:Static local:ToolboxFrame.ClickCommand}" CommandParameter="SCREENPLAYER">
+      <generic:Items Item0="pack://application:,,,/lenovo.mbg.service.lmsa.toolbox;component/Resources/ScreenCast.png" Item1="Screen Mirror" Item2="Screen mirroring and projecting to your PC" />
+    </Button>
+  </Grid>
+</UserControl>

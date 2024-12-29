@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="lenovo.mbg.service.lmsa.toolbox.ScreenPlayer.MAHideNotifyView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.toolbox.ScreenPlayer" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" Title="ConnectView" Height="310" Width="560" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF">
+  <Border CornerRadius="8" Background="#FFFFFFFF">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="80" />
+        <RowDefinition />
+        <RowDefinition Height="70" />
+      </Grid.RowDefinitions>
+      <lang:LangTextBlock Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="14" Foreground="#FF494949" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 10" LangText="Please make sure that the MA app is running at the forefront!" LangKey="K1113" />
+      <Image Grid.Row="1" Width="322" Height="149" VerticalAlignment="Center" Source="pack://application:,,,/lenovo.mbg.service.lmsa.toolbox;component/Resources/authorize2.png" />
+      <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+        <lang:LangButton LangContent="Cancel" LangKey="K0208" Width="140" Height="32" CommandParameter="False" Style="{StaticResource button_default_style}" Command="{Binding CloseCommand}" />
+        <lang:LangButton LangContent="OK" LangKey="K0327" Width="140" Height="32" Margin="80 0 0 0" CommandParameter="True" Style="{StaticResource button_default_style}" Command="{Binding CloseCommand}" />
+      </StackPanel>
+    </Grid>
+  </Border>
+</Window>

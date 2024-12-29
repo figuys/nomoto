@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="lenovo.mbg.service.lmsa.toolbox.UserControlsV6.RingtoneMakerViewV6" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:lenovo.mbg.service.lmsa.toolbox.Ringtone.View" xmlns:convert="clr-namespace:lenovo.mbg.service.lmsa.toolbox.Ringtone.Comm" xmlns:ctrl="clr-namespace:lenovo.mbg.service.lmsa.toolbox.Ringtone.Core" xmlns:cvrt="clr-namespace:lenovo.themes.generic.Converter;assembly=lenovo.themes.generic" xmlns:gifCvrt="clr-namespace:lenovo.mbg.service.lmsa.toolbox.GifMaker.Comm" xmlns:generic="clr-namespace:lenovo.themes.generic;assembly=lenovo.themes.generic" xmlns:lang="clr-namespace:lenovo.mbg.service.framework.lang;assembly=lenovo.mbg.service.framework.lang" FontSize="14" Foreground="#FF001429" xmlns:usercontrolsv6="clr-namespace:lenovo.mbg.service.lmsa.toolbox.UserControlsV6">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/GenericStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/ButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/RadioButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/lenovo.themes.generic;component/ThemesV6/DrawingImageStyle.xaml" />
+        <ResourceDictionary Source="../ThemesV6/IconSvgDrawingIamge.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <SolidColorBrush x:Key="ThemeBrushKey">#43B5E2</SolidColorBrush>
+      <SolidColorBrush x:Key="DefTextBrushKey">#FF494949</SolidColorBrush>
+      <convert:MultiBoolConverter x:Key="MultiBoolConverter" />
+      <cvrt:CompareValueConverter x:Key="CompareValueConverter" />
+      <gifCvrt:LangStringConverter x:Key="LangStringConverter" />
+      <convert:Number2TimeStrConverter x:Key="Number2TimeStrConverter" />
+      <Style x:Key="v6_SaveButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{DynamicResource V6_ThemeFgdBrushKey}" />
+        <Setter Property="Background" Value="{StaticResource V6_HighLightBkgBrushKey}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource V6_HighLightBkgBrushKey}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="8 0" />
+        <Setter Property="Width" Value="177" />
+        <Setter Property="Height" Value="38" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" Background="{TemplateBinding Control.Background}" CornerRadius="19">
+                <Grid Name="grid">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="43" />
+                  </Grid.ColumnDefinitions>
+                  <lang:LangTextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" LangKey="{TemplateBinding ContentControl.Content}" Foreground="{TemplateBinding Control.Foreground}" />
+                  <Border Grid.Column="1" Background="#55FFFFFF" CornerRadius="0 19 19 0">
+                    <Viewbox Width="13" Height="13">
+                      <Path Fill="{TemplateBinding Control.Foreground}" Data="M0,0 L3.5,4 L7,0" />
+                    </Viewbox>
+                  </Border>
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Background" Value="{StaticResource V6_HoverBkgBrushKey}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Background" Value="#64D4DCE3" />
+                  <Setter Property="BorderBrush" Value="#FFD4DCE3" />
+                  <Setter Property="Foreground" Value="#FF9FAEBF" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="Background" Value="#FF014B66" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_ItemButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="38" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border Background="{TemplateBinding Control.Background}">
+                <lang:LangTextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0 0 0" LangKey="{TemplateBinding ContentControl.Content}" Foreground="{TemplateBinding Control.Foreground}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                  <Setter Property="Background" Value="#4D9FAEBF" />
+                  <Setter Property="Foreground" Value="#FF001429" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Foreground" Value="{StaticResource V6_DisableBrushKey}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_PlayStopButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ToggleButton}">
+              <Image Name="imgBg" Source="{StaticResource v6_icon_music_btn_play}" />
+              <ControlTemplate.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                  <Setter TargetName="imgBg" Property="Image.Source" Value="{StaticResource v6_icon_music_btn_stop}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_TransparentButtonStyle" TargetType="{x:Type lang:LangButton}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#FF9FAEBF" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type lang:LangButton}">
+              <StackPanel VerticalAlignment="Bottom">
+                <Image Width="27" Height="25" Source="{TemplateBinding FrameworkElement.Tag}" />
+                <lang:LangTextBlock LangKey="{TemplateBinding lang:LangButton.LangKey}" Margin="0 5 0 0" />
+              </StackPanel>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_TimeBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="Margin" Value="-8" />
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid Tag="{Binding Path=., RelativeSource={RelativeSource AncestorType=Button}}">
+                <Panel.Background>
+                  <ImageBrush ImageSource="{StaticResource v6_icon_music_volume}" />
+                </Panel.Background>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_RealTimeBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="Margin" Value="-8" />
+        <Setter Property="FrameworkElement.Cursor" Value="SizeAll" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid Tag="{Binding Path=., RelativeSource={RelativeSource AncestorType=Button}}">
+                <Panel.Background>
+                  <ImageBrush ImageSource="{StaticResource v6_icon_music_volume}" />
+                </Panel.Background>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_TimeLableStyle" TargetType="{x:Type Label}">
+        <Setter Property="Width" Value="96" />
+        <Setter Property="Margin" Value="-48 0 -48 0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Label}">
+              <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="{TemplateBinding Control.Background}" Padding="{TemplateBinding Control.Padding}" SnapsToDevicePixels="True">
+                <Grid SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                  <ContentPresenter Grid.Column="1" HorizontalAlignment="Center" RecognizesAccessKey="True" VerticalAlignment="Center" Margin="2 0" />
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <LinearGradientBrush x:Key="v6_PlayerBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#00CFCFCF" Offset="0" />
+        <GradientStop Color="#8FCFCFCF" Offset="1" />
+      </LinearGradientBrush>
+      <Style x:Key="v6_ringPlayerCtrlStyle" TargetType="{x:Type ctrl:PlayerCtrlV6}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ctrl:PlayerCtrlV6}">
+              <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                  </Grid.RowDefinitions>
+                  <Grid Name="barChart" Row="0" Margin="50 0" Height="154" VerticalAlignment="Bottom">
+                    <Grid Name="PART_barcontent" Background="#66E7ECF1" />
+                    <Border Name="PART_LeftRegion" BorderBrush="#FF005D7F" BorderThickness="0 0 2 0" Margin="-2 0 0 0" CornerRadius="10 0 0 10" HorizontalAlignment="Left" Background="#446EC2ED" />
+                    <Border Name="PART_RightRegion" BorderBrush="#FF005D7F" BorderThickness="2 0 0 0" Margin="0 0 -2 0" CornerRadius="0 10 10 0" HorizontalAlignment="Right" Background="#446EC2ED" />
+                    <Border Name="PART_RealData" BorderBrush="#FF005D7F" BorderThickness="0 0 2 0" Margin="-2 0 0 0" HorizontalAlignment="Left" Background="#00FFFFFF" />
+                    <Label Name="PART_RealText" Content="00:00:00" Width="75" Height="28" Margin="-38 0 -38 3" Padding="0 3" VerticalAlignment="Bottom" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left">
+                      <Control.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/lenovo.mbg.service.lmsa.toolbox;component/Ringtone/Resources/current.png" Stretch="Fill" />
+                      </Control.Background>
+                    </Label>
+                  </Grid>
+                  <Border Grid.Row="2" Background="#00FFFFFF" />
+                  <Border Grid.Row="1" Background="#00FFFFFF">
+                    <Border Name="PART_TimeLine" Height="6" Margin="50 0">
+                      <Grid>
+                        <Button Name="PART_BtnReal" Background="#FF008000" HorizontalAlignment="Left" Style="{StaticResource v6_RealTimeBtnStyle}" />
+                        <Button Name="PART_BtnRight" Background="#FF0000FF" HorizontalAlignment="Right" Style="{StaticResource v6_TimeBtnStyle}" />
+                        <Button Name="PART_BtnLeft" Background="#FFFF0000" HorizontalAlignment="Left" Style="{StaticResource v6_TimeBtnStyle}" />
+                      </Grid>
+                    </Border>
+                  </Border>
+                  <Grid Row="2" Margin="50 0">
+                    <Label Name="PART_StartText" Content="00:00:00" Style="{StaticResource v6_TimeLableStyle}" />
+                    <Label Name="PART_EndText" Content="00:00:00" Style="{StaticResource v6_TimeLableStyle}" />
+                  </Grid>
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_AddMusicBtnStyle" TargetType="{x:Type lang:LangButton}">
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type lang:LangButton}">
+              <Border MinWidth="231" Height="38" CornerRadius="19" BorderBrush="#FF005D7F" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Margin="22 0 10 0" VerticalAlignment="Center">
+                  <Image Height="18" Width="18" Source="{StaticResource v6_icon_add_round_cross_start}" />
+                  <lang:LangTextBlock Margin="7 0 0 0" LangKey="{TemplateBinding lang:LangButton.LangKey}" Foreground="#FF005D7F" />
+                </StackPanel>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="v6_TimeTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Width" Value="108" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TextBox}">
+              <Border Background="#FFFFFFFF" BorderBrush="#FFD4DCE3" BorderThickness="1">
+                <Grid VerticalAlignment="Center">
+                  <TextBlock Margin="11 0 0 0" Text="{TemplateBinding TextBox.Text}" Foreground="#FF9FAEBF" />
+                  <StackPanel Orientation="Vertical" Margin="0 0 11 0" HorizontalAlignment="Right" VerticalAlignment="Center" IsEnabled="{TemplateBinding UIElement.IsEnabled}">
+                    <Button Width="7" Height="5" CommandParameter="{TemplateBinding FrameworkElement.Tag}" Command="{Binding IncreaseCommand}">
+                      <Control.Template>
+                        <ControlTemplate>
+                          <Image Source="{StaticResource v6_icon_ringmaker_time_encrease}" />
+                        </ControlTemplate>
+                      </Control.Template>
+                    </Button>
+                    <Button Width="7" Height="5" Margin="0 2 0 0" CommandParameter="{TemplateBinding FrameworkElement.Tag}" Command="{Binding DecreaseCommand}">
+                      <Control.Template>
+                        <ControlTemplate>
+                          <Image Source="{StaticResource v6_icon_ringmaker_time_decrease}" />
+                        </ControlTemplate>
+                      </Control.Template>
+                    </Button>
+                  </StackPanel>
+                </Grid>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Background="#FFF7F9FC">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="55" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+    <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding FileName}" ToolTip="{Binding MediaFile}" />
+    <ctrl:PlayerCtrlV6 x:Name="player" Grid.Row="1" Style="{StaticResource v6_ringPlayerCtrlStyle}" StartValue="{Binding Start, Mode=TwoWay}" Current="{Binding Current, Mode=TwoWay}" EndValue="{Binding End, Mode=TwoWay}" MaxValue="{Binding Max}" IsPlay="{Binding IsPlay}" IsEnabled="{Binding IsFileOk}" />
+    <lang:LangButton Grid.Row="2" LangContent="Add MP3 audio file" LangKey="K1415" Style="{StaticResource v6_AddMusicBtnStyle}" HorizontalAlignment="Left" Margin="50 26 0 0" Command="{Binding LoadCommand}" />
+    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 26 0 0">
+      <lang:LangButton LangContent="Set as start" LangKey="K0250" Style="{StaticResource v6_TransparentButtonStyle}" Tag="{StaticResource v6_icon_ringmaker_set_start}" Command="{Binding StartCommand}" IsEnabled="{Binding IsFileOk}" />
+      <ToggleButton Width="51" Height="51" Margin="43 0" Style="{StaticResource v6_PlayStopButtonStyle}" VerticalAlignment="Center" Command="{Binding PlayCommand}" IsChecked="{Binding IsPlay}" IsEnabled="{Binding IsFileOk}" />
+      <lang:LangButton LangContent="Set as end" LangKey="K0251" Style="{StaticResource v6_TransparentButtonStyle}" Tag="{StaticResource v6_icon_ringmaker_set_end}" Command="{Binding SetEndCommand}" IsEnabled="{Binding IsFileOk}" />
+    </StackPanel>
+    <Border Grid.Row="3" Margin="50 13 50 21" Height="151" Background="#70D4DCE3" BorderBrush="#FFD4DCE3" BorderThickness="1" CornerRadius="12">
+      <Grid Margin="30 0 0 0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="60" />
+          <RowDefinition Height="25" />
+          <RowDefinition Height="30" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="10" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="10" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <lang:LangTextBlock Grid.Row="0" Grid.Column="0" LangText="Ringtone type:" LangKey="K0244" VerticalAlignment="Center" />
+        <lang:LangRadioButton Grid.Row="1" Grid.Column="0" Content="Call ringtone" LangKey="K0245" Style="{StaticResource v6_RadioButtonDefultStyle}" IsChecked="{Binding IsMessage, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:false:true}" />
+        <lang:LangRadioButton Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Notification ringtone" LangKey="K0246" Style="{StaticResource v6_RadioButtonDefultStyle}" IsChecked="{Binding IsMessage}" />
+        <Line Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" X1="0" Y1="13" X2="0" Y2="140" Stroke="{StaticResource V6_SplitterBrushKey}" StrokeDashArray="4,5" StrokeThickness="1" />
+        <lang:LangTextBlock Grid.Row="0" Grid.Column="2" LangText="Time interception" LangKey="K1353" VerticalAlignment="Center" Margin="40 0 0 0" />
+        <Grid Row="1" RowSpan="2" Column="2" HorizontalAlignment="Center">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <lang:LangRun LangText="Start time" LangKey="K1354" />
+            <Run Text=":" />
+          </TextBlock>
+          <TextBox Grid.Row="0" Grid.Column="1" Tag="StartTime" Style="{StaticResource v6_TimeTextBoxStyle}" IsEnabled="{Binding IsFileOk}" Text="{Binding Start, Converter={StaticResource Number2TimeStrConverter}}" />
+          <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <lang:LangRun LangText="End time:" LangKey="K1355" />
+            <Run Text=":" />
+          </TextBlock>
+          <TextBox Grid.Row="1" Grid.Column="1" Tag="EndTime" Style="{StaticResource v6_TimeTextBoxStyle}" IsEnabled="{Binding IsFileOk}" Text="{Binding End, Converter={StaticResource Number2TimeStrConverter}}" />
+        </Grid>
+        <Line Grid.Row="0" Grid.RowSpan="4" Grid.Column="3" X1="0" Y1="13" X2="0" Y2="140" Stroke="{StaticResource V6_SplitterBrushKey}" StrokeDashArray="4,5" StrokeThickness="1" />
+        <StackPanel Grid.Row="0" Grid.RowSpan="4" Grid.Column="4" VerticalAlignment="Center">
+          <lang:LangButton Name="btnSave" Grid.Row="3" Grid.Column="3" LangContent="Save" LangKey="K0230" Style="{StaticResource v6_SaveButtonStyle}" Width="200" Command="{Binding SelModelCommand}" IsEnabled="{Binding IsFileOk}" />
+          <lang:LangButton Height="38" Margin="0 15 0 0" LangContent="Set as ringtone" LangKey="K0548" Style="{StaticResource V6_NormalBtnStyle}" Width="200" Command="{Binding RingtoneCommand}">
+            <UIElement.IsEnabled>
+              <MultiBinding Converter="{StaticResource MultiBoolConverter}">
+                <Binding Path="IsFileOk" />
+                <Binding Path="IsDevOnLine" />
+              </MultiBinding>
+            </UIElement.IsEnabled>
+          </lang:LangButton>
+        </StackPanel>
+      </Grid>
+    </Border>
+    <StackPanel Grid.Row="4" Margin="50 0 0 0" Orientation="Horizontal">
+      <Image Height="15" Width="15" Source="{StaticResource v6_icon_gifmaker_warning}" />
+      <lang:LangTextBlock Margin="5 0 0 0" Foreground="#FF005D7F" LangText="{Binding IsMessage, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:Recommend notification ringtone to be less than 20s.:Recommend call ringtone to be less than 40s.}" LangKey="{Binding IsMessage, Converter={StaticResource CompareValueConverter}, ConverterParameter=true:K0774:K0773}" />
+    </StackPanel>
+    <Popup Name="saveModel" Placement="Bottom" IsOpen="False" PlacementTarget="{Binding ElementName=btnSave}" Width="{Binding ElementName=btnSave, Path=ActualWidth}">
+      <FrameworkElement.Triggers>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+          <BeginStoryboard>
+            <Storyboard>
+              <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen">
+                <DiscreteBooleanKeyFrame KeyTime="00:00:0.001" Value="False" />
+              </BooleanAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </FrameworkElement.Triggers>
+      <Border BorderBrush="#FF9FAEBF" BorderThickness="1">
+        <StackPanel Background="#FFFFFFFF">
+          <lang:LangButton LangContent="Save to PC" LangKey="K0248" Style="{StaticResource v6_ItemButtonStyle}" CommandParameter="PC" Command="{Binding SaveCommand}" />
+          <lang:LangButton LangContent="Save to device" LangKey="K0249" Style="{StaticResource v6_ItemButtonStyle}" CommandParameter="Phone" Command="{Binding SaveCommand}" IsEnabled="{Binding IsDevOnLine}" />
+        </StackPanel>
+      </Border>
+    </Popup>
+  </Grid>
+</UserControl>
