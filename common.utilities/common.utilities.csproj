@@ -24,27 +24,35 @@
   <ItemGroup>
     <Reference Include="DotNetBrowser">
       <HintPath>..\lib\DotNetBrowser.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DotNetBrowser.Chromium.Win-x64">
       <HintPath>..\lib\DotNetBrowser.Chromium.Win-x64.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DotNetBrowser.Core">
       <HintPath>..\lib\DotNetBrowser.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DotNetBrowser.Logging">
       <HintPath>..\lib\DotNetBrowser.Logging.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DotNetBrowser.Wpf">
       <HintPath>..\lib\DotNetBrowser.Wpf.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Gma.QrCodeNet.Encoding">
       <HintPath>..\lib\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SevenZipSharp">
       <HintPath>..\lib\SevenZipSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Core" />

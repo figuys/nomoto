@@ -25,9 +25,11 @@
   <ItemGroup>
     <Reference Include="GoogleAnalytics.Core">
       <HintPath>..\lib\GoogleAnalytics.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System.ComponentModel.Composition" />

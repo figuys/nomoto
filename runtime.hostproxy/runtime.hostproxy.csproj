@@ -27,6 +27,7 @@
   <ItemGroup>
     <Reference Include="lenovo.themes.generic">
       <HintPath>..\lib\lenovo.themes.generic.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

@@ -20,9 +20,11 @@
   <ItemGroup>
     <Reference Include="log4net">
       <HintPath>..\lib\log4net.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Security" />
