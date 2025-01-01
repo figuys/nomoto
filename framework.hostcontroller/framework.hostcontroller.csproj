@@ -13,6 +13,12 @@
   <PropertyGroup>
     <RootNamespace>lenovo.mbg.service.framework.hostcontroller</RootNamespace>
   </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\common.log\common.log.csproj" />
     <ProjectReference Include="..\common.utilities\common.utilities.csproj" />

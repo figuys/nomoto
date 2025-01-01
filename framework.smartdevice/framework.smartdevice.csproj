@@ -13,6 +13,12 @@
   <PropertyGroup>
     <RootNamespace>lenovo.mbg.service.framework.smartdevice</RootNamespace>
   </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
     <ProjectReference Include="..\common.webservices\common.webservices.csproj" />

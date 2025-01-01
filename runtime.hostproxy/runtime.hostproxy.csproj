@@ -13,6 +13,12 @@
   <PropertyGroup>
     <RootNamespace>lenovo.mbg.service.lmsa.hostproxy</RootNamespace>
   </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\framework.services\framework.services.csproj" />
     <ProjectReference Include="..\framework.smartbase\framework.smartbase.csproj" />
