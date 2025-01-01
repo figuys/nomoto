@@ -19,4 +19,7 @@
   <ItemGroup>
     <Reference Include="System.Security" />
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(OutDir)*.* $(SolutionDir)application" />
+  </Target>
 </Project>
