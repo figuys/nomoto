@@ -1,0 +1,50 @@
+FFmpeg:
+	* LICENSE:
+		* https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
+	* HOMEPAGE
+		* https://github.com/FFmpeg/FFmpeg
+DotNetBrowser:
+	* LICENSE:
+		* https://www.teamdev.com/dotnetbrowser/licence-agreement
+	* HOMEPAGE
+		* https://www.teamdev.com/dotnetbrowser
+NAudio:
+	* LICENSE:
+		* https://github.com/naudio/NAudio/blob/master/license.txt
+	* HOMEPAGE
+		* https://github.com/naudio/NAudio
+SevenZipSharp:
+	* LICENSE:
+		* https://github.com/tomap/SevenZipSharp/blob/master/license
+	* HOMEPAGE
+		* https://github.com/tomap/SevenZipSharp
+SharpAdbClient:
+	* LICENSE:
+		* https://github.com/quamotion/madb/blob/master/LICENSE
+	* HOMEPAGE
+		* https://github.com/quamotion/madb
+LibUsbDotNet:
+	* LICENSE:
+		* https://github.com/LibUsbDotNet/LibUsbDotNet/blob/master/LICENSE
+	* HOMEPAGE
+		* https://github.com/LibUsbDotNet/LibUsbDotNet
+logging-log4net:
+	* LICENSE:
+		* https://github.com/apache/logging-log4net/blob/master/LICENSE
+	* HOMEPAGE
+		* https://github.com/apache/logging-log4net
+Newtonsoft.Json:
+	* LICENSE:
+		* https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+	* HOMEPAGE
+		* https://github.com/JamesNK/Newtonsoft.Json
+NPOI:
+	* LICENSE:
+		* https://github.com/nissl-lab/npoi/blob/master/LICENSE
+	* HOMEPAGE
+		* https://github.com/nissl-lab/npoi
+SuperWebSocket:
+	* LICENSE:
+		* https://github.com/kerryjiang/SuperWebSocket/blob/master/LICENSE.TXT
+	* HOMEPAGE
+		* https://github.com/kerryjiang/SuperWebSocket

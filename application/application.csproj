@@ -33,9 +33,106 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="7zSharp\7z64.dll" />
+    <Content Include="adb.exe" />
+    <Content Include="AdbWinApi.dll" />
+    <Content Include="AdbWinUsbApi.dll" />
+    <Content Include="BMAFrame9.dll" />
+    <Content Include="BouncyCastle.Crypto.dll" />
+    <Content Include="Common.Logging.Core.dll" />
+    <Content Include="Common.Logging.dll" />
+    <Content Include="Common.Logging.Log4Net.Universal.dll" />
+    <Content Include="DotNetBrowser.Chromium.Win-x64.dll" />
+    <Content Include="DotNetBrowser.Core.dll" />
+    <Content Include="DotNetBrowser.dll" />
+    <Content Include="DotNetBrowser.Logging.dll" />
+    <Content Include="DotNetBrowser.Wpf.dll" />
+    <Content Include="download-config.xml" />
+    <Content Include="fastboot.exe" />
+    <Content Include="fastbootmonitor.exe" />
+    <Content Include="Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="GoogleAnalytics.Core.dll" />
+    <Content Include="GoogleAnalytics.WPF.Managed.dll" />
+    <Content Include="InstallUtil64.exe" />
+    <Content Include="lenovo.mbg.service.common.log.dll" />
+    <Content Include="lenovo.mbg.service.common.utilities.dll" />
+    <Content Include="lenovo.mbg.service.common.webservices.dll" />
+    <Content Include="lenovo.mbg.service.framework.devicemgt.dll" />
+    <Content Include="lenovo.mbg.service.framework.download.dll" />
+    <Content Include="lenovo.mbg.service.framework.hostcontroller.dll" />
+    <Content Include="lenovo.mbg.service.framework.lang.dll" />
+    <Content Include="lenovo.mbg.service.framework.pipes.dll" />
+    <Content Include="lenovo.mbg.service.framework.resources.dll" />
+    <Content Include="lenovo.mbg.service.framework.services.dll" />
+    <Content Include="lenovo.mbg.service.framework.smartbase.dll" />
+    <Content Include="lenovo.mbg.service.framework.smartdevice.dll" />
+    <Content Include="lenovo.mbg.service.framework.socket.dll" />
+    <Content Include="lenovo.mbg.service.framework.updateversion.dll" />
+    <Content Include="lenovo.mbg.service.lmsa.common.dll" />
+    <Content Include="lenovo.mbg.service.lmsa.hostproxy.dll" />
+    <Content Include="lenovo.themes.generic.dll" />
+    <Content Include="LmsaWindowsService.exe" />
+    <Content Include="log4net.dll" />
+    <Content Include="log4net.xml" />
+    <Content Include="Microsoft.Expression.Drawing.dll" />
+    <Content Include="Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Microsoft.Xaml.Behaviors.dll" />
+    <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="plugins.xml" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\Common.Logging.Core.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\Common.Logging.Log4Net.Universal.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\DotNetBrowser.Core.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\DotNetBrowser.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\DotNetBrowser.Logging.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\DotNetBrowser.Wpf.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phonemanager.apps.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phoneManager.common.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phoneManager.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\log4net.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\Microsoft.Expression.Drawing.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\Microsoft.Xaml.Behaviors.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\protobuf-net.dll" />
+    <Content Include="plugins\02928af025384c75ae055aa2d4f256c8\SevenZipSharp.dll" />
+    <Content Include="plugins\13f79fe4cfc98747c78794a943886bcd\lenovo.mbg.service.lmsa.backuprestore.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\DotNetBrowser.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\DotNetBrowser.Logging.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\DotNetBrowser.Wpf.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\lenovo.mbg.service.lmsa.flash.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\Microsoft.Xaml.Behaviors.dll" />
+    <Content Include="plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\XamlAnimatedGif.dll" />
+    <Content Include="plugins\985c66acdde2483ed96844a6b5ea4337\lenovo.mbg.service.lmsa.hardwaretest.dll" />
+    <Content Include="plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.forum.dll" />
+    <Content Include="plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.messenger.dll" />
+    <Content Include="plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.support.dll" />
+    <Content Include="plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.tips.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\FFmpeg.AutoGen.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\lenovo.mbg.service.lmsa.toolbox.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\libmp3lame.32.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\Microsoft.Xaml.Behaviors.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\NAudio.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\SuperSocket.Common.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\SuperSocket.SocketBase.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\SuperSocket.SocketEngine.dll" />
+    <Content Include="plugins\dd537b5c6c074ae49cc8b0b2965ce54a\SuperWebSocket.dll" />
+    <Content Include="protobuf-net.dll" />
+    <Content Include="SevenZipSharp.dll" />
+    <Content Include="SharpAdbClient.dll" />
+    <Content Include="SharpVectors.Converters.dll" />
+    <Content Include="SharpVectors.Core.dll" />
+    <Content Include="SharpVectors.Css.dll" />
+    <Content Include="SharpVectors.Dom.dll" />
+    <Content Include="SharpVectors.Model.dll" />
+    <Content Include="SharpVectors.Rendering.Gdi.dll" />
+    <Content Include="SharpVectors.Rendering.Wpf.dll" />
+    <Content Include="SharpVectors.Runtime.dll" />
     <Content Include="Software Fix.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="System.Buffers.dll" />
+    <Content Include="System.Drawing.Common.dll" />
+    <Content Include="Uninstall.exe" />
+    <Content Include="vcredist_x86_2010.exe" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Software Fix.exe.Config">
@@ -99,6 +196,37 @@
       <Project>{b1fe6697-7fd3-a573-f203-67b7c31169c7}</Project>
       <Name>runtime.hostproxy</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="apk\lmsa.apk" />
+    <None Include="Document\LicenseAgreement.pdf" />
+    <None Include="Document\NOTICE" />
+    <None Include="download\MaAppNew" />
+    <None Include="lang\bg-BG\bg-BG" />
+    <None Include="lang\cs-CZ\cs-CZ" />
+    <None Include="lang\de-DE\de-DE" />
+    <None Include="lang\en-US\en-US" />
+    <None Include="lang\es-ES\es-ES" />
+    <None Include="lang\fr-FR\fr-FR" />
+    <None Include="lang\hi-IN\hi-IN" />
+    <None Include="lang\id-ID\id-ID" />
+    <None Include="lang\it-IT\it-IT" />
+    <None Include="lang\ja-JP\ja-JP" />
+    <None Include="lang\pl-PL\pl-PL" />
+    <None Include="lang\pt-BR\pt-BR" />
+    <None Include="lang\ro-RO\ro-RO" />
+    <None Include="lang\ru-RU\ru-RU" />
+    <None Include="lang\sk-SK\sk-SK" />
+    <None Include="lang\sr-RS\sr-RS" />
+    <None Include="lang\zh-CN\zh-CN" />
+    <None Include="LmsaWindowsService.exe.config" />
+    <None Include="LmsaWindowsService.InstallState" />
+    <None Include="log4net.config" />
+    <None Include="log4net.plugin.config" />
+    <None Include="nt-log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="logs\ntservice-logs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

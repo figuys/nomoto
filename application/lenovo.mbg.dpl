@@ -1,0 +1,32 @@
+﻿<AssemblyExplorer>
+  <Assembly Path="D:\droid\fix\plugins\8ab04aa975e34f1ca4f9dc3a81374e2c\lenovo.mbg.service.lmsa.flash.dll" />
+  <Assembly Path="D:\droid\fix\plugins\13f79fe4cfc98747c78794a943886bcd\lenovo.mbg.service.lmsa.backuprestore.dll" />
+  <Assembly Path="D:\droid\fix\plugins\985c66acdde2483ed96844a6b5ea4337\lenovo.mbg.service.lmsa.hardwaretest.dll" />
+  <Assembly Path="D:\droid\fix\plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phonemanager.apps.dll" />
+  <Assembly Path="D:\droid\fix\plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phoneManager.common.dll" />
+  <Assembly Path="D:\droid\fix\plugins\02928af025384c75ae055aa2d4f256c8\lenovo.mbg.service.lmsa.phoneManager.dll" />
+  <Assembly Path="D:\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.forum.dll" />
+  <Assembly Path="D:\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.messenger.dll" />
+  <Assembly Path="D:\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.support.dll" />
+  <Assembly Path="D:\droid\fix\plugins\a6099126929a4e74ac86f1c2405dcb32\lenovo.mbg.service.lmsa.tips.dll" />
+  <Assembly Path="D:\droid\fix\plugins\dd537b5c6c074ae49cc8b0b2965ce54a\lenovo.mbg.service.lmsa.toolbox.dll" />
+  <Assembly Path="D:\droid\fix\Software Fix.exe" />
+  <Assembly Path="D:\droid\fix\LmsaWindowsService.exe" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.common.log.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.common.utilities.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.common.webservices.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.devicemgt.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.download.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.hostcontroller.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.lang.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.pipes.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.resources.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.services.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.smartbase.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.smartdevice.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.socket.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.framework.updateversion.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.lmsa.common.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.mbg.service.lmsa.hostproxy.dll" />
+  <Assembly Path="D:\droid\fix\lenovo.themes.generic.dll" />
+</AssemblyExplorer>
