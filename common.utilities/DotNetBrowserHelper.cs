@@ -194,9 +194,9 @@ public class DotNetBrowserHelper
                 }
             }
             LogHelper.LogInstance.Info("Donetbrowser load url[" + url + "] start");
-            Task<NavigationResult> task = browser.Navigation.LoadUrl(url);
+            Task<LoadResult> task = browser.Navigation.LoadUrl(url);
             LogHelper.LogInstance.Info($"Donetbrowser load url result: {task}!");
-            return task.Result.LoadResult;
+            return task.Result;
         }
         catch (Exception exception2)
         {

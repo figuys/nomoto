@@ -13,12 +13,17 @@
     <RootNamespace>lenovo.mbg.service.framework.updateversion</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\common.log\common.log.csproj" />
     <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
     <ProjectReference Include="..\common.webservices\common.webservices.csproj" />
     <ProjectReference Include="..\framework.pipes\framework.pipes.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(OutDir)*.* $(SolutionDir)application" />
+	</Target>
 </Project>

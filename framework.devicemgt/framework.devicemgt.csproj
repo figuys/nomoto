@@ -13,9 +13,6 @@
     <RootNamespace>lenovo.mbg.service.framework.devicemgt</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\common.log\common.log.csproj" />
     <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
     <ProjectReference Include="..\common.webservices\common.webservices.csproj" />
@@ -23,14 +20,20 @@
     <ProjectReference Include="..\framework.socket\framework.socket.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Core" />
-    <Reference Include="SharpAdbClient">
-      <HintPath>..\..\..\droid\fix\SharpAdbClient.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Management" />
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>..\..\..\droid\fix\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <HintPath>..\lib\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpAdbClient">
+      <HintPath>..\lib\SharpAdbClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
+	    	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(OutDir)*.* $(SolutionDir)application" />
+	</Target>	
 </Project>

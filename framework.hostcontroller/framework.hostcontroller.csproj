@@ -21,4 +21,7 @@
   <ItemGroup>
     <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(OutDir)*.* $(SolutionDir)application" />
+	</Target>
 </Project>

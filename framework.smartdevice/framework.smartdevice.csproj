@@ -14,9 +14,6 @@
     <RootNamespace>lenovo.mbg.service.framework.smartdevice</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\common.utilities\common.utilities.csproj" />
     <ProjectReference Include="..\common.webservices\common.webservices.csproj" />
     <ProjectReference Include="..\framework.resources\framework.resources.csproj" />
@@ -28,9 +25,15 @@
     <Reference Include="lenovo.themes.generic">
       <HintPath>..\lib\lenovo.themes.generic.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(OutDir)*.* $(SolutionDir)application" />
+	</Target>
 </Project>
