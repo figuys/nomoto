@@ -1,37 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2E984EF-1628-4A0E-A217-DF7C1C255CAB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>application</RootNamespace>
     <AssemblyName>application</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
+    <RootNamespace>application</RootNamespace>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>11.0</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>embedded</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <ItemGroup>
     <Content Include="7zSharp\7z64.dll" />
     <Content Include="adb.exe" />
@@ -134,11 +132,13 @@
     <Content Include="Uninstall.exe" />
     <Content Include="vcredist_x86_2010.exe" />
   </ItemGroup>
+
   <ItemGroup>
     <Content Include="Software Fix.exe.Config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\common.log\common.log.csproj">
       <Project>{92c1ec5a-d0a9-4782-a313-4896a5b0ba23}</Project>
@@ -197,6 +197,7 @@
       <Name>runtime.hostproxy</Name>
     </ProjectReference>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="apk\lmsa.apk" />
     <None Include="Document\LicenseAgreement.pdf" />
@@ -225,8 +226,8 @@
     <None Include="log4net.plugin.config" />
     <None Include="nt-log4net.config" />
   </ItemGroup>
+
   <ItemGroup>
     <Folder Include="logs\ntservice-logs\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
